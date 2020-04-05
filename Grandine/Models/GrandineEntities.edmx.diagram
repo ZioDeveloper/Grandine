@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="GRANDINEModel.Utenti" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="GRANDINEModel.FK_Utenti_ClassiUtente" ManuallyRouted="false" />
         <EntityTypeShape EntityType="GRANDINEModel.Bisarchista" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="GRANDINEModel.Clienti" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

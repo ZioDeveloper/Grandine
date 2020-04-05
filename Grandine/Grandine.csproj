@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BisarchistasController.cs" />
+    <Compile Include="Controllers\ClientisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,6 +139,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClassiUtente.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Clienti.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GrandineEntities.Context.cs">
@@ -228,6 +232,11 @@
     <Content Include="Views\Bisarchistas\Details.cshtml" />
     <Content Include="Views\Bisarchistas\Edit.cshtml" />
     <Content Include="Views\Bisarchistas\Index.cshtml" />
+    <Content Include="Views\Clientis\Create.cshtml" />
+    <Content Include="Views\Clientis\Delete.cshtml" />
+    <Content Include="Views\Clientis\Details.cshtml" />
+    <Content Include="Views\Clientis\Edit.cshtml" />
+    <Content Include="Views\Clientis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,34 @@
+﻿@model Grandine.Models.Clienti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>Dettagli</h4>
+
+<div>
+    <h4>Clienti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descr)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Torna a lista", "Index")
+</p>
