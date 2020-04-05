@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Grandine.Models.Status>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Tabella status</h4>
+<br />
+<p>
+    @Html.ActionLink("Inserisci Status", "Create")
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Descr)*@
+            Codice
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Descr)*@
+            Status
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descr)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+            @Html.ActionLink("Cancella", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

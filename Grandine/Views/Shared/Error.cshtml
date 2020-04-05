@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <br />
+    <div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
+        <div style="text-align:left">
+            <h4>Application error !</h4>
+            <h5>Errore : @ViewBag.Message</h5>
+        </div>
+    </div>
+    <br />
+    @{ string myView = ViewBag.Action;}
+    @Html.ActionLink("Torna ...", myView, new { Telaio = ViewBag.Telaio, ViewBag.Modello, ViewBag.Rilevamento, ViewBag.myStatus, ViewBag.IsPSA }, new { @class = "btn btn-primary" })
+
+
+</body>
+</html>

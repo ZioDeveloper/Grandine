@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+<br />
+
+<div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
+    <h3 class="display-4">Gestione concessionari</h3>
+    <h5 class="display-4">Login page</h5>
+    <br />
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="container-fluid">
+            <div class="form-group">
+                <label for="aUser">User name</label><br />
+
+                @Html.TextBox("aCodiceUtente", null, new { style = "width:180px", @Value = "C001", placeholder = "Codice utente" })
+                @Html.ValidationMessage("aCodiceUtente")
+
+            </div>
+            <div class="form-group">
+                <label for="aPassword">Password</label><br />
+                @Html.TextBox("aPassword", null, new { style = "width:180px", @Value = "test", placeholder = "Password", type = "password" })
+                @Html.ValidationMessage("aPassword")
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Login</button>
+
+
+    }
+</div>
+
+

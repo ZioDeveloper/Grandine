@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GRANDINEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bisarchista">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Descr" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ClassiUtente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Classe" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Descr" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Utenti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Cognome" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="IDClasse" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Utenti_ClassiUtente">
+          <End Role="ClassiUtente" Type="Self.ClassiUtente" Multiplicity="1" />
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassiUtente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Utenti">
+              <PropertyRef Name="IDClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GRANDINEModelStoreContainer">
+          <EntitySet Name="Bisarchista" EntityType="Self.Bisarchista" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClassiUtente" EntityType="Self.ClassiUtente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
+            <End Role="ClassiUtente" EntitySet="ClassiUtente" />
+            <End Role="Utenti" EntitySet="Utenti" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GRANDINEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClassiUtente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Classe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Utenti" Relationship="Self.FK_Utenti_ClassiUtente" FromRole="ClassiUtente" ToRole="Utenti" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Utenti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDClasse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClassiUtente" Relationship="Self.FK_Utenti_ClassiUtente" FromRole="Utenti" ToRole="ClassiUtente" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Utenti_ClassiUtente">
+          <End Role="ClassiUtente" Type="Self.ClassiUtente" Multiplicity="1" />
+          <End Role="Utenti" Type="Self.Utenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassiUtente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Utenti">
+              <PropertyRef Name="IDClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GRANDINEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClassiUtente" EntityType="Self.ClassiUtente" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Utenti" EntityType="Self.Utenti" />
+          <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
+            <End Role="ClassiUtente" EntitySet="ClassiUtente" />
+            <End Role="Utenti" EntitySet="Utenti" />
+          </AssociationSet>
+          <EntitySet Name="Bisarchista" EntityType="GRANDINEModel.Bisarchista" />
+        </EntityContainer>
+        <EntityType Name="Bisarchista">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GRANDINEModelStoreContainer" CdmEntityContainer="GRANDINEEntities">
+          <EntitySetMapping Name="ClassiUtente">
+            <EntityTypeMapping TypeName="GRANDINEModel.ClassiUtente">
+              <MappingFragment StoreEntitySet="ClassiUtente">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Classe" ColumnName="Classe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="GRANDINEModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Descr" ColumnName="Descr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utenti">
+            <EntityTypeMapping TypeName="GRANDINEModel.Utenti">
+              <MappingFragment StoreEntitySet="Utenti">
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IDClasse" ColumnName="IDClasse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bisarchista">
+            <EntityTypeMapping TypeName="GRANDINEModel.Bisarchista">
+              <MappingFragment StoreEntitySet="Bisarchista">
+                <ScalarProperty Name="Descr" ColumnName="Descr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

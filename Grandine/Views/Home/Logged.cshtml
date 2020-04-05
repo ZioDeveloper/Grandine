@@ -1,0 +1,13 @@
+﻿@model Grandine.Models.HomeModel
+
+@{
+    ViewBag.Title = "Utente autenticato";
+}
+
+<h4>Utente autenticato</h4>
+<div>
+    @{var item = Model.Utenti.ToList();}
+
+    Benvenuto @item[0].Nome  @item[0].Cognome
+</div>
+
