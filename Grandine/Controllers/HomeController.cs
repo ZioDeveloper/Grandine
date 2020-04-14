@@ -32,8 +32,14 @@ namespace Grandine.Controllers
                                  where m.ID == myIDUtente
                                  select m;
                     model.Utenti = utente.ToList();
+
+                    // Classe
+                    var myClasse = (from m in db.Utenti
+                                 where m.ID == myIDUtente
+                                 select m.IDClasse).FirstOrDefault();
+
                     Session["UserName"] = myIDUtente;
-                    Session["UserName"] = myIDUtente;
+                    Session["Classeutente"] = myClasse;
                     ViewBag.Message = "OK !";
                     return View("Logged",model);
                 }

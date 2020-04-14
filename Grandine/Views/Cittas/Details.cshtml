@@ -1,4 +1,4 @@
-﻿@model Grandine.Models.Bisarchista
+﻿@model Grandine.Models.Citta
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Bisarchista</h4>
+    <h4>Citta</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -21,6 +21,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Torna a lista", "Index")
 </p>

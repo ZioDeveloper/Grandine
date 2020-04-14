@@ -129,13 +129,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BisarchistasController.cs" />
+    <Compile Include="Controllers\CittasController.cs" />
     <Compile Include="Controllers\ClientisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\TecnicisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Bisarchista.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Citta.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClassiUtente.cs">
@@ -159,8 +164,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrandineEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\GrandineEntities1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrandineEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Status.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tecnici.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Utenti.cs">
@@ -191,7 +204,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\GrandineEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GrandineEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>GrandineEntities1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\GrandineEntities.edmx.diagram">
       <DependentUpon>GrandineEntities.edmx</DependentUpon>
@@ -232,11 +245,21 @@
     <Content Include="Views\Bisarchistas\Details.cshtml" />
     <Content Include="Views\Bisarchistas\Edit.cshtml" />
     <Content Include="Views\Bisarchistas\Index.cshtml" />
+    <Content Include="Views\Cittas\Create.cshtml" />
+    <Content Include="Views\Cittas\Delete.cshtml" />
+    <Content Include="Views\Cittas\Details.cshtml" />
+    <Content Include="Views\Cittas\Edit.cshtml" />
+    <Content Include="Views\Cittas\Index.cshtml" />
     <Content Include="Views\Clientis\Create.cshtml" />
     <Content Include="Views\Clientis\Delete.cshtml" />
     <Content Include="Views\Clientis\Details.cshtml" />
     <Content Include="Views\Clientis\Edit.cshtml" />
     <Content Include="Views\Clientis\Index.cshtml" />
+    <Content Include="Views\Tecnicis\Create.cshtml" />
+    <Content Include="Views\Tecnicis\Delete.cshtml" />
+    <Content Include="Views\Tecnicis\Details.cshtml" />
+    <Content Include="Views\Tecnicis\Edit.cshtml" />
+    <Content Include="Views\Tecnicis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

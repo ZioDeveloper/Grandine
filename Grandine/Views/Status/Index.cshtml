@@ -3,11 +3,11 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<br />
 <h4>Tabella status</h4>
 <br />
 <p>
-    @Html.ActionLink("Inserisci Status", "Create")
+    @Html.ActionLink("Inserisci Status", "Create",null, new { @class = "btn btn-primary" })
 </p>
 <br />
 <table class="table">
@@ -32,9 +32,9 @@
             @Html.DisplayFor(modelItem => item.Descr)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID },new { @class = "btn btn-success" }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
-            @Html.ActionLink("Cancella", "Delete", new { id=item.ID })
+            @Html.ActionLink("Cancella", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

@@ -12,21 +12,13 @@ namespace Grandine.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Clienti
+    public partial class Tecnici
     {
         public int ID { get; set; }
         public string Codice { get; set; }
-        public string RagioneSociale { get; set; }
-        public string CAP { get; set; }
-        public string Comune { get; set; }
-        public string Provincia { get; set; }
-        public string Via { get; set; }
-        public string Tel1 { get; set; }
-        public string Mail1 { get; set; }
-        public string Tel2 { get; set; }
-        public string Mail2 { get; set; }
-        public string PIVA { get; set; }
-        public string Fax { get; set; }
-        public Nullable<int> GiorniPagamento { get; set; }
+        public string Cognome { get; set; }
+        public string Nome { get; set; }
+        public string Cell { get; set; }
+        public string Mail { get; set; }
     }
 }

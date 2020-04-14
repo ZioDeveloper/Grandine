@@ -30,5 +30,7 @@ namespace Grandine.Models
         public virtual DbSet<Utenti> Utenti { get; set; }
         public virtual DbSet<Bisarchista> Bisarchista { get; set; }
         public virtual DbSet<Clienti> Clienti { get; set; }
+        public virtual DbSet<Citta> Citta { get; set; }
+        public virtual DbSet<Tecnici> Tecnici { get; set; }
     }
 }

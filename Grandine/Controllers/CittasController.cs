@@ -10,107 +10,107 @@ using Grandine.Models;
 
 namespace Grandine.Controllers
 {
-    public class ClientisController : Controller
+    public class CittasController : Controller
     {
         private GRANDINEEntities db = new GRANDINEEntities();
 
-        // GET: Clientis
+        // GET: Cittas
         public ActionResult Index()
         {
-            return View(db.Clienti.ToList());
+            return View(db.Citta.ToList());
         }
 
-        // GET: Clientis/Details/5
-        public ActionResult Details(int? id)
+        // GET: Cittas/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Clienti clienti = db.Clienti.Find(id);
-            if (clienti == null)
+            Citta citta = db.Citta.Find(id);
+            if (citta == null)
             {
                 return HttpNotFound();
             }
-            return View(clienti);
+            return View(citta);
         }
 
-        // GET: Clientis/Create
+        // GET: Cittas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clientis/Create
+        // POST: Cittas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Codice,RagioneSociale,CAP,Comune,Provincia,Via,Tel1,Mail1,Tel2,Mail2,PIVA,Fax,GiorniPagamento")] Clienti clienti)
+        public ActionResult Create([Bind(Include = "ID,Descr")] Citta citta)
         {
             if (ModelState.IsValid)
             {
-                db.Clienti.Add(clienti);
+                db.Citta.Add(citta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(clienti);
+            return View(citta);
         }
 
-        // GET: Clientis/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Cittas/Edit/5
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Clienti clienti = db.Clienti.Find(id);
-            if (clienti == null)
+            Citta citta = db.Citta.Find(id);
+            if (citta == null)
             {
                 return HttpNotFound();
             }
-            return View(clienti);
+            return View(citta);
         }
 
-        // POST: Clientis/Edit/5
+        // POST: Cittas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Codice,RagioneSociale,CAP,Comune,Provincia,Via,Tel1,Mail1,Tel2,Mail2,PIVA,Fax,GiorniPagamento")] Clienti clienti)
+        public ActionResult Edit([Bind(Include = "ID,Descr")] Citta citta)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(clienti).State = EntityState.Modified;
+                db.Entry(citta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(clienti);
+            return View(citta);
         }
 
-        // GET: Clientis/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Cittas/Delete/5
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Clienti clienti = db.Clienti.Find(id);
-            if (clienti == null)
+            Citta citta = db.Citta.Find(id);
+            if (citta == null)
             {
                 return HttpNotFound();
             }
-            return View(clienti);
+            return View(citta);
         }
 
-        // POST: Clientis/Delete/5
+        // POST: Cittas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            Clienti clienti = db.Clienti.Find(id);
-            db.Clienti.Remove(clienti);
+            Citta citta = db.Citta.Find(id);
+            db.Citta.Remove(citta);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

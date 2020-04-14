@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h4>Dettagli</h4>
+<h2>Details</h2>
 
 <div>
     <h4>Clienti</h4>
@@ -19,16 +19,104 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descr)
+            @Html.DisplayNameFor(model => model.RagioneSociale)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Descr)
+            @Html.DisplayFor(model => model.RagioneSociale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comune)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comune)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Via)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Via)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiorniPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiorniPagamento)
         </dd>
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Torna a lista", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </p>

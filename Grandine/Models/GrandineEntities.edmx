@@ -12,6 +12,13 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descr" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Citta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Descr" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="ClassiUtente">
           <Key>
             <PropertyRef Name="ID" />
@@ -25,7 +32,18 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Codice" Type="varchar" MaxLength="10" />
-          <Property Name="Descr" Type="varchar" MaxLength="50" />
+          <Property Name="RagioneSociale" Type="varchar" MaxLength="50" />
+          <Property Name="CAP" Type="varchar" MaxLength="5" />
+          <Property Name="Comune" Type="varchar" MaxLength="50" />
+          <Property Name="Provincia" Type="varchar" MaxLength="50" />
+          <Property Name="Via" Type="varchar" MaxLength="50" />
+          <Property Name="Tel1" Type="varchar" MaxLength="50" />
+          <Property Name="Mail1" Type="varchar" MaxLength="50" />
+          <Property Name="Tel2" Type="varchar" MaxLength="50" />
+          <Property Name="Mail2" Type="varchar" MaxLength="50" />
+          <Property Name="PIVA" Type="varchar" MaxLength="50" />
+          <Property Name="Fax" Type="varchar" MaxLength="50" />
+          <Property Name="GiorniPagamento" Type="int" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -33,6 +51,17 @@
           </Key>
           <Property Name="ID" Type="varchar" MaxLength="2" Nullable="false" />
           <Property Name="Descr" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codice" Type="varchar" MaxLength="10" />
+          <Property Name="Cognome" Type="varchar" MaxLength="50" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Cell" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Utenti">
           <Key>
@@ -58,9 +87,11 @@
         </Association>
         <EntityContainer Name="GRANDINEModelStoreContainer">
           <EntitySet Name="Bisarchista" EntityType="Self.Bisarchista" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Citta" EntityType="Self.Citta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClassiUtente" EntityType="Self.ClassiUtente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clienti" EntityType="Self.Clienti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tecnici" EntityType="Self.Tecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
             <End Role="ClassiUtente" EntitySet="ClassiUtente" />
@@ -119,6 +150,8 @@
           </AssociationSet>
           <EntitySet Name="Bisarchista" EntityType="GRANDINEModel.Bisarchista" />
           <EntitySet Name="Clienti" EntityType="GRANDINEModel.Clienti" />
+          <EntitySet Name="Citta" EntityType="GRANDINEModel.Citta" />
+          <EntitySet Name="Tecnici" EntityType="GRANDINEModel.Tecnici" />
         </EntityContainer>
         <EntityType Name="Bisarchista">
           <Key>
@@ -133,7 +166,36 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Codice" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RagioneSociale" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CAP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Comune" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Via" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tel1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tel2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GiorniPagamento" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Citta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codice" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -179,7 +241,38 @@
           <EntitySetMapping Name="Clienti">
             <EntityTypeMapping TypeName="GRANDINEModel.Clienti">
               <MappingFragment StoreEntitySet="Clienti">
+                <ScalarProperty Name="GiorniPagamento" ColumnName="GiorniPagamento" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="Mail2" ColumnName="Mail2" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Mail1" ColumnName="Mail1" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Via" ColumnName="Via" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Comune" ColumnName="Comune" />
+                <ScalarProperty Name="CAP" ColumnName="CAP" />
+                <ScalarProperty Name="RagioneSociale" ColumnName="RagioneSociale" />
+                <ScalarProperty Name="Codice" ColumnName="Codice" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Citta">
+            <EntityTypeMapping TypeName="GRANDINEModel.Citta">
+              <MappingFragment StoreEntitySet="Citta">
                 <ScalarProperty Name="Descr" ColumnName="Descr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tecnici">
+            <EntityTypeMapping TypeName="GRANDINEModel.Tecnici">
+              <MappingFragment StoreEntitySet="Tecnici">
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Cell" ColumnName="Cell" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
                 <ScalarProperty Name="Codice" ColumnName="Codice" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
