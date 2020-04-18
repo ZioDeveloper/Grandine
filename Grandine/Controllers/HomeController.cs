@@ -38,9 +38,14 @@ namespace Grandine.Controllers
                                  where m.ID == myIDUtente
                                  select m.IDClasse).FirstOrDefault();
 
+                    var myTipo = (from m in db.ClassiUtente
+                                  where m.ID.ToString() == myClasse.ToString()
+                                  select m.Classe).FirstOrDefault();
+
                     Session["UserName"] = myIDUtente;
                     Session["Classeutente"] = myClasse;
                     ViewBag.Message = "OK !";
+                    ViewBag.DescrizioneClasse = myTipo;
 
                     // Conta i clienti attivi
                     var clienti = from m in db.Clienti
@@ -99,14 +104,16 @@ namespace Grandine.Controllers
                                     where m.ID == myIDUtente
                                     select m.IDClasse).FirstOrDefault();
 
-                   
+                    var myTipo = (from m in db.ClassiUtente
+                                  where m.ID.ToString() == myClasse.ToString()
+                                  select m.Classe).FirstOrDefault();
 
                     // Conta i clienti attivi
                     var clienti = from m in db.Clienti
                                   where m.IsActive == true
                                   select m;
                     model.Clienti = clienti.ToList();
-
+                    ViewBag.DescrizioneClasse = myTipo;
                     return View("Logged", model);
                 }
                 else

@@ -131,6 +131,7 @@
     <Compile Include="Controllers\BisarchistasController.cs" />
     <Compile Include="Controllers\CittasController.cs" />
     <Compile Include="Controllers\ClientisController.cs" />
+    <Compile Include="Controllers\ClientiXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
@@ -147,6 +148,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Clienti.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientiXTecnici.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GrandineEntities.Context.cs">
@@ -261,6 +265,11 @@
     <Content Include="Views\Clientis\Edit.cshtml" />
     <Content Include="Views\Clientis\Index.cshtml" />
     <Content Include="Views\Home\LoginInUse.cshtml" />
+    <Content Include="Views\ClientiXTecnicis\Create.cshtml" />
+    <Content Include="Views\ClientiXTecnicis\Delete.cshtml" />
+    <Content Include="Views\ClientiXTecnicis\Details.cshtml" />
+    <Content Include="Views\ClientiXTecnicis\Edit.cshtml" />
+    <Content Include="Views\ClientiXTecnicis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

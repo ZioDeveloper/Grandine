@@ -14,6 +14,12 @@ namespace Grandine.Models
     
     public partial class Clienti
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Clienti()
+        {
+            this.ClientiXTecnici = new HashSet<ClientiXTecnici>();
+        }
+    
         public int ID { get; set; }
         public string Codice { get; set; }
         public string RagioneSociale { get; set; }
@@ -29,5 +35,8 @@ namespace Grandine.Models
         public string Fax { get; set; }
         public Nullable<int> GiorniPagamento { get; set; }
         public bool IsActive { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientiXTecnici> ClientiXTecnici { get; set; }
     }
 }

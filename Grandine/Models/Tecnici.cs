@@ -14,11 +14,20 @@ namespace Grandine.Models
     
     public partial class Tecnici
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tecnici()
+        {
+            this.ClientiXTecnici = new HashSet<ClientiXTecnici>();
+        }
+    
         public int ID { get; set; }
         public string Codice { get; set; }
         public string Cognome { get; set; }
         public string Nome { get; set; }
         public string Cell { get; set; }
         public string Mail { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientiXTecnici> ClientiXTecnici { get; set; }
     }
 }

@@ -44,7 +44,15 @@
           <Property Name="PIVA" Type="varchar" MaxLength="50" />
           <Property Name="Fax" Type="varchar" MaxLength="50" />
           <Property Name="GiorniPagamento" Type="int" />
-          <Property Name="IsActive" Type="bit" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientiXTecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+          <Property Name="IDTecnico" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -74,6 +82,30 @@
           <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="IDClasse" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_ClientiXTecnici_Clienti">
+          <End Role="Clienti" Type="Self.Clienti" Multiplicity="1" />
+          <End Role="ClientiXTecnici" Type="Self.ClientiXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clienti">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClientiXTecnici">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientiXTecnici_Tecnici">
+          <End Role="Tecnici" Type="Self.Tecnici" Multiplicity="1" />
+          <End Role="ClientiXTecnici" Type="Self.ClientiXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClientiXTecnici">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Utenti_ClassiUtente">
           <End Role="ClassiUtente" Type="Self.ClassiUtente" Multiplicity="1" />
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="*" />
@@ -91,9 +123,18 @@
           <EntitySet Name="Citta" EntityType="Self.Citta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClassiUtente" EntityType="Self.ClassiUtente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clienti" EntityType="Self.Clienti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientiXTecnici" EntityType="Self.ClientiXTecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tecnici" EntityType="Self.Tecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ClientiXTecnici_Clienti" Association="Self.FK_ClientiXTecnici_Clienti">
+            <End Role="Clienti" EntitySet="Clienti" />
+            <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientiXTecnici_Tecnici" Association="Self.FK_ClientiXTecnici_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
+            <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
+          </AssociationSet>
           <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
             <End Role="ClassiUtente" EntitySet="ClassiUtente" />
             <End Role="Utenti" EntitySet="Utenti" />
@@ -150,15 +191,31 @@
             <End Role="Utenti" EntitySet="Utenti" />
           </AssociationSet>
           <EntitySet Name="Bisarchista" EntityType="GRANDINEModel.Bisarchista" />
-          <EntitySet Name="Clienti" EntityType="GRANDINEModel.Clienti" />
           <EntitySet Name="Citta" EntityType="GRANDINEModel.Citta" />
+          <EntitySet Name="Clienti" EntityType="GRANDINEModel.Clienti" />
           <EntitySet Name="Tecnici" EntityType="GRANDINEModel.Tecnici" />
+          <EntitySet Name="ClientiXTecnici" EntityType="GRANDINEModel.ClientiXTecnici" />
+          <AssociationSet Name="FK_ClientiXTecnici_Clienti" Association="GRANDINEModel.FK_ClientiXTecnici_Clienti">
+            <End Role="Clienti" EntitySet="Clienti" />
+            <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientiXTecnici_Tecnici" Association="GRANDINEModel.FK_ClientiXTecnici_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
+            <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Bisarchista">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Citta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Clienti">
@@ -179,14 +236,8 @@
           <Property Name="PIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GiorniPagamento" Type="Int32" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="None" />
-        </EntityType>
-        <EntityType Name="Citta">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClientiXTecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Clienti" FromRole="Clienti" ToRole="ClientiXTecnici" />
         </EntityType>
         <EntityType Name="Tecnici">
           <Key>
@@ -198,7 +249,42 @@
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Cell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ClientiXTecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Tecnici" FromRole="Tecnici" ToRole="ClientiXTecnici" />
         </EntityType>
+        <EntityType Name="ClientiXTecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="IDTecnico" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clienti" Relationship="GRANDINEModel.FK_ClientiXTecnici_Clienti" FromRole="ClientiXTecnici" ToRole="Clienti" />
+          <NavigationProperty Name="Tecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Tecnici" FromRole="ClientiXTecnici" ToRole="Tecnici" />
+        </EntityType>
+        <Association Name="FK_ClientiXTecnici_Clienti">
+          <End Type="GRANDINEModel.Clienti" Role="Clienti" Multiplicity="1" />
+          <End Type="GRANDINEModel.ClientiXTecnici" Role="ClientiXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clienti">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClientiXTecnici">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientiXTecnici_Tecnici">
+          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="1" />
+          <End Type="GRANDINEModel.ClientiXTecnici" Role="ClientiXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ClientiXTecnici">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -240,6 +326,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Citta">
+            <EntityTypeMapping TypeName="GRANDINEModel.Citta">
+              <MappingFragment StoreEntitySet="Citta">
+                <ScalarProperty Name="Descr" ColumnName="Descr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Clienti">
             <EntityTypeMapping TypeName="GRANDINEModel.Clienti">
               <MappingFragment StoreEntitySet="Clienti">
@@ -261,14 +355,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Citta">
-            <EntityTypeMapping TypeName="GRANDINEModel.Citta">
-              <MappingFragment StoreEntitySet="Citta">
-                <ScalarProperty Name="Descr" ColumnName="Descr" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Tecnici">
             <EntityTypeMapping TypeName="GRANDINEModel.Tecnici">
               <MappingFragment StoreEntitySet="Tecnici">
@@ -277,6 +363,15 @@
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cognome" ColumnName="Cognome" />
                 <ScalarProperty Name="Codice" ColumnName="Codice" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientiXTecnici">
+            <EntityTypeMapping TypeName="GRANDINEModel.ClientiXTecnici">
+              <MappingFragment StoreEntitySet="ClientiXTecnici">
+                <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
