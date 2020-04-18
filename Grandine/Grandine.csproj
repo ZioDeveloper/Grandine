@@ -250,16 +250,16 @@
     <Content Include="Views\Cittas\Details.cshtml" />
     <Content Include="Views\Cittas\Edit.cshtml" />
     <Content Include="Views\Cittas\Index.cshtml" />
-    <Content Include="Views\Clientis\Create.cshtml" />
-    <Content Include="Views\Clientis\Delete.cshtml" />
-    <Content Include="Views\Clientis\Details.cshtml" />
-    <Content Include="Views\Clientis\Edit.cshtml" />
-    <Content Include="Views\Clientis\Index.cshtml" />
     <Content Include="Views\Tecnicis\Create.cshtml" />
     <Content Include="Views\Tecnicis\Delete.cshtml" />
     <Content Include="Views\Tecnicis\Details.cshtml" />
     <Content Include="Views\Tecnicis\Edit.cshtml" />
     <Content Include="Views\Tecnicis\Index.cshtml" />
+    <Content Include="Views\Clientis\Create.cshtml" />
+    <Content Include="Views\Clientis\Delete.cshtml" />
+    <Content Include="Views\Clientis\Details.cshtml" />
+    <Content Include="Views\Clientis\Edit.cshtml" />
+    <Content Include="Views\Clientis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

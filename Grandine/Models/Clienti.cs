@@ -28,5 +28,6 @@ namespace Grandine.Models
         public string PIVA { get; set; }
         public string Fax { get; set; }
         public Nullable<int> GiorniPagamento { get; set; }
+        public bool IsActive { get; set; }
     }
 }

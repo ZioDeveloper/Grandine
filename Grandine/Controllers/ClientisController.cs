@@ -46,7 +46,7 @@ namespace Grandine.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Codice,RagioneSociale,CAP,Comune,Provincia,Via,Tel1,Mail1,Tel2,Mail2,PIVA,Fax,GiorniPagamento")] Clienti clienti)
+        public ActionResult Create([Bind(Include = "ID,Codice,RagioneSociale,CAP,Comune,Provincia,Via,Tel1,Mail1,Tel2,Mail2,PIVA,Fax,GiorniPagamento,IsActive")] Clienti clienti)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Grandine.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Codice,RagioneSociale,CAP,Comune,Provincia,Via,Tel1,Mail1,Tel2,Mail2,PIVA,Fax,GiorniPagamento")] Clienti clienti)
+        public ActionResult Edit([Bind(Include = "ID,Codice,RagioneSociale,CAP,Comune,Provincia,Via,Tel1,Mail1,Tel2,Mail2,PIVA,Fax,GiorniPagamento,IsActive")] Clienti clienti)
         {
             if (ModelState.IsValid)
             {

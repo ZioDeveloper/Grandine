@@ -44,6 +44,7 @@
           <Property Name="PIVA" Type="varchar" MaxLength="50" />
           <Property Name="Fax" Type="varchar" MaxLength="50" />
           <Property Name="GiorniPagamento" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -178,6 +179,7 @@
           <Property Name="PIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GiorniPagamento" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Citta">
           <Key>
@@ -241,6 +243,7 @@
           <EntitySetMapping Name="Clienti">
             <EntityTypeMapping TypeName="GRANDINEModel.Clienti">
               <MappingFragment StoreEntitySet="Clienti">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="GiorniPagamento" ColumnName="GiorniPagamento" />
                 <ScalarProperty Name="Fax" ColumnName="Fax" />
                 <ScalarProperty Name="PIVA" ColumnName="PIVA" />
