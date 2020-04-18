@@ -21,17 +21,17 @@
         <tbody>
             @foreach (var itemC in Model.Clienti)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => itemC.Codice)
-                </td>
-                <td>
-                    &nbsp;-&nbsp;
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => itemC.RagioneSociale)
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemC.Codice)
+                    </td>
+                    <td>
+                        &nbsp;-&nbsp;
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemC.RagioneSociale)
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

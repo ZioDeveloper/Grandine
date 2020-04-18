@@ -7,7 +7,7 @@
 <h4>Tabella status</h4>
 <br />
 <p>
-    @Html.ActionLink("Inserisci Status", "Create",null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Inserisci Status", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <br />
 <table class="table">
@@ -23,20 +23,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descr)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID },new { @class = "btn btn-success" }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.ID },null, new { @class = "btn btn-primary" }) |*@
-            @Html.ActionLink("Cancella", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descr)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.ID },null, new { @class = "btn btn-primary" }) |*@
+                @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<br />
+@Html.ActionLink("Torna a pagina principale", "LoginInUse","Home", new { aCodiceUtente = Session["UserName"].ToString() },null)

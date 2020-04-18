@@ -18,8 +18,8 @@
             @Html.DisplayNameFor(model => model.RagioneSociale)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.CAP)
-        </th>*@
+                @Html.DisplayNameFor(model => model.CAP)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Comune)
         </th>
@@ -27,85 +27,88 @@
             @Html.DisplayNameFor(model => model.Provincia)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.Via)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Via)
+            </th>*@
         @*<th>
-            @Html.DisplayNameFor(model => model.Tel1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mail1)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Tel1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail1)
+            </th>*@
         @*<th>
-            @Html.DisplayNameFor(model => model.Tel2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mail2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PIVA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fax)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GiorniPagamento)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Tel2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIVA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiorniPagamento)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Codice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RagioneSociale)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.CAP)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Comune)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Provincia)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Via)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Tel1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mail1)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Tel2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mail2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PIVA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fax)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GiorniPagamento)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Cancella", "Delete", new { id=item.ID },new { @class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RagioneSociale)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.CAP)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Comune)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provincia)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Via)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Tel1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail1)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Tel2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PIVA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiorniPagamento)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>
+<br />
+@Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, null)
