@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b9b6e5a016a4c889e130ade80647955" Name="Diagram1">
+      <Diagram DiagramId="9b9b6e5a016a4c889e130ade80647955" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="GRANDINEModel.ClassiUtente" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GRANDINEModel.Status" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GRANDINEModel.Utenti" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
@@ -16,7 +16,17 @@
         <EntityTypeShape EntityType="GRANDINEModel.ClientiXTecnici" Width="1.5" PointX="7.625" PointY="4" />
         <AssociationConnector Association="GRANDINEModel.FK_ClientiXTecnici_Clienti" />
         <AssociationConnector Association="GRANDINEModel.FK_ClientiXTecnici_Tecnici" />
-      </Diagram>
+        <EntityTypeShape EntityType="GRANDINEModel.Commesse" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GRANDINEModel.CommesseXTecnici" Width="1.5" PointX="10.625" PointY="4" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXTecnici_Commesse" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXTecnici_Tecnici" />
+        <EntityTypeShape EntityType="GRANDINEModel.CommesseXClienti" Width="1.5" PointX="9.625" PointY="0.875" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXClienti_Clienti" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXClienti_Commesse" />
+        <EntityTypeShape EntityType="GRANDINEModel.CommesseXBisarchisti" Width="1.5" PointX="12.625" PointY="0.75" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXBisarchisti_Bisarchisti" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXBisarchisti_Commesse" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

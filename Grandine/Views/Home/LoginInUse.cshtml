@@ -11,6 +11,12 @@
 
     Benvenuto <b>@item[0].Nome  @item[0].Cognome</b>
     Utente di classe : @ViewBag.DescrizioneClasse;
+   
+</div>
+<br />
+
+<div>
+    
 </div>
 <br />
 <br />
@@ -38,4 +44,7 @@
     </table>
 
 </div>
-
+<br />
+<div>
+    Seleziona Cliente : @Html.DropDownList("SearchLocation", (SelectList)ViewData["Clienti"], new { @class = "form-control", @onchange = "this.form.submit();" })
+</div>

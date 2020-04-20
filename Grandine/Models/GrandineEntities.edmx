@@ -50,9 +50,43 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDCliente" Type="int" Nullable="false" />
           <Property Name="IDTecnico" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Commesse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codice" Type="varchar" MaxLength="10" />
+          <Property Name="Descrizione" Type="varchar" MaxLength="50" />
+          <Property Name="StarDate" Type="datetime" />
+          <Property Name="EndDate" Type="date" />
+        </EntityType>
+        <EntityType Name="CommesseXBisarchisti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCommessa" Type="int" />
+          <Property Name="IDBisarchista" Type="int" />
+        </EntityType>
+        <EntityType Name="CommesseXClienti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCommessa" Type="int" />
+          <Property Name="IDCliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommesseXTecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCommessa" Type="int" />
+          <Property Name="IDTecnico" Type="int" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -106,6 +140,78 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CommesseXBisarchisti_Bisarchisti">
+          <End Role="Bisarchista" Type="Self.Bisarchista" Multiplicity="0..1" />
+          <End Role="CommesseXBisarchisti" Type="Self.CommesseXBisarchisti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bisarchista">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXBisarchisti">
+              <PropertyRef Name="IDBisarchista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXBisarchisti_Commesse">
+          <End Role="Commesse" Type="Self.Commesse" Multiplicity="0..1" />
+          <End Role="CommesseXBisarchisti" Type="Self.CommesseXBisarchisti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXBisarchisti">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXClienti_Clienti">
+          <End Role="Clienti" Type="Self.Clienti" Multiplicity="1" />
+          <End Role="CommesseXClienti" Type="Self.CommesseXClienti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clienti">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXClienti">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXClienti_Commesse">
+          <End Role="Commesse" Type="Self.Commesse" Multiplicity="0..1" />
+          <End Role="CommesseXClienti" Type="Self.CommesseXClienti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXClienti">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXTecnici_Commesse">
+          <End Role="Commesse" Type="Self.Commesse" Multiplicity="0..1" />
+          <End Role="CommesseXTecnici" Type="Self.CommesseXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXTecnici">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXTecnici_Tecnici">
+          <End Role="Tecnici" Type="Self.Tecnici" Multiplicity="0..1" />
+          <End Role="CommesseXTecnici" Type="Self.CommesseXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXTecnici">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Utenti_ClassiUtente">
           <End Role="ClassiUtente" Type="Self.ClassiUtente" Multiplicity="1" />
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="*" />
@@ -124,6 +230,10 @@
           <EntitySet Name="ClassiUtente" EntityType="Self.ClassiUtente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clienti" EntityType="Self.Clienti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClientiXTecnici" EntityType="Self.ClientiXTecnici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Commesse" EntityType="Self.Commesse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommesseXBisarchisti" EntityType="Self.CommesseXBisarchisti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommesseXClienti" EntityType="Self.CommesseXClienti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommesseXTecnici" EntityType="Self.CommesseXTecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tecnici" EntityType="Self.Tecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
@@ -134,6 +244,30 @@
           <AssociationSet Name="FK_ClientiXTecnici_Tecnici" Association="Self.FK_ClientiXTecnici_Tecnici">
             <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXBisarchisti_Bisarchisti" Association="Self.FK_CommesseXBisarchisti_Bisarchisti">
+            <End Role="Bisarchista" EntitySet="Bisarchista" />
+            <End Role="CommesseXBisarchisti" EntitySet="CommesseXBisarchisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXBisarchisti_Commesse" Association="Self.FK_CommesseXBisarchisti_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXBisarchisti" EntitySet="CommesseXBisarchisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXClienti_Clienti" Association="Self.FK_CommesseXClienti_Clienti">
+            <End Role="Clienti" EntitySet="Clienti" />
+            <End Role="CommesseXClienti" EntitySet="CommesseXClienti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXClienti_Commesse" Association="Self.FK_CommesseXClienti_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXClienti" EntitySet="CommesseXClienti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXTecnici_Commesse" Association="Self.FK_CommesseXTecnici_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXTecnici_Tecnici" Association="Self.FK_CommesseXTecnici_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
+            <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
           </AssociationSet>
           <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
             <End Role="ClassiUtente" EntitySet="ClassiUtente" />
@@ -203,13 +337,42 @@
             <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="Commesse" EntityType="GRANDINEModel.Commesse" />
+          <EntitySet Name="CommesseXTecnici" EntityType="GRANDINEModel.CommesseXTecnici" />
+          <AssociationSet Name="FK_CommesseXTecnici_Commesse" Association="GRANDINEModel.FK_CommesseXTecnici_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXTecnici_Tecnici" Association="GRANDINEModel.FK_CommesseXTecnici_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
+            <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
+          </AssociationSet>
+          <EntitySet Name="CommesseXClienti" EntityType="GRANDINEModel.CommesseXClienti" />
+          <AssociationSet Name="FK_CommesseXClienti_Clienti" Association="GRANDINEModel.FK_CommesseXClienti_Clienti">
+            <End Role="Clienti" EntitySet="Clienti" />
+            <End Role="CommesseXClienti" EntitySet="CommesseXClienti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXClienti_Commesse" Association="GRANDINEModel.FK_CommesseXClienti_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXClienti" EntitySet="CommesseXClienti" />
+          </AssociationSet>
+          <EntitySet Name="CommesseXBisarchisti" EntityType="GRANDINEModel.CommesseXBisarchisti" />
+          <AssociationSet Name="FK_CommesseXBisarchisti_Bisarchisti" Association="GRANDINEModel.FK_CommesseXBisarchisti_Bisarchisti">
+            <End Role="Bisarchista" EntitySet="Bisarchista" />
+            <End Role="CommesseXBisarchisti" EntitySet="CommesseXBisarchisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXBisarchisti_Commesse" Association="GRANDINEModel.FK_CommesseXBisarchisti_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXBisarchisti" EntitySet="CommesseXBisarchisti" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Bisarchista">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CommesseXBisarchisti" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Bisarchisti" FromRole="Bisarchista" ToRole="CommesseXBisarchisti" />
         </EntityType>
         <EntityType Name="Citta">
           <Key>
@@ -238,6 +401,7 @@
           <Property Name="GiorniPagamento" Type="Int32" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ClientiXTecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Clienti" FromRole="Clienti" ToRole="ClientiXTecnici" />
+          <NavigationProperty Name="CommesseXClienti" Relationship="GRANDINEModel.FK_CommesseXClienti_Clienti" FromRole="Clienti" ToRole="CommesseXClienti" />
         </EntityType>
         <EntityType Name="Tecnici">
           <Key>
@@ -250,6 +414,7 @@
           <Property Name="Cell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ClientiXTecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Tecnici" FromRole="Tecnici" ToRole="ClientiXTecnici" />
+          <NavigationProperty Name="CommesseXTecnici" Relationship="GRANDINEModel.FK_CommesseXTecnici_Tecnici" FromRole="Tecnici" ToRole="CommesseXTecnici" />
         </EntityType>
         <EntityType Name="ClientiXTecnici">
           <Key>
@@ -285,7 +450,122 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="Commesse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codice" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StarDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CommesseXTecnici" Relationship="GRANDINEModel.FK_CommesseXTecnici_Commesse" FromRole="Commesse" ToRole="CommesseXTecnici" />
+          <NavigationProperty Name="CommesseXClienti" Relationship="GRANDINEModel.FK_CommesseXClienti_Commesse" FromRole="Commesse" ToRole="CommesseXClienti" />
+          <NavigationProperty Name="CommesseXBisarchisti" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Commesse" FromRole="Commesse" ToRole="CommesseXBisarchisti" />
+        </EntityType>
+        <EntityType Name="CommesseXTecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCommessa" Type="Int32" />
+          <Property Name="IDTecnico" Type="Int32" />
+          <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_CommesseXTecnici_Commesse" FromRole="CommesseXTecnici" ToRole="Commesse" />
+          <NavigationProperty Name="Tecnici" Relationship="GRANDINEModel.FK_CommesseXTecnici_Tecnici" FromRole="CommesseXTecnici" ToRole="Tecnici" />
+        </EntityType>
+        <Association Name="FK_CommesseXTecnici_Commesse">
+          <End Type="GRANDINEModel.Commesse" Role="Commesse" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXTecnici" Role="CommesseXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXTecnici">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXTecnici_Tecnici">
+          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXTecnici" Role="CommesseXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXTecnici">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CommesseXClienti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCommessa" Type="Int32" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clienti" Relationship="GRANDINEModel.FK_CommesseXClienti_Clienti" FromRole="CommesseXClienti" ToRole="Clienti" />
+          <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_CommesseXClienti_Commesse" FromRole="CommesseXClienti" ToRole="Commesse" />
+        </EntityType>
+        <Association Name="FK_CommesseXClienti_Clienti">
+          <End Type="GRANDINEModel.Clienti" Role="Clienti" Multiplicity="1" />
+          <End Type="GRANDINEModel.CommesseXClienti" Role="CommesseXClienti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clienti">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXClienti">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXClienti_Commesse">
+          <End Type="GRANDINEModel.Commesse" Role="Commesse" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXClienti" Role="CommesseXClienti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXClienti">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CommesseXBisarchisti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCommessa" Type="Int32" />
+          <Property Name="IDBisarchista" Type="Int32" />
+          <NavigationProperty Name="Bisarchista" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Bisarchisti" FromRole="CommesseXBisarchisti" ToRole="Bisarchista" />
+          <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Commesse" FromRole="CommesseXBisarchisti" ToRole="Commesse" />
+        </EntityType>
+        <Association Name="FK_CommesseXBisarchisti_Bisarchisti">
+          <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXBisarchisti" Role="CommesseXBisarchisti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bisarchista">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXBisarchisti">
+              <PropertyRef Name="IDBisarchista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXBisarchisti_Commesse">
+          <End Type="GRANDINEModel.Commesse" Role="Commesse" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXBisarchisti" Role="CommesseXBisarchisti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXBisarchisti">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -372,6 +652,44 @@
               <MappingFragment StoreEntitySet="ClientiXTecnici">
                 <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
                 <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Commesse">
+            <EntityTypeMapping TypeName="GRANDINEModel.Commesse">
+              <MappingFragment StoreEntitySet="Commesse">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StarDate" ColumnName="StarDate" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Codice" ColumnName="Codice" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommesseXTecnici">
+            <EntityTypeMapping TypeName="GRANDINEModel.CommesseXTecnici">
+              <MappingFragment StoreEntitySet="CommesseXTecnici">
+                <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
+                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommesseXClienti">
+            <EntityTypeMapping TypeName="GRANDINEModel.CommesseXClienti">
+              <MappingFragment StoreEntitySet="CommesseXClienti">
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommesseXBisarchisti">
+            <EntityTypeMapping TypeName="GRANDINEModel.CommesseXBisarchisti">
+              <MappingFragment StoreEntitySet="CommesseXBisarchisti">
+                <ScalarProperty Name="IDBisarchista" ColumnName="IDBisarchista" />
+                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

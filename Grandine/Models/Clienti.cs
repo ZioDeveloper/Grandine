@@ -18,6 +18,7 @@ namespace Grandine.Models
         public Clienti()
         {
             this.ClientiXTecnici = new HashSet<ClientiXTecnici>();
+            this.CommesseXClienti = new HashSet<CommesseXClienti>();
         }
     
         public int ID { get; set; }
@@ -38,5 +39,7 @@ namespace Grandine.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientiXTecnici> ClientiXTecnici { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CommesseXClienti> CommesseXClienti { get; set; }
     }
 }

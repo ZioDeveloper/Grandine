@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Grandine.Models.Commesse>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h4>Tabella Comesse</h4>
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StarDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StarDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                @*@Html.ActionLink("Details", "Details", new { id = item.ID },new { @class = "btn btn-info" }) |*@
+                @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+@Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })

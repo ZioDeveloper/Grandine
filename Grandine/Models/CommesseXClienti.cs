@@ -12,18 +12,13 @@ namespace Grandine.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Bisarchista
+    public partial class CommesseXClienti
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Bisarchista()
-        {
-            this.CommesseXBisarchisti = new HashSet<CommesseXBisarchisti>();
-        }
-    
         public int ID { get; set; }
-        public string Descr { get; set; }
+        public Nullable<int> IDCommessa { get; set; }
+        public int IDCliente { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CommesseXBisarchisti> CommesseXBisarchisti { get; set; }
+        public virtual Clienti Clienti { get; set; }
+        public virtual Commesse Commesse { get; set; }
     }
 }

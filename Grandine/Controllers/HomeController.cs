@@ -53,6 +53,9 @@ namespace Grandine.Controllers
                                  select m;
                     model.Clienti = clienti.ToList();
 
+                    var elencoClienti = new SelectList(model.Clienti.ToList().Where(m=> m.IsActive== true).OrderBy(m => m.RagioneSociale) , "ID", "RagioneSociale");
+                    ViewData["Clienti"] = elencoClienti;
+
                     return View("Logged",model);
                 }
                 else
@@ -114,6 +117,10 @@ namespace Grandine.Controllers
                                   select m;
                     model.Clienti = clienti.ToList();
                     ViewBag.DescrizioneClasse = myTipo;
+
+                    var elencoClienti = new SelectList(model.Clienti.ToList().Where(m => m.IsActive == true).OrderBy(m => m.RagioneSociale), "ID", "RagioneSociale");
+                    ViewData["Clienti"] = elencoClienti;
+
                     return View("Logged", model);
                 }
                 else

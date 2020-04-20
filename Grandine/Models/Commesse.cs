@@ -12,17 +12,26 @@ namespace Grandine.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Bisarchista
+    public partial class Commesse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Bisarchista()
+        public Commesse()
         {
+            this.CommesseXTecnici = new HashSet<CommesseXTecnici>();
+            this.CommesseXClienti = new HashSet<CommesseXClienti>();
             this.CommesseXBisarchisti = new HashSet<CommesseXBisarchisti>();
         }
     
         public int ID { get; set; }
-        public string Descr { get; set; }
+        public string Codice { get; set; }
+        public string Descrizione { get; set; }
+        public Nullable<System.DateTime> StarDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CommesseXTecnici> CommesseXTecnici { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CommesseXClienti> CommesseXClienti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommesseXBisarchisti> CommesseXBisarchisti { get; set; }
     }

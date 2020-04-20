@@ -132,6 +132,10 @@
     <Compile Include="Controllers\CittasController.cs" />
     <Compile Include="Controllers\ClientisController.cs" />
     <Compile Include="Controllers\ClientiXTecnicisController.cs" />
+    <Compile Include="Controllers\CommessesController.cs" />
+    <Compile Include="Controllers\CommesseXBisarchistisController.cs" />
+    <Compile Include="Controllers\CommesseXClientisController.cs" />
+    <Compile Include="Controllers\CommesseXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
@@ -151,6 +155,18 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClientiXTecnici.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Commesse.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommesseXBisarchisti.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommesseXClienti.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommesseXTecnici.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GrandineEntities.Context.cs">
@@ -270,6 +286,26 @@
     <Content Include="Views\ClientiXTecnicis\Details.cshtml" />
     <Content Include="Views\ClientiXTecnicis\Edit.cshtml" />
     <Content Include="Views\ClientiXTecnicis\Index.cshtml" />
+    <Content Include="Views\Commesses\Create.cshtml" />
+    <Content Include="Views\Commesses\Delete.cshtml" />
+    <Content Include="Views\Commesses\Details.cshtml" />
+    <Content Include="Views\Commesses\Edit.cshtml" />
+    <Content Include="Views\Commesses\Index.cshtml" />
+    <Content Include="Views\CommesseXTecnicis\Create.cshtml" />
+    <Content Include="Views\CommesseXTecnicis\Delete.cshtml" />
+    <Content Include="Views\CommesseXTecnicis\Details.cshtml" />
+    <Content Include="Views\CommesseXTecnicis\Edit.cshtml" />
+    <Content Include="Views\CommesseXTecnicis\Index.cshtml" />
+    <Content Include="Views\CommesseXClientis\Create.cshtml" />
+    <Content Include="Views\CommesseXClientis\Delete.cshtml" />
+    <Content Include="Views\CommesseXClientis\Details.cshtml" />
+    <Content Include="Views\CommesseXClientis\Edit.cshtml" />
+    <Content Include="Views\CommesseXClientis\Index.cshtml" />
+    <Content Include="Views\CommesseXBisarchistis\Create.cshtml" />
+    <Content Include="Views\CommesseXBisarchistis\Delete.cshtml" />
+    <Content Include="Views\CommesseXBisarchistis\Details.cshtml" />
+    <Content Include="Views\CommesseXBisarchistis\Edit.cshtml" />
+    <Content Include="Views\CommesseXBisarchistis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
