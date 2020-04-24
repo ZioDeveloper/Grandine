@@ -18,6 +18,7 @@ namespace Grandine.Controllers
         public ActionResult Index()
         {
             return View(db.Citta.ToList());
+
         }
 
         // GET: Cittas/Details/5
