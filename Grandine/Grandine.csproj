@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BisarchistasController.cs" />
+    <Compile Include="Controllers\CarrozzeriasController.cs" />
     <Compile Include="Controllers\CittasController.cs" />
     <Compile Include="Controllers\ClientisController.cs" />
     <Compile Include="Controllers\ClientiXTecnicisController.cs" />
@@ -143,6 +144,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Bisarchista.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Carrozzeria.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Citta.cs">
@@ -306,6 +310,11 @@
     <Content Include="Views\CommesseXBisarchistis\Details.cshtml" />
     <Content Include="Views\CommesseXBisarchistis\Edit.cshtml" />
     <Content Include="Views\CommesseXBisarchistis\Index.cshtml" />
+    <Content Include="Views\Carrozzerias\Create.cshtml" />
+    <Content Include="Views\Carrozzerias\Delete.cshtml" />
+    <Content Include="Views\Carrozzerias\Details.cshtml" />
+    <Content Include="Views\Carrozzerias\Edit.cshtml" />
+    <Content Include="Views\Carrozzerias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

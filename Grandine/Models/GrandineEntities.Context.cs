@@ -37,5 +37,6 @@ namespace Grandine.Models
         public virtual DbSet<CommesseXTecnici> CommesseXTecnici { get; set; }
         public virtual DbSet<CommesseXClienti> CommesseXClienti { get; set; }
         public virtual DbSet<CommesseXBisarchisti> CommesseXBisarchisti { get; set; }
+        public virtual DbSet<Carrozzeria> Carrozzeria { get; set; }
     }
 }

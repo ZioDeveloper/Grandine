@@ -1,0 +1,44 @@
+﻿@model Grandine.Models.Carrozzeria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<h4>Tabella Carrozzerie</h4>
+<br />
+
+<div>
+    <h4>Carrozzeria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RagioneSociale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RagioneSociale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Torna a lista", "Index", null, new { @class = "btn btn-primary" })
+</p>

@@ -9,8 +9,9 @@
 <br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Inserisic nuova associazione", "Create", null, new { @class = "btn btn-primary" })
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -32,9 +33,9 @@
                 @Html.DisplayFor(modelItem => item.Commesse.Codice)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID },new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
