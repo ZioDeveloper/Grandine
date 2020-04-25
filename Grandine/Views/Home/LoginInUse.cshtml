@@ -11,12 +11,12 @@
 
     Benvenuto <b>@item[0].Nome  @item[0].Cognome</b>
     Utente di classe : @ViewBag.DescrizioneClasse;
-   
+
 </div>
 <br />
 
 <div>
-    
+
 </div>
 <br />
 <br />
@@ -45,6 +45,21 @@
 
 </div>
 <br />
+
+@*<div>
+
+            @Html.DropDownList("SearchLocation", (SelectList)ViewData["Clienti"], new  {   @class = "form-control",  @onchange = "this.form.submit();"})
+
+    </div>*@
+<br />
 <div>
-    Seleziona Cliente : @Html.DropDownList("SearchLocation", (SelectList)ViewData["Clienti"], new { @class = "form-control", @onchange = "this.form.submit();" })
+    @using (Html.BeginForm("Index", "Commesses", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.DropDownList("SearchLocation", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
+        <div>
+            <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
+        </div>
+    }
 </div>
+<br />

@@ -81,6 +81,14 @@
           <Property Name="IDCommessa" Type="int" />
           <Property Name="IDBisarchista" Type="int" />
         </EntityType>
+        <EntityType Name="CommesseXCarrozzerie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCommessa" Type="int" />
+          <Property Name="IDCarrozzeria" Type="int" />
+        </EntityType>
         <EntityType Name="CommesseXClienti">
           <Key>
             <PropertyRef Name="ID" />
@@ -173,6 +181,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CommesseXCarrozzerie_Carrozzeria">
+          <End Role="Carrozzeria" Type="Self.Carrozzeria" Multiplicity="0..1" />
+          <End Role="CommesseXCarrozzerie" Type="Self.CommesseXCarrozzerie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrozzeria">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXCarrozzerie">
+              <PropertyRef Name="IDCarrozzeria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXCarrozzerie_Commesse">
+          <End Role="Commesse" Type="Self.Commesse" Multiplicity="0..1" />
+          <End Role="CommesseXCarrozzerie" Type="Self.CommesseXCarrozzerie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXCarrozzerie">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CommesseXClienti_Clienti">
           <End Role="Clienti" Type="Self.Clienti" Multiplicity="1" />
           <End Role="CommesseXClienti" Type="Self.CommesseXClienti" Multiplicity="*" />
@@ -242,6 +274,7 @@
           <EntitySet Name="ClientiXTecnici" EntityType="Self.ClientiXTecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Commesse" EntityType="Self.Commesse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommesseXBisarchisti" EntityType="Self.CommesseXBisarchisti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommesseXCarrozzerie" EntityType="Self.CommesseXCarrozzerie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommesseXClienti" EntityType="Self.CommesseXClienti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommesseXTecnici" EntityType="Self.CommesseXTecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
@@ -262,6 +295,14 @@
           <AssociationSet Name="FK_CommesseXBisarchisti_Commesse" Association="Self.FK_CommesseXBisarchisti_Commesse">
             <End Role="Commesse" EntitySet="Commesse" />
             <End Role="CommesseXBisarchisti" EntitySet="CommesseXBisarchisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXCarrozzerie_Carrozzeria" Association="Self.FK_CommesseXCarrozzerie_Carrozzeria">
+            <End Role="Carrozzeria" EntitySet="Carrozzeria" />
+            <End Role="CommesseXCarrozzerie" EntitySet="CommesseXCarrozzerie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXCarrozzerie_Commesse" Association="Self.FK_CommesseXCarrozzerie_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXCarrozzerie" EntitySet="CommesseXCarrozzerie" />
           </AssociationSet>
           <AssociationSet Name="FK_CommesseXClienti_Clienti" Association="Self.FK_CommesseXClienti_Clienti">
             <End Role="Clienti" EntitySet="Clienti" />
@@ -376,6 +417,15 @@
             <End Role="CommesseXBisarchisti" EntitySet="CommesseXBisarchisti" />
           </AssociationSet>
           <EntitySet Name="Carrozzeria" EntityType="GRANDINEModel.Carrozzeria" />
+          <EntitySet Name="CommesseXCarrozzerie" EntityType="GRANDINEModel.CommesseXCarrozzerie" />
+          <AssociationSet Name="FK_CommesseXCarrozzerie_Carrozzeria" Association="GRANDINEModel.FK_CommesseXCarrozzerie_Carrozzeria">
+            <End Role="Carrozzeria" EntitySet="Carrozzeria" />
+            <End Role="CommesseXCarrozzerie" EntitySet="CommesseXCarrozzerie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommesseXCarrozzerie_Commesse" Association="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse">
+            <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="CommesseXCarrozzerie" EntitySet="CommesseXCarrozzerie" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Bisarchista">
           <Key>
@@ -473,6 +523,7 @@
           <NavigationProperty Name="CommesseXTecnici" Relationship="GRANDINEModel.FK_CommesseXTecnici_Commesse" FromRole="Commesse" ToRole="CommesseXTecnici" />
           <NavigationProperty Name="CommesseXClienti" Relationship="GRANDINEModel.FK_CommesseXClienti_Commesse" FromRole="Commesse" ToRole="CommesseXClienti" />
           <NavigationProperty Name="CommesseXBisarchisti" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Commesse" FromRole="Commesse" ToRole="CommesseXBisarchisti" />
+          <NavigationProperty Name="CommesseXCarrozzerie" Relationship="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse" FromRole="Commesse" ToRole="CommesseXCarrozzerie" />
         </EntityType>
         <EntityType Name="CommesseXTecnici">
           <Key>
@@ -584,7 +635,42 @@
           <Property Name="RagioneSociale" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CommesseXCarrozzerie" Relationship="GRANDINEModel.FK_CommesseXCarrozzerie_Carrozzeria" FromRole="Carrozzeria" ToRole="CommesseXCarrozzerie" />
         </EntityType>
+        <EntityType Name="CommesseXCarrozzerie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCommessa" Type="Int32" />
+          <Property Name="IDCarrozzeria" Type="Int32" />
+          <NavigationProperty Name="Carrozzeria" Relationship="GRANDINEModel.FK_CommesseXCarrozzerie_Carrozzeria" FromRole="CommesseXCarrozzerie" ToRole="Carrozzeria" />
+          <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse" FromRole="CommesseXCarrozzerie" ToRole="Commesse" />
+        </EntityType>
+        <Association Name="FK_CommesseXCarrozzerie_Carrozzeria">
+          <End Type="GRANDINEModel.Carrozzeria" Role="Carrozzeria" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXCarrozzerie" Role="CommesseXCarrozzerie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrozzeria">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXCarrozzerie">
+              <PropertyRef Name="IDCarrozzeria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXCarrozzerie_Commesse">
+          <End Type="GRANDINEModel.Commesse" Role="Commesse" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXCarrozzerie" Role="CommesseXCarrozzerie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXCarrozzerie">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -720,6 +806,15 @@
                 <ScalarProperty Name="Tel" ColumnName="Tel" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="RagioneSociale" ColumnName="RagioneSociale" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommesseXCarrozzerie">
+            <EntityTypeMapping TypeName="GRANDINEModel.CommesseXCarrozzerie">
+              <MappingFragment StoreEntitySet="CommesseXCarrozzerie">
+                <ScalarProperty Name="IDCarrozzeria" ColumnName="IDCarrozzeria" />
+                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

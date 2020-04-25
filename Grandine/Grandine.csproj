@@ -135,6 +135,7 @@
     <Compile Include="Controllers\ClientiXTecnicisController.cs" />
     <Compile Include="Controllers\CommessesController.cs" />
     <Compile Include="Controllers\CommesseXBisarchistisController.cs" />
+    <Compile Include="Controllers\CommesseXCarrozzeriesController.cs" />
     <Compile Include="Controllers\CommesseXClientisController.cs" />
     <Compile Include="Controllers\CommesseXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -165,6 +166,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CommesseXBisarchisti.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommesseXCarrozzerie.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CommesseXClienti.cs">
@@ -315,6 +319,11 @@
     <Content Include="Views\Carrozzerias\Details.cshtml" />
     <Content Include="Views\Carrozzerias\Edit.cshtml" />
     <Content Include="Views\Carrozzerias\Index.cshtml" />
+    <Content Include="Views\CommesseXCarrozzeries\Create.cshtml" />
+    <Content Include="Views\CommesseXCarrozzeries\Delete.cshtml" />
+    <Content Include="Views\CommesseXCarrozzeries\Details.cshtml" />
+    <Content Include="Views\CommesseXCarrozzeries\Edit.cshtml" />
+    <Content Include="Views\CommesseXCarrozzeries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

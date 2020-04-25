@@ -13,7 +13,7 @@
     <br />
     Utente di classe : <b>@ViewBag.DescrizioneClasse</b>
     <br />
-    
+
 </div>
 <br />
 
@@ -27,17 +27,17 @@
         <tbody>
             @foreach (var itemC in Model.Clienti)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => itemC.Codice)
-                </td>
-                <td>
-                    &nbsp;-&nbsp;
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => itemC.RagioneSociale)
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemC.Codice)
+                    </td>
+                    <td>
+                        &nbsp;-&nbsp;
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemC.RagioneSociale)
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -45,10 +45,21 @@
 </div>
 
 <br />
-<div>
-    Seleziona Cliente : @Html.DropDownList("SearchLocation", (SelectList)ViewData["Clienti"], new { @class = "form-control", @onchange = "this.form.submit();" })
-</div>
+@*<div>
+    
+        @Html.DropDownList("SearchLocation", (SelectList)ViewData["Clienti"], new  {   @class = "form-control",  @onchange = "this.form.submit();"})
+
+</div>*@
 <br />
 <div>
-    <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
+    @using (Html.BeginForm("Index", "Commesses", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.DropDownList("SearchLocation", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
+        <div>
+            <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
+        </div>
+    }
 </div>
+<br />
+

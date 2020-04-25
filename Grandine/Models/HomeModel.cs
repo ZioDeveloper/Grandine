@@ -9,6 +9,7 @@ namespace Grandine.Models
     {
         public IEnumerable<Utenti> Utenti { get; set; }
         public IEnumerable<Clienti> Clienti { get; set; }
+        public IEnumerable<Commesse> Commesse { get; set; }
     }
 
 }

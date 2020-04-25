@@ -27,6 +27,9 @@
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXBisarchisti_Bisarchisti" />
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXBisarchisti_Commesse" />
         <EntityTypeShape EntityType="GRANDINEModel.Carrozzeria" Width="1.5" PointX="13.25" PointY="4.125" />
+        <EntityTypeShape EntityType="GRANDINEModel.CommesseXCarrozzerie" Width="1.5" PointX="15.5" PointY="2.5" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXCarrozzerie_Carrozzeria" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

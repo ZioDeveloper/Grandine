@@ -14,9 +14,18 @@ namespace Grandine.Models
     
     public partial class Carrozzeria
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Carrozzeria()
+        {
+            this.CommesseXCarrozzerie = new HashSet<CommesseXCarrozzerie>();
+        }
+    
         public int ID { get; set; }
         public string RagioneSociale { get; set; }
         public string Mail { get; set; }
         public string Tel { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CommesseXCarrozzerie> CommesseXCarrozzerie { get; set; }
     }
 }

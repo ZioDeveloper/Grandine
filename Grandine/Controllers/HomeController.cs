@@ -53,8 +53,15 @@ namespace Grandine.Controllers
                                  select m;
                     model.Clienti = clienti.ToList();
 
+                    // Lista commesse
+                    var commesse = from m in db.Commesse
+                                   select m;
+                    model.Commesse = commesse.ToList();
+
                     var elencoClienti = new SelectList(model.Clienti.ToList().Where(m=> m.IsActive== true).OrderBy(m => m.RagioneSociale) , "ID", "RagioneSociale");
+                    var elencoCommesse = new SelectList(model.Commesse.ToList().OrderBy(m => m.Descrizione), "ID", "Descrizione");
                     ViewData["Clienti"] = elencoClienti;
+                    ViewData["Commesse"] = elencoCommesse;
 
                     return View("Logged",model);
                 }
@@ -116,10 +123,18 @@ namespace Grandine.Controllers
                                   where m.IsActive == true
                                   select m;
                     model.Clienti = clienti.ToList();
+
+                    // Lista commesse
+                    var commesse = from m in db.Commesse
+                                   select m;
+                    model.Commesse = commesse.ToList();
+
                     ViewBag.DescrizioneClasse = myTipo;
 
                     var elencoClienti = new SelectList(model.Clienti.ToList().Where(m => m.IsActive == true).OrderBy(m => m.RagioneSociale), "ID", "RagioneSociale");
+                    var elencoCommesse = new SelectList(model.Commesse.ToList().OrderBy(m => m.Descrizione), "ID", "Descrizione");
                     ViewData["Clienti"] = elencoClienti;
+                    ViewData["Commesse"] = elencoCommesse;
 
                     return View("Logged", model);
                 }
