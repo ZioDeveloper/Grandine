@@ -1,0 +1,146 @@
+﻿@model Grandine.Models.TelaiAnagrafica
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TelaiAnagrafica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Telaio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telaio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Annotazioni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Annotazioni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NFattAttiva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NFattAttiva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFattAtt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFattAtt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImpFattAtt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImpFattAtt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bisarchista.Descr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bisarchista.Descr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bisarchista1.Descr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bisarchista1.Descr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carrozzeria.RagioneSociale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carrozzeria.RagioneSociale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carrozzeria1.RagioneSociale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carrozzeria1.RagioneSociale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Commesse.Codice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Commesse.Codice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

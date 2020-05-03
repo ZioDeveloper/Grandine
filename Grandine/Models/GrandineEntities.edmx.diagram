@@ -30,6 +30,17 @@
         <EntityTypeShape EntityType="GRANDINEModel.CommesseXCarrozzerie" Width="1.5" PointX="15.5" PointY="2.5" />
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXCarrozzerie_Carrozzeria" />
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse" />
+        <EntityTypeShape EntityType="GRANDINEModel.StoricoStatus" Width="1.5" PointX="8.25" PointY="6.75" />
+        <AssociationConnector Association="GRANDINEModel.FK_Status" />
+        <AssociationConnector Association="GRANDINEModel.FK_StoricoStatus_Tecnici" />
+        <AssociationConnector Association="GRANDINEModel.FK_StoricoStatus_Utenti" />
+        <EntityTypeShape EntityType="GRANDINEModel.TelaiAnagrafica" Width="1.5" PointX="18.5" PointY="1.25" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista1" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Commesse" />
+        <AssociationConnector Association="GRANDINEModel.FK_IDTelaio" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

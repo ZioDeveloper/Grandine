@@ -21,6 +21,7 @@ namespace Grandine.Models
             this.CommesseXClienti = new HashSet<CommesseXClienti>();
             this.CommesseXBisarchisti = new HashSet<CommesseXBisarchisti>();
             this.CommesseXCarrozzerie = new HashSet<CommesseXCarrozzerie>();
+            this.TelaiAnagrafica = new HashSet<TelaiAnagrafica>();
         }
     
         public int ID { get; set; }
@@ -37,5 +38,7 @@ namespace Grandine.Models
         public virtual ICollection<CommesseXBisarchisti> CommesseXBisarchisti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommesseXCarrozzerie> CommesseXCarrozzerie { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TelaiAnagrafica> TelaiAnagrafica { get; set; }
     }
 }

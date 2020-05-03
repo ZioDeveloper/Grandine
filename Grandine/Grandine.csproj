@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
+    <Compile Include="Controllers\TelaiAnagraficasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,7 +202,13 @@
     <Compile Include="Models\Status.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StoricoStatus.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tecnici.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TelaiAnagrafica.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Utenti.cs">
@@ -326,6 +333,11 @@
     <Content Include="Views\CommesseXCarrozzeries\Details.cshtml" />
     <Content Include="Views\CommesseXCarrozzeries\Edit.cshtml" />
     <Content Include="Views\CommesseXCarrozzeries\Index.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\Create.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\Delete.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\Details.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\Edit.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

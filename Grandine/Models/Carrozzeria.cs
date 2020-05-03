@@ -18,6 +18,8 @@ namespace Grandine.Models
         public Carrozzeria()
         {
             this.CommesseXCarrozzerie = new HashSet<CommesseXCarrozzerie>();
+            this.TelaiAnagrafica = new HashSet<TelaiAnagrafica>();
+            this.TelaiAnagrafica1 = new HashSet<TelaiAnagrafica>();
         }
     
         public int ID { get; set; }
@@ -27,5 +29,9 @@ namespace Grandine.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommesseXCarrozzerie> CommesseXCarrozzerie { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TelaiAnagrafica> TelaiAnagrafica { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TelaiAnagrafica> TelaiAnagrafica1 { get; set; }
     }
 }
