@@ -142,6 +142,7 @@
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
     <Compile Include="Controllers\TelaiAnagraficasController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,11 +221,41 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.js" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\cercaCap.png" />
+    <Content Include="Content\dataTables.buttons.min.js" />
+    <Content Include="Content\delete.png" />
+    <Content Include="Content\deleteFile.png" />
+    <Content Include="Content\image.png" />
+    <None Include="Content\jquery-3.3.1.intellisense.js" />
+    <Content Include="Content\jquery-3.3.1.js" />
+    <Content Include="Content\jquery-3.3.1.min.js" />
+    <Content Include="Content\jquery-3.3.1.slim.js" />
+    <Content Include="Content\jquery-3.3.1.slim.min.js" />
+    <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Content\jquery.dataTables.min.js" />
+    <Content Include="Content\jquery.tablesorter.js" />
+    <Content Include="Content\jquery.tablesorter.pager.js" />
+    <None Include="Content\jquery.validate-vsdoc.js" />
+    <Content Include="Content\jquery.validate.js" />
+    <Content Include="Content\jquery.validate.min.js" />
+    <Content Include="Content\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\modernizr-2.8.3.js" />
+    <Content Include="Content\mygrid.css" />
+    <Content Include="Content\paperclip.png" />
+    <Content Include="Content\up_plus.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\delete.png" />
+    <Content Include="img\folder.png" />
+    <Content Include="img\image.png" />
+    <Content Include="img\info.gif" />
+    <Content Include="img\xls.jpg" />
     <Content Include="Models\GrandineEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GrandineEntities.Context.cs</LastGenOutput>
@@ -244,18 +275,28 @@
     <Content Include="Models\GrandineEntities.edmx.diagram">
       <DependentUpon>GrandineEntities.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\jquery-3.3.1.min.map" />
+    <Content Include="Content\jquery-3.3.1.slim.min.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\buttons.html5.min.js" />
+    <Content Include="Scripts\dataTables.buttons.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.js" />
+    <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jszip.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -338,6 +379,8 @@
     <Content Include="Views\TelaiAnagraficas\Details.cshtml" />
     <Content Include="Views\TelaiAnagraficas\Edit.cshtml" />
     <Content Include="Views\TelaiAnagraficas\Index.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\CercaTelaio.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

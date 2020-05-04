@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,15 +15,41 @@ namespace Grandine.Controllers
     {
         private GRANDINEEntities db = new GRANDINEEntities();
 
+        int myIDCommessa = 0;
+
+        public ActionResult CercaTelaio(string aTelaio)
+        {
+            return View();
+        }
+
         // GET: TelaiAnagraficas
         public ActionResult Index(int? IDCommessa)
         {
+
+
+            if (Session["IDCommessa"] == null)
+            {
+                Session["IDCommessa"] = IDCommessa;
+                Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
+            }
+            else
+            {
+                if((Session["IDCommessa"].ToString() == IDCommessa.ToString()))
+                    Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
+                else
+                {
+                    Session["IDCommessa"] = IDCommessa;
+                    Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
+                }
+
+            }
+            
             var telaiAnagrafica = db.TelaiAnagrafica.Include
                     (t => t.Bisarchista).Include
                     (t => t.Bisarchista1).Include
                     (t => t.Carrozzeria).Include
                     (t => t.Carrozzeria1).Include
-                    (t => t.Commesse).Where(t=>t.IDCommessa ==IDCommessa);
+                    (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa);
             return View(telaiAnagrafica.ToList());
         }
 
@@ -42,13 +69,16 @@ namespace Grandine.Controllers
         }
 
         // GET: TelaiAnagraficas/Create
-        public ActionResult Create()
+        public ActionResult Create(int? IDCommessa)
         {
+           
+
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr");
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr");
             ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
             ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
-            ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Codice");
+            //ViewBag.IDCommessa = 1; //new SelectList(db.Commesse, "ID", "Codice");
+            
             return View();
         }
 
@@ -61,9 +91,20 @@ namespace Grandine.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.TelaiAnagrafica.Add(telaiAnagrafica);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                // Insert StoricoStatus
+                int myID = telaiAnagrafica.ID;
+                var sql = @"INSERT INTO SDU_DocumentiPerizia (ID_Perizia, percorsoFile) Values (@ID_Perizia, @percorsoFile)";
+                int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                    new SqlParameter("@ID_Perizia", ""),
+                    new SqlParameter("@percorsoFile", ""));
+
+                // END
+
+                return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
             }
 
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);

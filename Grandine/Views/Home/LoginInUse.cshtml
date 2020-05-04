@@ -53,10 +53,11 @@
     </div>*@
 <br />
 <div>
-    @using (Html.BeginForm("Index", "Commesses", FormMethod.Post))
+    @using (Html.BeginForm("Index", "TelaiAnagraficas", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        @Html.DropDownList("SearchLocation", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
+        @Html.DropDownList("IDCommessa", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
+        <br />
         <div>
             <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
         </div>

@@ -50,12 +50,14 @@
         @Html.DropDownList("SearchLocation", (SelectList)ViewData["Clienti"], new  {   @class = "form-control",  @onchange = "this.form.submit();"})
 
 </div>*@
-<br />
+<br /><br />
 <div>
     @using (Html.BeginForm("Index", "TelaiAnagraficas", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         @Html.DropDownList("IDCommessa", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
+        <br />
+
         <div>
             <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
         </div>
