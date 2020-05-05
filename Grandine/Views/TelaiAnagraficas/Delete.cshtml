@@ -3,13 +3,14 @@
 @{
     ViewBag.Title = "Delete";
 }
+<br />
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h4>Cancella telaio</h4>
+<br />
+<h5>Confermi di voler cancellare ?</h5>
+<br />
 <div>
-    <h4>TelaiAnagrafica</h4>
-    <hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Telaio)
@@ -27,7 +28,7 @@
             @Html.DisplayFor(model => model.Modello)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.InsertUser)
         </dt>
 
@@ -137,7 +138,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.Commesse.Codice)
-        </dd>
+        </dd>*@
 
     </dl>
 
@@ -146,7 +147,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index", new { IDCommessa = Session["IDCommessa"] })
+            @Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] },new { @class = "btn btn-primary" })
         </div>
     }
 </div>

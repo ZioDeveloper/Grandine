@@ -78,7 +78,14 @@ namespace Grandine.Controllers
             ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
             ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
             //ViewBag.IDCommessa = 1; //new SelectList(db.Commesse, "ID", "Codice");
-            
+
+            var model = new Models.HomeModel();
+            // Lista tecnici
+            var tecnici = from m in db.Tecnici
+                           select m;
+            model.Tecnici = tecnici.ToList();
+            var elencoTecnici = new SelectList(model.Tecnici.ToList().OrderBy(m => m.ID), "ID", "Cognome");
+            ViewData["Tecnici"] = elencoTecnici;
             return View();
         }
 
@@ -87,7 +94,7 @@ namespace Grandine.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt,IDCarrozzeria1,IDCarrozzeria2,IDBisarchistaAndata,IDBisarchistaRitorno")] TelaiAnagrafica telaiAnagrafica)
+        public ActionResult Create([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt,IDCarrozzeria1,IDCarrozzeria2,IDBisarchistaAndata,IDBisarchistaRitorno")] TelaiAnagrafica telaiAnagrafica, int? IDTecnico)
         {
             if (ModelState.IsValid)
             {
@@ -97,10 +104,12 @@ namespace Grandine.Controllers
 
                 // Insert StoricoStatus
                 int myID = telaiAnagrafica.ID;
-                var sql = @"INSERT INTO SDU_DocumentiPerizia (ID_Perizia, percorsoFile) Values (@ID_Perizia, @percorsoFile)";
+                var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDTecnico ,IDUtente) Values (@IDTelaio ,@IDStato ,@IDTecnico ,@IDUtente)";
                 int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
-                    new SqlParameter("@ID_Perizia", ""),
-                    new SqlParameter("@percorsoFile", ""));
+                    new SqlParameter("@IDTelaio", telaiAnagrafica.ID),
+                    new SqlParameter("@IDStato", "GI"),
+                    new SqlParameter("@IDTecnico", IDTecnico),
+                    new SqlParameter("@IDUtente", Session["UserName"]));
 
                 // END
 
