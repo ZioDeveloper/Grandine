@@ -105,6 +105,17 @@
           <Property Name="IDCommessa" Type="int" />
           <Property Name="IDTecnico" Type="int" />
         </EntityType>
+        <EntityType Name="FotoXTelaio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTelaio" Type="int" />
+          <Property Name="IDTipoDocumento" Type="int" />
+          <Property Name="NomeFile" Type="varchar" MaxLength="50" />
+          <Property Name="InsertTime" Type="datetime" />
+          <Property Name="InsertUsert" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="ID" />
@@ -156,6 +167,15 @@
           <Property Name="IDCarrozzeria2" Type="int" />
           <Property Name="IDBisarchistaAndata" Type="int" />
           <Property Name="IDBisarchistaRitorno" Type="int" />
+        </EntityType>
+        <EntityType Name="TipiDocumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoDocumento" Type="varchar" MaxLength="50" />
+          <Property Name="InsertUser" Type="varchar" MaxLength="20" />
+          <Property Name="InsertDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Utenti">
           <Key>
@@ -284,6 +304,30 @@
             </Principal>
             <Dependent Role="CommesseXTecnici">
               <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FotoXTelaio_TelaiAnagrafica">
+          <End Role="TelaiAnagrafica" Type="Self.TelaiAnagrafica" Multiplicity="0..1" />
+          <End Role="FotoXTelaio" Type="Self.FotoXTelaio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FotoXTelaio">
+              <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FotoXTelaio_TipiDocumento">
+          <End Role="TipiDocumento" Type="Self.TipiDocumento" Multiplicity="0..1" />
+          <End Role="FotoXTelaio" Type="Self.FotoXTelaio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipiDocumento">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FotoXTelaio">
+              <PropertyRef Name="IDTipoDocumento" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -419,10 +463,12 @@
           <EntitySet Name="CommesseXCarrozzerie" EntityType="Self.CommesseXCarrozzerie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommesseXClienti" EntityType="Self.CommesseXClienti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommesseXTecnici" EntityType="Self.CommesseXTecnici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FotoXTelaio" EntityType="Self.FotoXTelaio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StoricoStatus" EntityType="Self.StoricoStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tecnici" EntityType="Self.Tecnici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TelaiAnagrafica" EntityType="Self.TelaiAnagrafica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipiDocumento" EntityType="Self.TipiDocumento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utenti" EntityType="Self.Utenti" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ClientiXTecnici_Clienti" Association="Self.FK_ClientiXTecnici_Clienti">
             <End Role="Clienti" EntitySet="Clienti" />
@@ -463,6 +509,14 @@
           <AssociationSet Name="FK_CommesseXTecnici_Tecnici" Association="Self.FK_CommesseXTecnici_Tecnici">
             <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FotoXTelaio_TelaiAnagrafica" Association="Self.FK_FotoXTelaio_TelaiAnagrafica">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FotoXTelaio_TipiDocumento" Association="Self.FK_FotoXTelaio_TipiDocumento">
+            <End Role="TipiDocumento" EntitySet="TipiDocumento" />
+            <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
           </AssociationSet>
           <AssociationSet Name="FK_IDTelaio" Association="Self.FK_IDTelaio">
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
@@ -645,6 +699,16 @@
           <AssociationSet Name="FK_IDTelaio" Association="GRANDINEModel.FK_IDTelaio">
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
+          </AssociationSet>
+          <EntitySet Name="FotoXTelaio" EntityType="GRANDINEModel.FotoXTelaio" />
+          <EntitySet Name="TipiDocumento" EntityType="GRANDINEModel.TipiDocumento" />
+          <AssociationSet Name="FK_FotoXTelaio_TelaiAnagrafica" Association="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FotoXTelaio_TipiDocumento" Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento">
+            <End Role="TipiDocumento" EntitySet="TipiDocumento" />
+            <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Bisarchista">
@@ -976,6 +1040,7 @@
           <NavigationProperty Name="Carrozzeria1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" FromRole="TelaiAnagrafica" ToRole="Carrozzeria" />
           <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Commesse" FromRole="TelaiAnagrafica" ToRole="Commesse" />
           <NavigationProperty Name="StoricoStatus" Relationship="GRANDINEModel.FK_IDTelaio" FromRole="TelaiAnagrafica" ToRole="StoricoStatus" />
+          <NavigationProperty Name="FotoXTelaio" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="FotoXTelaio" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1046,6 +1111,53 @@
             </Principal>
             <Dependent Role="StoricoStatus">
               <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FotoXTelaio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTelaio" Type="Int32" />
+          <Property Name="IDTipoDocumento" Type="Int32" />
+          <Property Name="NomeFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InsertTime" Type="DateTime" Precision="3" />
+          <Property Name="InsertUsert" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="FotoXTelaio" ToRole="TelaiAnagrafica" />
+          <NavigationProperty Name="TipiDocumento" Relationship="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" FromRole="FotoXTelaio" ToRole="TipiDocumento" />
+        </EntityType>
+        <EntityType Name="TipiDocumento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InsertUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="FotoXTelaio" Relationship="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" FromRole="TipiDocumento" ToRole="FotoXTelaio" />
+        </EntityType>
+        <Association Name="FK_FotoXTelaio_TelaiAnagrafica">
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.FotoXTelaio" Role="FotoXTelaio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FotoXTelaio">
+              <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FotoXTelaio_TipiDocumento">
+          <End Type="GRANDINEModel.TipiDocumento" Role="TipiDocumento" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.FotoXTelaio" Role="FotoXTelaio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipiDocumento">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FotoXTelaio">
+              <PropertyRef Name="IDTipoDocumento" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1229,6 +1341,28 @@
                 <ScalarProperty Name="InsertUser" ColumnName="InsertUser" />
                 <ScalarProperty Name="Modello" ColumnName="Modello" />
                 <ScalarProperty Name="Telaio" ColumnName="Telaio" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FotoXTelaio">
+            <EntityTypeMapping TypeName="GRANDINEModel.FotoXTelaio">
+              <MappingFragment StoreEntitySet="FotoXTelaio">
+                <ScalarProperty Name="InsertUsert" ColumnName="InsertUsert" />
+                <ScalarProperty Name="InsertTime" ColumnName="InsertTime" />
+                <ScalarProperty Name="NomeFile" ColumnName="NomeFile" />
+                <ScalarProperty Name="IDTipoDocumento" ColumnName="IDTipoDocumento" />
+                <ScalarProperty Name="IDTelaio" ColumnName="IDTelaio" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipiDocumento">
+            <EntityTypeMapping TypeName="GRANDINEModel.TipiDocumento">
+              <MappingFragment StoreEntitySet="TipiDocumento">
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="InsertUser" ColumnName="InsertUser" />
+                <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

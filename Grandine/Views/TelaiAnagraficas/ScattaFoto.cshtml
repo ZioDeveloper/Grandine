@@ -1,7 +1,80 @@
-﻿
+﻿@model IEnumerable<Grandine.Models.FotoXTelaio>
+
 @{
-    ViewBag.Title = "ScattaFoto";
+    /**/
+
+    ViewBag.Title = "Gestione documenti";
+}
+<br />
+<h4>Gestione documenti</h4>
+<br />
+@using (Html.BeginForm("Upload", "TelaiAnagraficas", new { IDTelaio = ViewBag.IDTelaio }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <table border="0">
+        <thead>
+            <tr>
+                @*<td>
+                        <label for="file">Upload Image:</label>
+                    </td>
+                    <td> - </td>*@
+                <td>
+                    <input type="file" name="files" multiple id="files_0" />
+                </td>
+                @*<td> - </td>*@
+
+
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Upload" class="submit" />
+                </td>
+            </tr>
+
+        </thead>
+    </table>
+
+    <br />
+    <table>
+        <tr>
+            <td>
+                @Html.Label("Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownList("IDTipoDocumento", (SelectList)ViewData["TipiDocumento"], new { @class = "form-control" })
+            </td>
+        </tr>
+    </table>
+
 }
 
-<h2>ScattaFoto</h2>
+    <hr>
+
+@foreach (var item in Model)
+{
+    <table border="0">
+        <tr>
+            <td>
+               
+            </td>
+            <td>
+                <img src="@Url.Content("~/DocumentiXTelai/" + item.NomeFile)" title="@Url.Content(item.NomeFile)" alt="Image" style='height: 480px; width: 640px; object-fit: contain'>
+
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Elimina", "CancellaDocumento", new { IDDocumento = item.ID, IDTelaio= item.IDTelaio,nomefile = item.NomeFile }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+
+
+        </tr>
+    </table>
+
+}
 

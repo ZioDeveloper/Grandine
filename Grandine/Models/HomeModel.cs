@@ -11,6 +11,8 @@ namespace Grandine.Models
         public IEnumerable<Clienti> Clienti { get; set; }
         public IEnumerable<Commesse> Commesse { get; set; }
         public IEnumerable<Tecnici> Tecnici { get; set; }
+        public IEnumerable<FotoXTelaio> FotoXTelaio { get; set; }
+        public IEnumerable<TipiDocumento> TipiDocumento { get; set; }
     }
 
 }

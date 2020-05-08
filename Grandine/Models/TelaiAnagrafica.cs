@@ -18,6 +18,7 @@ namespace Grandine.Models
         public TelaiAnagrafica()
         {
             this.StoricoStatus = new HashSet<StoricoStatus>();
+            this.FotoXTelaio = new HashSet<FotoXTelaio>();
         }
     
         public int ID { get; set; }
@@ -45,5 +46,7 @@ namespace Grandine.Models
         public virtual Commesse Commesse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StoricoStatus> StoricoStatus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FotoXTelaio> FotoXTelaio { get; set; }
     }
 }

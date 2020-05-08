@@ -203,43 +203,109 @@ namespace Grandine.Controllers
                 new SqlParameter("@IDTelaio", IDtelaio));
         }
 
-        public ActionResult ScattaFoto()
+        public ActionResult ScattaFoto(int? IDTelaio)
         {
+
             var model = new Models.HomeModel();
-            //var rilevamentiDett = db.RilevamentiDett.Include(r => r.Rilevamenti);
-            //var rilevamentiDett = from m in db.VIG_DettDannoXRilevamento
-            //                      where m.Telaio == myTelaio
-            //                      where m.IsVisualizzabile == true
-            //                      select m;
-            //model.VIG_DettDannoXRilevamento = rilevamentiDett.ToList();
 
-            //TelaioModello telaioModello = new TelaioModello
-            //{
-            //    Telaio = myTelaio,
-            //    Modello = myModello,
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
 
-            //    IDRilevamento = myRilevamento.ToString(),
+            var myFoto = (from f in db.FotoXTelaio
+                         where f.IDTelaio == IDTelaio
+                         select f);
+            model.FotoXTelaio = myFoto.ToList();
 
-            //};
-            //ViewBag.Message = telaioModello;
+            
+            ViewBag.IDTelaio = IDTelaio;
+            return View("ScattaFoto", myFoto);
+           
+        }
 
-            //ViewBag.ItemsCounter = rilevamentiDett.Count();
-            //ViewBag.Telaio = myTelaio;
-            //ViewBag.Modello = myModello;
-            //ViewBag.Rilevamento = myRilevamento;
-            //ViewBag.IDRilevamentoDett = myIDRilevamentoDett;
-            //ViewBag.myStatus = myStatus;
-            //ViewBag.IDComponente = IDComponente;
-            //ViewBag.IDTipoDanno = IDTipoDanno;
-            //ViewBag.IsPSA = IsPSA;
+        public ActionResult Upload(IEnumerable<HttpPostedFileBase> files , int? IDTelaio ,int? IDTipoDocumento)
+        {
+            string filename = "";
+            string path = "";
+            //int myIDTelaio = 0;
 
-            //var myFoto = from f in db.FotoXTelaio
-            //             where f.Telaio == myTelaio
-            //             select f;
-            //model.FotoXTelaio = myFoto.ToList();
-            //Session["IDRilevamento"] = myRilevamento;
-            return View("ScattaFoto");
-            //return View("ScattaFoto", myFoto);
+            //string mySearch = TempData["mySearch"] as string;
+            //string myLotto = TempData["myLotto"] as string;
+            //myIDTelaio = (int)TempData["myIDTelaio"];
+
+            foreach (var file in files)
+            {
+                if (file != null)
+                {
+                    filename = System.IO.Path.GetFileName(file.FileName);
+                    
+                    path = System.IO.Path.Combine(Server.MapPath("~/DocumentiXTelai"), filename);
+                    if (file != null)
+                    {
+                        file.SaveAs(path);
+                    }
+
+                    var sql = @"Insert Into FotoXTelaio (IDTelaio, IDTipoDocumento , NomeFile) Values (@IDTelaio, @IDTipoDocumento, @NomeFile)";
+                    int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                        new SqlParameter("@IDTelaio", IDTelaio),
+                        new SqlParameter("@IDTipoDocumento", IDTipoDocumento),
+                        new SqlParameter("@NomeFile", filename));
+                }
+            }
+
+            var model = new Models.HomeModel();
+
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
+
+            var myFoto = (from f in db.FotoXTelaio
+                          where f.IDTelaio == IDTelaio
+                          select f);
+            model.FotoXTelaio = myFoto.ToList();
+
+
+            ViewBag.IDTelaio = IDTelaio;
+            return View("ScattaFoto", myFoto);
+
+            return RedirectToAction("ScattaFoto");
+
+
+        }
+
+        public ActionResult CancellaDocumento(int? IDDocumento, int? IDTelaio, string nomefile)
+        {
+            var sql = @"DELETE FROM FotoXTelaio WHERE ID = @IDDocumento";
+            int myRecordCounter = db.Database.ExecuteSqlCommand(sql, new SqlParameter("@IDDocumento", IDDocumento));
+
+            string fullPath = Request.MapPath("~/DocumentiXTelai/" + nomefile);
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+
+            var model = new Models.HomeModel();
+
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
+
+            var myFoto = (from f in db.FotoXTelaio
+                          where f.IDTelaio == IDTelaio
+                          select f);
+            model.FotoXTelaio = myFoto.ToList();
+
+            ViewBag.IDTelaio = IDTelaio;
+            return View("ScattaFoto", myFoto);
         }
 
         protected override void Dispose(bool disposing)

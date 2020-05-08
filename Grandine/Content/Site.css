@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+.deleteImg {
+    display: inline-block;
+    background: url(../img/delete.png) no-repeat scroll left;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+}

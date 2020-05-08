@@ -54,7 +54,7 @@
                 @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
             </td>
             <td>
-                @Html.ActionLink("Foto", "ScattaFoto",null,new { @class = "btn btn-primary btn-xs" })
+                @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
             </td>
         </tr>
         }

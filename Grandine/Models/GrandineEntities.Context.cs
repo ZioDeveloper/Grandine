@@ -41,5 +41,7 @@ namespace Grandine.Models
         public virtual DbSet<CommesseXCarrozzerie> CommesseXCarrozzerie { get; set; }
         public virtual DbSet<StoricoStatus> StoricoStatus { get; set; }
         public virtual DbSet<TelaiAnagrafica> TelaiAnagrafica { get; set; }
+        public virtual DbSet<FotoXTelaio> FotoXTelaio { get; set; }
+        public virtual DbSet<TipiDocumento> TipiDocumento { get; set; }
     }
 }

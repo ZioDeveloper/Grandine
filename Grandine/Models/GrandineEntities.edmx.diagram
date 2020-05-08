@@ -41,6 +41,10 @@
         <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" />
         <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Commesse" />
         <AssociationConnector Association="GRANDINEModel.FK_IDTelaio" />
+        <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio" Width="1.5" PointX="20.75" PointY="3" />
+        <EntityTypeShape EntityType="GRANDINEModel.TipiDocumento" Width="1.5" PointX="18.5" PointY="9.375" />
+        <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" />
+        <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

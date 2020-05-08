@@ -179,6 +179,9 @@
     <Compile Include="Models\CommesseXTecnici.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FotoXTelaio.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GrandineEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +213,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TelaiAnagrafica.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipiDocumento.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Utenti.cs">
@@ -385,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DocumentiXTelai\" />
     <Folder Include="Views\Anagrafiche\" />
   </ItemGroup>
   <ItemGroup>
