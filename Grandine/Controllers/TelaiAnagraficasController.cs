@@ -155,7 +155,7 @@ namespace Grandine.Controllers
             {
                 db.Entry(telaiAnagrafica).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
             }
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
@@ -185,10 +185,61 @@ namespace Grandine.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            CancellaStorico(id);
+            
             TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
+            int myIDCommessa = (int)telaiAnagrafica.IDCommessa;
             db.TelaiAnagrafica.Remove(telaiAnagrafica);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+               
+                db.SaveChanges();
+                return RedirectToAction("Index", new { IDCommessa = myIDCommessa });
+
+        }
+
+        public void CancellaStorico(int IDtelaio)
+        {
+            var sql = @"DELETE FROM dbo.StoricoStatus  WHERE IDTelaio = @IDTelaio ";
+            int noOfRowDeleted = db.Database.ExecuteSqlCommand(sql,
+                new SqlParameter("@IDTelaio", IDtelaio));
+        }
+
+        public ActionResult ScattaFoto()
+        {
+            var model = new Models.HomeModel();
+            //var rilevamentiDett = db.RilevamentiDett.Include(r => r.Rilevamenti);
+            //var rilevamentiDett = from m in db.VIG_DettDannoXRilevamento
+            //                      where m.Telaio == myTelaio
+            //                      where m.IsVisualizzabile == true
+            //                      select m;
+            //model.VIG_DettDannoXRilevamento = rilevamentiDett.ToList();
+
+            //TelaioModello telaioModello = new TelaioModello
+            //{
+            //    Telaio = myTelaio,
+            //    Modello = myModello,
+
+            //    IDRilevamento = myRilevamento.ToString(),
+
+            //};
+            //ViewBag.Message = telaioModello;
+
+            //ViewBag.ItemsCounter = rilevamentiDett.Count();
+            //ViewBag.Telaio = myTelaio;
+            //ViewBag.Modello = myModello;
+            //ViewBag.Rilevamento = myRilevamento;
+            //ViewBag.IDRilevamentoDett = myIDRilevamentoDett;
+            //ViewBag.myStatus = myStatus;
+            //ViewBag.IDComponente = IDComponente;
+            //ViewBag.IDTipoDanno = IDTipoDanno;
+            //ViewBag.IsPSA = IsPSA;
+
+            //var myFoto = from f in db.FotoXTelaio
+            //             where f.Telaio == myTelaio
+            //             select f;
+            //model.FotoXTelaio = myFoto.ToList();
+            //Session["IDRilevamento"] = myRilevamento;
+            return View("ScattaFoto");
+            //return View("ScattaFoto", myFoto);
         }
 
         protected override void Dispose(bool disposing)
