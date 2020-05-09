@@ -186,7 +186,8 @@ namespace Grandine.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             CancellaStorico(id);
-            
+            CancellaDocumenti(id);
+
             TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
             int myIDCommessa = (int)telaiAnagrafica.IDCommessa;
             db.TelaiAnagrafica.Remove(telaiAnagrafica);
@@ -199,6 +200,13 @@ namespace Grandine.Controllers
         public void CancellaStorico(int IDtelaio)
         {
             var sql = @"DELETE FROM dbo.StoricoStatus  WHERE IDTelaio = @IDTelaio ";
+            int noOfRowDeleted = db.Database.ExecuteSqlCommand(sql,
+                new SqlParameter("@IDTelaio", IDtelaio));
+        }
+
+        public void CancellaDocumenti(int IDtelaio)
+        {
+            var sql = @"DELETE FROM dbo.FotoXTelaio  WHERE IDTelaio = @IDTelaio ";
             int noOfRowDeleted = db.Database.ExecuteSqlCommand(sql,
                 new SqlParameter("@IDTelaio", IDtelaio));
         }
