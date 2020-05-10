@@ -139,6 +139,7 @@
     <Compile Include="Controllers\CommesseXClientisController.cs" />
     <Compile Include="Controllers\CommesseXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InsertTelaiFormListController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
     <Compile Include="Controllers\TelaiAnagraficasController.cs" />
@@ -180,6 +181,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FotoXTelaio.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FotoXTelaio_vw.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GrandineEntities.Context.cs">
@@ -393,6 +397,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="DocumentiXTelai\" />
     <Folder Include="Views\Anagrafiche\" />
+    <Folder Include="Views\InsertTelaiFormList\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

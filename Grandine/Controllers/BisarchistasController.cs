@@ -17,7 +17,7 @@ namespace Grandine.Controllers
         // GET: Bisarchistas
         public ActionResult Index()
         {
-            return View(db.Bisarchista.ToList());
+            return View(db.Bisarchista.OrderBy(s=>s.Descr).ToList());
         }
 
         // GET: Bisarchistas/Details/5

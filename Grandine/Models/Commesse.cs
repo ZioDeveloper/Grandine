@@ -29,6 +29,7 @@ namespace Grandine.Models
         public string Descrizione { get; set; }
         public Nullable<System.DateTime> StarDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public Nullable<int> IDCliente { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommesseXTecnici> CommesseXTecnici { get; set; }
@@ -40,5 +41,6 @@ namespace Grandine.Models
         public virtual ICollection<CommesseXCarrozzerie> CommesseXCarrozzerie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TelaiAnagrafica> TelaiAnagrafica { get; set; }
+        public virtual Clienti Clienti { get; set; }
     }
 }

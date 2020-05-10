@@ -1,0 +1,462 @@
+Telaio	Status	Modello	Data Gated In	Data Consegna	Tecnico	Carrozzeria 1	Carrozzeria extra	Bisarchista	1	2	3	4	5	6	7	8	9	10	Note
+KPJ40400	Pronta x consegna	RENEGADE	17/01/2020		Costantino	Autoservice			freccia dx										
+KPJ52359	PF–Preparazionefinale	RENEGADE	29/01/2020		Juliano	Autoservice			PARABREZZA	CALOTTA 									, freccia specchio sx
+KPJ65262	IC–INCarrozzeria	RENEGADE	10/01/2020		Costantino	Beauty Car			CALOTTA  DX (PLASTICA NERA)	TERZO STOP	CAPPELLIERA	RINFRANGENTE PARAFANGO ANT SX	FANALE POST SX						Ritornata beautycar
+KPJ45099	Pronta x consegna	RENEGADE	13/01/2020		Costantino	Beauty Car		TCA											
+KPJ68989	Pronta x consegna	RENEGADE	17/01/2020		Costantino	Beauty Car		TCA	3° STOP	Specchio est sx									
+KPJ51264	FA-Fatturato	RENEGADE	09/01/2020	20/02/2020	Damiani	Beauty Car			CALOTTA  SX	VETRINO SPECCHIO SX									
+KPJ69133	PF–Preparazionefinale	RENEGADE	03/02/2020		Damiani	Beauty Car		TCA	PARABREZZA	FANALE POST DX									
+KT710767	FA-Fatturato	COMPASS	21/01/2020	28/02/2020	Ederson	Beauty Car			MOD LATO SX ANT/POST/PARAFANGO POST	MOD COFANO POST									
+KPJ65014	Pronta x consegna	RENEGADE	24/01/2020		Ederson	Beauty Car	 	TCA	CALOTTA DX	FRECCIA SPECCHIO DX									
+KPJ28062	Pronta x consegna	RENEGADE	16/01/2020		Ederson	Beauty Car		TCA	SPORTELLO CARBURANTE	FANALE POST DX	PARABREZZA								
+KT635338	IC–INCarrozzeria	COMPASS	04/03/2020		Fabrizio	Beauty Car	X Car	TCA	FANALE ANT SX	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	CORRIMANO SX							Ritornata beautycar
+KPJ33471	FA-Fatturato	RENEGADE	07/01/2020	13/02/2020	Juliano	Beauty Car			3° STOP										
+KPJ54621	IC–INCarrozzeria	RENEGADE	31/01/2020		Juliano	Beauty Car			RASAVETRO ant e post dx	CATADIOTTRO ANT DX									
+KPJ30399	PF–Preparazionefinale	RENEGADE	29/01/2020		Juliano	Beauty Car		TCA	PARABREZZA	FRECCIA SX 	3° STOP		rasch ant sx						rasch ant sx
+KPJ44623	FA-Fatturato	RENEGADE	09/01/2020	13/02/2020	Leo	Beauty Car													
+KPJ65113	FA-Fatturato	RENEGADE	09/01/2020	13/02/2020	Leo	Beauty Car													
+KT691023	FA-Fatturato	COMPASS	10/01/2020	03/03/2020	Leo	Beauty Car			PARABREZZA	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST									
+KPJ96712	Pronta x consegna	RENEGADE	20/01/2020		Leo	Beauty Car		TCA	CALOTTA  DX	FANALE POST DX									
+KPJ50392	Pronta x consegna	RENEGADE	31/01/2020		Rafael	Beauty Car		TCA	FANALE POST SX	TERZO	BASE BASE ANTENNA								
+KT710685	Pronta x consegna	COMPASS	27/02/2020		Rafael	Beauty Car			MOD LATO SX  ANT/POST/PARAFANGO POST	PARABREZZA									
+KPJ49584	FA-Fatturato	RENEGADE	10/01/2020	18/02/2020	Roberto	Beauty Car			3° STOP	FANALE POST SX	CAPPELLIERA								
+KPJ65648	IC–INCarrozzeria	RENEGADE	10/01/2020		Roberto	Beauty Car		TCA	NOTTOLINO COPRI TERGICRISTALLO	VETRO FISSO (PARAFANGO POST SX)	FANALE POST SX	CAPPELLIERA	Passamano sinistro						Ritornata beautycar
+KPJ44617	PF–Preparazionefinale	RENEGADE	14/01/2020		Roberto	Beauty Car			PARABREZZA	cristallo finetrino posteriore dx 									Freccia ant sx e raschiavetro ant sx
+KPK30408	Pronta x consegna	RENEGADE	16/01/2020		Roberto	Beauty Car		TCA	CALOTTA  SX	FANALE POST SX	3° STOP								
+KT633448	Pronta x consegna	COMPASS	10/01/2020		Roberto	Beauty Car		TCA	FANALE POST DX (PA)	TERZO STOP	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST							Forse Gil
+KT762282	Pronta x consegna	COMPASS	13/01/2020		Roberto	Beauty Car		TCA	PARABREZZA	MOD LATO DX  ANT/POST/PARAFANGO POST	Calandra tra cofano e parabrezza	FARO POST DX (PA)							
+KT606175	Pronta x consegna	COMPASS	13/01/2020		Ciro	Beautycar		TCA	PARABREZZA	MOD lato sx  ANT/POST/PARAFANGO POST	CORRIMANO SX	MOD COFANO POST							
+KT660343	PF–Preparazionefinale	COMPASS	13/03/2020		Ederson	Beautycar			PARABREZZA	Calandra tra cofano e parabrezza	MOD LATO SX ANT/POST/PARAFANGO	MONTANTE PORTA ANT SX	MOD COFANO POST	MOD LATO DX P					Raschiavetri ant e post sx, modanature tutte a sx, plastiche davanti a barre tetto sia sx che dx, fascione, coprimontante ant sx
+KPJ47695	Pronta x consegna	RENEGADE	10/02/2020		Ederson	Beautycar		TCA	3° STOP										
+KT604336	Pronta x consegna	COMPASS	05/03/2020		Ederson	Beautycar	 	TCA	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	CORRIMANO DX									
+KT705495	PF–Preparazionefinale	COMPASS	13/03/2020		Fabrizio	Beautycar			MOD COFANO POST 	MOD LATO DX ANT/POST/PARAFANGO POST	GUARNIZIONE PARABREZZA ANT DX 	MOD lato sx  ANT/POST							Modanature tutte a dx e parafango post sx nere, coprimontante post dx della porta post, tappini, fascione 
+KT684955	Pronta x consegna	COMPASS	21/02/2020		Fabrizio	Beautycar		TCA	MOD lato dx  ANT/POST/PARAFANGO POST	corrimano dx	fanale post DX (PA)								
+KPJ95203	PF–Preparazionefinale	RENEGADE	11/03/2020		Juliano	Beautycar			FRECCIA DX	CALOTTA  DX	RASAVETRO ANT E POST SX								Raschiavetri ant dx e sx, catarifrangente dx, tappi barre tetto
+KT606879	PF–Preparazionefinale	COMPASS	13/03/2020		Juliano	Beautycar			MOD lato dx  ANT/POST/PARAFANGO POST	MOD COFANO POST	PARABREZZA		MOD LATO SX SUPERIORI ANT/POST						Plastiche dx e sx davanti alle barre tetto, plastica dx tra vetro e cofano, modanature tutte dx e ant sx, copribarra sx, coprimontante ant dx e sx e post della porta post dx, fascione, tappini 
+KPJ61904	PF–Preparazionefinale	RENEGADE	13/03/2020		Rafael	Beautycar			PARABREZZA	RASAVETRO ANT SX									Raschiavetri ant e post sx,
+KT663366	PF–Preparazionefinale	COMPASS	13/03/2020		Rafael	Beautycar			MOD LATO DX ANT/POST/PARAFANGO POST	CORRIMANO DX	MONT POST PORTA POST DX	MONT PORTA DX							
+KPK49449	Pronta x consegna	RENEGADE	21/02/2020		Rafael	Beautycar		TCA	FRECCIA ANT SPECCHIETTO										
+KPJ61676	Pronta x consegna	RENEGADE	10/02/2020		Roberto	Beautycar		TCA	TERGILUNOTTO										
+KPJ86545	PF–Preparazionefinale	RENEGADE	21/01/2020		Ederson	Bonfanti			3° STOP	PARABREZZA	Freccia Specchio dx								Raschiavetro ant sx, Freccia specchio sx, calotta sx, spazzola tergi ant
+KPJ30342	Pronta x consegna	RENEGADE	29/01/2020		Rafael	Bonfanti			3° STOP	FARO POST SX 									
+KPJ58728	Pronta x consegna	RENEGADE	19/02/2020		Costantino	Cantù			FRECCIA SPECCHIIO SX	RASAVETRO ANT E POST DX									Enrico Modena
+KT607963	Pronta x consegna	COMPASS	13/02/2020		Costantino	Cantù	X Car		MOD LATO DX  ANT/POST/PARAFANGO POST	MOD COFANO POST	3° STOP	CALANDRA SOTTOPARABREZZA	MONTANTE ANT PORTA ANT DX	MONTANTE ANT PORTA ANT DX					
+KPJ54195	IC–INCarrozzeria	RENEGADE	19/02/2020		Damiani	Cantù			RASAVETRO ANT + POST SX										
+KPJ64564	IC–INCarrozzeria	RENEGADE	11/03/2020		Ederson	Cantù			FRECCIA SPECCHIO SX	RASAVETRO ANT E POST SX	FANALE POST SX	3° STOP							
+KPK17234	IC–INCarrozzeria	RENEGADE	11/03/2020		Ederson	Cantù			3° STOP	RASAVETRO ANT DX									
+KT646288	PF–Preparazionefinale	COMPASS	14/02/2020		Ederson	Cantù	X Car		MOD LATO SX ANT/POST/PARAFANGO POST	PARABREZZA	MOD LATO DX SUPERIORI ANT								Cofan xcar?
+KT736276	Pronta x consegna	COMPASS+A4B419:C462	19/02/2020		Ederson	Cantù			MOD LATO SX  ANT/POST/PARAFANGO POST	FANALE POST SX (PA)	CORRIMANO SX	FANALE POST DX (PA)							Cofano, fascione post, tappini, scritta porta sx
+KT663575	IC–INCarrozzeria	COMPASS	04/03/2020		Fabrizio	Cantù			MOD COFANO POST (C)	FANALE POST SX (PA)	MOD LATO SX ANT/POST/PARAFANGO POST		CORRIMANO SX	PROFILI ANT TETTO DX E SX	PROFILI POST TETTO DX E SX	MONTANTE PORTA POST SX POST			
+KT684954	IC–INCarrozzeria	COMPASS	21/02/2020		Fabrizio	Cantù			MOD lato dx  ANT/POST/PARAFANGO POST	MOD COFANO POST	MONTANTE POST PORTA POST DX								
+KPJ43971	IC–INCarrozzeria	RENEGADE	13/03/2020		Juliano	Cantù			FANALE POST SX	FRECCIA SPECCHIO SX	3° STOP								
+K7C26870	Pronta x consegna	STELVIO	12/02/2020	06/05/2020	Rafael	Cantù			PARABREZZA	fanale post dx (portellone)	VETRO SPECCHIO ESTERNO SINISTRO	MOD POST DX	TAPPINO TERGICRISTALLO LATO GUIDA						, vetro specchio sx 
+KT710791	FA-Fatturato	COMPASS	14/02/2020	16/04/2020	Roberto	Cantù			MOD lato dx  ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE ANT. DX	TERZO STOP	MONTANTE ANT PORTA POST DX	MONTANTE POST PORTA POST DX					
+KPJ45536	FA-Fatturato	RENEGADE	24/01/2020	09/03/2020	Ciro	Cavallari	Eurocar		FRECCIA SPECCHIO DX	TERZO STOP	RINFRANGENTE ANT DX								Tetto e 2 porte
+KT632458	PF–Preparazionefinale	COMPASS	14/02/2020		Ciro	Cavallari			PARABREZZA	MOD COFANO POST (C)	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST								Tacchi sottocofano, spruzzino cofano, modanatura ant sx e tutte a dx, raschiavetri ant e post a dx e ant sx, copribarra dx tetto, coprimontanti ant dx e sx e post della porta post dx, fascione, tappini
+KPJ51733	IC–INCarrozzeria	RENEGADE	13/01/2020		Costantino	Cavallari			CALOTTA  SX										
+KT711220	PF–Preparazionefinale	COMPASS	14/02/2020		Costantino	Cavallari			MOD COFANO POST (C)	PARABREZZA	MOD LATO SX ANT/POST/PARAFANGO POST	FANALE POST SX (PA)	FANALE POST DX (PA)	MOD COFANO POST	MONTANTE ANT + POST PORTA POST SX				, scritta sx, tappini portellone
+KPJ57758	FA-Fatturato	RENEGADE	29/01/2020	04/03/2020	Ederson	Cavallari	X Car			CATADIOTTRO ANT SX									Solo tetto
+KPJ46379	IC–INCarrozzeria	RENEGADE	28/02/2020		Ederson	Cavallari		TCA	CALOTTA  DX+SX	3° STOP	CORPO SPECCHIO DX								
+KPK11041	IC–INCarrozzeria	RENEGADE	28/02/2020		Ederson	Cavallari		TCA	FRECCIA ANT PARAURTI SX										
+KPK19342	IC–INCarrozzeria	RENEGADE	28/02/2020		Ederson	Cavallari		TCA	CALOTTA  DX	3° STOP									
+KT644726	IC–INCarrozzeria	COMPASS	28/02/2020		Ederson	Cavallari		TCA	POSTA SX MOD ANT/POST/PARAFANGO POST+ PORTELLONE	CORRIMANO SX									
+KPJ84664	Pronta x consegna	RENEGADE	21/01/2020		Ederson	Cavallari	X Car												
+KT685124	Pronta x consegna	COMPASS	21/02/2020		Ederson	Cavallari		TCA	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE ANTERIORE DX								Manca logo porta DX
+KT691035	FA-Fatturato	COMPASS	13/02/2020	07/05/2020	Juliano	Cavallari			FANALE ANT DX	MOD ANT MOD ANT/POST/PARAFANGO POST	FANALEPOST SX (PA)	MOD COFANO POST	Calandra tra cofano e parabrezza	MONTANTE ANT PORTA ANT SX	MONTANTE POST PORTA ANT SX	MONTANTE ANT PORTA POST SX	MONTANTE POST PORTA POST SX	CORRIMANO SX	Enrico re, manca scritta porta sx
+K7602812	IC–INCarrozzeria	GIULIA	27/02/2020		Juliano	Cavallari			COFANO POSTERIORE + LOGO GIULIA	LUNOTTO	VARI COMPONENTI POST, VEDI FOTO	PLAFONIERA CENTRALE							LUNOTTO
+KPK46717	IC–INCarrozzeria	RENEGADE	13/03/2020		Juliano	Cavallari			RASAVETRO ANT SX	3° STOP									
+KT634682	IC–INCarrozzeria	COMPASS	13/03/2020		juliano	Cavallari			 COFANO POST	MOD LATO DX  ANT/POST/PARAFANGO POST	fanale post DX (PA)	FANALE POST DX (PORTELLONE)	FANALE POST. SX (PA)	PARABREZZA	MOD LATO SX  ANT/POST/PARAFANGO POST				
+KT644722	IC–INCarrozzeria	COMPASS	28/02/2020		juliano	Cavallari		TCA	PARABREZZA	MOD lato sx  ANT/POST/PARAFANGO POST	MOD COFANO POST	FARO POST (PA)	CORRIMANO DX						
+KT632454	Pronta x consegna	COMPASS	14/02/2020		Juliano	Cavallari			MOD lato sx  ANT/POST/PARAFANGO POST	MOD COFANO POST	Corrimano Sx CROMATO								
+KPJ68029	FA-Fatturato	RENEGADE	10/01/2020	28/02/2020	Leo	Cavallari			TERZO STOP										
+KPJ67377	IC–INCarrozzeria	RENEGADE	11/03/2020		Rafael	Cavallari			3° STOP	RASAVETRO ANT E POST SX									
+KPK20541	IC–INCarrozzeria	RENEGADE	27/02/2020		Rafael	Cavallari			FANALE POST DX										
+KT606925	IC–INCarrozzeria	COMPASS	13/03/2020		Rafael	Cavallari			MOD lato Sx  ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE ANT. SX	CORRIMANO SX	MONT PORTA ANT SX						
+KPJ68652	FA-Fatturato	RENEGADE	16/01/2020	22/02/2020	Roberto	Cavallari			freccia dx										
+KPJ82124	FA-Fatturato	RENEGADE	13/01/2020	27/02/2020	Roberto	Cavallari			3° STOP										
+KPJ82957	FA-Fatturato	RENEGADE	09/01/2020	26/02/2020	Roberto	Cavallari			3° STOP										
+KPJ59293	FA-Fatturato	RENEGADE	14/01/2020	25/02/2020	Roberto	Cavallari			VETRO CALOTTA  SX	FANALE POST DX									
+KT632354	FA-Fatturato	COMPASS	14/02/2020	06/03/2020	Roberto	Cavallari	X Car		PARABREZZA	FANALE ANT. SX 	MOD LATO SX  PARAFANGO POST								
+KT691024	FA-Fatturato	COMPASS	13/02/2020	06/03/2020	Roberto	Cavallari			MOD LATO DX SUPERIORI POST/PARAFANGO POST	MOD COFANO POST	FANALE POST. SX (PORTELLONE)	CALANDRA SOTTOPARABREZZA	VETRINO SPECCHIO RETROVISORE SX	FANALE POST (PARAFANGO) SX					Partenza
+KT690902	FA-Fatturato	COMPASS	13/02/2020	06/05/2020	Roberto	Cavallari			MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MONTANTE POST PORTA POST SX	MOD COFANO POST	CALANDRA SOTTOPARABREZZA							Gil / Enrico
+KT691456	FA-Fatturato	COMPASS	07/02/2020	12/03/2020	Roberto	Cavallari	Eurocar		PARABREZZA	lato sx MOD ANT/POST/PARAFANGO POST mod. (nera)	MOD COFANO POST	corrimano sx	Montanti plastica ANT/POST lato sx	fanale post sx					
+KPJ68736	IC–INCarrozzeria	RENEGADE	13/01/2020		Roberto	Cavallari			VETRO CALOTTA  DX										
+KT646300	PF–Preparazionefinale	COMPASS	14/02/2020		Roberto	Cavallari			PARABREZZA	MOD LATO SX  ANT/POST/PARAFANGO POST	MOD COFANO POST								Modanatura post dx, tappini 
+KT690935	PF–Preparazionefinale	COMPASS	13/02/2020		Roberto	Cavallari			Calandra tra cofano e parabrezza	PARABREZZA	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	FANALE POST DX (PA)							Modanature tutte a dx e ant sx, plastiche davanti a barre tetto sia dx che sx, copribarra sia dx che sx, calandra, raschiavetri ant e post dx, coprimontante ant dx e post della porta post dx, 
+KT710760	PF–Preparazionefinale	COMPASS	19/02/2020		Roberto	Cavallari			PARABREZZA	MOD lato sx ANT/POST/PARAFANGO POSTR (C)	corrimano sx	MOD COFANO POST							Calandra, coprimontante ant sx, modanatura ant sx, raschiavetro ant sx, plastiche tra  e cofano sia dx che sx
+KPJ28010	Pronta x consegna	RENEGADE	10/02/2020		Roberto	Cavallari													
+KT609614	FA-Fatturato	COMPASS	11/12/2019	28/02/2020	Ciro	Ercolani			VETRO SPECCHIO SX	MOD COFANO POST									
+KT623318	FA-Fatturato	COMPASS	09/01/2020	12/03/2020	Ciro	Ercolani			MOD lato Sx  ANT/POST/PARAFANGO POST	PARABREZZA + GEL									
+JPH83671	In rientro	RENEGADE	19/12/2019		Costantino	Ercolani			TERZO STOP										Enrico Re 
+KT691537	In rientro	COMPASS	11/12/2019		Costantino	Ercolani			MOD LATO SX  ANT/POST/PARAFANGO POST	PARABREZZA	fanale post SX (PA)	mod sx a/p/pp							RIMANDARE A ERCOLANI
+KT710707	IC–INCarrozzeria	COMPASS	20/02/2020		Ederson	Ercolani			MOD LATO SX P										
+KT648949	IC–INCarrozzeria	COMPASS	13/02/2020		Juliano	Ercolani	X Car		3° STOP	 COFANO POST	MOD LATO DX SUPERIORI POST/PARAFANGO POST	FANALE POST DX (PA)	MOD LATO SX  ANT/POST/PARAFANGO POST	MOD COFANO POST (C)					
+KT691026	IC–INCarrozzeria	COMPASS	13/02/2020		Juliano	Ercolani			MOD lato Sx  ANT/POST/PARAFANGO POST	Calandra tra cofano e parabrezza									
+KT606989	In rientro	COMPASS	07/01/2020		Leo	Ercolani			PARABREZZA	MOD LATO SX ANT/POST/PARAFANGO POST	FANALE POST. SX (PA)								RIMANDARE A ERCOLANI
+KT632460	IC–INCarrozzeria	COMPASS	21/02/2020		Rafael	Ercolani			FARO ANT. Dx	MOD lato dx  ANT/POST/PARAFANGO POST	COPEERTURA BARRA TETTO DX								
+KT631385	FA-Fatturato	COMPASS	11/12/2019	28/02/2020	Roberto	Ercolani			MOD LATO SX  POST	CORRIMANO SX COMPLETO (CROMATURA + PLASTICA)									
+KPK12508	FA-Fatturato	RENEGADE	08/01/2020	10/02/2020	Roberto	Ercolani			CALOTTA SPECCHIO ANT SX	VETRINO SPECCHIO DX									
+KT632477	IC–INCarrozzeria	COMPASS	14/02/2020		Roberto	Ercolani	X Car		PARABREZZA	MOD LATO SX ANT/PORTA	MOD LATO DX ANT/PORTA	MOD COFANO POST							
+KT663189	FA-Fatturato	COMPASS	11/12/2019	23/01/2020	Ciro	Eurocar			MOD LATO SX  ANT/POST/PARAFANGO POST										
+KT710710	FA-Fatturato	COMPASS	11/12/2019	31/01/2020	Costantino	Eurocar			MOD LATO SX  ANT/POST/PARAFANGO POST										Rossa
+KPJ69909	FA-Fatturato	RENEGADE	08/01/2020	12/02/2020	Damiani	Eurocar			CAPPELLIERA DEFORMATA										
+KPK19530	FA-Fatturato	RENEGADE	22/01/2020	19/02/2020	Ederson	Eurocar													
+KT607653	Pronta x consegna	COMPASS	13/03/2020		Ederson	Eurocar			MOD LATO SX  ANT/POST/PARAFANGO POST										
+KPK32317	IC–INCarrozzeria	RENEGADE	26/02/2020		Fabrizio	Eurocar			PARABREZZA	CALOTTA  DX									
+KT631435	PF–Preparazionefinale	COMPASS	13/03/2020		Fabrizio	Eurocar			PARABREZZA	FARO ANT SX	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	 	 						
+KT698112	Pronta x consegna	COMPASS	29/02/2020		Fabrizio	Eurocar	X Car		MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD LATO SX ANT/POST	Calandra tra cofano e parabrezza								
+KT642057	IC–INCarrozzeria	COMPASS	11/03/2020		Juliano	Eurocar	X Car		MOD LATO SX  Porta Post	CORRIMANO sx	FARO ANT. SX								
+KT606501	PF–Preparazionefinale	COMPASS	13/03/2020		Juliano	Eurocar			MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	fanale post DX COFANO POST	FANALE POST SX (PA)	3° STOP						Fanale post dx del portellone, coprimontante ant dx, coprimontante post porta post sx, fascione baule no telecamera, terzostop
+KPK20512	Pronta x consegna	RENEGADE	13/03/2020		Juliano	Eurocar			CATARINFRANGENTE ANT SX	3° STOP									
+KT586658	FA-Fatturato	COMPASS	21/01/2020	10/02/2020	Leo	Eurocar			MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST NERE	FANALE POST SX (PA)	FIANCHETTO MODATUR POST DX PORTA POSTERIORE	MOD COFANO POST NERA							rifare tetto nero
+KPJ57732	PF–Preparazionefinale	RENEGADE	13/03/2020		Rafael	Eurocar			PARABREZZA	3° STOP	RASAVETRO ANT DX								 tergicristallo Plastica interna montante  dx, raschiavetro ant sx
+KT609673	Pronta x consegna	COMPASS	13/03/2020		Rafael	Eurocar	X Car		Calandra tra cofano e parabrezza	MOD LATO DX ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE POST DX							
+KT631409	Pronta x consegna	COMPASS	13/03/2020		Rafael	Eurocar			FANALE POST.DX (PA)	CORRIMANO DX	MOD LATO DX  ANT/POST/PARAFANGO POST	FANALE ANT. DX	CORRIMANO DX						
+KT762275	Pronta x consegna	COMPASS	19/02/2020		Rafael	Eurocar	X Car		 COFANO POST	MOD LATO DX  P	PARABREZZA	MOD LATO SX  P/PA	MOD COFANO POST						
+KPK20551	Pronta x consegna	RENEGADE	28/02/2020		Rafael	Eurocar	X Car		3° stop										
+KT663248	Pronta x consegna	COMPASS	27/02/2020		Rafael	Eurocar	X Car		LUNOTTO	MOD LATO SX A	MOD LATO DX ANT/POST/PARAFANGO POST	Calandra tra cofano e parabrezza							
+KPJ50478	FA-Fatturato	RENEGADE	17/01/2020	10/03/2020	Roberto	Eurocar	X Car		faro post dx										
+KT742809	PF–Preparazionefinale	COMPASS	20/02/2020		Roberto	Eurocar	X Car		PARABREZZA	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	CORRIMANO SX	FARO POST SX						Cofano, copribarra cromata tetto sx, modanatura cromata ant sx
+7520273	FA-Fatturato	GIULIETTA	10/02/2020	09/03/2020	Rafael	Eurocar 			FANALE P0ST DX 	FARO ANT DX 	CORPO SPECCHIO DX								X eurocar? Solo spoiler post
+K7C53836	Pronta x consegna	STELVIO	25/02/2020	04/05/2020	Rafael	Ferraguti			MODANATURA PORTA POST LATO SX										Enrico Modena
+KPJ57324	In rientro	RENEGADE	29/01/2020		Ciro	La Pesa	X Car		PARABREZZA										Tetto e un montante
+KPJ44508	In rientro	RENEGADE	29/01/2020		Damiani	La Pesa	Eurocar		FRECCIA SX	PARABREZZA	3° STOP								Solo tetto + 
+KPK23144	In rientro	RENEGADE	10/02/2020		Damiani	La Pesa	X Car		3° STOP	PARABREZZA	CATADIOTTRO ANT DX								
+KPK20700	In rientro	RENEGADE	19/02/2020		Leo	La Pesa	X Car		RASAVETRO ANT + POST SX										
+KT724923	IC–INCarrozzeria	COMPASS	18/02/2020		Costantino	Lucca Car			MOD lato Sx  ANT/POST/PARAFANGO POST	MOD COFANO POST	PARABREZZA	FANALE ANT. DX	FANALE POST DX (PA)						
+K7C62244	FA-Fatturato	STELVIO	21/10/2019	12/11/2019	Benvenuti	Luna													
+KPJ12995	FA-Fatturato	RENEGADE	10/11/2019	17/12/2019	Benvenuti	Luna			PARABREZZA										
+KPJ69477	FA-Fatturato	RENEGADE	10/11/2019	17/12/2019	Benvenuti	Luna			PARABREZZA	freccia sx									
+KT631281	FA-Fatturato	COMPASS	21/10/2019	12/11/2019	Benvenuti	Luna			MOD LATO SX  P/PA	MOD COFANO POST	MOD LATO DX  P/PA	3° STOP							
+KPK48636	FA-Fatturato	RENEGADE	10/12/2019	29/01/2020	Ciro	Luna	Eurocar		CALOTTA  SX	FANALE POST SX									
+K7C47814	FA-Fatturato	STELVIO	10/12/2019	29/01/2020	Costantino	Luna			PARABREZZA	RASAVETRO MOD ANTERIORE DX (ALLUMINIO	RASAVETRO MOD POSTERIORE SX (ALLUMINIO)								
+K7C41328	FA-Fatturato	STELVIO	10/12/2019	21/01/2020	Roberto	Luna			PARABREZZA	CALOTTA  SX									
+K7C47527	FA-Fatturato	STELVIO	10/12/2019	13/02/2020	Roberto	Luna			PARABREZZA										
+KPJ37640	FA-Fatturato	RENEGADE	07/01/2020	08/02/2020	Roberto	Luna													
+KPJ18463	FA-Fatturato	RENEGADE	10/11/2019	17/02/2020	Benvenuti	New Mercury			3° stop	freccia sx									
+KPJ28095	FA-Fatturato	RENEGADE	11/12/2019	28/01/2020	Ciro	New Mercury				RASAVETRO ant sinistro	RASAVETRO post sinistro								
+KT642108	FA-Fatturato	COMPASS	10/01/2020	17/02/2020	Ciro	New Mercury			FARO POST. SX (PA)	MOD lato sx  ANT/POST/PARAFANGO POST	BARRA CORRIMANO SX								
+J7578384	IC–INCarrozzeria	GIULIA	05/02/2020		Ciro	New Mercury			PARABREZZA	SPORTELLO CARBURANTE	TAPPO BENZINA	FANALE POST SX (PA)							
+KPJ57641	Pronta x consegna	RENEGADE	17/02/2020		Ciro	New Mercury	X Car		3° STOP										
+KPJ20095	FA-Fatturato	RENEGADE	11/12/2019	24/02/2020	Costantino	New Mercury	Luna		3° STOP	vetro fisso ppowsterire dx									
+KPK09588	FA-Fatturato	RENEGADE	11/12/2019	28/01/2020	Costantino	New Mercury			FANALE POST SX COMPLETO	3° STOP	RASAVETRO anteriore sinistro	RASAVETRO porta post sinistra							
+KPK46714	FA-Fatturato	RENEGADE	11/12/2019	24/01/2020	Costantino	New Mercury			RASAVETRO EST ANTERIORE DESTRO										
+KPJ70222	FA-Fatturato	RENEGADE	08/01/2020	15/02/2020	Costantino	New Mercury			VETRO FISSO POST DX										
+KC686546	PF–Preparazionefinale	GRAND CHEROKE	28/01/2020		Costantino	New Mercury			MOD LATO DX MOD. INF. ANT/POST	tutte le MOD LATO DX INF+SUP. porte e PARAFANGO	Entrambi i montantini in plastica delle porta post dx	Calandra tra parabrezza e cofano							Vetro post dx con cromatura da incollare, coprimontante ant della porta post dx arrivato sbagliato
+K7595277	Pronta x consegna	GIULIA	05/02/2020		Costantino	New Mercury			MOD LATO DX NERE (TUTTE) ANT/POST SUP e RASAVETRO inferiori	Cornice tra deflettore e vetro fisso	Fanale Post SX								CORNICE POST DX
+KPJ42245	Pronta x consegna	RENEGADE	09/01/2020		Costantino	New Mercury			VETRINO SPECCHIO RETROVISORE SX	TERZO STOP 									
+K7C46175	FA-Fatturato	STELVIO	12/02/2020	04/05/2020	Damiani	New Mercury		TCA	PARABREZZA	MOD LATO SX MOD.  ANT/POST	RASAVETRO ANT E POST SX	VETRO SPECCHIO DX							
+KPJ45240	IC–INCarrozzeria	RENEGADE	13/03/2020		Damiani	New Mercury			PARABREZZA	FRECCIA SPECCHIO SX	RASAVETRO ANT E POST DX								Raschiavetro ant dx e sx, fanale post sx e dx
+KPJ45626	IC–INCarrozzeria	RENEGADE	20/02/2020		Damiani	New Mercury			3 STOP										MANCANO PEZZI COFANO (spazio Torino) Cofano, componenti sottocofano, coprimontante post sx della porta post, raschiavetri ant e post sx, barra completa dx 
+KT660330	IC–INCarrozzeria	COMPASS	13/03/2020		Damiani	New Mercury	X Car		PARABREZZA	MOD LATO SX P									Cofano, plastica tra  e cofano dx, tutti i raschiavetri, coprimontante ant dx e sx, coprimontante post della porta post dx, plastiche davanti a copribarra sia dx che sx, plastica sotto lo spoiler a dx, copribarra dx, faro ant sx no led, faro post sx
+KPJ65238	In rientro	RENEGADE	11/03/2020		Damiani	New Mercury			RASAVETRO ANT SX	RASAVETRO POST SX	FANALINO PARAURTI POST SX (ROSSO)								BASSINGHI. Freccia specchi sx e dx, calotta dx, raschiavetro ant e post sia dx che sx, retronebbia sx paraurti post
+KT727951	PF–Preparazionefinale	COMPASS	14/02/2020		Damiani	New Mercury	X Car		MOD COFANO POST (C)	3° STOP	MOD LATO SX MOD. ANT/POST/PARAFANGO POST	FANALE POST SX (PA)	fianchetto plastica a lato sx						ARRIVATA 28/4
+KPJ68749	Pronta x consegna	RENEGADE	29/01/2020		Damiani	New Mercury	Eurocar		3° STOP	PARABREZZA	FRECCIA DX								
+KPJ67268	IC–INCarrozzeria	RENEGADE	20/02/2020		Ederson	New Mercury			FRECCIA SX										
+KT632334	Pronta x consegna	COMPASS	14/02/2020		Ederson	New Mercury			PARABREZZA	MOD LATO DX  ANT/POST/PARAFANGO POST	MONTANTE ANT PORTA POST SX	MONTANTE POST PORTA POST SX							Manca logo porta DX
+KPJ54155	Pronta x consegna	RENEGADE	12/02/2020		Ederson	New Mercury			TERZO STOP										
+K7C62274	FA-Fatturato	STELVIO	21/10/2019	12/11/2019	Juliano	New Mercury			PARABREZZA	MOD LATO SX ANT/POST									
+KPJ26788	FA-Fatturato	RENEGADE	21/10/2019	17/12/2019	Juliano	New Mercury			FRECCIA DX	CALOTTA  SX									
+KPJ45723	FA-Fatturato	RENEGADE	21/10/2019	17/12/2019	Juliano	New Mercury			CALOTTA  DX+SX										
+KPK16633	FA-Fatturato	RENEGADE	21/10/2019	12/11/2019	Juliano	New Mercury													
+7523230	FA-Fatturato	GIULIETTA	10/02/2020	28/02/2020	Juliano	New Mercury	X Car												
+KPJ62024	FA-Fatturato	RENEGADE	29/01/2020	07/03/2020	Juliano	New Mercury			LUNOTTO	calotta dx	catadiottro dx	proiettore dx	terzo stop	rasciavetro ant e post dx					montare  lunotto
+K7598782	PF–Preparazionefinale	GIULIA	07/01/2020		Juliano	New Mercury			COFANO POSTERIORE + LOGO GIULIA NERO	FANALE POST PARAFANGO SX	VETRINO FRECCIA SPECCHIO RESTROVISORE SX	CORNICE PLASTICA NERA ANTERIORE DEL MONTANTE MOD POSTERIORE SX 							Plastica tra finestrino e deflettore dx
+KPJ69123	PF–Preparazionefinale	RENEGADE	20/02/2020		Juliano	New Mercury			3 STOP										ARRIVATA 28/4
+KT710806	PF–Preparazionefinale	COMPASS	14/02/2020		Juliano	New Mercury			MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	PARABREZZA	CORPO SPECCHIO SX	VETRINO SPECCHIO RETROVISORE SX	MOD COFANO POST						 - Cofano Xcar, corpo specchio sx, copribarra tetto sx nera, modanatura ant sx e parafango sx, raschiavetro ant sx, 
+KPJ82886	Pronta x consegna	RENEGADE	28/01/2020		Juliano	New Mercury	X Car		corpo specchio dx 	FANALI POST DX+SX	3° STOP	RASAVETRO ANT E POST LATO sx							ARRIVATA 28/4
+KPJ93177	FA-Fatturato	RENEGADE	11/12/2019	24/01/2020	Leo	New Mercury			3° STOP	BASE ANTENNA	VETRO SPECCHIO ESTERNO SINISTRO	GANCIO SOSTEGNO ALETTA PARASOLE DESTRA	RASAVETRO ESTERNO POST DESTRO						
+KPJ68762	FA-Fatturato	RENEGADE	09/01/2020	17/02/2020	Leo	New Mercury			VETRINO SPECCHIO RETROVISORE DX	FANALINO PARAFANGFO ANT DX									
+KT606933	FA-Fatturato	COMPASS	07/01/2020	17/02/2020	Leo	New Mercury			MOD LATO DX ANT/POST/PARAFANGO POST	MOD COFANO POST POSTERIORE	FANALE POST. DX (PA)	CORNICE PLASTICA NERA ANTERIORE DEL MONTANTE MOD POSTERIORE DX 							
+KPK02048	FA-Fatturato	RENEGADE	11/12/2019	28/02/2020	Leo	New Mercury			3° STOP	PARABREZZA	FRECCIA DX	RASAVETRO ANT EST DESTRO	RASAVETRO EST POST DESTRO						 e Calandra
+KPJ68420	Pronta x consegna	RENEGADE	05/02/2020		Leo	New Mercury		TCA	3° STOP										
+KPJ68892	Pronta x consegna	RENEGADE	12/02/2020		Leo	New Mercury	Eurocar		CATADIOTTRO ANT SX	RASAVETRO ANT E POST SX	CALANDRA SOTTOPARABREZZA								
+K7C55480	FA-Fatturato	STELVIO	03/03/2020	05/05/2020	Rafael	New Mercury			RASAVETRO ANT DX	MOD POST DX									
+KT632443	PF–Preparazionefinale	COMPASS	14/02/2020		Rafael	New Mercury			PARABREZZA	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE POST SX (PA)	TERZO STOP	CALANDRA SOTTOPARABREZZA					Enrico re  Cofano, modanatura ant sx, raschiavetro ant sx, coprimontante ant sx, fascione, tappini
+KT766226	Pronta x consegna	COMPASS	20/02/2020		Rafael	New Mercury	Eurocar		PARABREZZA	MOD LATO DX  ANT/POST/PARAFANGO POST NERA	FANALE POST DX (PA)	CORRIMANO DX NERO							
+KPK18685	Pronta x consegna	RENEGADE	28/02/2020		Rafael	New Mercury	X Car		CALOTTA SX	3° STOP									
+KPJ30130	FA-Fatturato	RENEGADE	10/12/2019	28/01/2020	Roberto	New Mercury			CAPPELLIERA DEFORMATA	TERZO STOP 	RASAVETRO EST ANT SINISTRO	RASAVETRO EST POST SINISTRO							
+KPJ30511	FA-Fatturato	RENEGADE	11/12/2019	21/01/2020	Roberto	New Mercury			RASAVETRO anteriore destro 	RASAVETRO est post dx	fanale post destro								
+KPJ67790	FA-Fatturato	RENEGADE	13/01/2020	18/02/2020	Roberto	New Mercury			BASE ANTENNA										
+KPJ30839	FA-Fatturato	RENEGADE	16/01/2020	03/03/2020	Roberto	New Mercury			FANALE ANT	terzo stop	calotta specchio est sx								
+KPJ36131	FA-Fatturato	RENEGADE	20/01/2020	06/03/2020	Roberto	New Mercury			CORPO SPECCHIO RETROVISORE SX	TERZO STOP	FANALE POST SX								
+KPJ68870	FA-Fatturato	RENEGADE	13/01/2020	25/02/2020	Roberto	New Mercury			3° STOP										
+7528092	FA-Fatturato	GIULIETTA	03/02/2020	11/03/2020	Roberto	New Mercury			proiettore parafango sx	RASAVETRO ant e post sx, e cornici cromate ant e post sx	cornice ant dx								vern porta dx
+KPJ69790	FA-Fatturato	RENEGADE	07/02/2020	11/03/2020	Roberto	New Mercury													Carpi
+KPJ68620	IC–INCarrozzeria	RENEGADE	03/02/2020		Roberto	New Mercury			FRECCIA SPECCHIO SX										
+KPJ28092	PF–Preparazionefinale	RENEGADE	16/01/2020		Roberto	New Mercury			PANNELLO PORTA POST SX + GUIDA										Mandare e Eurocar
+KT609595	PF–Preparazionefinale	COMPASS	08/02/2020		Roberto	New Mercury			MOD COFANO POST (C)	MOD LATO SX ANT/POST/PARAFANGO POST	FANALE POST SX (PARAFANGO)	CROMATURA CORRIMANO SX							
+KT762276	Pronta x consegna	COMPASS	19/02/2020		Roberto	New Mercury	X Car		PARABREZZA	MOD lato sx  ANT/POST/PARAFANGO POST	FARO LATO SX	CORRIMANO SX							
+7523586	Pronta x consegna	GIULIETTA	12/02/2020		Roberto	New Mercury			FANALE POST DX (COFANO)	RASAVETRO post dx									
+KPJ67520	Pronta x consegna	RENEGADE	20/02/2020		Roberto	New Mercury			FRECCIA LATO SX										ARRIVATA 28/4
+KPJ52972	FA-Fatturato	RENEGADE	10/11/2019	17/12/2019	Tognetti/Benvenuti	New Mercury													
+KT710681	FA-Fatturato	COMPASS	11/12/2019	31/01/2020	Leo	noi			PARABREZZA	MOD LATO SX  ANT/POST/PARAFANGO POST	GUARNIZIONE PARABREZZA ANT SX 	CORNICE CORRIMANO SX 							
+KT710816	Pronta x consegna	COMPASS	19/02/2020		Ciro	Prestige			MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST									
+KPJ44510	Pronta x consegna	RENEGADE	10/02/2020		Costantino	Prestige			FRECCIA SPECCHIO SX										
+KT663458	Pronta x consegna	COMPASS	13/02/2020		Damiani	Prestige			MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST									
+KPJ66354	Pronta x consegna	RENEGADE	21/02/2020		Ederson	Prestige			Calandra tra cofano e parabrezza										 
+KPK32561	IC–INCarrozzeria	RENEGADE	21/02/2020		Fabrizio	Prestige			fanale post SX	TAPPO BENZINA									
+KT642094	IC–INCarrozzeria	COMPASS	04/03/2020		Fabrizio	Prestige	X Car		MOD LATO DX  ANT/POST/PARAFANGO POST	FANALE POST DX (PA)	MOD COFANO POST	MONTANTE PORTA ANT DX	PROFILO ANTERIORE CORRIMANO DX						
+KT710121	IC–INCarrozzeria	COMPASS	27/02/2020		Fabrizio	Prestige			MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	FANALE POST SX	3° STOP	CORRIMANO SX	RASAVETRO ANT E POST DX						
+KT691134	Pronta x consegna	COMPASS	21/02/2020	05/05/2020	Fabrizio	Prestige	X Car		MOD TETTO	MOD LATO SX  ANT/POST/PARAFANGO POST	FARO POST. SX (PA)	SOST CROMATURE PARAFANGO DX							
+KPJ45969	IC–INCarrozzeria	RENEGADE	13/03/2020		Noi	Prestige			PARABREZZA	CATARARINFRANGENTE DX	FRECCIA SPECCHIO DX								
+KPJ86581	IC–INCarrozzeria	RENEGADE	13/03/2020		Noi	Prestige			RASAVETRO ANT DX	3° STOP	MONTANTE INTERNO ANTERIORE DX (TRA PARABREZZA E PORTA DX								
+KT631254	IC–INCarrozzeria	COMPASS	13/03/2020		Noi	Prestige			MOD COFANO POST	MOD LATO DX ANT/POST/PARAFANGO POST	3° STOP								
+KT635650	PF–Preparazionefinale	COMPASS	28/02/2020		Rafael	Prestige			MOD lato Sx  ANT/POST/PARAFANGO POST	Corrimano Sx	PARABREZZA	MONTANTE PORTA ANT SX							Modanatura ant sx, raschiavetro ant e post sx, coprimontante ant sx, scritta porta sx, copribarra tetto sx cromato, tappini 
+KT642213	PF–Preparazionefinale	COMPASS	19/02/2020		Rafael	Prestige			MOD LATO DX  ANT/POSTA	3° STOP	PARABREZZA	MOD COFANO POST							Cofano, tappini, modanature nere parafango post dx e sx 
+KT710795	PF–Preparazionefinale	COMPASS	14/02/2020		Roberto	Prestige			Calandra tra cofano e parabrezza	Corrimano Sx NERO	MOD LATO SX MOD. ANT/POST/PARAFANGO POST	MOD COFANO POST							Logo porta ant sx e tappini portellone
+KPJ46158	Pronta x consegna	RENEGADE	10/02/2020		Roberto	Prestige			FANALE POST SX										
+KPJ54526	Pronta x consegna	RENEGADE	12/02/2020		Roberto	Prestige			3° STOP	RASAVETRO ANT E POST SX									
+KPJ65697	Pronta x consegna	RENEGADE	19/02/2020		Roberto	Prestige			CORPO SPECCHIO DX										
+KPJ58355	Pronta x consegna	RENEGADE	12/02/2020		Roberto	PRESTIGE			PARABREZZA										
+KPJ45080	IC–INCarrozzeria	RENEGADE	13/03/2020		Tettamanti	Prestige			FANALE POST. DX	FANALE POST SX	RASAVETRO ANT SX								
+KPJ81260	IC–INCarrozzeria	RENEGADE	11/03/2020		Tettamanti	Prestige			FANALE POST SX	VETRO CALOTTA  SX	RASAVETRO ANT SX								
+KT604716	IC–INCarrozzeria	COMPASS	13/03/2020		Tettamanti	Prestige			SPORTELLO CARBURANTE	PARABREZZA	MOD LATO DX MOD ANT/POST/PARAFANGO	CORRIMANO DX	MONT PORTA POST DX POSTERIORE	MONT PORTA ANT DX 					
+KT663229	IC–INCarrozzeria	COMPASS	13/03/2020		Tettamanti	Prestige			PARABREZZA	MOD COFANO POST	FANAle post SX (PA)	MOD LATO SX ANT/POST/PARAFANGO POST/PORTELLONE							
+KPJ51111	FA-Fatturato	RENEGADE	10/01/2020	06/03/2020	Ciro	Regina			CALOTTA  SX										
+KPJ09029	IC–INCarrozzeria	RENEGADE	07/01/2020		Ciro	Regina			CATADIOTTRO PARAFANGO ANT SX	3° STOP									
+KPJ45633	IC–INCarrozzeria	RENEGADE	10/02/2020		Costantino	Regina			CORPO SPECCHIO DX	barra corrimano dx									
+KT660338	IC–INCarrozzeria	COMPASS	20/02/2020		Costantino	Regina			PARABREZZA	MOD LATO DX  ANT/POST/PARAFANGO POST	MOD LATO SX  P/PA	MOD COFANO POST	FANALE POST. DX (PA)	CALANDRA SOTTO PARABREZZA					
+KPJ51834	Pronta x consegna	RENEGADE	13/01/2020		Costantino	Regina			PARABREZZA	CATADIOTTRO ANT DX									
+KT710773	IC–INCarrozzeria	COMPASS	14/02/2020		Ederson	Regina	X Car		PARABREZZA	MOD LATO SX ANT/POST	MOD LATO DX P								Solo tetto
+KT642273	in rientro	COMPASS	20/02/2020		Ederson	Regina			MOD COFANO POST nera	3° STOP	MOD LATO DX ANT/POST/PARAFANGO POST nere								Enrico modena
+KPJ10589	FA-Fatturato	RENEGADE	09/01/2020	10/03/2020	Juliano	Regina			FRECCIA SX	CALOTTA  SX	RINFRANGENTE PARAFANGO ANT SX								
+KPJ67494	IC–INCarrozzeria	RENEGADE	20/02/2020		juliano	Regina			CATARINFRANGENTE ANT SX										
+KPJ58671	Pronta x consegna	RENEGADE	20/02/2020		Juliano	Regina			FARO POST SX										
+KPJ46811	FA-Fatturato	RENEGADE	16/01/2020	06/03/2020	Leo	Regina			FRECCIA SX										
+KPJ52085	IC–INCarrozzeria	RENEGADE	22/01/2020		Leo	Regina	X Car		FANALE POSTERIORE DX										
+KPJ64720	IC–INCarrozzeria	RENEGADE	20/02/2020		Leo	Regina			PANNO SOTTOCOFANO	Calandra tra cofano e parabrezza									
+KT632444	in rientro	COMPASS	18/02/2020		Leo	Regina	X Car		MOD LATO SX ANT/POST 										Enrico
+KPK17563	in rientro	RENEGADE	21/02/2020		Rafael	Regina			VETRINO FRECCIA SINISTRA	Calandra tra cofano e parabrezza									
+KPJ31127	FA-Fatturato	RENEGADE	21/01/2020	04/03/2020	Roberto	Regina			CATADIOTTRO ANT DX	CORPO SPECCHIO DESTRO + FANALIN FRECCIA	3° STOP								
+KPJ44705	FA-Fatturato	RENEGADE	14/01/2020	10/03/2020	Roberto	Regina			CALOTTA  SX	VETRINO FRECCIA CALOTTA SX	SPECCHIO DX COMPLETO								
+KPJ67720	IC–INCarrozzeria	RENEGADE	20/02/2020		Roberto	Regina			3 STOP	TAPPO BENZINA									
+KT644739	in rientro	COMPASS	14/02/2020		Roberto	Regina			FANALE ANT DX	MOD LATO SX  ANT/POST/PARAFANGO POST									Enrico
+KT710556	FA-Fatturato	COMPASS	10/12/2019	24/02/2020	Costantino	Riuniti			MOD SUP MOD POST SX										
+KPJ11834	FA-Fatturato	RENEGADE	11/12/2019	18/02/2020	Leo	Riuniti			SPECCHIO COMPLETO SX (BIANCO)	FRECCIA ANT DX									
+KPK18933	FA-Fatturato	RENEGADE	10/01/2020	06/03/2020	ROBERTO	Riuniti			PARABREZZA	RINFRANGENTE ANT DX									 + bolli
+J7586194	IC–INCarrozzeria	GIULIA	05/02/2020		Roberto	Riuniti			PARABREZZA	MOD. GOMMA MOD ANT/POST LATO SX	COFANO POSTERIORE + LOGO GIULIA CROMATA								
+J7587267	IC–INCarrozzeria	GIULIA	12/02/2020		Roberto	Riuniti			PARABREZZA	CALOTTA  SX	COFANO POSTERIORE + LOGO GIULIA								
+KPK20173	Pronta x consegna	RENEGADE	09/01/2020		Roberto	Riuniti	X Car		BASE ANTENNA	SENSORE PARAURTI PèOST DX E CENTRALE									
+KPJ50953	FA-Fatturato	RENEGADE	11/12/2019	28/01/2020	Ciro	riuniti livor			3° STOP										
+KPJ64337	FA-Fatturato	RENEGADE	21/10/2019	17/12/2019	Tognetti	Riuniti Livorno			CALOTTA  DX+SX										
+KT609749	FA-Fatturato	COMPASS	11/12/2019	31/01/2020	Roberto	Riuniti Livorno?			PARABREZZA	MOD COFANO POST	MOD LATO SX  ANT/POST/PARAFANGO POST								
+KPJ27906	FA-Fatturato	RENEGADE	10/01/2020	13/02/2020	Ciro	Spazio			FRECCIA DX										
+KPJ83512	FA-Fatturato	RENEGADE	08/01/2020	12/02/2020	Costantino	Spazio			3° STOP	CAPPELLIERA	RINFRANGENTE PARAFANGO ANT SX								
+KPJ54438	FA-Fatturato	RENEGADE	07/01/2020	13/02/2020	Roberto	Spazio			CAPPELLIERA DEFORMATA										
+KPK20520	FA-Fatturato	RENEGADE	09/01/2020	12/02/2020	Roberto	Spazio			3° STOP	FANALE POST SX FUME'									
+KPJ37379	FA-Fatturato	RENEGADE	11/12/2019	13/02/2020	Costantino	Spazio 			PARABREZZA	CALOTTA  SX	VETRINO FRECCIA SX								
+KPJ38429	FA-Fatturato	RENEGADE	11/12/2019	31/01/2020	Costantino	Spazio 			PARABREZZA										
+KPJ68548	FA-Fatturato	RENEGADE	11/12/2019	28/02/2020	Costantino	Spazio 			PARABREZZA	SPECCHIO RETROVISORE  DX	3° STOP								???????????????
+KPJ44395	FA-Fatturato	RENEGADE	11/12/2019	29/01/2020	Leo	Spazio 			3 STOP										
+KPJ68546	FA-Fatturato	RENEGADE	18/12/2019	31/01/2020	Roberto	Spazio 			PARABREZZA	RASAVETRO ANTERIORE DESTRO	RASAVETRO post destro								
+KPK17724	FA-Fatturato	RENEGADE	11/12/2019	28/01/2020	Roberto	Spazio 			SPECCHIO COMPLETO DX (ANTRACITE)										
+KPJ70248	FA-Fatturato	RENEGADE	10/12/2019	28/01/2020	Todaro	Spazio 			RASAVETRO MOD ANT SX	RASAVETRO post sx									
+KPJ58225	PF–Preparazionefinale	RENEGADE	17/01/2020		Ciro	Stanga			CALOTTA  DX										Mandare e Eurocar
+KPJ46139	PF–Preparazionefinale	RENEGADE	10/01/2020		Juliano	Stanga													Mandare e Eurocar Raschiavetri a dx
+KT585557	PF–Preparazionefinale	COMPASS	29/01/2020		Ciro	Strada due			tergicristallo mancante	3° STOP	MOD LATO SX MOD. ANT/POST/PARAFANGO POST	FANALE POST. (PA)	GRIGLIA SOTTO PARABREZZA						Spazzola tergicristallo ant, scritta porta sx, modanatura ant sx, tappini, faro post sx, montante ant della porta post
+KT607656	Pronta x consegna	COMPASS	05/02/2020		Costantino	Strada due			MOD COFANO POST (NERA) + PARAFANGO POST SX	MOD LATO DX ANT/POST/PARAFANGO POST	3° STOP								vern tetto nero
+KT606367	FA-Fatturato	COMPASS	29/01/2020	04/05/2020	Leo	Strada due			MOD LATO SX ANT/POST/PARAFANGO POST	MOD COFANO POST	FANAle post SX (PA)								
+KT632484	PF–Preparazionefinale	COMPASS	04/02/2020		Leo	Strada due			Calandra tra cofano e parabrezza	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST e COFANO POST	FANALE POST SX (PORTELLONE)	MOD LATO SX Porta post, 							vern tetto nero
+KPJ45413	IC–INCarrozzeria	RENEGADE	13/03/2020		Rafael	Strada due			PARABREZZA	FRECCIA SPECCHIO SX									
+KPJ82718	IC–INCarrozzeria	RENEGADE	13/03/2020		Rafael	Strada Due			PARABREZZA	CATARINFRANGENTE ANT DX	RASAVETRO ANT DX								LUNOTTO
+KPK02502	IC–INCarrozzeria	RENEGADE	11/03/2020		Rafael	Strada Due			PARABREZZA	CORPO SPECCHIO SX	RASAVETRO ANT DX								
+KT606881	IC–INCarrozzeria	COMPASS	13/03/2020		Rafael	Strada Due			PARABREZZA	MOD LATO SX  ANT	FARO ANT SX	CORRIMANO SX							
+KT632267	IC–INCarrozzeria	COMPASS	13/03/2020		Rafael	Strada Due			FANALE POST DX (PA)	MOD COFANO POST (C)	MOD LATO DX ANT/POST/PARAFANGO POST								
+KT684757	PF–Preparazionefinale	COMPASS	05/02/2020		Rafael	Strada due			MOD COFANO POST 	MOD LATO DX ANT/POST/PARAFANGO POST	MOD LATO SX ANT/POST	TUTTI E 3 I MONTANTI DI PLASTICA DEL LATO DX							vern tetto nero
+KT606638	FA-Fatturato	COMPASS	04/02/2020	04/03/2020	Roberto	Strada due			MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST/PORTELLONE	Calandra tra cofano e parabrezza	GUARNIZIONE PARABREZZA ANT SX 								vern tetto nero
+KT632324	IC–INCarrozzeria	COMPASS	04/02/2020		Roberto	Strada due			Calandra tra cofano e parabrezza	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE POST DX E SX (PORTELLONE)	MOD porta post sx e parafango post sx						vern tetto nero in blocco
+KT604605	IC–INCarrozzeria	COMPASS	05/02/2020		Ciro	Vannini			FANALE POST SX COFANO POST	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD LATO SX MOD. MOD PORTA POST E COFANO POST	MOD LATO DX MOD. MOD PORTA ANT, POST E PARAFANGO	CORRIMANO CROMATO DX						vern tetto nero
+KPJ53364	Pronta x consegna	RENEGADE	31/01/2020		Costantino	Vannini			RASAVETRO ant e post sx	fanale post sx									
+KPJ54023	Pronta x consegna	RENEGADE	04/02/2020		Costantino	Vannini													
+KT635196	IC–INCarrozzeria	COMPASS	21/02/2020		Ederson	Vannini			MOD LATO SX  P	MOD COFANO POST	CROMATURA  PORTIERA POSTERIORE								
+KT642116	IC–INCarrozzeria	COMPASS	05/02/2020		Ederson	Vannini		TCA	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	PARABREZZA								vern tetto nero
+KT642276	IC–INCarrozzeria	COMPASS	04/02/2020		Ederson	Vannini				Calandra tra cofano e parabrezza	tutte le MOD nere, sx dx e COFANO POST	3° STOP	FANALE POST DX						vern tetto nero
+KT691542	IC–INCarrozzeria	COMPASS	21/02/2020		Ederson	Vannini			PARABREZZA	3° STOP	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST MONTANTINO POST SX POST	FANALE POST SX (PA)						
+KT684751	IC–INCarrozzeria	COMPASS	27/02/2020		Fabrizio	Vannini			PARABREZZA	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	CORRIMANO SX	MONTANTI  POST, PORTA ANT DX							
+KPJ82113	IC–INCarrozzeria	RENEGADE	03/02/2020		Juliano	Vannini	Eurocar		FANALE POST DX										
+KT606972	IC–INCarrozzeria	COMPASS	05/02/2020		Juliano	Vannini			FANALE POST DX	MOD LATO DX ANT/CENTRALE E POST	FANALE POST SX COFANO POST								vern tetto nero
+7497896	IC–INCarrozzeria	GIULIETTA	29/01/2020		Leo	Vannini													
+7523753	IC–INCarrozzeria	GIULIETTA	12/02/2020		Leo	Vannini			FANALE POST DX (COFANO)	FANALE POST SX (COFANO)	CORPO SPECCHIO DX	RASAVETRO ANT E POST LATO DX							
+KPJ82216	IC–INCarrozzeria	RENEGADE	10/02/2020		Leo	Vannini			corpo specchio dx 	FANALE POST DX + SX									
+KPJ83978	PF–Preparazionefinale	RENEGADE	20/01/2020		Leo	Vannini			PARABREZZA										
+7524376	IC–INCarrozzeria	GIULIETTA	10/02/2020		Rafael	Vannini													X eurocar? Cofano e porta
+KT691444	IC–INCarrozzeria	COMPASS	21/02/2020		Rafael	Vannini			FRECCIA SPECCHIO SX	CROMATURA PORT ANT SX CROMATURA POST PRTA SINISTRA CROMATURA PARAFANGO POST SX SOSTITUZIONE FARO POST SX	PARABREZZA	FANALE POST SX  	BARRA TETTO SX						
+KT710799	IC–INCarrozzeria	COMPASS	14/02/2020		Rafael	Vannini			Calandra tra cofano e parabrezza	MOD lato sx  ANT/POST/PARAFANGO POST	MOD COFANO POST	luce post sx  (PA)	Corrimano Sx NERO						
+KPJ21167	Pronta x consegna	RENEGADE	21/01/2020		Rafael	Vannini			3° STOP	FANALE POST SX	COPRO SPECCHIO  SX								
+KT663361	FA-Fatturato	COMPASS	10/12/2019	22/01/2020	Ciro	X car			MOD SUPERIORI LATO SX ANT/POST/PARAFANGO POST	 									
+KPJ64552	FA-Fatturato	RENEGADE	13/01/2020	31/01/2020	Costantino	x CAR			3° luce post 	VETRO FISSO DX									
+KT632304	FA-Fatturato	COMPASS	11/12/2019	29/01/2020	Damiani	X Car			PARABREZZA	MOD LATO SX  A	MOD COFANO POST	GUARNIZIONE PARABREZZA ANT SX 							
+KT663450	FA-Fatturato	COMPASS	10/12/2019	29/01/2020	Roberto	X Car			MOD SUPERIORI LATO SX ANT/POST/PARAFANGO POST										
+KT710688	FA-Fatturato	COMPASS	11/12/2019	31/01/2020	Roberto	X Car			MOD LATO SX  ANT/POST/PARAFANGO POST										
+KT654473	FA-Fatturato	COMPASS	11/12/2019	31/01/2020	Roberto	X Car			MOD LATO SX  ANT/POST										
+KT632142	PF–Preparazionefinale	COMPASS	13/03/2020		Damiani	Xcar			PARABREZZA	MOD LATO DX  Porta post	MOD LATO SX  ANT/POST/PARAFANGO POST								 in allarme Cofano XCAR, raschiavetri dx e sx sia ant che post,
+KT606418	FA-Fatturato	COMPASS	09/03/2020	05/05/2020	Fabrizio	Xcar			MOD COFANO POST	MOD LATO SX PORTA POST 	MOD LATO DX PORTA ANT/POST E PARAFANGO								
+KT632075	PF–Preparazionefinale	COMPASS	13/03/2020		Juliano	Xcar			 COFANO POST	3° STOP	MOD LATO DX  ANT/POST/PARAFANGO POST	MOD LATO SX  PARAFANGO POST/PORTELLONE	CORRIMANO DX						porta post dx scrostata non da grandine
+KT606042	IC–INCarrozzeria	COMPASS	13/03/2020		Rafael	Xcar			MOD lato dx  ANT/POST/PARAFANGO POST	FARO ANT DX 									
+KT644736	Pronta x consegna	COMPASS	20/02/2020		Rafael	Xcar			PARABREZZA	MOD LATO SX P	MOD LATO DX P	MOD COFANO POST	CALANDRA SOTTO PARABREZZA						
+HJ371662	FA-Fatturato	TUCSON	18/02/2020	18/02/2020	Ciro														800€ in
+KT705369	FA-Fatturato	COMPASS	11/12/2019	31/01/2020	Costantino				MOD LATO SX  ANT/POST/PARAFANGO POST	PARABREZZA									
+KT663355	FA-Fatturato	COMPASS	08/01/2020	22/01/2020	Damiani				MOD LATO SX SUPERIORI ANT/POST										 
+KPJ66368	IC–INCarrozzeria	RENEGADE	21/02/2020		Juliano				PARABREZZA	NOTTOLINO COPRI TERGICRISTALLO POST	TERZO STOP								
+7502502	FA-Fatturato	GIULIETTA	31/01/2020	13/02/2020	Leo				Fanale post sx COFANO POST 										
+KPJ47462	IC–INCarrozzeria	RENEGADE	29/01/2020		Leo				3° STOP	CALOTTA  DX	PARABREZZA								sost carrozzeria
+KPJ81264	IC–INCarrozzeria	RENEGADE	11/03/2020						FANALE POST SX	VETRO CALOTTA  SX	RASAVETRO ANT SX								
+KPK10064	IC–INCarrozzeria	RENEGADE	13/03/2020						FANALE POST DX	3° STOP									
+KPK16501	IC–INCarrozzeria	RENEGADE	27/02/2020						3° stop	CALOTTA  SX									
+75265	NU-NuovoMezzo	GIULIETTA							LUNOTTO										
+7495751	NU-NuovoMezzo	GIULIETTA							LUNOTTO										LUNOTTO
+7524379	NU-NuovoMezzo	GIULIETTA																	
+7534087	NU-NuovoMezzo	GIULIETTA																	
+7534205	NU-NuovoMezzo	GIULIETTA							LUNOTTO	FANALI POST DX+SX (PORTELLONE)									LUNOTTO
+7C28265	NU-NuovoMezzo	STELVIO							PARABREZZA	MOD LATO SX MOD.  P									
+J41647	NU-NuovoMezzo	RENEGADE																	
+J7577118	NU-NuovoMezzo	GIULIA																	
+K7596205	NU-NuovoMezzo	GIULIA							FANALE POST DX+SX (PORTELLONE)										
+K7596821	NU-NuovoMezzo	GIULIA							MOD LATO DX ANT/POST	FANALE POST DX COFANO									
+K7608317	NU-NuovoMezzo	GIULIA							LUNOTTO	CAPPELLIERA	FANALE POST DX								
+K7610014	NU-NuovoMezzo	GIULIA							FANALE POST SX (PA)	CALOTTA  SX	MOD LATO DX ANT/POST	MOD LATO SX INF A							
+KPJ02979	NU-NuovoMezzo	RENEGADE							3° STOP										
+KPJ06335	NU-NuovoMezzo	RENEGADE							CALOTTA  SX + DX	FRECCIA DX	3° STOP	FANALE POST DX	TAPPO CORRIMANO MANCANTE						
+KPJ12042	NU-NuovoMezzo	RENEGADE							3° stop	FANALE POST SX	FRECCIA SX								
+KPJ22313	NU-NuovoMezzo	RENEGADE							PARABREZZA	3° STOP									
+KPJ24105	NU-NuovoMezzo	RENEGADE																	
+KPJ24137	NU-NuovoMezzo	RENEGADE							BASE ANTENNA	FRECCIA DX									
+KPJ24560	NU-NuovoMezzo	RENEGADE							3° stop										
+KPJ25493	NU-NuovoMezzo	RENEGADE																	
+KPJ25832	NU-NuovoMezzo	RENEGADE							FRECCIA SX	FANALE POST SX	3° STOP								
+KPJ26345	NU-NuovoMezzo	RENEGADE							TERGICRISTALLO POST										
+KPJ27262	NU-NuovoMezzo	RENEGADE							FANALE POST. SX										
+KPJ27393	NU-NuovoMezzo	RENEGADE							3° stop	freccia sx									
+KPJ27972	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ29096	NU-NuovoMezzo	RENEGADE							CALOTTA  SX										
+KPJ29804	NU-NuovoMezzo	RENEGADE							FRECCIA SX	VETRO MOD POST SX	3° STOP								
+KPJ30029	NU-NuovoMezzo	RENEGADE							3° STOP										
+KPJ30636	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ30658	NU-NuovoMezzo	RENEGADE							FRECCIA SX	PARABREZZA									
+KPJ31962	NU-NuovoMezzo	RENEGADE							3° stop	PARABREZZA									
+KPJ34648	NU-NuovoMezzo	RENEGADE																	
+KPJ35274	NU-NuovoMezzo	RENEGADE							FANALE POST. SX										
+KPJ37657	NU-NuovoMezzo	RENEGADE							CALOTTA  DX	PARABREZZA									
+KPJ42646	NU-NuovoMezzo	RENEGADE																	LUNOTTO
+KPJ43799	NU-NuovoMezzo	RENEGADE							PARABREZZA	CALOTTA  DX									
+KPJ44649	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ44868	NU-NuovoMezzo	RENEGADE							CALOTTA  SX										
+KPJ44868	NU-NuovoMezzo	RENEGADE							TELAIO DOPPIO										
+KPJ44992	NU-NuovoMezzo	RENEGADE																	
+KPJ45171	NU-NuovoMezzo	RENEGADE							CALOTTA  SX										
+KPJ45211	NU-NuovoMezzo	RENEGADE							CALOTTA  DX										
+KPJ45256	NU-NuovoMezzo	COMPASS							FANALE POST SX	3° STOP									
+KPJ45613	NU-NuovoMezzo	RENEGADE							PARABREZZA	CALOTTA  SX									
+KPJ46085	NU-NuovoMezzo	RENEGADE							CALOTTA  SX										
+KPJ46237	NU-NuovoMezzo	RENEGADE							PARABREZZA	FRECCIA DX									
+KPJ46405	NU-NuovoMezzo	RENEGADE							SPORTELLO CARBURANTE	FRECCIA DX									
+KPJ46469	NU-NuovoMezzo	RENEGADE							BASE ANTENNA										
+KPJ46844	NU-NuovoMezzo	RENEGADE																	
+KPJ47206	NU-NuovoMezzo	RENEGADE							3° stop										
+KPJ47646	NU-NuovoMezzo	RENEGADE							LUNOTTO										LUNOTTO
+KPJ48706	NU-NuovoMezzo	RENEGADE							CALOTTA  SX	FANALE POST SX									
+KPJ49502	NU-NuovoMezzo	RENEGADE							FRECCIA DX	3° STOP									
+KPJ49632	NU-NuovoMezzo	RENEGADE																	
+KPJ50420	NU-NuovoMezzo	RENEGADE							PARABREZZA	FRECCIA SX									
+KPJ50642	NU-NuovoMezzo	RENEGADE							CALOTTA  SX	FANALE POST SX									
+KPJ51230	NU-NuovoMezzo	RENEGADE							PARABREZZA	FRECCIA LATO SX + DX	3° STOP								
+KPJ52115	NU-NuovoMezzo	RENEGADE							3° STOP	CALOTTA  DX									
+KPJ52142	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ52532	NU-NuovoMezzo	RENEGADE																	
+KPJ53343	NU-NuovoMezzo	RENEGADE							3° STOP										
+KPJ53831	NU-NuovoMezzo	RENEGADE							PARABREZZA	3° STOP	CORRIMANO SX								
+KPJ54615	NU-NuovoMezzo	RENEGADE							FRECCIA DX										
+KPJ57195	NU-NuovoMezzo	RENEGADE																	
+KPJ57545	NU-NuovoMezzo	RENEGADE																	
+KPJ57799	NU-NuovoMezzo	RENEGADE																	
+KPJ58613	NU-NuovoMezzo	RENEGADE																	
+KPJ64978	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ65170	NU-NuovoMezzo	RENEGADE																	
+KPJ65437	NU-NuovoMezzo	RENEGADE							PARABREZZA	CALOTTA  DX									
+KPJ67212	NU-NuovoMezzo	RENEGADE																	
+KPJ67639	NU-NuovoMezzo	RENEGADE							FRECCIA LATO SX	PARABREZZA									
+KPJ67696	NU-NuovoMezzo	RENEGADE							FANALE POST. SX	3° STOP	CALOTTA  Sx								
+KPJ68436	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ68462	NU-NuovoMezzo	RENEGADE							PARABREZZA	CALOTTA  dx	3° luce post. Dx	faro post dx							
+KPJ68700	NU-NuovoMezzo	RENEGADE							PARABREZZA	FRECCIA DX									
+KPJ68722	NU-NuovoMezzo	RENEGADE							CALOTTA  DX										
+KPJ68852	NU-NuovoMezzo	RENEGADE							FANALE POST. SX	3° STOP									
+KPJ69383	NU-NuovoMezzo	RENEGADE							CALOTTA  SX										
+KPJ69853	NU-NuovoMezzo	RENEGADE																	
+KPJ76802	NU-NuovoMezzo	RENEGADE																	
+KPJ82508	NU-NuovoMezzo	RENEGADE							LUNOTTO	3° STOP									LUNOTTO
+KPJ94932	NU-NuovoMezzo	RENEGADE							PARABREZZA										
+KPJ95103	NU-NuovoMezzo	RENEGADE																	
+KPJ97424	NU-NuovoMezzo	RENEGADE							3° STOP										
+KPK00142	NU-NuovoMezzo	RENEGADE																	
+KPK12277	NU-NuovoMezzo	RENEGADE																	
+KPK14034	NU-NuovoMezzo	RENEGADE																	
+KPK16769	NU-NuovoMezzo	RENEGADE							3° STOP	CALOTTA  SX									
+KPK17288	NU-NuovoMezzo	RENEGADE							SPORTELLO CARBURANTE	CALOTTA  DX									
+KPK17900	NU-NuovoMezzo	RENEGADE							PARABREZZA	FRECCIA SX									
+KPK18372	NU-NuovoMezzo	RENEGADE							spazzola COFANO POST										
+KPK18782	NU-NuovoMezzo	RENEGADE							LUNOTTO	3									
+KPK19388	NU-NuovoMezzo	RENEGADE							3° STOP	MOD LATO SX A GUARNIZIONE									
+KPK19595	NU-NuovoMezzo	RENEGADE							PARABREZZA	CALOTTA  DX									
+KPK20396	NU-NuovoMezzo	RENEGADE							tergicristallo mancante	51									
+KPK20493	NU-NuovoMezzo	RENEGADE							FANALE POST SX										
+KPK32092	NU-NuovoMezzo	RENEGADE							vetro terza luce (dx)	freccia dx	CALOTTA  dx								
+KPK32901	NU-NuovoMezzo	RENEGADE							3° stop										
+KPK33452	NU-NuovoMezzo	RENEGADE							3° stop										
+KPK47335	NU-NuovoMezzo	RENEGADE							BASE ANTENNA										
+KT586516	NU-NuovoMezzo	COMPASS							FANALE ANT. SX	MOD LATO SX MOD.  ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE POST. SX (PA)							
+KT603549	NU-NuovoMezzo	COMPASS							MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST										
+KT604021	NU-NuovoMezzo	COMPASS							PARABREZZA	TERGICRISTALLO	MOD LATO SX ANT/POST	FIANCHETTO MOD LATO SX A							
+KT604330	NU-NuovoMezzo	COMPASS																	
+KT604588	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD lato dx  ANT/POST	corrimano dx								
+KT606259	NU-NuovoMezzo	GIULIETTA							MOD LATO DX ANT/POST 	MOD LATO DX PA	MOD COFANO POST	CORRIMANO DX+SX							
+KT606310	NU-NuovoMezzo	COMPASS							MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST										
+KT606603	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO SX ANT/POST									
+KT606863	NU-NuovoMezzo	COMPASS							MOD COFANO POST (C)	PARABREZZA	Calandra tra cofano e parabrezza	CORRIMANO SX							
+KT607086	NU-NuovoMezzo	COMPASS							MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD LATO SX P	MOD COFANO POST	3° STOP	FANALE POST DX (PA)						
+KT607712	NU-NuovoMezzo	COMPASS																	
+KT609825	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD lato sx  ANT/POST/PARAFANGO POST	CORRIMANO SX								
+KT621795	NU-NuovoMezzo	COMPASS							MOD LATO SX ANT/POST	PARABREZZA	CORRIMANO SX								
+KT626699	NU-NuovoMezzo	COMPASS							MOD lato Sx  ANT/POST/PARAFANGO POST	3° STOP	MOD COFANO POST	FANALE POST SX (PA)	CORRIMANO SX						
+KT631164	NU-NuovoMezzo	COMPASS							MOD LATO DX PA	FANALE POST SX (PA)	MOD LATO SX P/PA	3° STOP							
+KT631375	NU-NuovoMezzo	COMPASS							 COFANO POST	CALOTTA  SX	MOD LATO DX  ANT/POST/PARAFANGO POST								
+KT631396	NU-NuovoMezzo	COMPASS							MOD DC MOD ANT/POST/PARAFANGO POST										
+KT631441	NU-NuovoMezzo	COMPASS							PARABREZZA	CALOTTA  DX	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	FANALE POST COFANO POST	MOD COFANO POST						
+KT631533	NU-NuovoMezzo	COMPASS							Calandra tra cofano e parabrezza	PARABREZZA	MOD COFANO POST	MOD LATO SX  ANT/POST/PARAFANGO POST							
+KT631788	NU-NuovoMezzo	COMPASS							MOD COFANO POST (C)	MOD LATO DX ANT/POST/PARAFANGO POST									
+KT632130	NU-NuovoMezzo	COMPASS							LUCE CALOTTA  STACCATA	PARABREZZA	MOD LATO SX MOD. ANT/POST/PARAFANGO POST								
+KT632480	NU-NuovoMezzo	COMPASS							FANALE POST DX (PA)	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST									
+KT634574	NU-NuovoMezzo	COMPASS							MOD DC MOD ANT/POST/PARAFANGO POST	PARABREZZA	Calandra tra cofano e parabrezza								
+KT634889	NU-NuovoMezzo	COMPASS							FIANCHETTO MOD LATO SX P	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST									
+KT635204	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST	FIAnchetto MOD A SX	MOD COFANO POST							
+KT635623	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST								LUNOTTO
+KT643603	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO SX  ANT/POST/PARAFANGO POST									
+KT644411	NU-NuovoMezzo	COMPASS							MOD COFANO POST (C)	3° LUCE LATO SX	FIANCHETTO MOD LATO SX POST	MOD LATO SX ANT/POST/PARAFANGO POST	PARABREZZA						LUNOTTO
+KT644601	NU-NuovoMezzo	COMPASS							MOD LATO SX ANT/POST	PARABREZZA									
+KT644612	NU-NuovoMezzo	COMPASS							MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST									
+KT644680	NU-NuovoMezzo	COMPASS							MOD lato dx  ANT/POST/PARAFANGO POST										
+KT648873	NU-NuovoMezzo	COMPASS							MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	MOD COFANO POST	FANALE POST DX (PORTELLONE)								
+KT648918	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO DX  P/PA									
+KT648941	NU-NuovoMezzo	COMPASS							PORTELLONE MOD (C)	3° STOP	MOD LATO DX P/PA								
+KT660308	NU-NuovoMezzo	COMPASS							FANALE POST SX (PA)	MOD LATO SX SUPERIORI ANT/POST/PARAFANGO POST									
+KT660368	NU-NuovoMezzo	COMPASS							MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	PARABREZZA	FANALE ANT DX	MOD LATO SX A							
+KT684643	NU-NuovoMezzo	COMPASS							MOD lato dx  ANT/POST/PARAFANGO POST	PARABREZZA	MOD COFANO POST	MOD TETTO	LUCE CALOTTA  STACCATA						
+KT684730	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	fanale post DX (PA)								
+KT685134	NU-NuovoMezzo	COMPASS							MOD COFANO POST	MOD LATO SX FARO POST SX (PA)									
+KT690910	NU-NuovoMezzo	COMPASS							MOD LATO DX SUPERIORI ANT/POST/PARAFANGO POST	FANALE POST DX	3° STOP								
+KT691031	NU-NuovoMezzo	COMPASS							Calandra tra cofano e parabrezza	MOD lato sx  ANT/POST/PARAFANGO POST									
+KT691034	NU-NuovoMezzo	COMPASS							MOD LATO DX ANT/POST	FANALE POST DX (PA)	MOD COFANO POST								
+KT691038	NU-NuovoMezzo	COMPASS							MOD lato Sx  ANT/POST/PARAFANGO POST	MOD COFANO POST	PARABREZZA	FANALE POST. SX (PA)							
+KT691578	NU-NuovoMezzo	COMPASS							TERGICRISTALLO ANT.	MOD lato sx  ANT/POST/PARAFANGO POST									
+KT710678	NU-NuovoMezzo	COMPASS							PARABREZZA	FIANCHETTO MOD LATO DX POST	MOD LATO DX  P/PA	FANALE POST DX (PA)							
+KT730229	NU-NuovoMezzo	COMPASS							Calandra tra cofano e parabrezza	MOD.  COFANO POST	MOD LATO DX MOD. ANT/POST	FIANCHETTO MOD LATO DX A	CORRIMANO SX	FANALE POST DX (PA)					
+KT730242	NU-NuovoMezzo	COMPASS							MOD COFANO POST 										
+KT756671	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD COFANO POST 	FANAle post SX (PA)	MOD LATO SX ANT/POST/PARAFANGO POST							
+KT756848	NU-NuovoMezzo	COMPASS							PARABREZZA	MOD LATO DX  ANT/POST/PARAFANGO POST									
+KT756902	NU-NuovoMezzo	COMPASS							MOD lato dx  ANT/POST/PARAFANGO POST	MOD COFANO POST	fianchetto MOD dx	CORRIMANO DX							
+KT773249	NU-NuovoMezzo	COMPASS																	
+KW567639	NU-NuovoMezzo	WRANGLER																	
+PJ37364	NU-NuovoMezzo	RENEGADE																	
+PJ52086	NU-NuovoMezzo	RENEGADE							FANALE POST SX										
+W594854	NU-NuovoMezzo	WRANGLER							PARABREZZA										

@@ -223,12 +223,14 @@ namespace Grandine.Controllers
             var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
             ViewData["TipiDocumento"] = elencotipidocumento;
 
-            var myFoto = (from f in db.FotoXTelaio
+            var myFoto = (from f in db.FotoXTelaio_vw
                          where f.IDTelaio == IDTelaio
                          select f);
-            model.FotoXTelaio = myFoto.ToList();
+            model.FotoXTelaio_vw = myFoto.ToList();
 
             
+
+
             ViewBag.IDTelaio = IDTelaio;
             return View("ScattaFoto", myFoto);
            
@@ -243,6 +245,8 @@ namespace Grandine.Controllers
             //string mySearch = TempData["mySearch"] as string;
             //string myLotto = TempData["myLotto"] as string;
             //myIDTelaio = (int)TempData["myIDTelaio"];
+
+           
 
             foreach (var file in files)
             {
@@ -273,16 +277,16 @@ namespace Grandine.Controllers
             var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
             ViewData["TipiDocumento"] = elencotipidocumento;
 
-            var myFoto = (from f in db.FotoXTelaio
+            var myFoto = (from f in db.FotoXTelaio_vw
                           where f.IDTelaio == IDTelaio
                           select f);
-            model.FotoXTelaio = myFoto.ToList();
+            model.FotoXTelaio_vw = myFoto.ToList();
 
 
             ViewBag.IDTelaio = IDTelaio;
             return View("ScattaFoto", myFoto);
 
-            return RedirectToAction("ScattaFoto");
+            //return RedirectToAction("ScattaFoto");
 
 
         }
@@ -307,10 +311,10 @@ namespace Grandine.Controllers
             var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
             ViewData["TipiDocumento"] = elencotipidocumento;
 
-            var myFoto = (from f in db.FotoXTelaio
+            var myFoto = (from f in db.FotoXTelaio_vw
                           where f.IDTelaio == IDTelaio
                           select f);
-            model.FotoXTelaio = myFoto.ToList();
+            model.FotoXTelaio_vw = myFoto.ToList();
 
             ViewBag.IDTelaio = IDTelaio;
             return View("ScattaFoto", myFoto);

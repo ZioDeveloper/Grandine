@@ -17,7 +17,7 @@ namespace Grandine.Controllers
         // GET: Tecnicis
         public ActionResult Index()
         {
-            return View(db.Tecnici.ToList());
+            return View(db.Tecnici.OrderBy(s=>s.Cognome).ToList());
         }
 
         // GET: Tecnicis/Details/5

@@ -17,7 +17,8 @@ namespace Grandine.Controllers
         // GET: Carrozzerias
         public ActionResult Index()
         {
-            return View(db.Carrozzeria.ToList());
+            return View(db.Carrozzeria.OrderBy(s => s.RagioneSociale)
+                .ToList());
         }
 
         // GET: Carrozzerias/Details/5

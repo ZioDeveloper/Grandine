@@ -13,6 +13,7 @@ namespace Grandine.Models
         public IEnumerable<Tecnici> Tecnici { get; set; }
         public IEnumerable<FotoXTelaio> FotoXTelaio { get; set; }
         public IEnumerable<TipiDocumento> TipiDocumento { get; set; }
+        public IEnumerable<FotoXTelaio_vw> FotoXTelaio_vw { get; set; }
     }
 
 }

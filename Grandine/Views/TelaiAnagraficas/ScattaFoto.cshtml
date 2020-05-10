@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Grandine.Models.FotoXTelaio>
+﻿@model IEnumerable<Grandine.Models.FotoXTelaio_vw>
 
 @{
     /**/
@@ -7,6 +7,9 @@
 }
 <br />
 <h4>Gestione documenti</h4>
+<br />
+@Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+<br />
 <br />
 @using (Html.BeginForm("Upload", "TelaiAnagraficas", new { IDTelaio = ViewBag.IDTelaio }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -53,27 +56,28 @@
 
 }
 
-    <hr>
+<hr>
 
 @foreach (var item in Model)
 {
     <table border="0">
         <tr>
-            <td>
-               
-            </td>
+            <td></td>
             <td>
                 <img src="@Url.Content("~/DocumentiXTelai/" + item.NomeFile)" title="@Url.Content(item.NomeFile)" alt="Image" style='height: 480px; width: 640px; object-fit: contain'>
 
             </td>
-
+            <td>&nbsp;&nbsp;</td>
+            <td>@Html.Label(item.TipoDocumento.ToString())</td>
+            <td>&nbsp;&nbsp;</td>
             <td>
 
-                @Html.ActionLink("Elimina", "CancellaDocumento", new { IDDocumento = item.ID, IDTelaio= item.IDTelaio,nomefile = item.NomeFile }, new { @class = "btn btn-danger btn-xs" })
+                @Html.ActionLink("Elimina", "CancellaDocumento", new { IDDocumento = item.ID, IDTelaio = item.IDTelaio, nomefile = item.NomeFile }, new { @class = "btn btn-danger btn-xs" })
             </td>
 
 
         </tr>
+        
     </table>
 
 }
