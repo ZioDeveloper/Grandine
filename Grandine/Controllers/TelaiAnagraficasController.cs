@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,7 +50,8 @@ namespace Grandine.Controllers
                     (t => t.Bisarchista1).Include
                     (t => t.Carrozzeria).Include
                     (t => t.Carrozzeria1).Include
-                    (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa);
+                    (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa).Include
+                    (t=>t.StoricoStatus);
             return View(telaiAnagrafica.ToList());
         }
 
@@ -211,8 +213,10 @@ namespace Grandine.Controllers
                 new SqlParameter("@IDTelaio", IDtelaio));
         }
 
-        public ActionResult ScattaFoto(int? IDTelaio)
+        
+        public ActionResult ScattaFoto(int? IDTelaio,int? IDTipoDocumento)
         {
+
 
             var model = new Models.HomeModel();
 
@@ -228,14 +232,17 @@ namespace Grandine.Controllers
                          select f);
             model.FotoXTelaio_vw = myFoto.ToList();
 
-            
 
+            if (IDTipoDocumento != null)
+                ViewBag.IDTipoDocumento = IDTipoDocumento;
+            else
+                ViewBag.IDTipoDocumento = 1;
 
             ViewBag.IDTelaio = IDTelaio;
             return View("ScattaFoto", myFoto);
            
         }
-
+        
         public ActionResult Upload(IEnumerable<HttpPostedFileBase> files , int? IDTelaio ,int? IDTipoDocumento)
         {
             string filename = "";
@@ -267,7 +274,33 @@ namespace Grandine.Controllers
                         new SqlParameter("@NomeFile", filename));
                 }
             }
+            
+            var model = new Models.HomeModel();
+            
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
 
+            var myFoto = (from f in db.FotoXTelaio_vw
+                          where f.IDTelaio == IDTelaio
+                          select f);
+            model.FotoXTelaio_vw = myFoto.ToList();
+            UpdateModel(myFoto);
+
+            ViewBag.IDTelaio = IDTelaio;
+            ViewBag.IDTipoDocumento = IDTipoDocumento;
+            return View("ScattaFoto", myFoto);
+
+            //return RedirectToAction("ScattaFoto", new { IDTelaio, IDTipoDocumento });
+
+
+        }
+
+        public ActionResult Reload(int? IDTelaio, int? IDTipoDocumento)
+        {
             var model = new Models.HomeModel();
 
             // Lista tipidocumento
@@ -283,15 +316,17 @@ namespace Grandine.Controllers
             model.FotoXTelaio_vw = myFoto.ToList();
 
 
+            if (IDTipoDocumento != null)
+                ViewBag.IDTipoDocumento = IDTipoDocumento;
+            else
+                ViewBag.IDTipoDocumento = 1;
+
             ViewBag.IDTelaio = IDTelaio;
             return View("ScattaFoto", myFoto);
 
-            //return RedirectToAction("ScattaFoto");
-
-
         }
 
-        public ActionResult CancellaDocumento(int? IDDocumento, int? IDTelaio, string nomefile)
+        public ActionResult CancellaDocumento(int? IDDocumento, int? IDTelaio, string nomefile, int?IDTipoDocumento)
         {
             var sql = @"DELETE FROM FotoXTelaio WHERE ID = @IDDocumento";
             int myRecordCounter = db.Database.ExecuteSqlCommand(sql, new SqlParameter("@IDDocumento", IDDocumento));
@@ -317,6 +352,79 @@ namespace Grandine.Controllers
             model.FotoXTelaio_vw = myFoto.ToList();
 
             ViewBag.IDTelaio = IDTelaio;
+            ViewBag.IDTipoDocumento = IDTipoDocumento;
+            return View("ScattaFoto", myFoto);
+        }
+
+        public ActionResult DragAndDrop(int? IDTelaio, int? IDTipoDocumento)
+        {
+
+            var model = new Models.HomeModel();
+
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
+
+            var myFoto = (from f in db.FotoXTelaio_vw
+                          where f.IDTelaio == IDTelaio
+                          select f);
+            model.FotoXTelaio_vw = myFoto.ToList();
+
+
+            if (IDTipoDocumento != null)
+                ViewBag.IDTipoDocumento = IDTipoDocumento;
+            else
+                ViewBag.IDTipoDocumento = 1;
+
+            ViewBag.IDTelaio = IDTelaio;
+            return View("DragAndDrop", myFoto);
+
+        }
+        [HttpPost]
+        public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files, int? IDTelaio, int? IDTipoDocumento)
+        {
+            string filename = "";
+            string path = "";
+            foreach (var file in files)
+            {
+                if (file != null)
+                {
+                    filename = System.IO.Path.GetFileName(file.FileName);
+
+                    path = System.IO.Path.Combine(Server.MapPath("~/DocumentiXTelai"), filename);
+                    if (file != null)
+                    {
+                        file.SaveAs(path);
+                    }
+
+                    var sql = @"Insert Into FotoXTelaio (IDTelaio, IDTipoDocumento , NomeFile) Values (@IDTelaio, @IDTipoDocumento, @NomeFile)";
+                    int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                        new SqlParameter("@IDTelaio", IDTelaio),
+                        new SqlParameter("@IDTipoDocumento", IDTipoDocumento),
+                        new SqlParameter("@NomeFile", filename));
+                }
+            }
+
+            var model = new Models.HomeModel();
+
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
+
+            var myFoto = (from f in db.FotoXTelaio_vw
+                          where f.IDTelaio == IDTelaio
+                          select f);
+            model.FotoXTelaio_vw = myFoto.ToList();
+            UpdateModel(myFoto);
+
+            ViewBag.IDTelaio = IDTelaio;
+            ViewBag.IDTipoDocumento = IDTipoDocumento;
             return View("ScattaFoto", myFoto);
         }
 

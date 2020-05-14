@@ -5,13 +5,33 @@
 
     ViewBag.Title = "Gestione documenti";
 }
+@*<style>
+        #dropArea {
+            background: #b5b5b5;
+            border: black dashed 1px;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+            padding-top: 12px;
+        }
+
+        .active-drop {
+            background: #77bafa !important;
+            border: solid 2px blue !important;
+            opacity: .5;
+            color: black !important;
+        }
+    </style>*@
 <br />
 <h4>Gestione documenti</h4>
 <br />
-@Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary btn-xs" }) 
+&nbsp;&nbsp;
+@Html.ActionLink("Drag & drop", "DragAndDrop", new { IDCommessa = Session["IDCommessa"],IDTelaio = ViewBag.IDTelaio, IDTipoDocumento = ViewBag.IDTipoDocumento }, new { @class = "btn btn-warning btn-xs" })
 <br />
 <br />
-@using (Html.BeginForm("Upload", "TelaiAnagraficas", new { IDTelaio = ViewBag.IDTelaio }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Upload", "TelaiAnagraficas", new { IDTelaio = ViewBag.IDTelaio, IDTipoDocumento = ViewBag.IDTipoDocumento }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     <table border="0">
@@ -28,6 +48,21 @@
 
 
             </tr>
+
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            @*<tr>
+                <td>
+                    @Html.Label("Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DropDownList("IDTipoDocumento", (SelectList)ViewData["TipiDocumento"], new { @class = "form-control" })
+                </td>
+            </tr>*@
             <tr>
                 <td>&nbsp;</td>
             </tr>
@@ -42,29 +77,49 @@
 
     <br />
     <table>
+        
         <tr>
             <td>
                 @Html.Label("Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
             </td>
         </tr>
-        <tr>
-            <td>
-                @Html.DropDownList("IDTipoDocumento", (SelectList)ViewData["TipiDocumento"], new { @class = "form-control" })
-            </td>
-        </tr>
+
     </table>
 
 }
 
-<hr>
+<br />
+
+@using (Html.BeginForm("ScattaFoto", "TelaiAnagraficas", new { IDTelaio = ViewBag.IDTelaio, IDTipoDocumento = ViewBag.IDTipoDocumento }))
+    {
+        @Html.DropDownList("IDTipoDocumento", (SelectList)ViewData["TipiDocumento"], new { @class = "form-control", onchange = "this.form.submit()" })
+
+
+    }
+@*<br />
+
+    <br />
+    <div id="dropSection">
+    </div>
+    <br />
+    <h2>Drag & Drop file upload </h2>
+    <div id="dropArea">
+        Drop your files here
+    </div>
+    <h4>Uploaded files : </h4>
+    <ul class="list-group" id="uploadList"></ul>
+    <input type="button" id="btnUpload" value="Upload" />*@
+
+
+
 
 @foreach (var item in Model)
 {
-    <table border="0">
+    <table border="1">
         <tr>
             <td></td>
             <td>
-                <img src="@Url.Content("~/DocumentiXTelai/" + item.NomeFile)" title="@Url.Content(item.NomeFile)" alt="Image" style='height: 480px; width: 640px; object-fit: contain'>
+                <img src="@Url.Content("~/DocumentiXTelai/" + item.NomeFile)" title="@Url.Content(item.NomeFile)" alt="Image" style='height: 100px; width: 200px; object-fit: contain'>
 
             </td>
             <td>&nbsp;&nbsp;</td>
@@ -72,13 +127,56 @@
             <td>&nbsp;&nbsp;</td>
             <td>
 
-                @Html.ActionLink("Elimina", "CancellaDocumento", new { IDDocumento = item.ID, IDTelaio = item.IDTelaio, nomefile = item.NomeFile }, new { @class = "btn btn-danger btn-xs" })
+                @Html.ActionLink("Elimina", "CancellaDocumento", new { IDDocumento = item.ID, IDTelaio = item.IDTelaio, nomefile = item.NomeFile, IDTipoDocumento = ViewBag.IDTipoDocumento }, new { @class = "btn btn-danger btn-xs" })
             </td>
 
 
         </tr>
-        
+
     </table>
 
 }
 
+
+
+@*<script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+    <script src="~/Scripts/jquery.filedrop.js"></script>
+    <script type="text/javascript">
+        var e = document.getElementById("IDTipoDocumento");
+        var result = e.options[e.selectedIndex].value;
+        $(function () {
+
+                $("#dropSection").filedrop({
+                    fallback_id: 'btnUpload',
+                    fallback_dropzoneClick: true,
+                    url: '@Url.Action("Upload")',
+                    //allowedfiletypes: ['image/jpeg', 'image/png', 'image/gif', 'application/pdf', 'application/doc'],
+                    allowedfileextensions: ['.doc', '.docx', '.pdf', '.jpg', '.jpeg', '.png', '.gif'],
+                    paramname: 'files',
+                    data: {
+                        IDTelaio: @ViewBag.IDTelaio, IDTipoDocumento: @ViewBag.IDTipoDocumento
+                        },
+                    maxfiles: 5, //Maximum Number of Files allowed at a time.
+                    maxfilesize: 2, //Maximum File Size in MB.
+                    dragOver: function () {
+                        $('#dropSection').addClass('active');
+                    },
+                    dragLeave: function () {
+                        $('#dropSection').removeClass('active');
+                    },
+                    drop: function () {
+                        $('#dropSection').removeClass('active');
+                    },
+                    uploadFinished: function (i, file, response, time) {
+                        $('#uploadedFiles').append(file.name + '<br />')
+                    },
+                    afterAll: function (e) {
+                        //To do some task after all uploads done.
+                    }
+                })
+        });
+
+
+
+
+    </script>*@

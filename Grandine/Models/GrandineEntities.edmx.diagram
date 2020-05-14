@@ -47,6 +47,7 @@
         <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" />
         <AssociationConnector Association="GRANDINEModel.FK_Commesse_Clienti" />
         <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio_vw" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="GRANDINEModel.Ricambi" Width="1.5" PointX="5.375" PointY="9.25" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
