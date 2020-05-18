@@ -217,7 +217,7 @@ namespace Grandine.Controllers
         public ActionResult ScattaFoto(int? IDTelaio,int? IDTipoDocumento)
         {
 
-
+            
             var model = new Models.HomeModel();
 
             // Lista tipidocumento
@@ -359,6 +359,13 @@ namespace Grandine.Controllers
         public ActionResult DragAndDrop(int? IDTelaio, int? IDTipoDocumento)
         {
 
+            if(IDTipoDocumento == 1)
+            {
+                
+                return RedirectToAction("ScattaFoto", new { IDTelaio, IDTipoDocumento });
+                
+            }
+
             var model = new Models.HomeModel();
 
             // Lista tipidocumento
@@ -427,6 +434,38 @@ namespace Grandine.Controllers
             ViewBag.IDTipoDocumento = IDTipoDocumento;
             return View("ScattaFoto", myFoto);
         }
+
+        public ActionResult InsertStatus(int? IDTelaio)
+        {
+
+            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(IDTelaio);
+            if (telaiAnagrafica == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr");
+
+            var model = new Models.HomeModel();
+            // Lista tecnici
+            var tecnici = from m in db.Tecnici
+                          select m;
+            model.Tecnici = tecnici.ToList();
+            var elencoTecnici = new SelectList(model.Tecnici.ToList().OrderBy(m => m.ID), "ID", "Cognome");
+            ViewData["Tecnici"] = elencoTecnici;
+            return View(telaiAnagrafica);
+            
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult InsertStatus()
+        {
+            
+            return View();
+        }
+
 
         protected override void Dispose(bool disposing)
         {

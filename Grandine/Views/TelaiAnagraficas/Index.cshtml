@@ -25,7 +25,7 @@
         <tr>
             <th>Telaio</th>
             <th>Modello</th>
-            <th>Data ins.</th>
+            <th>Status</th>
             <th>Modifica</th>
             <th>Cancella</th>
             <th>Foto</th>
@@ -41,12 +41,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Modello)
             </td>
-
             <td>
-                @Html.DisplayFor(modelItem => item.DataIn)
+                @Html.ActionLink("Status", "InsertStatus", new { IDTElaio = item.ID }, new { @class = "btn btn-success btn-xs" })
             </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.DataIn)
+            </td>*@
             <td>
-                @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                @Html.ActionLink("Modifica", "Edit", new { IDTelaio = item.ID }, new { @class = "btn btn-success btn-xs" })
 
                 @*@Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-info" })*@
             </td>
@@ -63,7 +65,7 @@
         <tr>
             <th>Telaio</th>
             <th>Modello</th>
-            <th>Data ins.</th>
+            <th>Status</th>
             <th>Modifica</th>
             <th>Cancella</th>
             <th>Foto</th>

@@ -398,6 +398,7 @@
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\TelaiAnagraficas\ScattaFoto.cshtml" />
     <Content Include="Views\TelaiAnagraficas\DragAndDrop.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\InsertStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
