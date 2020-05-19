@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsertTelaiFormListController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\StoricoStatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
     <Compile Include="Controllers\TelaiAnagraficasController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -220,6 +221,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TelaiAnagrafica.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Telai_LastStatus_vw.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipiDocumento.cs">
@@ -399,6 +403,11 @@
     <Content Include="Views\TelaiAnagraficas\ScattaFoto.cshtml" />
     <Content Include="Views\TelaiAnagraficas\DragAndDrop.cshtml" />
     <Content Include="Views\TelaiAnagraficas\InsertStatus.cshtml" />
+    <Content Include="Views\StoricoStatus\Create.cshtml" />
+    <Content Include="Views\StoricoStatus\Delete.cshtml" />
+    <Content Include="Views\StoricoStatus\Details.cshtml" />
+    <Content Include="Views\StoricoStatus\Edit.cshtml" />
+    <Content Include="Views\StoricoStatus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -45,5 +45,6 @@ namespace Grandine.Models
         public virtual DbSet<TipiDocumento> TipiDocumento { get; set; }
         public virtual DbSet<FotoXTelaio_vw> FotoXTelaio_vw { get; set; }
         public virtual DbSet<Ricambi> Ricambi { get; set; }
+        public virtual DbSet<Telai_LastStatus_vw> Telai_LastStatus_vw { get; set; }
     }
 }

@@ -27,8 +27,7 @@ namespace Grandine.Controllers
         public ActionResult Index(int? IDCommessa)
         {
 
-
-            if (Session["IDCommessa"] == null)
+           if (Session["IDCommessa"] == null)
             {
                 Session["IDCommessa"] = IDCommessa;
                 Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
@@ -44,14 +43,16 @@ namespace Grandine.Controllers
                 }
 
             }
-            
-            var telaiAnagrafica = db.TelaiAnagrafica.Include
-                    (t => t.Bisarchista).Include
-                    (t => t.Bisarchista1).Include
-                    (t => t.Carrozzeria).Include
-                    (t => t.Carrozzeria1).Include
-                    (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa).Include
-                    (t=>t.StoricoStatus);
+
+            //var telaiAnagrafica = db.TelaiAnagrafica.Include
+            //        (t => t.Bisarchista).Include
+            //        (t => t.Bisarchista1).Include
+            //        (t => t.Carrozzeria).Include
+            //        (t => t.Carrozzeria1).Include
+            //        (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa).Include
+            //        (t=>t.StoricoStatus);
+
+            var telaiAnagrafica = db.Telai_LastStatus_vw;
             return View(telaiAnagrafica.ToList());
         }
 
@@ -438,13 +439,11 @@ namespace Grandine.Controllers
         public ActionResult InsertStatus(int? IDTelaio)
         {
 
-            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(IDTelaio);
-            if (telaiAnagrafica == null)
-            {
-                return HttpNotFound();
-            }
 
             ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr");
+            //ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice");
+            //ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome");
+            ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio");
 
             var model = new Models.HomeModel();
             // Lista tecnici
@@ -453,17 +452,30 @@ namespace Grandine.Controllers
             model.Tecnici = tecnici.ToList();
             var elencoTecnici = new SelectList(model.Tecnici.ToList().OrderBy(m => m.ID), "ID", "Cognome");
             ViewData["Tecnici"] = elencoTecnici;
-            return View(telaiAnagrafica);
-            
+
+            return View();
+
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
-        public ActionResult InsertStatus()
+        public ActionResult InsertStatus([Bind(Include = "ID,IDTelaio,IDStato,IDTecnico")] StoricoStatus storicoStatus)
         {
+            if (ModelState.IsValid)
+            {
+                storicoStatus.IDUtente = "C001";
+                db.StoricoStatus.Add(storicoStatus);
+                db.SaveChanges();
+                return RedirectToAction("Index", new { IDCommessa = Session["IDCommessa"] });
+            }
+
+            ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr", storicoStatus.IDStato);
+            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
+            ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome", storicoStatus.IDUtente);
+            ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", storicoStatus.IDTelaio);
+            return View(storicoStatus);
             
-            return View();
+
         }
 
 

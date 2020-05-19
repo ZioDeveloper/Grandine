@@ -1,0 +1,66 @@
+﻿@model Grandine.Models.StoricoStatus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StoricoStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsertUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsertUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Descr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Descr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tecnici.Codice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tecnici.Codice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Utenti.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utenti.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelaiAnagrafica.Telaio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelaiAnagrafica.Telaio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

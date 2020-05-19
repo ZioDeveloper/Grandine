@@ -48,6 +48,7 @@
         <AssociationConnector Association="GRANDINEModel.FK_Commesse_Clienti" />
         <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio_vw" Width="1.5" PointX="3.375" PointY="8.75" />
         <EntityTypeShape EntityType="GRANDINEModel.Ricambi" Width="1.5" PointX="5.375" PointY="9.25" />
+        <EntityTypeShape EntityType="GRANDINEModel.Telai_LastStatus_vw" Width="1.5" PointX="0.75" PointY="10.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
