@@ -97,7 +97,7 @@ namespace Grandine.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt,IDCarrozzeria1,IDCarrozzeria2,IDBisarchistaAndata,IDBisarchistaRitorno")] TelaiAnagrafica telaiAnagrafica, int? IDTecnico)
+        public ActionResult Create([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt,IDCarrozzeria1,IDCarrozzeria2,IDBisarchistaAndata,IDBisarchistaRitorno,IDTecnico")] TelaiAnagrafica telaiAnagrafica, int? IDTecnico)
         {
             if (ModelState.IsValid)
             {
@@ -107,12 +107,11 @@ namespace Grandine.Controllers
 
                 // Insert StoricoStatus
                 int myID = telaiAnagrafica.ID;
-                var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDTecnico ,IDUtente) Values (@IDTelaio ,@IDStato ,@IDTecnico ,@IDUtente)";
+                var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDUtente) Values (@IDTelaio ,@IDStato  ,@IDUtente)";
                 int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
                     new SqlParameter("@IDTelaio", telaiAnagrafica.ID),
                     new SqlParameter("@IDStato", "GI"),
-                    new SqlParameter("@IDTecnico", IDTecnico),
-                    new SqlParameter("@IDUtente", Session["UserName"]));
+                      new SqlParameter("@IDUtente", Session["UserName"]));
 
                 // END
 
@@ -470,7 +469,7 @@ namespace Grandine.Controllers
             }
 
             ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr", storicoStatus.IDStato);
-            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
+           // ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
             ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome", storicoStatus.IDUtente);
             ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", storicoStatus.IDTelaio);
             return View(storicoStatus);

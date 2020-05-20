@@ -38,6 +38,7 @@ namespace Grandine.Models
         public Nullable<int> IDCarrozzeria2 { get; set; }
         public Nullable<int> IDBisarchistaAndata { get; set; }
         public Nullable<int> IDBisarchistaRitorno { get; set; }
+        public Nullable<int> IDTecnico { get; set; }
     
         public virtual Bisarchista Bisarchista { get; set; }
         public virtual Bisarchista Bisarchista1 { get; set; }

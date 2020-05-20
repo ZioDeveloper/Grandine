@@ -17,7 +17,7 @@ namespace Grandine.Controllers
         // GET: StoricoStatus
         public ActionResult Index()
         {
-            var storicoStatus = db.StoricoStatus.Include(s => s.Status).Include(s => s.Tecnici).Include(s => s.Utenti).Include(s => s.TelaiAnagrafica);
+            var storicoStatus = db.StoricoStatus.Include(s => s.Status).Include(s => s.Utenti).Include(s => s.TelaiAnagrafica);
             return View(storicoStatus.ToList());
         }
 
@@ -61,7 +61,7 @@ namespace Grandine.Controllers
             }
 
             ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr", storicoStatus.IDStato);
-            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
+            //ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
             ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome", storicoStatus.IDUtente);
             ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", storicoStatus.IDTelaio);
             return View(storicoStatus);
@@ -80,7 +80,7 @@ namespace Grandine.Controllers
                 return HttpNotFound();
             }
             ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr", storicoStatus.IDStato);
-            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
+            //ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
             ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome", storicoStatus.IDUtente);
             ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", storicoStatus.IDTelaio);
             return View(storicoStatus);
@@ -100,7 +100,7 @@ namespace Grandine.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr", storicoStatus.IDStato);
-            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
+            //ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice", storicoStatus.IDTecnico);
             ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome", storicoStatus.IDUtente);
             ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", storicoStatus.IDTelaio);
             return View(storicoStatus);

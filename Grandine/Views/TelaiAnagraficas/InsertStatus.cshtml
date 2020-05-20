@@ -30,14 +30,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.IDTecnico, "IDTecnico", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.DropDownList("IDTecnico", null, htmlAttributes: new { @class = "form-control" })*@
-                @*@Html.ValidationMessageFor(model => model.IDTecnico, "", new { @class = "text-danger" })*@
+                
                 @Html.DropDownList("IDTecnico", (SelectList)ViewData["Tecnici"], new { @class = "form-control" })
             </div>
-        </div>
+        </div>*@
 
         
 

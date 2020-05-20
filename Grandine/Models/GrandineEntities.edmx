@@ -226,6 +226,7 @@
           <Property Name="IDCarrozzeria2" Type="int" />
           <Property Name="IDBisarchistaAndata" Type="int" />
           <Property Name="IDBisarchistaRitorno" Type="int" />
+          <Property Name="IDTecnico" Type="int" />
         </EntityType>
         <EntityType Name="TipiDocumento">
           <Key>
@@ -1170,6 +1171,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Commesse" FromRole="TelaiAnagrafica" ToRole="Commesse" />
           <NavigationProperty Name="StoricoStatus" Relationship="GRANDINEModel.FK_IDTelaio" FromRole="TelaiAnagrafica" ToRole="StoricoStatus" />
           <NavigationProperty Name="FotoXTelaio" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="FotoXTelaio" />
+          <Property Name="IDTecnico" Type="Int32" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1544,6 +1546,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="TelaiAnagrafica">
             <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
               <MappingFragment StoreEntitySet="TelaiAnagrafica">
+                <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
                 <ScalarProperty Name="IDBisarchistaRitorno" ColumnName="IDBisarchistaRitorno" />
                 <ScalarProperty Name="IDBisarchistaAndata" ColumnName="IDBisarchistaAndata" />
                 <ScalarProperty Name="IDCarrozzeria2" ColumnName="IDCarrozzeria2" />
