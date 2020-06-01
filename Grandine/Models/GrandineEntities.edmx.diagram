@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b9b6e5a016a4c889e130ade80647955" Name="Diagram1" ZoomLevel="98">
+      <Diagram DiagramId="9b9b6e5a016a4c889e130ade80647955" Name="Diagram1" ZoomLevel="54">
         <EntityTypeShape EntityType="GRANDINEModel.ClassiUtente" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GRANDINEModel.Status" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GRANDINEModel.Utenti" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
@@ -49,6 +49,7 @@
         <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio_vw" Width="1.5" PointX="3.375" PointY="8.75" />
         <EntityTypeShape EntityType="GRANDINEModel.Ricambi" Width="1.5" PointX="5.375" PointY="9.25" />
         <EntityTypeShape EntityType="GRANDINEModel.Telai_LastStatus_vw" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="GRANDINEModel.StoricoStatus_vw" Width="1.5" PointX="10.375" PointY="6.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

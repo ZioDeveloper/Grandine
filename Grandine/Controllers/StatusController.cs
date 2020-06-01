@@ -38,6 +38,12 @@ namespace Grandine.Controllers
         // GET: Status/Create
         public ActionResult Create()
         {
+            //var model = new Models.HomeModel();
+            //var myStatusStory = (from f in db.StoricoStatus
+            //              where f.IDTelaio.ToString() == id
+            //                     select f);
+            //model.StoricoStatus = myStatusStory.ToList();
+
             return View();
         }
 

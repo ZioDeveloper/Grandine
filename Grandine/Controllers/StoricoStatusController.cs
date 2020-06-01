@@ -39,6 +39,9 @@ namespace Grandine.Controllers
         // GET: StoricoStatus/Create
         public ActionResult Create()
         {
+
+
+
             ViewBag.IDStato = new SelectList(db.Status, "ID", "Descr");
             ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Codice");
             ViewBag.IDUtente = new SelectList(db.Utenti, "ID", "Nome");

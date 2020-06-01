@@ -4,11 +4,15 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h4>Inserisci nuovo stato</h4>
+<br /><br />
+
+
+
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken();
     @*@Html.HiddenFor(model => model.IDTelaio)*@
     <div class="form-horizontal">
         <h4>StoricoStatus</h4>
@@ -30,15 +34,7 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.IDTecnico, "IDTecnico", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                
-                @Html.DropDownList("IDTecnico", (SelectList)ViewData["Tecnici"], new { @class = "form-control" })
-            </div>
-        </div>*@
-
-        
+    
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

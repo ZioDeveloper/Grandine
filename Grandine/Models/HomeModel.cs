@@ -15,6 +15,8 @@ namespace Grandine.Models
         public IEnumerable<TipiDocumento> TipiDocumento { get; set; }
         public IEnumerable<FotoXTelaio_vw> FotoXTelaio_vw { get; set; }
         public IEnumerable<Status> Status { get; set; }
+        public IEnumerable<StoricoStatus> StoricoStatus { get; set; }
+        public IEnumerable<StoricoStatus_vw> StoricoStatus_vw { get; set; }
     }
 
 }

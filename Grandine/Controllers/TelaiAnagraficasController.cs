@@ -452,6 +452,18 @@ namespace Grandine.Controllers
             var elencoTecnici = new SelectList(model.Tecnici.ToList().OrderBy(m => m.ID), "ID", "Cognome");
             ViewData["Tecnici"] = elencoTecnici;
 
+            //var modelstatus = new Models.HomeModel();
+            //var storico = from m in db.StoricoStatus_vw
+                         
+            //              select m;
+
+            //var dati = from m in db.StoricoStatus
+            //           where m.IDTelaio == IDTelaio
+            //              select m;
+
+            //modelstatus.StoricoStatus_vw = storico.ToList();
+            //modelstatus.StoricoStatus = dati.ToList();
+
             return View();
 
         }

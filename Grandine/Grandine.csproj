@@ -202,6 +202,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrandineEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\GrandineEntities1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GrandineEntities1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,6 +220,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StoricoStatus.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoricoStatus_vw.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tecnici.cs">
@@ -281,6 +289,7 @@
     <Content Include="Models\GrandineEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GrandineEntities.edmx</DependentUpon>
+      <LastGenOutput>GrandineEntities1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
