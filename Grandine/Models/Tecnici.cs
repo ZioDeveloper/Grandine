@@ -17,9 +17,8 @@ namespace Grandine.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tecnici()
         {
-            this.ClientiXTecnici = new HashSet<ClientiXTecnici>();
             this.CommesseXTecnici = new HashSet<CommesseXTecnici>();
-            this.StoricoStatus = new HashSet<StoricoStatus>();
+            this.TelaiAnagrafica = new HashSet<TelaiAnagrafica>();
         }
     
         public int ID { get; set; }
@@ -30,10 +29,8 @@ namespace Grandine.Models
         public string Mail { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClientiXTecnici> ClientiXTecnici { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommesseXTecnici> CommesseXTecnici { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StoricoStatus> StoricoStatus { get; set; }
+        public virtual ICollection<TelaiAnagrafica> TelaiAnagrafica { get; set; }
     }
 }

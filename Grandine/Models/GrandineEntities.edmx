@@ -212,21 +212,40 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Telaio" Type="varchar" MaxLength="20" />
           <Property Name="Modello" Type="varchar" MaxLength="50" />
-          <Property Name="InsertUser" Type="varchar" MaxLength="20" StoreGeneratedPattern="Computed" />
-          <Property Name="InsertDate" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="InsertUser" Type="varchar" MaxLength="20" />
+          <Property Name="InsertDate" Type="datetime" />
           <Property Name="NomeFile" Type="varchar" MaxLength="50" />
           <Property Name="IDCommessa" Type="int" />
           <Property Name="Annotazioni" Type="varchar(max)" />
-          <Property Name="DataIn" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="DataIn" Type="datetime" />
           <Property Name="DataOut" Type="datetime" />
           <Property Name="NFattAttiva" Type="varchar" MaxLength="50" />
           <Property Name="DataFattAtt" Type="datetime" />
           <Property Name="ImpFattAtt" Type="float" />
-          <Property Name="IDCarrozzeria1" Type="int" />
-          <Property Name="IDCarrozzeria2" Type="int" />
-          <Property Name="IDBisarchistaAndata" Type="int" />
-          <Property Name="IDBisarchistaRitorno" Type="int" />
           <Property Name="IDTecnico" Type="int" />
+          <Property Name="DataFatturaPassiva" Type="datetime" />
+          <Property Name="ImportoFattPass" Type="float" />
+          <Property Name="IDCarrozzeria1" Type="int" />
+          <Property Name="NumFattCarrozzeria1" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaCarrozzeria1" Type="datetime" />
+          <Property Name="ImportoCarrozzeria1" Type="float" />
+          <Property Name="IDCarrozzeria2" Type="int" />
+          <Property Name="NumFattCarrozzeria2" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaCarrozzeria2" Type="datetime" />
+          <Property Name="ImportoCarrozzeria2" Type="float" />
+          <Property Name="IDCarglass" Type="int" />
+          <Property Name="NumFattCarGlass" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoFattCarGlass" Type="float" />
+          <Property Name="DataFatturaCarglass" Type="datetime" />
+          <Property Name="IDBisarchistaAndata" Type="int" />
+          <Property Name="NumFattBisarchistaA" Type="varchar" MaxLength="50" />
+          <Property Name="DataFattBisarchistaA" Type="datetime" />
+          <Property Name="CostoAndata" Type="float" />
+          <Property Name="IDBisarchistaRitorno" Type="int" />
+          <Property Name="NumFattBisarchistaR" Type="varchar" MaxLength="50" />
+          <Property Name="DataFattBisarchistaR" Type="datetime" />
+          <Property Name="CostoRitorno" Type="float" />
+          <Property Name="Costi" Type="float" />
         </EntityType>
         <EntityType Name="TipiDocumento">
           <Key>
@@ -291,18 +310,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="ClientiXTecnici">
               <PropertyRef Name="IDCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ClientiXTecnici_Tecnici">
-          <End Role="Tecnici" Type="Self.Tecnici" Multiplicity="1" />
-          <End Role="ClientiXTecnici" Type="Self.ClientiXTecnici" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tecnici">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ClientiXTecnici">
-              <PropertyRef Name="IDTecnico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -462,18 +469,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_StoricoStatus_Tecnici">
-          <End Role="Tecnici" Type="Self.Tecnici" Multiplicity="0..1" />
-          <End Role="StoricoStatus" Type="Self.StoricoStatus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tecnici">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StoricoStatus">
-              <PropertyRef Name="IDTecnico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_StoricoStatus_Utenti">
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="0..1" />
           <End Role="StoricoStatus" Type="Self.StoricoStatus" Multiplicity="*" />
@@ -546,6 +541,18 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TelaiAnagrafica_Tecnici">
+          <End Role="Tecnici" Type="Self.Tecnici" Multiplicity="0..1" />
+          <End Role="TelaiAnagrafica" Type="Self.TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Utenti_ClassiUtente">
           <End Role="ClassiUtente" Type="Self.ClassiUtente" Multiplicity="1" />
           <End Role="Utenti" Type="Self.Utenti" Multiplicity="*" />
@@ -611,10 +618,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Clienti" EntitySet="Clienti" />
             <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
           </AssociationSet>
-          <AssociationSet Name="FK_ClientiXTecnici_Tecnici" Association="Self.FK_ClientiXTecnici_Tecnici">
-            <End Role="Tecnici" EntitySet="Tecnici" />
-            <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
-          </AssociationSet>
           <AssociationSet Name="FK_Commesse_Clienti" Association="Self.FK_Commesse_Clienti">
             <End Role="Clienti" EntitySet="Clienti" />
             <End Role="Commesse" EntitySet="Commesse" />
@@ -667,10 +670,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Status" EntitySet="Status" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
           </AssociationSet>
-          <AssociationSet Name="FK_StoricoStatus_Tecnici" Association="Self.FK_StoricoStatus_Tecnici">
-            <End Role="Tecnici" EntitySet="Tecnici" />
-            <End Role="StoricoStatus" EntitySet="StoricoStatus" />
-          </AssociationSet>
           <AssociationSet Name="FK_StoricoStatus_Utenti" Association="Self.FK_StoricoStatus_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
@@ -693,6 +692,10 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           </AssociationSet>
           <AssociationSet Name="FK_TelaiAnagrafica_Commesse" Association="Self.FK_TelaiAnagrafica_Commesse">
             <End Role="Commesse" EntitySet="Commesse" />
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TelaiAnagrafica_Tecnici" Association="Self.FK_TelaiAnagrafica_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
           <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
@@ -755,24 +758,15 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySet Name="Bisarchista" EntityType="GRANDINEModel.Bisarchista" />
           <EntitySet Name="Citta" EntityType="GRANDINEModel.Citta" />
           <EntitySet Name="Clienti" EntityType="GRANDINEModel.Clienti" />
-          <EntitySet Name="Tecnici" EntityType="GRANDINEModel.Tecnici" />
           <EntitySet Name="ClientiXTecnici" EntityType="GRANDINEModel.ClientiXTecnici" />
           <AssociationSet Name="FK_ClientiXTecnici_Clienti" Association="GRANDINEModel.FK_ClientiXTecnici_Clienti">
             <End Role="Clienti" EntitySet="Clienti" />
-            <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ClientiXTecnici_Tecnici" Association="GRANDINEModel.FK_ClientiXTecnici_Tecnici">
-            <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="ClientiXTecnici" EntitySet="ClientiXTecnici" />
           </AssociationSet>
           <EntitySet Name="Commesse" EntityType="GRANDINEModel.Commesse" />
           <EntitySet Name="CommesseXTecnici" EntityType="GRANDINEModel.CommesseXTecnici" />
           <AssociationSet Name="FK_CommesseXTecnici_Commesse" Association="GRANDINEModel.FK_CommesseXTecnici_Commesse">
             <End Role="Commesse" EntitySet="Commesse" />
-            <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommesseXTecnici_Tecnici" Association="GRANDINEModel.FK_CommesseXTecnici_Tecnici">
-            <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
           </AssociationSet>
           <EntitySet Name="CommesseXClienti" EntityType="GRANDINEModel.CommesseXClienti" />
@@ -808,14 +802,25 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Status" EntitySet="Status" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
           </AssociationSet>
-          <AssociationSet Name="FK_StoricoStatus_Tecnici" Association="GRANDINEModel.FK_StoricoStatus_Tecnici">
-            <End Role="Tecnici" EntitySet="Tecnici" />
-            <End Role="StoricoStatus" EntitySet="StoricoStatus" />
-          </AssociationSet>
           <AssociationSet Name="FK_StoricoStatus_Utenti" Association="GRANDINEModel.FK_StoricoStatus_Utenti">
             <End Role="Utenti" EntitySet="Utenti" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
           </AssociationSet>
+          <EntitySet Name="FotoXTelaio" EntityType="GRANDINEModel.FotoXTelaio" />
+          <EntitySet Name="TipiDocumento" EntityType="GRANDINEModel.TipiDocumento" />
+          <AssociationSet Name="FK_FotoXTelaio_TipiDocumento" Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento">
+            <End Role="TipiDocumento" EntitySet="TipiDocumento" />
+            <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commesse_Clienti" Association="GRANDINEModel.FK_Commesse_Clienti">
+            <End Role="Clienti" EntitySet="Clienti" />
+            <End Role="Commesse" EntitySet="Commesse" />
+          </AssociationSet>
+          <EntitySet Name="FotoXTelaio_vw" EntityType="GRANDINEModel.FotoXTelaio_vw" />
+          <EntitySet Name="Ricambi" EntityType="GRANDINEModel.Ricambi" />
+          <EntitySet Name="Telai_LastStatus_vw" EntityType="GRANDINEModel.Telai_LastStatus_vw" />
+          <EntitySet Name="StoricoStatus_vw" EntityType="GRANDINEModel.StoricoStatus_vw" />
+          <EntitySet Name="Tecnici" EntityType="GRANDINEModel.Tecnici" />
           <EntitySet Name="TelaiAnagrafica" EntityType="GRANDINEModel.TelaiAnagrafica" />
           <AssociationSet Name="FK_TelaiAnagrafica_Bisarchista" Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista">
             <End Role="Bisarchista" EntitySet="Bisarchista" />
@@ -837,28 +842,22 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Commesse" EntitySet="Commesse" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
-          <AssociationSet Name="FK_IDTelaio" Association="GRANDINEModel.FK_IDTelaio">
-            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
-            <End Role="StoricoStatus" EntitySet="StoricoStatus" />
+          <AssociationSet Name="FK_CommesseXTecnici_Tecnici" Association="GRANDINEModel.FK_CommesseXTecnici_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
+            <End Role="CommesseXTecnici" EntitySet="CommesseXTecnici" />
           </AssociationSet>
-          <EntitySet Name="FotoXTelaio" EntityType="GRANDINEModel.FotoXTelaio" />
-          <EntitySet Name="TipiDocumento" EntityType="GRANDINEModel.TipiDocumento" />
           <AssociationSet Name="FK_FotoXTelaio_TelaiAnagrafica" Association="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica">
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
             <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
           </AssociationSet>
-          <AssociationSet Name="FK_FotoXTelaio_TipiDocumento" Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento">
-            <End Role="TipiDocumento" EntitySet="TipiDocumento" />
-            <End Role="FotoXTelaio" EntitySet="FotoXTelaio" />
+          <AssociationSet Name="FK_IDTelaio" Association="GRANDINEModel.FK_IDTelaio">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="StoricoStatus" EntitySet="StoricoStatus" />
           </AssociationSet>
-          <AssociationSet Name="FK_Commesse_Clienti" Association="GRANDINEModel.FK_Commesse_Clienti">
-            <End Role="Clienti" EntitySet="Clienti" />
-            <End Role="Commesse" EntitySet="Commesse" />
+          <AssociationSet Name="FK_TelaiAnagrafica_Tecnici" Association="GRANDINEModel.FK_TelaiAnagrafica_Tecnici">
+            <End Role="Tecnici" EntitySet="Tecnici" />
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
-          <EntitySet Name="FotoXTelaio_vw" EntityType="GRANDINEModel.FotoXTelaio_vw" />
-          <EntitySet Name="Ricambi" EntityType="GRANDINEModel.Ricambi" />
-          <EntitySet Name="Telai_LastStatus_vw" EntityType="GRANDINEModel.Telai_LastStatus_vw" />
-          <EntitySet Name="StoricoStatus_vw" EntityType="GRANDINEModel.StoricoStatus_vw" />
           </EntityContainer>
         <EntityType Name="Bisarchista">
           <Key>
@@ -869,7 +868,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="CommesseXBisarchisti" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Bisarchisti" FromRole="Bisarchista" ToRole="CommesseXBisarchisti" />
           <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista" FromRole="Bisarchista" ToRole="TelaiAnagrafica" />
           <NavigationProperty Name="TelaiAnagrafica1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista1" FromRole="Bisarchista" ToRole="TelaiAnagrafica" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="Citta">
           <Key>
             <PropertyRef Name="ID" />
@@ -900,20 +899,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="CommesseXClienti" Relationship="GRANDINEModel.FK_CommesseXClienti_Clienti" FromRole="Clienti" ToRole="CommesseXClienti" />
           <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_Commesse_Clienti" FromRole="Clienti" ToRole="Commesse" />
         </EntityType>
-        <EntityType Name="Tecnici">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Codice" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Cell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ClientiXTecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Tecnici" FromRole="Tecnici" ToRole="ClientiXTecnici" />
-          <NavigationProperty Name="CommesseXTecnici" Relationship="GRANDINEModel.FK_CommesseXTecnici_Tecnici" FromRole="Tecnici" ToRole="CommesseXTecnici" />
-          <NavigationProperty Name="StoricoStatus" Relationship="GRANDINEModel.FK_StoricoStatus_Tecnici" FromRole="Tecnici" ToRole="StoricoStatus" />
-        </EntityType>
         <EntityType Name="ClientiXTecnici">
           <Key>
             <PropertyRef Name="ID" />
@@ -922,7 +907,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="IDCliente" Type="Int32" Nullable="false" />
           <Property Name="IDTecnico" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Clienti" Relationship="GRANDINEModel.FK_ClientiXTecnici_Clienti" FromRole="ClientiXTecnici" ToRole="Clienti" />
-          <NavigationProperty Name="Tecnici" Relationship="GRANDINEModel.FK_ClientiXTecnici_Tecnici" FromRole="ClientiXTecnici" ToRole="Tecnici" />
         </EntityType>
         <Association Name="FK_ClientiXTecnici_Clienti">
           <End Type="GRANDINEModel.Clienti" Role="Clienti" Multiplicity="1" />
@@ -933,18 +917,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="ClientiXTecnici">
               <PropertyRef Name="IDCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ClientiXTecnici_Tecnici">
-          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="1" />
-          <End Type="GRANDINEModel.ClientiXTecnici" Role="ClientiXTecnici" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tecnici">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ClientiXTecnici">
-              <PropertyRef Name="IDTecnico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -961,9 +933,9 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="CommesseXClienti" Relationship="GRANDINEModel.FK_CommesseXClienti_Commesse" FromRole="Commesse" ToRole="CommesseXClienti" />
           <NavigationProperty Name="CommesseXBisarchisti" Relationship="GRANDINEModel.FK_CommesseXBisarchisti_Commesse" FromRole="Commesse" ToRole="CommesseXBisarchisti" />
           <NavigationProperty Name="CommesseXCarrozzerie" Relationship="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse" FromRole="Commesse" ToRole="CommesseXCarrozzerie" />
-          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Commesse" FromRole="Commesse" ToRole="TelaiAnagrafica" />
           <Property Name="IDCliente" Type="Int32" />
           <NavigationProperty Name="Clienti" Relationship="GRANDINEModel.FK_Commesse_Clienti" FromRole="Commesse" ToRole="Clienti" />
+          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Commesse" FromRole="Commesse" ToRole="TelaiAnagrafica" />
         </EntityType>
         <EntityType Name="CommesseXTecnici">
           <Key>
@@ -984,18 +956,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="CommesseXTecnici">
               <PropertyRef Name="IDCommessa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommesseXTecnici_Tecnici">
-          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.CommesseXTecnici" Role="CommesseXTecnici" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tecnici">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="CommesseXTecnici">
-              <PropertyRef Name="IDTecnico" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1125,7 +1085,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="InsertDate" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="InsertUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Status" Relationship="GRANDINEModel.FK_Status" FromRole="StoricoStatus" ToRole="Status" />
-          <NavigationProperty Name="Tecnici" Relationship="GRANDINEModel.FK_StoricoStatus_Tecnici" FromRole="StoricoStatus" ToRole="Tecnici" />
           <NavigationProperty Name="Utenti" Relationship="GRANDINEModel.FK_StoricoStatus_Utenti" FromRole="StoricoStatus" ToRole="Utenti" />
           <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_IDTelaio" FromRole="StoricoStatus" ToRole="TelaiAnagrafica" />
         </EntityType>
@@ -1141,18 +1100,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_StoricoStatus_Tecnici">
-          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.StoricoStatus" Role="StoricoStatus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tecnici">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StoricoStatus">
-              <PropertyRef Name="IDTecnico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_StoricoStatus_Utenti">
           <End Type="GRANDINEModel.Utenti" Role="Utenti" Multiplicity="0..1" />
           <End Type="GRANDINEModel.StoricoStatus" Role="StoricoStatus" Multiplicity="*" />
@@ -1162,108 +1109,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="StoricoStatus">
               <PropertyRef Name="IDUtente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="TelaiAnagrafica">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Telaio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Modello" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="InsertUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="InsertDate" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="NomeFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IDCommessa" Type="Int32" />
-          <Property Name="Annotazioni" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DataIn" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="DataOut" Type="DateTime" Precision="3" />
-          <Property Name="NFattAttiva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DataFattAtt" Type="DateTime" Precision="3" />
-          <Property Name="ImpFattAtt" Type="Double" />
-          <Property Name="IDCarrozzeria1" Type="Int32" />
-          <Property Name="IDCarrozzeria2" Type="Int32" />
-          <Property Name="IDBisarchistaAndata" Type="Int32" />
-          <Property Name="IDBisarchistaRitorno" Type="Int32" />
-          <NavigationProperty Name="Bisarchista" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista" FromRole="TelaiAnagrafica" ToRole="Bisarchista" />
-          <NavigationProperty Name="Bisarchista1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista1" FromRole="TelaiAnagrafica" ToRole="Bisarchista" />
-          <NavigationProperty Name="Carrozzeria" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria" FromRole="TelaiAnagrafica" ToRole="Carrozzeria" />
-          <NavigationProperty Name="Carrozzeria1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" FromRole="TelaiAnagrafica" ToRole="Carrozzeria" />
-          <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Commesse" FromRole="TelaiAnagrafica" ToRole="Commesse" />
-          <NavigationProperty Name="StoricoStatus" Relationship="GRANDINEModel.FK_IDTelaio" FromRole="TelaiAnagrafica" ToRole="StoricoStatus" />
-          <NavigationProperty Name="FotoXTelaio" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="FotoXTelaio" />
-          <Property Name="IDTecnico" Type="Int32" />
-        </EntityType>
-        <Association Name="FK_TelaiAnagrafica_Bisarchista">
-          <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bisarchista">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TelaiAnagrafica">
-              <PropertyRef Name="IDBisarchistaAndata" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TelaiAnagrafica_Bisarchista1">
-          <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bisarchista">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TelaiAnagrafica">
-              <PropertyRef Name="IDBisarchistaRitorno" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TelaiAnagrafica_Carrozzeria">
-          <End Type="GRANDINEModel.Carrozzeria" Role="Carrozzeria" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Carrozzeria">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TelaiAnagrafica">
-              <PropertyRef Name="IDCarrozzeria1" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TelaiAnagrafica_Carrozzeria1">
-          <End Type="GRANDINEModel.Carrozzeria" Role="Carrozzeria" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Carrozzeria">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TelaiAnagrafica">
-              <PropertyRef Name="IDCarrozzeria2" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TelaiAnagrafica_Commesse">
-          <End Type="GRANDINEModel.Commesse" Role="Commesse" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Commesse">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TelaiAnagrafica">
-              <PropertyRef Name="IDCommessa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_IDTelaio">
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.StoricoStatus" Role="StoricoStatus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TelaiAnagrafica">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StoricoStatus">
-              <PropertyRef Name="IDTelaio" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1277,8 +1122,8 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="NomeFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="InsertTime" Type="DateTime" Precision="3" />
           <Property Name="InsertUsert" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="FotoXTelaio" ToRole="TelaiAnagrafica" />
           <NavigationProperty Name="TipiDocumento" Relationship="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" FromRole="FotoXTelaio" ToRole="TipiDocumento" />
+          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="FotoXTelaio" ToRole="TelaiAnagrafica" />
         </EntityType>
         <EntityType Name="TipiDocumento">
           <Key>
@@ -1290,18 +1135,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="InsertDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="FotoXTelaio" Relationship="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" FromRole="TipiDocumento" ToRole="FotoXTelaio" />
         </EntityType>
-        <Association Name="FK_FotoXTelaio_TelaiAnagrafica">
-          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="0..1" />
-          <End Type="GRANDINEModel.FotoXTelaio" Role="FotoXTelaio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TelaiAnagrafica">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="FotoXTelaio">
-              <PropertyRef Name="IDTelaio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_FotoXTelaio_TipiDocumento">
           <End Type="GRANDINEModel.TipiDocumento" Role="TipiDocumento" Multiplicity="0..1" />
           <End Type="GRANDINEModel.FotoXTelaio" Role="FotoXTelaio" Multiplicity="*" />
@@ -1413,6 +1246,177 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="InsertDate" Type="DateTime" Precision="3" />
           <Property Name="IDTelaio" Type="Int32" />
         </EntityType>
+        <EntityType Name="Tecnici">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codice" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cognome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CommesseXTecnici" Relationship="GRANDINEModel.FK_CommesseXTecnici_Tecnici" FromRole="Tecnici" ToRole="CommesseXTecnici" />
+          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Tecnici" FromRole="Tecnici" ToRole="TelaiAnagrafica" />
+        </EntityType>
+        <EntityType Name="TelaiAnagrafica">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Telaio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Modello" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InsertUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <Property Name="NomeFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCommessa" Type="Int32" />
+          <Property Name="Annotazioni" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DataIn" Type="DateTime" Precision="3" />
+          <Property Name="DataOut" Type="DateTime" Precision="3" />
+          <Property Name="NFattAttiva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFattAtt" Type="DateTime" Precision="3" />
+          <Property Name="ImpFattAtt" Type="Double" />
+          <Property Name="IDTecnico" Type="Int32" />
+          <Property Name="DataFatturaPassiva" Type="DateTime" Precision="3" />
+          <Property Name="ImportoFattPass" Type="Double" />
+          <Property Name="IDCarrozzeria1" Type="Int32" />
+          <Property Name="NumFattCarrozzeria1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaCarrozzeria1" Type="DateTime" Precision="3" />
+          <Property Name="ImportoCarrozzeria1" Type="Double" />
+          <Property Name="IDCarrozzeria2" Type="Int32" />
+          <Property Name="NumFattCarrozzeria2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaCarrozzeria2" Type="DateTime" Precision="3" />
+          <Property Name="ImportoCarrozzeria2" Type="Double" />
+          <Property Name="IDCarglass" Type="Int32" />
+          <Property Name="NumFattCarGlass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoFattCarGlass" Type="Double" />
+          <Property Name="DataFatturaCarglass" Type="DateTime" Precision="3" />
+          <Property Name="IDBisarchistaAndata" Type="Int32" />
+          <Property Name="NumFattBisarchistaA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFattBisarchistaA" Type="DateTime" Precision="3" />
+          <Property Name="CostoAndata" Type="Double" />
+          <Property Name="IDBisarchistaRitorno" Type="Int32" />
+          <Property Name="NumFattBisarchistaR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFattBisarchistaR" Type="DateTime" Precision="3" />
+          <Property Name="CostoRitorno" Type="Double" />
+          <Property Name="Costi" Type="Double" />
+          <NavigationProperty Name="Bisarchista" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista" FromRole="TelaiAnagrafica" ToRole="Bisarchista" />
+          <NavigationProperty Name="Bisarchista1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista1" FromRole="TelaiAnagrafica" ToRole="Bisarchista" />
+          <NavigationProperty Name="Carrozzeria" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria" FromRole="TelaiAnagrafica" ToRole="Carrozzeria" />
+          <NavigationProperty Name="Carrozzeria1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" FromRole="TelaiAnagrafica" ToRole="Carrozzeria" />
+          <NavigationProperty Name="Commesse" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Commesse" FromRole="TelaiAnagrafica" ToRole="Commesse" />
+          <NavigationProperty Name="FotoXTelaio" Relationship="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="FotoXTelaio" />
+          <NavigationProperty Name="StoricoStatus" Relationship="GRANDINEModel.FK_IDTelaio" FromRole="TelaiAnagrafica" ToRole="StoricoStatus" />
+          <NavigationProperty Name="Tecnici" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Tecnici" FromRole="TelaiAnagrafica" ToRole="Tecnici" />
+        </EntityType>
+        <Association Name="FK_TelaiAnagrafica_Bisarchista">
+          <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bisarchista">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDBisarchistaAndata" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_Bisarchista1">
+          <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bisarchista">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDBisarchistaRitorno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_Carrozzeria">
+          <End Type="GRANDINEModel.Carrozzeria" Role="Carrozzeria" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrozzeria">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDCarrozzeria1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_Carrozzeria1">
+          <End Type="GRANDINEModel.Carrozzeria" Role="Carrozzeria" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrozzeria">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDCarrozzeria2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_Commesse">
+          <End Type="GRANDINEModel.Commesse" Role="Commesse" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commesse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDCommessa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommesseXTecnici_Tecnici">
+          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.CommesseXTecnici" Role="CommesseXTecnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommesseXTecnici">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FotoXTelaio_TelaiAnagrafica">
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.FotoXTelaio" Role="FotoXTelaio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FotoXTelaio">
+              <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IDTelaio">
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.StoricoStatus" Role="StoricoStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StoricoStatus">
+              <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_Tecnici">
+          <End Type="GRANDINEModel.Tecnici" Role="Tecnici" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnici">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1478,18 +1482,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
                 <ScalarProperty Name="Comune" ColumnName="Comune" />
                 <ScalarProperty Name="CAP" ColumnName="CAP" />
                 <ScalarProperty Name="RagioneSociale" ColumnName="RagioneSociale" />
-                <ScalarProperty Name="Codice" ColumnName="Codice" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tecnici">
-            <EntityTypeMapping TypeName="GRANDINEModel.Tecnici">
-              <MappingFragment StoreEntitySet="Tecnici">
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="Cell" ColumnName="Cell" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
                 <ScalarProperty Name="Codice" ColumnName="Codice" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -1571,30 +1563,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
                 <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
                 <ScalarProperty Name="IDStato" ColumnName="IDStato" />
                 <ScalarProperty Name="IDTelaio" ColumnName="IDTelaio" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TelaiAnagrafica">
-            <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
-              <MappingFragment StoreEntitySet="TelaiAnagrafica">
-                <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
-                <ScalarProperty Name="IDBisarchistaRitorno" ColumnName="IDBisarchistaRitorno" />
-                <ScalarProperty Name="IDBisarchistaAndata" ColumnName="IDBisarchistaAndata" />
-                <ScalarProperty Name="IDCarrozzeria2" ColumnName="IDCarrozzeria2" />
-                <ScalarProperty Name="IDCarrozzeria1" ColumnName="IDCarrozzeria1" />
-                <ScalarProperty Name="ImpFattAtt" ColumnName="ImpFattAtt" />
-                <ScalarProperty Name="DataFattAtt" ColumnName="DataFattAtt" />
-                <ScalarProperty Name="NFattAttiva" ColumnName="NFattAttiva" />
-                <ScalarProperty Name="DataOut" ColumnName="DataOut" />
-                <ScalarProperty Name="DataIn" ColumnName="DataIn" />
-                <ScalarProperty Name="Annotazioni" ColumnName="Annotazioni" />
-                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
-                <ScalarProperty Name="NomeFile" ColumnName="NomeFile" />
-                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-                <ScalarProperty Name="InsertUser" ColumnName="InsertUser" />
-                <ScalarProperty Name="Modello" ColumnName="Modello" />
-                <ScalarProperty Name="Telaio" ColumnName="Telaio" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1712,6 +1680,61 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Tecnici">
+            <EntityTypeMapping TypeName="GRANDINEModel.Tecnici">
+              <MappingFragment StoreEntitySet="Tecnici">
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Cell" ColumnName="Cell" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="Codice" ColumnName="Codice" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TelaiAnagrafica">
+            <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
+              <MappingFragment StoreEntitySet="TelaiAnagrafica">
+                <ScalarProperty Name="Costi" ColumnName="Costi" />
+                <ScalarProperty Name="CostoRitorno" ColumnName="CostoRitorno" />
+                <ScalarProperty Name="DataFattBisarchistaR" ColumnName="DataFattBisarchistaR" />
+                <ScalarProperty Name="NumFattBisarchistaR" ColumnName="NumFattBisarchistaR" />
+                <ScalarProperty Name="IDBisarchistaRitorno" ColumnName="IDBisarchistaRitorno" />
+                <ScalarProperty Name="CostoAndata" ColumnName="CostoAndata" />
+                <ScalarProperty Name="DataFattBisarchistaA" ColumnName="DataFattBisarchistaA" />
+                <ScalarProperty Name="NumFattBisarchistaA" ColumnName="NumFattBisarchistaA" />
+                <ScalarProperty Name="IDBisarchistaAndata" ColumnName="IDBisarchistaAndata" />
+                <ScalarProperty Name="DataFatturaCarglass" ColumnName="DataFatturaCarglass" />
+                <ScalarProperty Name="ImportoFattCarGlass" ColumnName="ImportoFattCarGlass" />
+                <ScalarProperty Name="NumFattCarGlass" ColumnName="NumFattCarGlass" />
+                <ScalarProperty Name="IDCarglass" ColumnName="IDCarglass" />
+                <ScalarProperty Name="ImportoCarrozzeria2" ColumnName="ImportoCarrozzeria2" />
+                <ScalarProperty Name="DataFatturaCarrozzeria2" ColumnName="DataFatturaCarrozzeria2" />
+                <ScalarProperty Name="NumFattCarrozzeria2" ColumnName="NumFattCarrozzeria2" />
+                <ScalarProperty Name="IDCarrozzeria2" ColumnName="IDCarrozzeria2" />
+                <ScalarProperty Name="ImportoCarrozzeria1" ColumnName="ImportoCarrozzeria1" />
+                <ScalarProperty Name="DataFatturaCarrozzeria1" ColumnName="DataFatturaCarrozzeria1" />
+                <ScalarProperty Name="NumFattCarrozzeria1" ColumnName="NumFattCarrozzeria1" />
+                <ScalarProperty Name="IDCarrozzeria1" ColumnName="IDCarrozzeria1" />
+                <ScalarProperty Name="ImportoFattPass" ColumnName="ImportoFattPass" />
+                <ScalarProperty Name="DataFatturaPassiva" ColumnName="DataFatturaPassiva" />
+                <ScalarProperty Name="IDTecnico" ColumnName="IDTecnico" />
+                <ScalarProperty Name="ImpFattAtt" ColumnName="ImpFattAtt" />
+                <ScalarProperty Name="DataFattAtt" ColumnName="DataFattAtt" />
+                <ScalarProperty Name="NFattAttiva" ColumnName="NFattAttiva" />
+                <ScalarProperty Name="DataOut" ColumnName="DataOut" />
+                <ScalarProperty Name="DataIn" ColumnName="DataIn" />
+                <ScalarProperty Name="Annotazioni" ColumnName="Annotazioni" />
+                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
+                <ScalarProperty Name="NomeFile" ColumnName="NomeFile" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="InsertUser" ColumnName="InsertUser" />
+                <ScalarProperty Name="Modello" ColumnName="Modello" />
+                <ScalarProperty Name="Telaio" ColumnName="Telaio" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1727,7 +1750,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

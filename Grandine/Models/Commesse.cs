@@ -39,8 +39,8 @@ namespace Grandine.Models
         public virtual ICollection<CommesseXBisarchisti> CommesseXBisarchisti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommesseXCarrozzerie> CommesseXCarrozzerie { get; set; }
+        public virtual Clienti Clienti { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TelaiAnagrafica> TelaiAnagrafica { get; set; }
-        public virtual Clienti Clienti { get; set; }
     }
 }

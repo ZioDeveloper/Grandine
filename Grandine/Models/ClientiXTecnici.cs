@@ -19,6 +19,5 @@ namespace Grandine.Models
         public int IDTecnico { get; set; }
     
         public virtual Clienti Clienti { get; set; }
-        public virtual Tecnici Tecnici { get; set; }
     }
 }

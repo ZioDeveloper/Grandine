@@ -12,14 +12,11 @@
         <EntityTypeShape EntityType="GRANDINEModel.Bisarchista" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="GRANDINEModel.Citta" Width="1.5" PointX="5.375" PointY="5.75" />
         <EntityTypeShape EntityType="GRANDINEModel.Clienti" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="GRANDINEModel.Tecnici" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="GRANDINEModel.ClientiXTecnici" Width="1.5" PointX="7.625" PointY="4" />
         <AssociationConnector Association="GRANDINEModel.FK_ClientiXTecnici_Clienti" />
-        <AssociationConnector Association="GRANDINEModel.FK_ClientiXTecnici_Tecnici" />
         <EntityTypeShape EntityType="GRANDINEModel.Commesse" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="GRANDINEModel.CommesseXTecnici" Width="1.5" PointX="10.625" PointY="4" />
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXTecnici_Commesse" />
-        <AssociationConnector Association="GRANDINEModel.FK_CommesseXTecnici_Tecnici" />
         <EntityTypeShape EntityType="GRANDINEModel.CommesseXClienti" Width="1.5" PointX="9.625" PointY="0.875" />
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXClienti_Clienti" />
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXClienti_Commesse" />
@@ -32,24 +29,26 @@
         <AssociationConnector Association="GRANDINEModel.FK_CommesseXCarrozzerie_Commesse" />
         <EntityTypeShape EntityType="GRANDINEModel.StoricoStatus" Width="1.5" PointX="8.25" PointY="6.75" />
         <AssociationConnector Association="GRANDINEModel.FK_Status" />
-        <AssociationConnector Association="GRANDINEModel.FK_StoricoStatus_Tecnici" />
         <AssociationConnector Association="GRANDINEModel.FK_StoricoStatus_Utenti" />
-        <EntityTypeShape EntityType="GRANDINEModel.TelaiAnagrafica" Width="1.5" PointX="18.5" PointY="1.25" />
-        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista" />
-        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista1" />
-        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria" />
-        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" />
-        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Commesse" />
-        <AssociationConnector Association="GRANDINEModel.FK_IDTelaio" />
         <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio" Width="1.5" PointX="20.75" PointY="3" />
         <EntityTypeShape EntityType="GRANDINEModel.TipiDocumento" Width="1.5" PointX="18.5" PointY="9.375" />
-        <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" />
         <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" />
         <AssociationConnector Association="GRANDINEModel.FK_Commesse_Clienti" />
         <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio_vw" Width="1.5" PointX="3.375" PointY="8.75" />
         <EntityTypeShape EntityType="GRANDINEModel.Ricambi" Width="1.5" PointX="5.375" PointY="9.25" />
         <EntityTypeShape EntityType="GRANDINEModel.Telai_LastStatus_vw" Width="1.5" PointX="0.75" PointY="10.75" />
         <EntityTypeShape EntityType="GRANDINEModel.StoricoStatus_vw" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="GRANDINEModel.Tecnici" Width="1.5" PointX="16.25" PointY="7.25" />
+        <EntityTypeShape EntityType="GRANDINEModel.TelaiAnagrafica" Width="1.5" PointX="18.5" PointY="0.75" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Bisarchista1" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Commesse" />
+        <AssociationConnector Association="GRANDINEModel.FK_CommesseXTecnici_Tecnici" />
+        <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TelaiAnagrafica" />
+        <AssociationConnector Association="GRANDINEModel.FK_IDTelaio" />
+        <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Tecnici" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

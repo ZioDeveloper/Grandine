@@ -21,7 +21,7 @@ namespace Grandine.Models
         public Nullable<System.DateTime> InsertTime { get; set; }
         public string InsertUsert { get; set; }
     
-        public virtual TelaiAnagrafica TelaiAnagrafica { get; set; }
         public virtual TipiDocumento TipiDocumento { get; set; }
+        public virtual TelaiAnagrafica TelaiAnagrafica { get; set; }
     }
 }

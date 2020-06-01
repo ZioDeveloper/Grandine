@@ -144,6 +144,7 @@
     <Compile Include="Controllers\StoricoStatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
     <Compile Include="Controllers\TelaiAnagraficasController.cs" />
+    <Compile Include="Controllers\TelaiCompletiController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -416,6 +417,11 @@
     <Content Include="Views\StoricoStatus\Details.cshtml" />
     <Content Include="Views\StoricoStatus\Edit.cshtml" />
     <Content Include="Views\StoricoStatus\Index.cshtml" />
+    <Content Include="Views\TelaiCompleti\Create.cshtml" />
+    <Content Include="Views\TelaiCompleti\Delete.cshtml" />
+    <Content Include="Views\TelaiCompleti\Details.cshtml" />
+    <Content Include="Views\TelaiCompleti\Edit.cshtml" />
+    <Content Include="Views\TelaiCompleti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

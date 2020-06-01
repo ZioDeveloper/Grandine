@@ -23,7 +23,6 @@ namespace Grandine.Models
         public string InsertUser { get; set; }
     
         public virtual Status Status { get; set; }
-        public virtual Tecnici Tecnici { get; set; }
         public virtual Utenti Utenti { get; set; }
         public virtual TelaiAnagrafica TelaiAnagrafica { get; set; }
     }

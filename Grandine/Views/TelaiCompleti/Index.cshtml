@@ -1,0 +1,243 @@
+﻿@model IEnumerable<Grandine.Models.TelaiAnagrafica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Telaio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modello)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsertUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsertDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Annotazioni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NFattAttiva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFattAtt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImpFattAtt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFatturaPassiva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImportoFattPass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFattCarrozzeria1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFatturaCarrozzeria1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImportoCarrozzeria1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFattCarrozzeria2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFatturaCarrozzeria2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImportoCarrozzeria2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCarglass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFattCarGlass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImportoFattCarGlass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFatturaCarglass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFattBisarchistaA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFattBisarchistaA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoAndata)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFattBisarchistaR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFattBisarchistaR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoRitorno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bisarchista.Descr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bisarchista1.Descr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carrozzeria.RagioneSociale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carrozzeria1.RagioneSociale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Commesse.Codice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecnici.Codice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telaio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modello)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsertUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsertDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Annotazioni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NFattAttiva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFattAtt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImpFattAtt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFatturaPassiva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImportoFattPass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFattCarrozzeria1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFatturaCarrozzeria1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImportoCarrozzeria1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFattCarrozzeria2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFatturaCarrozzeria2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImportoCarrozzeria2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCarglass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFattCarGlass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImportoFattCarGlass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFatturaCarglass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFattBisarchistaA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFattBisarchistaA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoAndata)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFattBisarchistaR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFattBisarchistaR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoRitorno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bisarchista.Descr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bisarchista1.Descr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carrozzeria.RagioneSociale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carrozzeria1.RagioneSociale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Commesse.Codice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tecnici.Codice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

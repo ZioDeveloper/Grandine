@@ -20,7 +20,7 @@ namespace Grandine.Controllers
         public ActionResult Index()
         {
             
-            var clientiXTecnici = db.ClientiXTecnici.Include(c => c.Clienti).Include(c => c.Tecnici);
+            var clientiXTecnici = db.ClientiXTecnici.Include(c => c.Clienti);
             return View(clientiXTecnici.ToList());
         }
 
