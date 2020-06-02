@@ -14,11 +14,41 @@ namespace Grandine.Controllers
     {
         private GRANDINEEntities db = new GRANDINEEntities();
 
+        int myIDCommessa = 0;
+
         // GET: TelaiCompleti
-        public ActionResult Index()
+        public ActionResult Index(int? IDCommessa)
         {
-            var telaiAnagrafica = db.TelaiAnagrafica.Include(t => t.Bisarchista).Include(t => t.Bisarchista1).Include(t => t.Carrozzeria).Include(t => t.Carrozzeria1).Include(t => t.Commesse).Include(t => t.Tecnici);
+            //var telaiAnagrafica = db.TelaiAnagrafica.Include(t => t.Bisarchista).Include(t => t.Bisarchista1).Include(t => t.Carrozzeria).Include(t => t.Carrozzeria1).Include(t => t.Commesse).Include(t => t.Tecnici);
+            //return View(telaiAnagrafica.ToList());
+            if (Session["IDCommessa"] == null)
+            {
+                Session["IDCommessa"] = IDCommessa;
+                Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
+            }
+            else
+            {
+                if ((Session["IDCommessa"].ToString() == IDCommessa.ToString()))
+                    Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
+                else
+                {
+                    Session["IDCommessa"] = IDCommessa;
+                    Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
+                }
+
+            }
+
+            //var telaiAnagrafica = db.TelaiAnagrafica.Include
+            //        (t => t.Bisarchista).Include
+            //        (t => t.Bisarchista1).Include
+            //        (t => t.Carrozzeria).Include
+            //        (t => t.Carrozzeria1).Include
+            //        (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa).Include
+            //        (t=>t.StoricoStatus);
+
+            var telaiAnagrafica = db.Telai_LastStatus_vw;
             return View(telaiAnagrafica.ToList());
+
         }
 
         // GET: TelaiCompleti/Details/5
@@ -45,6 +75,7 @@ namespace Grandine.Controllers
             ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
             ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione");
             ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome");
+            ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
             return View();
         }
 

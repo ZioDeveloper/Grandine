@@ -47,5 +47,6 @@ namespace Grandine.Models
         public virtual DbSet<StoricoStatus_vw> StoricoStatus_vw { get; set; }
         public virtual DbSet<Tecnici> Tecnici { get; set; }
         public virtual DbSet<TelaiAnagrafica> TelaiAnagrafica { get; set; }
+        public virtual DbSet<Carglass> Carglass { get; set; }
     }
 }

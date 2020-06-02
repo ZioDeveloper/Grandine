@@ -17,7 +17,8 @@
 <h4>Gestione telai</h4>
 <br />
 <p>
-    @Html.ActionLink("Inserisci telaio", "Create", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+   @Html.ActionLink("Inserisci telaio", "Create", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+    @*@Html.ActionLink("Inserisci telaio","Create","TelaiCompleti", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })*@
 </p>
 <br />
 <table id="ElencoTelai" class="display" style="width:100%">
@@ -34,7 +35,7 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-        {
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Telaio)
@@ -49,18 +50,18 @@
                 @Html.ActionLink("Status", "InsertStatus", new { IDTElaio = item.ID }, new { @class = "btn btn-success btn-xs" })
             </td>
             <td>
-                @Html.ActionLink("Modifica", "Edit", new { IDTelaio = item.ID }, new { @class = "btn btn-success btn-xs" })
+                @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
 
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-info" })*@
-            </td>
-            <td>
-                @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
-            </td>
-            <td>
-                @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
-            </td>
-        </tr>
-        }
+    @*@Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-info" })*@
+    </td>
+    <td>
+        @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
+    </td>
+    <td>
+        @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
+    </td>
+    </tr>
+    }
     </tbody>
     <tfoot>
         <tr>
@@ -73,13 +74,13 @@
             <th>Foto</th>
         </tr>
     </tfoot>
-</table>
-<br />
-<div>
-    @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
-</div>
-<script>
-    $(document).ready(function () {
-        $('#ElencoTelai').DataTable();
-    });
-</script>
+    </table>
+    <br />
+    <div>
+        @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#ElencoTelai').DataTable();
+        });
+    </script>

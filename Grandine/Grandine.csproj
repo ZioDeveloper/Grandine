@@ -152,6 +152,9 @@
     <Compile Include="Models\Bisarchista.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Carglass.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Carrozzeria.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>

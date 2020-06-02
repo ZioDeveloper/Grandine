@@ -69,5 +69,6 @@ namespace Grandine.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StoricoStatus> StoricoStatus { get; set; }
         public virtual Tecnici Tecnici { get; set; }
+        public virtual Carglass Carglass { get; set; }
     }
 }
