@@ -55,7 +55,7 @@
             </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IDCommessa, "IDCommessa", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Commessa", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IDCommessa", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IDCommessa, "", new { @class = "text-danger" })
@@ -177,7 +177,7 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Data fatt carrozzeria 1", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Data fatt carrozzeria 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DataFatturaCarrozzeria2, new { htmlAttributes = new { @class = "datetime-local", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.DataFatturaCarrozzeria2, "", new { @class = "text-danger" })
@@ -185,7 +185,7 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Importo carrozzeria 1", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Importo carrozzeria 2", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ImportoCarrozzeria2, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ImportoCarrozzeria2, "", new { @class = "text-danger" })
