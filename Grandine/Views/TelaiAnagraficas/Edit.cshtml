@@ -22,8 +22,8 @@
 
     <form>
         <div class="form-row">
-            <hr class="new1" />
-            <b>Sezione dati generali</b>
+            <hr class="bordonero" />
+            <b class="sectionlabel">Sezione dati generali</b>
             <br /><br />
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -70,9 +70,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-
-                    <hr />
-                    Dati fatturazione attiva / passiva
+                    <hr class="nero" />
+                    <b class="sectionlabel">Dati fatturazione attiva / passiva</b>
                     <br />
                 </div>
             </div>
@@ -125,8 +124,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
 
-                    <hr />
-                    Carrozzeria 1
+                    <hr class="nero" />
+                    <b style="color:darkgreen">Carrozzeria 1</b>
                     <br />
                 </div>
             </div>
@@ -165,8 +164,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
 
-                    <hr />
-                    Carrozzeria 2
+                    <hr class="nero" />
+                    <b class="sectionlabel>Carrozzeria 2</b>
                     <br />
                 </div>
             </div>
@@ -206,8 +205,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
 
-                    <hr />
-                    Carglass
+                    <hr class="nero" />
+                    <b class="sectionlabel">Carglass</b>
                     <br />
                 </div>
             </div>
@@ -247,8 +246,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
 
-                    <hr />
-                    Bisarchista ANDATA
+                    <hr class="nero" />
+                    <b class="sectionlabel">Bisarchista ANDATA</b>
                     <br />
                 </div>
             </div>
@@ -288,8 +287,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
 
-                    <hr />
-                    Bisarchista RITORNO
+                    <hr class="nero" />
+                    <b class="sectionlabel">Bisarchista RITORNO</b>
                     <br />
                 </div>
             </div>
@@ -329,8 +328,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <br /><br />
-                    <hr />
-                    Costi
+                    <hr class="nero" />
+                    <b class="sectionlabel">Costi</b>
                     <br />
                 </div>
             </div>
@@ -347,8 +346,8 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <br /><br />
-                    <hr />
-                    Note
+                    <hr class="nero" />
+                    <b class="sectionlabel">Note</b>
                     <br />
                 </div>
             </div>
@@ -359,19 +358,21 @@
                 <div class="form-group col-md-12">
                     @Html.LabelFor(model => model.Annotazioni, htmlAttributes: new { @class = "control-label col-md-12" })
                     <div>
-                        @Html.EditorFor(model => model.Annotazioni, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextAreaFor(model => model.Annotazioni, new { htmlAttributes = new { @class = "form-control input-lg" } })
                         @Html.ValidationMessageFor(model => model.Annotazioni, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
 
-    </form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
-        </div>
-    </div>
+</form>
+
+ 
 
 }
 
@@ -379,9 +380,11 @@
 <br />
 <form>
     <div class="form-row">
-        <hr />
+        <div class="form-group col-md-12">
 
-        <br />
-        @Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+            <hr class="bordonero" />
+            <br />
+            @Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        </div>
     </div>
 </form>
