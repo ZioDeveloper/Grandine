@@ -29,3 +29,6 @@ textarea {
     height: 32px;
     text-indent: -9999px;
 }
+hr.new1 {
+    border-top: 1px solid red;
+}

@@ -425,6 +425,7 @@
     <Content Include="Views\TelaiCompleti\Details.cshtml" />
     <Content Include="Views\TelaiCompleti\Edit.cshtml" />
     <Content Include="Views\TelaiCompleti\Index.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\EditTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
