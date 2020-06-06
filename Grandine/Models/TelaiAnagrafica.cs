@@ -58,6 +58,9 @@ namespace Grandine.Models
         public Nullable<System.DateTime> DataFattBisarchistaR { get; set; }
         public Nullable<double> CostoRitorno { get; set; }
         public Nullable<double> Costi { get; set; }
+        public string NumFattTecnico { get; set; }
+        public string Chiave { get; set; }
+        public string Fila { get; set; }
     
         public virtual Bisarchista Bisarchista { get; set; }
         public virtual Bisarchista Bisarchista1 { get; set; }

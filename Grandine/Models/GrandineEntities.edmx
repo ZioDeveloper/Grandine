@@ -232,6 +232,7 @@
           <Property Name="DataFattAtt" Type="datetime" />
           <Property Name="ImpFattAtt" Type="float" />
           <Property Name="IDTecnico" Type="int" />
+          <Property Name="NumFattTecnico" Type="varchar" MaxLength="50" />
           <Property Name="DataFatturaPassiva" Type="datetime" />
           <Property Name="ImportoFattPass" Type="float" />
           <Property Name="IDCarrozzeria1" Type="int" />
@@ -255,6 +256,8 @@
           <Property Name="DataFattBisarchistaR" Type="datetime" />
           <Property Name="CostoRitorno" Type="float" />
           <Property Name="Costi" Type="float" />
+          <Property Name="Chiave" Type="varchar" MaxLength="50" />
+          <Property Name="Fila" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TipiDocumento">
           <Key>
@@ -1340,6 +1343,9 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="StoricoStatus" Relationship="GRANDINEModel.FK_IDTelaio" FromRole="TelaiAnagrafica" ToRole="StoricoStatus" />
           <NavigationProperty Name="Tecnici" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Tecnici" FromRole="TelaiAnagrafica" ToRole="Tecnici" />
           <NavigationProperty Name="Carglass" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carglass" FromRole="TelaiAnagrafica" ToRole="Carglass" />
+          <Property Name="NumFattTecnico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Chiave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1749,6 +1755,9 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="TelaiAnagrafica">
             <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
               <MappingFragment StoreEntitySet="TelaiAnagrafica">
+                <ScalarProperty Name="Fila" ColumnName="Fila" />
+                <ScalarProperty Name="Chiave" ColumnName="Chiave" />
+                <ScalarProperty Name="NumFattTecnico" ColumnName="NumFattTecnico" />
                 <ScalarProperty Name="Costi" ColumnName="Costi" />
                 <ScalarProperty Name="CostoRitorno" ColumnName="CostoRitorno" />
                 <ScalarProperty Name="DataFattBisarchistaR" ColumnName="DataFattBisarchistaR" />

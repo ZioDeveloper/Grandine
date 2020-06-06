@@ -161,7 +161,12 @@ namespace Grandine.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt,IDTecnico,DataFatturaPassiva,ImportoFattPass,IDCarrozzeria1,NumFattCarrozzeria1,DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2,ImportoCarrozzeria2,IDCarglass,NumFattCarGlass,ImportoFattCarGlass,DataFatturaCarglass,IDBisarchistaAndata,NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR,DataFattBisarchistaR,CostoRitorno,Costi")] TelaiAnagrafica telaiAnagrafica)
+        public ActionResult Edit([Bind(Include = " ID,Telaio,IDCommessa,Modello,InsertUser,InsertDate,NomeFile,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt, " +
+                                                 " ImpFattAtt,IDTecnico,NumFattTecnico,DataFatturaPassiva,ImportoFattPass,IDCarrozzeria1,NumFattCarrozzeria1, " +
+                                                 " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
+                                                 " ImportoCarrozzeria2,IDCarglass,NumFattCarGlass,ImportoFattCarGlass,DataFatturaCarglass,IDBisarchistaAndata, " +
+                                                 "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila")] TelaiAnagrafica telaiAnagrafica)
         {
             if (ModelState.IsValid)
             {
