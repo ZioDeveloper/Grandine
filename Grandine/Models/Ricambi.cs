@@ -67,5 +67,7 @@ namespace Grandine.Models
         public bool CATADIOTTRO_ANT_DX { get; set; }
         public bool FANALE_ANT_DX { get; set; }
         public bool FRECCIA_PARAURTI_ANT_DX { get; set; }
+    
+        public virtual TelaiAnagrafica TelaiAnagrafica { get; set; }
     }
 }

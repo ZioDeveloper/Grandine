@@ -132,57 +132,57 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDTelaio" Type="int" Nullable="false" />
-          <Property Name="COFANO_ANT" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="LOGO_ANT" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FANALE_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAURT_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CATADIOTTRO_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAFANGO_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CALANDRA_SOTTOPARABREZZA" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="PARABREZZA" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="GUARNIZIONE_PARABREZZA_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORPO_SPECCHIO_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="VETRINO_SPECCHIO_RETROVISORE_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CALOTTA_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_SPECCHIO_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_POST_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_POST_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_POST_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PARAFANGO_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_ANT_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_POST_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORRIMANO_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="BASE_ANTENNA" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="TERZO_STOP" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_COFANO_POST" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FANALE_POST_PARAFANGO_SX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="COFANO_POST" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="LOGO_POST" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="LUNOTTO" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CAPPELLIERA" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="SPORTELLO_CARBURANTE" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORRIMANO_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_POST_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PARAFANGO_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_POST_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_POST_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_POST_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CORPO_SPECCHIO_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="VETRINO_SPECCHIO_RETROVISORE_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CALOTTA_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_SPECCHIO_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="GUARNIZIONE_PARABREZZA_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAFANGO_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="CATADIOTTRO_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FANALE_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAURTI_ANT_DX" Type="bit" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="COFANO_ANT" Type="bit" Nullable="false" />
+          <Property Name="LOGO_ANT" Type="bit" Nullable="false" />
+          <Property Name="FANALE_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="FRECCIA_PARAURT_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="CATADIOTTRO_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="FRECCIA_PARAFANGO_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="CALANDRA_SOTTOPARABREZZA" Type="bit" Nullable="false" />
+          <Property Name="PARABREZZA" Type="bit" Nullable="false" />
+          <Property Name="GUARNIZIONE_PARABREZZA_SX" Type="bit" Nullable="false" />
+          <Property Name="CORPO_SPECCHIO_SX" Type="bit" Nullable="false" />
+          <Property Name="VETRINO_SPECCHIO_RETROVISORE_SX" Type="bit" Nullable="false" />
+          <Property Name="CALOTTA_SX" Type="bit" Nullable="false" />
+          <Property Name="FRECCIA_SPECCHIO_SX" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_PORTA_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_PORTA_POST_SX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_POST_SX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_POST_SX" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_PARAFANGO_SX" Type="bit" Nullable="false" />
+          <Property Name="RASAVETRO_ANT_SX" Type="bit" Nullable="false" />
+          <Property Name="RASAVETRO_POST_SX" Type="bit" Nullable="false" />
+          <Property Name="CORRIMANO_SX" Type="bit" Nullable="false" />
+          <Property Name="BASE_ANTENNA" Type="bit" Nullable="false" />
+          <Property Name="TERZO_STOP" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_COFANO_POST" Type="bit" Nullable="false" />
+          <Property Name="FANALE_POST_PARAFANGO_SX" Type="bit" Nullable="false" />
+          <Property Name="COFANO_POST" Type="bit" Nullable="false" />
+          <Property Name="LOGO_POST" Type="bit" Nullable="false" />
+          <Property Name="LUNOTTO" Type="bit" Nullable="false" />
+          <Property Name="CAPPELLIERA" Type="bit" Nullable="false" />
+          <Property Name="SPORTELLO_CARBURANTE" Type="bit" Nullable="false" />
+          <Property Name="CORRIMANO_DX" Type="bit" Nullable="false" />
+          <Property Name="RASAVETRO_POST_DX" Type="bit" Nullable="false" />
+          <Property Name="RASAVETRO_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_PARAFANGO_DX" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_PORTA_POST_DX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_POST_DX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_POST_DX" Type="bit" Nullable="false" />
+          <Property Name="CORNICE_PORTA_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="CORPO_SPECCHIO_DX" Type="bit" Nullable="false" />
+          <Property Name="VETRINO_SPECCHIO_RETROVISORE_DX" Type="bit" Nullable="false" />
+          <Property Name="CALOTTA_DX" Type="bit" Nullable="false" />
+          <Property Name="FRECCIA_SPECCHIO_DX" Type="bit" Nullable="false" />
+          <Property Name="GUARNIZIONE_PARABREZZA_DX" Type="bit" Nullable="false" />
+          <Property Name="FRECCIA_PARAFANGO_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="CATADIOTTRO_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="FANALE_ANT_DX" Type="bit" Nullable="false" />
+          <Property Name="FRECCIA_PARAURTI_ANT_DX" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
@@ -470,6 +470,18 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Ricambi_TelaiAnagrafica">
+          <End Role="TelaiAnagrafica" Type="Self.TelaiAnagrafica" Multiplicity="1" />
+          <End Role="Ricambi" Type="Self.Ricambi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ricambi">
+              <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Status">
           <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
           <End Role="StoricoStatus" Type="Self.StoricoStatus" Multiplicity="*" />
@@ -693,6 +705,10 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
           </AssociationSet>
+          <AssociationSet Name="FK_Ricambi_TelaiAnagrafica" Association="Self.FK_Ricambi_TelaiAnagrafica">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="Ricambi" EntitySet="Ricambi" />
+          </AssociationSet>
           <AssociationSet Name="FK_Status" Association="Self.FK_Status">
             <End Role="Status" EntitySet="Status" />
             <End Role="StoricoStatus" EntitySet="StoricoStatus" />
@@ -848,7 +864,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Commesse" EntitySet="Commesse" />
           </AssociationSet>
           <EntitySet Name="FotoXTelaio_vw" EntityType="GRANDINEModel.FotoXTelaio_vw" />
-          <EntitySet Name="Ricambi" EntityType="GRANDINEModel.Ricambi" />
           <EntitySet Name="Telai_LastStatus_vw" EntityType="GRANDINEModel.Telai_LastStatus_vw" />
           <EntitySet Name="StoricoStatus_vw" EntityType="GRANDINEModel.StoricoStatus_vw" />
           <EntitySet Name="Tecnici" EntityType="GRANDINEModel.Tecnici" />
@@ -893,6 +908,11 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <AssociationSet Name="FK_TelaiAnagrafica_Carglass" Association="GRANDINEModel.FK_TelaiAnagrafica_Carglass">
             <End Role="Carglass" EntitySet="Carglass" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+          </AssociationSet>
+          <EntitySet Name="Ricambi" EntityType="GRANDINEModel.Ricambi" />
+          <AssociationSet Name="FK_Ricambi_TelaiAnagrafica" Association="GRANDINEModel.FK_Ricambi_TelaiAnagrafica">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="Ricambi" EntitySet="Ricambi" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Bisarchista">
@@ -1205,64 +1225,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="NomeFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TipoDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Ricambi">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDTelaio" Type="Int32" Nullable="false" />
-          <Property Name="COFANO_ANT" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="LOGO_ANT" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FANALE_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAURT_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CATADIOTTRO_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAFANGO_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CALANDRA_SOTTOPARABREZZA" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="PARABREZZA" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="GUARNIZIONE_PARABREZZA_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORPO_SPECCHIO_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="VETRINO_SPECCHIO_RETROVISORE_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CALOTTA_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_SPECCHIO_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_POST_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_POST_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_POST_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PARAFANGO_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_ANT_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_POST_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORRIMANO_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="BASE_ANTENNA" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="TERZO_STOP" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_COFANO_POST" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FANALE_POST_PARAFANGO_SX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="COFANO_POST" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="LOGO_POST" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="LUNOTTO" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CAPPELLIERA" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="SPORTELLO_CARBURANTE" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORRIMANO_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_POST_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="RASAVETRO_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PARAFANGO_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_POST_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_POST_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_POST_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORNICE_PORTA_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_ANT_PORTA_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="MONTANTE_POST_PORTA_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CORPO_SPECCHIO_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="VETRINO_SPECCHIO_RETROVISORE_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CALOTTA_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_SPECCHIO_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="GUARNIZIONE_PARABREZZA_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAFANGO_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="CATADIOTTRO_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FANALE_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="FRECCIA_PARAURTI_ANT_DX" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-        </EntityType>
         <EntityType Name="Telai_LastStatus_vw">
           <Key>
             <PropertyRef Name="ID" />
@@ -1349,6 +1311,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="NumFattTecnico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Chiave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Ricambi" Relationship="GRANDINEModel.FK_Ricambi_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="Ricambi" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1477,6 +1440,77 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="TelaiAnagrafica">
               <PropertyRef Name="IDCarglass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ricambi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTelaio" Type="Int32" Nullable="false" />
+          <Property Name="COFANO_ANT" Type="Boolean" Nullable="false" />
+          <Property Name="LOGO_ANT" Type="Boolean" Nullable="false" />
+          <Property Name="FANALE_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="FRECCIA_PARAURT_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CATADIOTTRO_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="FRECCIA_PARAFANGO_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CALANDRA_SOTTOPARABREZZA" Type="Boolean" Nullable="false" />
+          <Property Name="PARABREZZA" Type="Boolean" Nullable="false" />
+          <Property Name="GUARNIZIONE_PARABREZZA_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CORPO_SPECCHIO_SX" Type="Boolean" Nullable="false" />
+          <Property Name="VETRINO_SPECCHIO_RETROVISORE_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CALOTTA_SX" Type="Boolean" Nullable="false" />
+          <Property Name="FRECCIA_SPECCHIO_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_PORTA_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_PORTA_POST_SX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_POST_SX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_POST_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_PARAFANGO_SX" Type="Boolean" Nullable="false" />
+          <Property Name="RASAVETRO_ANT_SX" Type="Boolean" Nullable="false" />
+          <Property Name="RASAVETRO_POST_SX" Type="Boolean" Nullable="false" />
+          <Property Name="CORRIMANO_SX" Type="Boolean" Nullable="false" />
+          <Property Name="BASE_ANTENNA" Type="Boolean" Nullable="false" />
+          <Property Name="TERZO_STOP" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_COFANO_POST" Type="Boolean" Nullable="false" />
+          <Property Name="FANALE_POST_PARAFANGO_SX" Type="Boolean" Nullable="false" />
+          <Property Name="COFANO_POST" Type="Boolean" Nullable="false" />
+          <Property Name="LOGO_POST" Type="Boolean" Nullable="false" />
+          <Property Name="LUNOTTO" Type="Boolean" Nullable="false" />
+          <Property Name="CAPPELLIERA" Type="Boolean" Nullable="false" />
+          <Property Name="SPORTELLO_CARBURANTE" Type="Boolean" Nullable="false" />
+          <Property Name="CORRIMANO_DX" Type="Boolean" Nullable="false" />
+          <Property Name="RASAVETRO_POST_DX" Type="Boolean" Nullable="false" />
+          <Property Name="RASAVETRO_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_PARAFANGO_DX" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_PORTA_POST_DX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_POST_DX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_POST_DX" Type="Boolean" Nullable="false" />
+          <Property Name="CORNICE_PORTA_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_ANT_PORTA_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="MONTANTE_POST_PORTA_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="CORPO_SPECCHIO_DX" Type="Boolean" Nullable="false" />
+          <Property Name="VETRINO_SPECCHIO_RETROVISORE_DX" Type="Boolean" Nullable="false" />
+          <Property Name="CALOTTA_DX" Type="Boolean" Nullable="false" />
+          <Property Name="FRECCIA_SPECCHIO_DX" Type="Boolean" Nullable="false" />
+          <Property Name="GUARNIZIONE_PARABREZZA_DX" Type="Boolean" Nullable="false" />
+          <Property Name="FRECCIA_PARAFANGO_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="CATADIOTTRO_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="FANALE_ANT_DX" Type="Boolean" Nullable="false" />
+          <Property Name="FRECCIA_PARAURTI_ANT_DX" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_Ricambi_TelaiAnagrafica" FromRole="Ricambi" ToRole="TelaiAnagrafica" />
+        </EntityType>
+        <Association Name="FK_Ricambi_TelaiAnagrafica">
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="1" />
+          <End Type="GRANDINEModel.Ricambi" Role="Ricambi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ricambi">
+              <PropertyRef Name="IDTelaio" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1663,65 +1697,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ricambi">
-            <EntityTypeMapping TypeName="GRANDINEModel.Ricambi">
-              <MappingFragment StoreEntitySet="Ricambi">
-                <ScalarProperty Name="FRECCIA_PARAURTI_ANT_DX" ColumnName="FRECCIA_PARAURTI_ANT_DX" />
-                <ScalarProperty Name="FANALE_ANT_DX" ColumnName="FANALE_ANT_DX" />
-                <ScalarProperty Name="CATADIOTTRO_ANT_DX" ColumnName="CATADIOTTRO_ANT_DX" />
-                <ScalarProperty Name="FRECCIA_PARAFANGO_ANT_DX" ColumnName="FRECCIA_PARAFANGO_ANT_DX" />
-                <ScalarProperty Name="GUARNIZIONE_PARABREZZA_DX" ColumnName="GUARNIZIONE_PARABREZZA_DX" />
-                <ScalarProperty Name="FRECCIA_SPECCHIO_DX" ColumnName="FRECCIA_SPECCHIO_DX" />
-                <ScalarProperty Name="CALOTTA_DX" ColumnName="CALOTTA_DX" />
-                <ScalarProperty Name="VETRINO_SPECCHIO_RETROVISORE_DX" ColumnName="VETRINO_SPECCHIO_RETROVISORE_DX" />
-                <ScalarProperty Name="CORPO_SPECCHIO_DX" ColumnName="CORPO_SPECCHIO_DX" />
-                <ScalarProperty Name="MONTANTE_POST_PORTA_ANT_DX" ColumnName="MONTANTE_POST_PORTA_ANT_DX" />
-                <ScalarProperty Name="MONTANTE_ANT_PORTA_ANT_DX" ColumnName="MONTANTE_ANT_PORTA_ANT_DX" />
-                <ScalarProperty Name="CORNICE_PORTA_ANT_DX" ColumnName="CORNICE_PORTA_ANT_DX" />
-                <ScalarProperty Name="MONTANTE_POST_PORTA_POST_DX" ColumnName="MONTANTE_POST_PORTA_POST_DX" />
-                <ScalarProperty Name="MONTANTE_ANT_PORTA_POST_DX" ColumnName="MONTANTE_ANT_PORTA_POST_DX" />
-                <ScalarProperty Name="CORNICE_PORTA_POST_DX" ColumnName="CORNICE_PORTA_POST_DX" />
-                <ScalarProperty Name="CORNICE_PARAFANGO_DX" ColumnName="CORNICE_PARAFANGO_DX" />
-                <ScalarProperty Name="RASAVETRO_ANT_DX" ColumnName="RASAVETRO_ANT_DX" />
-                <ScalarProperty Name="RASAVETRO_POST_DX" ColumnName="RASAVETRO_POST_DX" />
-                <ScalarProperty Name="CORRIMANO_DX" ColumnName="CORRIMANO_DX" />
-                <ScalarProperty Name="SPORTELLO_CARBURANTE" ColumnName="SPORTELLO_CARBURANTE" />
-                <ScalarProperty Name="CAPPELLIERA" ColumnName="CAPPELLIERA" />
-                <ScalarProperty Name="LUNOTTO" ColumnName="LUNOTTO" />
-                <ScalarProperty Name="LOGO_POST" ColumnName="LOGO_POST" />
-                <ScalarProperty Name="COFANO_POST" ColumnName="COFANO_POST" />
-                <ScalarProperty Name="FANALE_POST_PARAFANGO_SX" ColumnName="FANALE_POST_PARAFANGO_SX" />
-                <ScalarProperty Name="CORNICE_COFANO_POST" ColumnName="CORNICE_COFANO_POST" />
-                <ScalarProperty Name="TERZO_STOP" ColumnName="TERZO_STOP" />
-                <ScalarProperty Name="BASE_ANTENNA" ColumnName="BASE_ANTENNA" />
-                <ScalarProperty Name="CORRIMANO_SX" ColumnName="CORRIMANO_SX" />
-                <ScalarProperty Name="RASAVETRO_POST_SX" ColumnName="RASAVETRO_POST_SX" />
-                <ScalarProperty Name="RASAVETRO_ANT_SX" ColumnName="RASAVETRO_ANT_SX" />
-                <ScalarProperty Name="CORNICE_PARAFANGO_SX" ColumnName="CORNICE_PARAFANGO_SX" />
-                <ScalarProperty Name="MONTANTE_POST_PORTA_POST_SX" ColumnName="MONTANTE_POST_PORTA_POST_SX" />
-                <ScalarProperty Name="MONTANTE_ANT_PORTA_POST_SX" ColumnName="MONTANTE_ANT_PORTA_POST_SX" />
-                <ScalarProperty Name="CORNICE_PORTA_POST_SX" ColumnName="CORNICE_PORTA_POST_SX" />
-                <ScalarProperty Name="MONTANTE_POST_PORTA_ANT_SX" ColumnName="MONTANTE_POST_PORTA_ANT_SX" />
-                <ScalarProperty Name="MONTANTE_ANT_PORTA_ANT_SX" ColumnName="MONTANTE_ANT_PORTA_ANT_SX" />
-                <ScalarProperty Name="CORNICE_PORTA_ANT_SX" ColumnName="CORNICE_PORTA_ANT_SX" />
-                <ScalarProperty Name="FRECCIA_SPECCHIO_SX" ColumnName="FRECCIA_SPECCHIO_SX" />
-                <ScalarProperty Name="CALOTTA_SX" ColumnName="CALOTTA_SX" />
-                <ScalarProperty Name="VETRINO_SPECCHIO_RETROVISORE_SX" ColumnName="VETRINO_SPECCHIO_RETROVISORE_SX" />
-                <ScalarProperty Name="CORPO_SPECCHIO_SX" ColumnName="CORPO_SPECCHIO_SX" />
-                <ScalarProperty Name="GUARNIZIONE_PARABREZZA_SX" ColumnName="GUARNIZIONE_PARABREZZA_SX" />
-                <ScalarProperty Name="PARABREZZA" ColumnName="PARABREZZA" />
-                <ScalarProperty Name="CALANDRA_SOTTOPARABREZZA" ColumnName="CALANDRA_SOTTOPARABREZZA" />
-                <ScalarProperty Name="FRECCIA_PARAFANGO_ANT_SX" ColumnName="FRECCIA_PARAFANGO_ANT_SX" />
-                <ScalarProperty Name="CATADIOTTRO_ANT_SX" ColumnName="CATADIOTTRO_ANT_SX" />
-                <ScalarProperty Name="FRECCIA_PARAURT_ANT_SX" ColumnName="FRECCIA_PARAURT_ANT_SX" />
-                <ScalarProperty Name="FANALE_ANT_SX" ColumnName="FANALE_ANT_SX" />
-                <ScalarProperty Name="LOGO_ANT" ColumnName="LOGO_ANT" />
-                <ScalarProperty Name="COFANO_ANT" ColumnName="COFANO_ANT" />
-                <ScalarProperty Name="IDTelaio" ColumnName="IDTelaio" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Telai_LastStatus_vw">
             <EntityTypeMapping TypeName="GRANDINEModel.Telai_LastStatus_vw">
               <MappingFragment StoreEntitySet="Telai_LastStatus_vw">
@@ -1808,6 +1783,65 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
                 <ScalarProperty Name="Tel" ColumnName="Tel" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="RagioneSociale" ColumnName="RagioneSociale" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ricambi">
+            <EntityTypeMapping TypeName="GRANDINEModel.Ricambi">
+              <MappingFragment StoreEntitySet="Ricambi">
+                <ScalarProperty Name="FRECCIA_PARAURTI_ANT_DX" ColumnName="FRECCIA_PARAURTI_ANT_DX" />
+                <ScalarProperty Name="FANALE_ANT_DX" ColumnName="FANALE_ANT_DX" />
+                <ScalarProperty Name="CATADIOTTRO_ANT_DX" ColumnName="CATADIOTTRO_ANT_DX" />
+                <ScalarProperty Name="FRECCIA_PARAFANGO_ANT_DX" ColumnName="FRECCIA_PARAFANGO_ANT_DX" />
+                <ScalarProperty Name="GUARNIZIONE_PARABREZZA_DX" ColumnName="GUARNIZIONE_PARABREZZA_DX" />
+                <ScalarProperty Name="FRECCIA_SPECCHIO_DX" ColumnName="FRECCIA_SPECCHIO_DX" />
+                <ScalarProperty Name="CALOTTA_DX" ColumnName="CALOTTA_DX" />
+                <ScalarProperty Name="VETRINO_SPECCHIO_RETROVISORE_DX" ColumnName="VETRINO_SPECCHIO_RETROVISORE_DX" />
+                <ScalarProperty Name="CORPO_SPECCHIO_DX" ColumnName="CORPO_SPECCHIO_DX" />
+                <ScalarProperty Name="MONTANTE_POST_PORTA_ANT_DX" ColumnName="MONTANTE_POST_PORTA_ANT_DX" />
+                <ScalarProperty Name="MONTANTE_ANT_PORTA_ANT_DX" ColumnName="MONTANTE_ANT_PORTA_ANT_DX" />
+                <ScalarProperty Name="CORNICE_PORTA_ANT_DX" ColumnName="CORNICE_PORTA_ANT_DX" />
+                <ScalarProperty Name="MONTANTE_POST_PORTA_POST_DX" ColumnName="MONTANTE_POST_PORTA_POST_DX" />
+                <ScalarProperty Name="MONTANTE_ANT_PORTA_POST_DX" ColumnName="MONTANTE_ANT_PORTA_POST_DX" />
+                <ScalarProperty Name="CORNICE_PORTA_POST_DX" ColumnName="CORNICE_PORTA_POST_DX" />
+                <ScalarProperty Name="CORNICE_PARAFANGO_DX" ColumnName="CORNICE_PARAFANGO_DX" />
+                <ScalarProperty Name="RASAVETRO_ANT_DX" ColumnName="RASAVETRO_ANT_DX" />
+                <ScalarProperty Name="RASAVETRO_POST_DX" ColumnName="RASAVETRO_POST_DX" />
+                <ScalarProperty Name="CORRIMANO_DX" ColumnName="CORRIMANO_DX" />
+                <ScalarProperty Name="SPORTELLO_CARBURANTE" ColumnName="SPORTELLO_CARBURANTE" />
+                <ScalarProperty Name="CAPPELLIERA" ColumnName="CAPPELLIERA" />
+                <ScalarProperty Name="LUNOTTO" ColumnName="LUNOTTO" />
+                <ScalarProperty Name="LOGO_POST" ColumnName="LOGO_POST" />
+                <ScalarProperty Name="COFANO_POST" ColumnName="COFANO_POST" />
+                <ScalarProperty Name="FANALE_POST_PARAFANGO_SX" ColumnName="FANALE_POST_PARAFANGO_SX" />
+                <ScalarProperty Name="CORNICE_COFANO_POST" ColumnName="CORNICE_COFANO_POST" />
+                <ScalarProperty Name="TERZO_STOP" ColumnName="TERZO_STOP" />
+                <ScalarProperty Name="BASE_ANTENNA" ColumnName="BASE_ANTENNA" />
+                <ScalarProperty Name="CORRIMANO_SX" ColumnName="CORRIMANO_SX" />
+                <ScalarProperty Name="RASAVETRO_POST_SX" ColumnName="RASAVETRO_POST_SX" />
+                <ScalarProperty Name="RASAVETRO_ANT_SX" ColumnName="RASAVETRO_ANT_SX" />
+                <ScalarProperty Name="CORNICE_PARAFANGO_SX" ColumnName="CORNICE_PARAFANGO_SX" />
+                <ScalarProperty Name="MONTANTE_POST_PORTA_POST_SX" ColumnName="MONTANTE_POST_PORTA_POST_SX" />
+                <ScalarProperty Name="MONTANTE_ANT_PORTA_POST_SX" ColumnName="MONTANTE_ANT_PORTA_POST_SX" />
+                <ScalarProperty Name="CORNICE_PORTA_POST_SX" ColumnName="CORNICE_PORTA_POST_SX" />
+                <ScalarProperty Name="MONTANTE_POST_PORTA_ANT_SX" ColumnName="MONTANTE_POST_PORTA_ANT_SX" />
+                <ScalarProperty Name="MONTANTE_ANT_PORTA_ANT_SX" ColumnName="MONTANTE_ANT_PORTA_ANT_SX" />
+                <ScalarProperty Name="CORNICE_PORTA_ANT_SX" ColumnName="CORNICE_PORTA_ANT_SX" />
+                <ScalarProperty Name="FRECCIA_SPECCHIO_SX" ColumnName="FRECCIA_SPECCHIO_SX" />
+                <ScalarProperty Name="CALOTTA_SX" ColumnName="CALOTTA_SX" />
+                <ScalarProperty Name="VETRINO_SPECCHIO_RETROVISORE_SX" ColumnName="VETRINO_SPECCHIO_RETROVISORE_SX" />
+                <ScalarProperty Name="CORPO_SPECCHIO_SX" ColumnName="CORPO_SPECCHIO_SX" />
+                <ScalarProperty Name="GUARNIZIONE_PARABREZZA_SX" ColumnName="GUARNIZIONE_PARABREZZA_SX" />
+                <ScalarProperty Name="PARABREZZA" ColumnName="PARABREZZA" />
+                <ScalarProperty Name="CALANDRA_SOTTOPARABREZZA" ColumnName="CALANDRA_SOTTOPARABREZZA" />
+                <ScalarProperty Name="FRECCIA_PARAFANGO_ANT_SX" ColumnName="FRECCIA_PARAFANGO_ANT_SX" />
+                <ScalarProperty Name="CATADIOTTRO_ANT_SX" ColumnName="CATADIOTTRO_ANT_SX" />
+                <ScalarProperty Name="FRECCIA_PARAURT_ANT_SX" ColumnName="FRECCIA_PARAURT_ANT_SX" />
+                <ScalarProperty Name="FANALE_ANT_SX" ColumnName="FANALE_ANT_SX" />
+                <ScalarProperty Name="LOGO_ANT" ColumnName="LOGO_ANT" />
+                <ScalarProperty Name="COFANO_ANT" ColumnName="COFANO_ANT" />
+                <ScalarProperty Name="IDTelaio" ColumnName="IDTelaio" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

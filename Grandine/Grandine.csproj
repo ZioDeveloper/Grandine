@@ -140,6 +140,7 @@
     <Compile Include="Controllers\CommesseXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsertTelaiFormListController.cs" />
+    <Compile Include="Controllers\RicambiController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\StoricoStatusController.cs" />
     <Compile Include="Controllers\TecnicisController.cs" />
@@ -426,6 +427,11 @@
     <Content Include="Views\TelaiCompleti\Edit.cshtml" />
     <Content Include="Views\TelaiCompleti\Index.cshtml" />
     <Content Include="Views\TelaiAnagraficas\EditTest.cshtml" />
+    <Content Include="Views\Ricambi\Create.cshtml" />
+    <Content Include="Views\Ricambi\Delete.cshtml" />
+    <Content Include="Views\Ricambi\Details.cshtml" />
+    <Content Include="Views\Ricambi\Edit.cshtml" />
+    <Content Include="Views\Ricambi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

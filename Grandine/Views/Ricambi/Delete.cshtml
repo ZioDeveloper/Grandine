@@ -1,0 +1,440 @@
+﻿@model Grandine.Models.Ricambi
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ricambi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COFANO_ANT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COFANO_ANT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOGO_ANT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOGO_ANT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FANALE_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FANALE_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FRECCIA_PARAURT_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FRECCIA_PARAURT_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATADIOTTRO_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATADIOTTRO_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FRECCIA_PARAFANGO_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FRECCIA_PARAFANGO_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CALANDRA_SOTTOPARABREZZA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CALANDRA_SOTTOPARABREZZA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PARABREZZA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARABREZZA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GUARNIZIONE_PARABREZZA_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GUARNIZIONE_PARABREZZA_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORPO_SPECCHIO_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORPO_SPECCHIO_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VETRINO_SPECCHIO_RETROVISORE_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VETRINO_SPECCHIO_RETROVISORE_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CALOTTA_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CALOTTA_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FRECCIA_SPECCHIO_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FRECCIA_SPECCHIO_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_PORTA_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_PORTA_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_ANT_PORTA_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_ANT_PORTA_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_POST_PORTA_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_POST_PORTA_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_PORTA_POST_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_PORTA_POST_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_ANT_PORTA_POST_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_ANT_PORTA_POST_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_POST_PORTA_POST_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_POST_PORTA_POST_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_PARAFANGO_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_PARAFANGO_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RASAVETRO_ANT_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RASAVETRO_ANT_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RASAVETRO_POST_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RASAVETRO_POST_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORRIMANO_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORRIMANO_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BASE_ANTENNA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BASE_ANTENNA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TERZO_STOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TERZO_STOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_COFANO_POST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_COFANO_POST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FANALE_POST_PARAFANGO_SX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FANALE_POST_PARAFANGO_SX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COFANO_POST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COFANO_POST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOGO_POST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOGO_POST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUNOTTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUNOTTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAPPELLIERA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAPPELLIERA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPORTELLO_CARBURANTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPORTELLO_CARBURANTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORRIMANO_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORRIMANO_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RASAVETRO_POST_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RASAVETRO_POST_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RASAVETRO_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RASAVETRO_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_PARAFANGO_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_PARAFANGO_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_PORTA_POST_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_PORTA_POST_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_ANT_PORTA_POST_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_ANT_PORTA_POST_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_POST_PORTA_POST_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_POST_PORTA_POST_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORNICE_PORTA_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORNICE_PORTA_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_ANT_PORTA_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_ANT_PORTA_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTANTE_POST_PORTA_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTANTE_POST_PORTA_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORPO_SPECCHIO_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORPO_SPECCHIO_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VETRINO_SPECCHIO_RETROVISORE_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VETRINO_SPECCHIO_RETROVISORE_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CALOTTA_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CALOTTA_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FRECCIA_SPECCHIO_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FRECCIA_SPECCHIO_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GUARNIZIONE_PARABREZZA_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GUARNIZIONE_PARABREZZA_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FRECCIA_PARAFANGO_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FRECCIA_PARAFANGO_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATADIOTTRO_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATADIOTTRO_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FANALE_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FANALE_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FRECCIA_PARAURTI_ANT_DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FRECCIA_PARAURTI_ANT_DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelaiAnagrafica.Telaio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelaiAnagrafica.Telaio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

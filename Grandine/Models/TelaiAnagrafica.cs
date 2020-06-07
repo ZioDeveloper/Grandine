@@ -19,6 +19,7 @@ namespace Grandine.Models
         {
             this.FotoXTelaio = new HashSet<FotoXTelaio>();
             this.StoricoStatus = new HashSet<StoricoStatus>();
+            this.Ricambi = new HashSet<Ricambi>();
         }
     
         public int ID { get; set; }
@@ -73,5 +74,7 @@ namespace Grandine.Models
         public virtual ICollection<StoricoStatus> StoricoStatus { get; set; }
         public virtual Tecnici Tecnici { get; set; }
         public virtual Carglass Carglass { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ricambi> Ricambi { get; set; }
     }
 }

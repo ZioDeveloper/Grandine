@@ -42,11 +42,11 @@ namespace Grandine.Models
         public virtual DbSet<FotoXTelaio> FotoXTelaio { get; set; }
         public virtual DbSet<TipiDocumento> TipiDocumento { get; set; }
         public virtual DbSet<FotoXTelaio_vw> FotoXTelaio_vw { get; set; }
-        public virtual DbSet<Ricambi> Ricambi { get; set; }
         public virtual DbSet<Telai_LastStatus_vw> Telai_LastStatus_vw { get; set; }
         public virtual DbSet<StoricoStatus_vw> StoricoStatus_vw { get; set; }
         public virtual DbSet<Tecnici> Tecnici { get; set; }
         public virtual DbSet<TelaiAnagrafica> TelaiAnagrafica { get; set; }
         public virtual DbSet<Carglass> Carglass { get; set; }
+        public virtual DbSet<Ricambi> Ricambi { get; set; }
     }
 }

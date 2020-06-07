@@ -53,7 +53,7 @@ namespace Grandine.Controllers
             //        (t=>t.StoricoStatus);
 
             var telaiAnagrafica = db.Telai_LastStatus_vw.Where(t => t.IDCommessa == myIDCommessa);
-                ;
+
             return View(telaiAnagrafica.ToList());
         }
 
@@ -164,6 +164,11 @@ namespace Grandine.Controllers
             ViewBag.Fatturato = Fatturato;
             ViewBag.Differenza = Differenza;
 
+            var tmp =(from m in db.Telai_LastStatus_vw
+                    where m.ID == id
+                    select m.LastStatus).FirstOrDefault();
+            ViewBag.LastStatus = tmp;
+
 
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
@@ -172,6 +177,7 @@ namespace Grandine.Controllers
             ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
             ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
             ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
+            
             return View(telaiAnagrafica);
         }
 

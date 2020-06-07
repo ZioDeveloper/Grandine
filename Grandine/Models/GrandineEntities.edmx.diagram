@@ -35,7 +35,6 @@
         <AssociationConnector Association="GRANDINEModel.FK_FotoXTelaio_TipiDocumento" />
         <AssociationConnector Association="GRANDINEModel.FK_Commesse_Clienti" />
         <EntityTypeShape EntityType="GRANDINEModel.FotoXTelaio_vw" Width="1.5" PointX="3.375" PointY="8.75" />
-        <EntityTypeShape EntityType="GRANDINEModel.Ricambi" Width="1.5" PointX="5.375" PointY="9.25" />
         <EntityTypeShape EntityType="GRANDINEModel.Telai_LastStatus_vw" Width="1.5" PointX="0.75" PointY="10.75" />
         <EntityTypeShape EntityType="GRANDINEModel.StoricoStatus_vw" Width="1.5" PointX="10.375" PointY="6.75" />
         <EntityTypeShape EntityType="GRANDINEModel.Tecnici" Width="1.5" PointX="16.25" PointY="7.25" />
@@ -51,6 +50,8 @@
         <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Tecnici" />
         <EntityTypeShape EntityType="GRANDINEModel.Carglass" Width="1.5" PointX="12.375" PointY="11.125" />
         <AssociationConnector Association="GRANDINEModel.FK_TelaiAnagrafica_Carglass" />
+        <EntityTypeShape EntityType="GRANDINEModel.Ricambi" Width="1.5" PointX="20.75" PointY="9.375" />
+        <AssociationConnector Association="GRANDINEModel.FK_Ricambi_TelaiAnagrafica" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
