@@ -52,7 +52,8 @@ namespace Grandine.Controllers
             //        (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa).Include
             //        (t=>t.StoricoStatus);
 
-            var telaiAnagrafica = db.Telai_LastStatus_vw;
+            var telaiAnagrafica = db.Telai_LastStatus_vw.Where(t => t.IDCommessa == myIDCommessa);
+                ;
             return View(telaiAnagrafica.ToList());
         }
 
@@ -146,6 +147,24 @@ namespace Grandine.Controllers
             {
                 return HttpNotFound();
             }
+
+            float Totale = 0;
+            float Fatturato = (float)(telaiAnagrafica.ImpFattAtt ?? 0);
+            
+
+            float CostoAndata = (float)(telaiAnagrafica.CostoAndata ?? 0);
+            float CostoRitorno = (float)(telaiAnagrafica.CostoRitorno ?? 0);
+            float ImportoFattPass = (float)(telaiAnagrafica.ImportoFattPass ?? 0);
+            float ImportoCarrozzeria1 = (float)(telaiAnagrafica.ImportoCarrozzeria1 ?? 0);
+            float ImportoCarrozzeria2 = (float)(telaiAnagrafica.ImportoCarrozzeria2 ?? 0);
+            float ImportoFattCarGlass = (float)(telaiAnagrafica.ImportoFattCarGlass ?? 0);
+            Totale = CostoAndata + CostoRitorno + ImportoFattPass + ImportoCarrozzeria1 + ImportoCarrozzeria2 + ImportoFattCarGlass;
+            float Differenza = Fatturato - Totale;
+            ViewBag.Totale = Totale.ToString();
+            ViewBag.Fatturato = Fatturato;
+            ViewBag.Differenza = Differenza;
+
+
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
             ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
@@ -180,6 +199,24 @@ namespace Grandine.Controllers
             ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
             ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
             ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+
+            float Totale = 0;
+            float Fatturato = (float)(telaiAnagrafica.ImpFattAtt ?? 0);
+            
+
+            float CostoAndata = (float)(telaiAnagrafica.CostoAndata ?? 0);
+            float CostoRitorno = (float)(telaiAnagrafica.CostoRitorno ?? 0);
+            float ImportoFattPass = (float)(telaiAnagrafica.ImportoFattPass ?? 0);
+            float ImportoCarrozzeria1 = (float)(telaiAnagrafica.ImportoCarrozzeria1 ?? 0);
+            float ImportoCarrozzeria2 = (float)(telaiAnagrafica.ImportoCarrozzeria2 ?? 0);
+            float ImportoFattCarGlass = (float)(telaiAnagrafica.ImportoFattCarGlass ?? 0);
+            Totale = CostoAndata + CostoRitorno + ImportoFattPass + ImportoCarrozzeria1 + ImportoCarrozzeria2 + ImportoFattCarGlass;
+            float Differenza = Fatturato - Totale;
+            ViewBag.Totale = Totale.ToString();
+            ViewBag.Fatturato = Fatturato;
+            ViewBag.Differenza = Differenza;
+
+
             return View(telaiAnagrafica);
         }
 
