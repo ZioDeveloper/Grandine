@@ -46,8 +46,9 @@
         <tr>
             <th>Telaio</th>
             <th>Modello</th>
-            <th>Chiave</th>
+
             <th>Status</th>
+            <th>Chiave</th>
             <th>Note</th>
             <th>Modifica</th>
             <th>Cancella</th>
@@ -72,11 +73,12 @@
                 @Html.DisplayFor(modelItem => item.Modello)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Chiave)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.LastStatus)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chiave)
+            </td>
+
             <td style="width:100px">
                 @Html.DisplayFor(modelItem => item.Annotazioni)
             </td>
@@ -120,8 +122,9 @@
         <tr>
             <th>Telaio</th>
             <th>Modello</th>
-            <th>Chiave</th>
             <th>Status</th>
+            <th>Chiave</th>
+
             <th>Note</th>
             <th>Modifica</th>
             <th>Cancella</th>
