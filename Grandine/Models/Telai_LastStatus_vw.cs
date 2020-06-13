@@ -19,5 +19,7 @@ namespace Grandine.Models
         public string Modello { get; set; }
         public string LastStatus { get; set; }
         public Nullable<int> IDCommessa { get; set; }
+        public string Chiave { get; set; }
+        public string Annotazioni { get; set; }
     }
 }

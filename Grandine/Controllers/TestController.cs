@@ -13,5 +13,10 @@ namespace Grandine.Controllers
         {
             return View();
         }
+
+        public ActionResult Index02()
+        {
+            return View();
+        }
     }
 }

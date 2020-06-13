@@ -313,6 +313,8 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\buttons.html5.min.js" />
     <Content Include="Scripts\dataTables.buttons.min.js" />
+    <Content Include="Scripts\dataTables.searchPanes.min.js" />
+    <Content Include="Scripts\dataTables.select.min.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -320,6 +322,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery.dataTables.min.css" />
     <Content Include="Scripts\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.filedrop.js" />
     <Content Include="Scripts\jquery.tablesorter.js" />
@@ -330,6 +334,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jszip.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\select.dataTables.min.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -432,6 +437,7 @@
     <Content Include="Views\Ricambi\Details.cshtml" />
     <Content Include="Views\Ricambi\Edit.cshtml" />
     <Content Include="Views\Ricambi\Index.cshtml" />
+    <Content Include="Views\Test\Index02.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,6 +17,7 @@ namespace Grandine.Models
         public IEnumerable<Status> Status { get; set; }
         public IEnumerable<StoricoStatus> StoricoStatus { get; set; }
         public IEnumerable<StoricoStatus_vw> StoricoStatus_vw { get; set; }
+        public IEnumerable<Telai_LastStatus_vw> Telai_LastStatus_vw { get; set; }
     }
 
 }

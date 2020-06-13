@@ -52,7 +52,15 @@ namespace Grandine.Controllers
             //        (t => t.Commesse).Where(t=>t.IDCommessa == myIDCommessa).Include
             //        (t=>t.StoricoStatus);
 
-            var telaiAnagrafica = db.Telai_LastStatus_vw.Where(t => t.IDCommessa == myIDCommessa);
+            // Ultima usata prima di LINQ
+            //var telaiAnagrafica = db.Telai_LastStatus_vw.Where(t => t.IDCommessa == myIDCommessa);
+
+            var model = new Models.HomeModel();
+            
+            var telaiAnagrafica = from m in db.Telai_LastStatus_vw
+                          where m.IDCommessa == myIDCommessa
+                          select m;
+            model.Telai_LastStatus_vw = telaiAnagrafica.ToList();
 
             return View(telaiAnagrafica.ToList());
         }
@@ -197,6 +205,7 @@ namespace Grandine.Controllers
             {
                 db.Entry(telaiAnagrafica).State = EntityState.Modified;
                 db.SaveChanges();
+                return RedirectToAction("Edit", new { id = telaiAnagrafica.ID });
                 return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
             }
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
