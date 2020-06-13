@@ -52,7 +52,14 @@
             <th>Modifica</th>
             <th>Cancella</th>
             <th>Foto</th>
+            <th>Foto</th>
+            <th>Ingresso</th>
+            <th>Lavorazione</th>
+            <th>Bolla X</th>
+            <th>Bolla da</th>
+            <th>Consegna</th>
         </tr>
+
     </thead>
     <tbody>
         @foreach (var item in Model)
@@ -87,6 +94,25 @@
             <td>
                 @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingresso)
+            <td>
+                @Html.DisplayFor(modelItem => item.Lavorazione)
+            </td>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BollaX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BollaDa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Consegna)
+            </td>
+
         </tr>
         }
     </tbody>
@@ -100,6 +126,12 @@
             <th>Modifica</th>
             <th>Cancella</th>
             <th>Foto</th>
+            <th>Foto</th>
+            <th>Ingresso</th>
+            <th>Lavorazione</th>
+            <th>Bolla X</th>
+            <th>Bolla da</th>
+            <th>Consegna</th>
         </tr>
     </tfoot>
 </table>
@@ -113,7 +145,7 @@
         });
     </script>*@
 
-<script>
+@*<script>
         $(document).ready(function () {
             $('#ElencoTelai').DataTable({
                           
@@ -127,38 +159,133 @@
                             0: 'Nessun filtro',
                             1: 'Un filtro selezionato'
                         }
-                    }
-                },
-                searchPanes: {
-                    
-                    cascadePanes: true,
-                    viewTotal: false,
-                },
-                columnDefs: [
-                    {
-                        searchPanes: {
-                            show: false,
-                        },
-                        targets: [1],
                     },
-                    {
-                        searchPanes: {
-                            show: false,
-                        },
-                        targets: [2],
+                    searchPanes: {
+
+                        cascadePanes: true,
+                        viewTotal: false,
                     },
-                    {
-                        searchPanes: {
-                            show: true,
-                        },
-                        targets: ['Note'],
-                    }
-                ],
+                //columnDefs: [
+                //    {
+                //        searchPanes: {
+                //            show: false,
+                //        },
+                //        targets: [1],
+                //    },
+                //    {
+                //        searchPanes: {
+                //            show: false,
+                //        },
+                //        targets: [2],
+                //    },
+                //    {
+                //        searchPanes: {
+                //            show: true,
+                //        },
+                //        targets: ['Note'],
+                //    }
+                //],
+                },
+                
                
                 dom: 'Pfrtip',
 
                 stateSave: true
             });
         });
+
+</script>*@
+<script>
+            $(document).ready(function () {
+              var dt =  $('#ElencoTelai').DataTable({
+                    
+                    
+                    
+                    columnDefs: [
+                        {
+                            searchPanes: {
+                                show: true,
+                            },
+                            targets: [1],
+                        },
+                        {
+                            searchPanes: {
+                                show: true,
+                            },
+                            targets: [2],
+                        },
+                        {
+                            searchPanes: {
+                                show: true,
+                            },
+                            targets: [3],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [4],
+                        },
+
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [5],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [6],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [7],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [8],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [9],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [10],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [11],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [12],
+                        },
+                        {
+                            searchPanes: {
+                                show: false,
+                            },
+                            targets: [13],
+                        }
+                    ],
+                    stateSave: true,
+                    dom: 'Pfrtip'
+                    
+                });
+            });
 
 </script>

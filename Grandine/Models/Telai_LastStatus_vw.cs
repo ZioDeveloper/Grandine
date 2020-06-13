@@ -21,5 +21,11 @@ namespace Grandine.Models
         public Nullable<int> IDCommessa { get; set; }
         public string Chiave { get; set; }
         public string Annotazioni { get; set; }
+        public Nullable<int> Foto { get; set; }
+        public Nullable<int> Ingresso { get; set; }
+        public Nullable<int> Lavorazione { get; set; }
+        public Nullable<int> BollaX { get; set; }
+        public Nullable<int> BollaDa { get; set; }
+        public Nullable<int> Consegna { get; set; }
     }
 }
