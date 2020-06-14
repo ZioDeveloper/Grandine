@@ -14,7 +14,6 @@
         <h4>Ricambi</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
         @Html.HiddenFor(model => model.ID)
         @*@Html.HiddenFor(model => model.IDTelaio)*@
 
@@ -27,8 +26,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.COFANO_ANT, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.COFANO_ANT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.COFANO_ANT)
                     @Html.ValidationMessageFor(model => model.COFANO_ANT, "", new { @class = "text-danger" })
@@ -37,8 +36,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LOGO_ANT, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.LOGO_ANT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.LOGO_ANT)
                     @Html.ValidationMessageFor(model => model.LOGO_ANT, "", new { @class = "text-danger" })
@@ -47,8 +46,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FANALE_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FANALE_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FANALE_ANT_SX)
                     @Html.ValidationMessageFor(model => model.FANALE_ANT_SX, "", new { @class = "text-danger" })
@@ -57,8 +56,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FRECCIA_PARAURT_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FRECCIA_PARAURT_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FRECCIA_PARAURT_ANT_SX)
                     @Html.ValidationMessageFor(model => model.FRECCIA_PARAURT_ANT_SX, "", new { @class = "text-danger" })
@@ -67,8 +66,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CATADIOTTRO_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CATADIOTTRO_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CATADIOTTRO_ANT_SX)
                     @Html.ValidationMessageFor(model => model.CATADIOTTRO_ANT_SX, "", new { @class = "text-danger" })
@@ -77,8 +76,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FRECCIA_PARAFANGO_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FRECCIA_PARAFANGO_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FRECCIA_PARAFANGO_ANT_SX)
                     @Html.ValidationMessageFor(model => model.FRECCIA_PARAFANGO_ANT_SX, "", new { @class = "text-danger" })
@@ -87,8 +86,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CALANDRA_SOTTOPARABREZZA, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CALANDRA_SOTTOPARABREZZA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CALANDRA_SOTTOPARABREZZA)
                     @Html.ValidationMessageFor(model => model.CALANDRA_SOTTOPARABREZZA, "", new { @class = "text-danger" })
@@ -97,8 +96,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PARABREZZA, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.PARABREZZA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.PARABREZZA)
                     @Html.ValidationMessageFor(model => model.PARABREZZA, "", new { @class = "text-danger" })
@@ -107,8 +106,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GUARNIZIONE_PARABREZZA_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.GUARNIZIONE_PARABREZZA_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.GUARNIZIONE_PARABREZZA_SX)
                     @Html.ValidationMessageFor(model => model.GUARNIZIONE_PARABREZZA_SX, "", new { @class = "text-danger" })
@@ -117,8 +116,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORPO_SPECCHIO_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORPO_SPECCHIO_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORPO_SPECCHIO_SX)
                     @Html.ValidationMessageFor(model => model.CORPO_SPECCHIO_SX, "", new { @class = "text-danger" })
@@ -127,8 +126,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.VETRINO_SPECCHIO_RETROVISORE_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.VETRINO_SPECCHIO_RETROVISORE_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.VETRINO_SPECCHIO_RETROVISORE_SX)
                     @Html.ValidationMessageFor(model => model.VETRINO_SPECCHIO_RETROVISORE_SX, "", new { @class = "text-danger" })
@@ -137,8 +136,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CALOTTA_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CALOTTA_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CALOTTA_SX)
                     @Html.ValidationMessageFor(model => model.CALOTTA_SX, "", new { @class = "text-danger" })
@@ -147,8 +146,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FRECCIA_SPECCHIO_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FRECCIA_SPECCHIO_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FRECCIA_SPECCHIO_SX)
                     @Html.ValidationMessageFor(model => model.FRECCIA_SPECCHIO_SX, "", new { @class = "text-danger" })
@@ -157,8 +156,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_PORTA_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_PORTA_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_PORTA_ANT_SX)
                     @Html.ValidationMessageFor(model => model.CORNICE_PORTA_ANT_SX, "", new { @class = "text-danger" })
@@ -167,8 +166,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_ANT_PORTA_ANT_SX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_ANT_PORTA_ANT_SX, "", new { @class = "text-danger" })
@@ -177,8 +176,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_POST_PORTA_ANT_SX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_POST_PORTA_ANT_SX, "", new { @class = "text-danger" })
@@ -187,8 +186,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_PORTA_POST_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_PORTA_POST_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_PORTA_POST_SX)
                     @Html.ValidationMessageFor(model => model.CORNICE_PORTA_POST_SX, "", new { @class = "text-danger" })
@@ -197,8 +196,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_POST_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_POST_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_ANT_PORTA_POST_SX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_ANT_PORTA_POST_SX, "", new { @class = "text-danger" })
@@ -207,8 +206,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_POST_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_POST_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_POST_PORTA_POST_SX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_POST_PORTA_POST_SX, "", new { @class = "text-danger" })
@@ -217,8 +216,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_PARAFANGO_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_PARAFANGO_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_PARAFANGO_SX)
                     @Html.ValidationMessageFor(model => model.CORNICE_PARAFANGO_SX, "", new { @class = "text-danger" })
@@ -227,8 +226,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RASAVETRO_ANT_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.RASAVETRO_ANT_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.RASAVETRO_ANT_SX)
                     @Html.ValidationMessageFor(model => model.RASAVETRO_ANT_SX, "", new { @class = "text-danger" })
@@ -237,8 +236,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RASAVETRO_POST_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.RASAVETRO_POST_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.RASAVETRO_POST_SX)
                     @Html.ValidationMessageFor(model => model.RASAVETRO_POST_SX, "", new { @class = "text-danger" })
@@ -247,8 +246,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORRIMANO_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORRIMANO_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORRIMANO_SX)
                     @Html.ValidationMessageFor(model => model.CORRIMANO_SX, "", new { @class = "text-danger" })
@@ -257,8 +256,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BASE_ANTENNA, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.BASE_ANTENNA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.BASE_ANTENNA)
                     @Html.ValidationMessageFor(model => model.BASE_ANTENNA, "", new { @class = "text-danger" })
@@ -267,8 +266,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TERZO_STOP, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.TERZO_STOP, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.TERZO_STOP)
                     @Html.ValidationMessageFor(model => model.TERZO_STOP, "", new { @class = "text-danger" })
@@ -277,8 +276,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_COFANO_POST, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_COFANO_POST, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_COFANO_POST)
                     @Html.ValidationMessageFor(model => model.CORNICE_COFANO_POST, "", new { @class = "text-danger" })
@@ -287,8 +286,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FANALE_POST_PARAFANGO_SX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FANALE_POST_PARAFANGO_SX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FANALE_POST_PARAFANGO_SX)
                     @Html.ValidationMessageFor(model => model.FANALE_POST_PARAFANGO_SX, "", new { @class = "text-danger" })
@@ -297,8 +296,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.COFANO_POST, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.COFANO_POST, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.COFANO_POST)
                     @Html.ValidationMessageFor(model => model.COFANO_POST, "", new { @class = "text-danger" })
@@ -307,8 +306,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LOGO_POST, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.LOGO_POST, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.LOGO_POST)
                     @Html.ValidationMessageFor(model => model.LOGO_POST, "", new { @class = "text-danger" })
@@ -317,8 +316,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LUNOTTO, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.LUNOTTO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.LUNOTTO)
                     @Html.ValidationMessageFor(model => model.LUNOTTO, "", new { @class = "text-danger" })
@@ -327,8 +326,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CAPPELLIERA, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CAPPELLIERA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CAPPELLIERA)
                     @Html.ValidationMessageFor(model => model.CAPPELLIERA, "", new { @class = "text-danger" })
@@ -337,8 +336,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SPORTELLO_CARBURANTE, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.SPORTELLO_CARBURANTE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.SPORTELLO_CARBURANTE)
                     @Html.ValidationMessageFor(model => model.SPORTELLO_CARBURANTE, "", new { @class = "text-danger" })
@@ -347,8 +346,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORRIMANO_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORRIMANO_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORRIMANO_DX)
                     @Html.ValidationMessageFor(model => model.CORRIMANO_DX, "", new { @class = "text-danger" })
@@ -357,8 +356,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RASAVETRO_POST_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.RASAVETRO_POST_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.RASAVETRO_POST_DX)
                     @Html.ValidationMessageFor(model => model.RASAVETRO_POST_DX, "", new { @class = "text-danger" })
@@ -367,8 +366,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RASAVETRO_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.RASAVETRO_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.RASAVETRO_ANT_DX)
                     @Html.ValidationMessageFor(model => model.RASAVETRO_ANT_DX, "", new { @class = "text-danger" })
@@ -377,8 +376,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_PARAFANGO_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_PARAFANGO_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_PARAFANGO_DX)
                     @Html.ValidationMessageFor(model => model.CORNICE_PARAFANGO_DX, "", new { @class = "text-danger" })
@@ -387,8 +386,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_PORTA_POST_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_PORTA_POST_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_PORTA_POST_DX)
                     @Html.ValidationMessageFor(model => model.CORNICE_PORTA_POST_DX, "", new { @class = "text-danger" })
@@ -397,8 +396,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_POST_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_POST_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_ANT_PORTA_POST_DX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_ANT_PORTA_POST_DX, "", new { @class = "text-danger" })
@@ -407,8 +406,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_POST_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_POST_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_POST_PORTA_POST_DX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_POST_PORTA_POST_DX, "", new { @class = "text-danger" })
@@ -417,8 +416,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORNICE_PORTA_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORNICE_PORTA_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORNICE_PORTA_ANT_DX)
                     @Html.ValidationMessageFor(model => model.CORNICE_PORTA_ANT_DX, "", new { @class = "text-danger" })
@@ -427,8 +426,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_ANT_PORTA_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_ANT_PORTA_ANT_DX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_ANT_PORTA_ANT_DX, "", new { @class = "text-danger" })
@@ -437,8 +436,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.MONTANTE_POST_PORTA_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.MONTANTE_POST_PORTA_ANT_DX)
                     @Html.ValidationMessageFor(model => model.MONTANTE_POST_PORTA_ANT_DX, "", new { @class = "text-danger" })
@@ -447,8 +446,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CORPO_SPECCHIO_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CORPO_SPECCHIO_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CORPO_SPECCHIO_DX)
                     @Html.ValidationMessageFor(model => model.CORPO_SPECCHIO_DX, "", new { @class = "text-danger" })
@@ -457,8 +456,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.VETRINO_SPECCHIO_RETROVISORE_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.VETRINO_SPECCHIO_RETROVISORE_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.VETRINO_SPECCHIO_RETROVISORE_DX)
                     @Html.ValidationMessageFor(model => model.VETRINO_SPECCHIO_RETROVISORE_DX, "", new { @class = "text-danger" })
@@ -467,8 +466,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CALOTTA_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CALOTTA_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CALOTTA_DX)
                     @Html.ValidationMessageFor(model => model.CALOTTA_DX, "", new { @class = "text-danger" })
@@ -477,8 +476,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FRECCIA_SPECCHIO_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FRECCIA_SPECCHIO_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FRECCIA_SPECCHIO_DX)
                     @Html.ValidationMessageFor(model => model.FRECCIA_SPECCHIO_DX, "", new { @class = "text-danger" })
@@ -487,8 +486,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GUARNIZIONE_PARABREZZA_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.GUARNIZIONE_PARABREZZA_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.GUARNIZIONE_PARABREZZA_DX)
                     @Html.ValidationMessageFor(model => model.GUARNIZIONE_PARABREZZA_DX, "", new { @class = "text-danger" })
@@ -497,8 +496,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FRECCIA_PARAFANGO_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FRECCIA_PARAFANGO_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FRECCIA_PARAFANGO_ANT_DX)
                     @Html.ValidationMessageFor(model => model.FRECCIA_PARAFANGO_ANT_DX, "", new { @class = "text-danger" })
@@ -507,8 +506,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CATADIOTTRO_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.CATADIOTTRO_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.CATADIOTTRO_ANT_DX)
                     @Html.ValidationMessageFor(model => model.CATADIOTTRO_ANT_DX, "", new { @class = "text-danger" })
@@ -517,8 +516,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FANALE_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FANALE_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FANALE_ANT_DX)
                     @Html.ValidationMessageFor(model => model.FANALE_ANT_DX, "", new { @class = "text-danger" })
@@ -527,8 +526,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FRECCIA_PARAURTI_ANT_DX, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-3">
+            @Html.LabelFor(model => model.FRECCIA_PARAURTI_ANT_DX, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.FRECCIA_PARAURTI_ANT_DX)
                     @Html.ValidationMessageFor(model => model.FRECCIA_PARAURTI_ANT_DX, "", new { @class = "text-danger" })
@@ -544,7 +543,6 @@
     </div>
 }
 
-    <div>
-        @Html.ActionLink("Torna a lista", "Edit", "TelaiAnagraficas", new { id = ViewBag.myIDTelaio }, new { @class = "btn btn-default" })
-        @*@Html.ActionLink("Ricambi", "Edit", "Ricambi", new { IDTelaio = Model.ID }, new { @class = "btn btn-default" })*@
-    </div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

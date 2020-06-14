@@ -62,18 +62,19 @@ namespace Grandine.Controllers
         }
 
         // GET: Ricambi/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int?IDTelaio)
         {
-            if (id == null)
+            if (IDTelaio == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ricambi ricambi = db.Ricambi.Find(id);
+            Ricambi ricambi = db.Ricambi.Find(IDTelaio);
             if (ricambi == null)
             {
                 return HttpNotFound();
             }
             ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", ricambi.IDTelaio);
+            ViewBag.myIDTelaio = ricambi.IDTelaio;
             return View(ricambi);
         }
 
@@ -88,9 +89,11 @@ namespace Grandine.Controllers
             {
                 db.Entry(ricambi).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return View(ricambi);
+                //return RedirectToAction("Index");
             }
             ViewBag.IDTelaio = new SelectList(db.TelaiAnagrafica, "ID", "Telaio", ricambi.IDTelaio);
+            ViewBag.myIDTelaio = ricambi.IDTelaio;
             return View(ricambi);
         }
 

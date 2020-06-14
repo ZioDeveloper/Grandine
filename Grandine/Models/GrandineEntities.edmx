@@ -243,6 +243,10 @@
           <Property Name="NumFattCarrozzeria2" Type="varchar" MaxLength="50" />
           <Property Name="DataFatturaCarrozzeria2" Type="datetime" />
           <Property Name="ImportoCarrozzeria2" Type="float" />
+          <Property Name="IDCarrozzeria3" Type="int" />
+          <Property Name="NumFattCarrozzeria3" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaCarrozzeria3" Type="datetime" />
+          <Property Name="ImportoCarrozzeria3" Type="float" />
           <Property Name="IDCarglass" Type="int" />
           <Property Name="NumFattCarGlass" Type="varchar" MaxLength="50" />
           <Property Name="ImportoFattCarGlass" Type="float" />
@@ -574,6 +578,18 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TelaiAnagrafica_Carrozzeria2">
+          <End Role="Carrozzeria" Type="Self.Carrozzeria" Multiplicity="0..1" />
+          <End Role="TelaiAnagrafica" Type="Self.TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrozzeria">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDCarrozzeria3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TelaiAnagrafica_Commesse">
           <End Role="Commesse" Type="Self.Commesse" Multiplicity="0..1" />
           <End Role="TelaiAnagrafica" Type="Self.TelaiAnagrafica" Multiplicity="*" />
@@ -595,6 +611,18 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="TelaiAnagrafica">
               <PropertyRef Name="IDTecnico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_TelaiAnagrafica">
+          <End Role="TelaiAnagrafica" Type="Self.TelaiAnagrafica" Multiplicity="1" />
+          <End Role="TelaiAnagrafica1" Type="Self.TelaiAnagrafica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica1">
+              <PropertyRef Name="ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -753,6 +781,10 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Carrozzeria" EntitySet="Carrozzeria" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
+          <AssociationSet Name="FK_TelaiAnagrafica_Carrozzeria2" Association="Self.FK_TelaiAnagrafica_Carrozzeria2">
+            <End Role="Carrozzeria" EntitySet="Carrozzeria" />
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+          </AssociationSet>
           <AssociationSet Name="FK_TelaiAnagrafica_Commesse" Association="Self.FK_TelaiAnagrafica_Commesse">
             <End Role="Commesse" EntitySet="Commesse" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
@@ -760,6 +792,10 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <AssociationSet Name="FK_TelaiAnagrafica_Tecnici" Association="Self.FK_TelaiAnagrafica_Tecnici">
             <End Role="Tecnici" EntitySet="Tecnici" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TelaiAnagrafica_TelaiAnagrafica" Association="Self.FK_TelaiAnagrafica_TelaiAnagrafica">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="TelaiAnagrafica1" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
           <AssociationSet Name="FK_Utenti_ClassiUtente" Association="Self.FK_Utenti_ClassiUtente">
             <End Role="ClassiUtente" EntitySet="ClassiUtente" />
@@ -929,6 +965,14 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <AssociationSet Name="FK_Ricambi_TelaiAnagrafica" Association="GRANDINEModel.FK_Ricambi_TelaiAnagrafica">
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
             <End Role="Ricambi" EntitySet="Ricambi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TelaiAnagrafica_Carrozzeria2" Association="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria2">
+            <End Role="Carrozzeria" EntitySet="Carrozzeria" />
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TelaiAnagrafica_TelaiAnagrafica" Association="GRANDINEModel.FK_TelaiAnagrafica_TelaiAnagrafica">
+            <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
+            <End Role="TelaiAnagrafica1" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Bisarchista">
@@ -1110,6 +1154,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="CommesseXCarrozzerie" Relationship="GRANDINEModel.FK_CommesseXCarrozzerie_Carrozzeria" FromRole="Carrozzeria" ToRole="CommesseXCarrozzerie" />
           <NavigationProperty Name="TelaiAnagrafica" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria" FromRole="Carrozzeria" ToRole="TelaiAnagrafica" />
           <NavigationProperty Name="TelaiAnagrafica1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria1" FromRole="Carrozzeria" ToRole="TelaiAnagrafica" />
+          <NavigationProperty Name="TelaiAnagrafica2" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria2" FromRole="Carrozzeria" ToRole="TelaiAnagrafica" />
         </EntityType>
         <EntityType Name="CommesseXCarrozzerie">
           <Key>
@@ -1336,6 +1381,13 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="Chiave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Ricambi" Relationship="GRANDINEModel.FK_Ricambi_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="Ricambi" />
+          <Property Name="IDCarrozzeria3" Type="Int32" />
+          <Property Name="NumFattCarrozzeria3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaCarrozzeria3" Type="DateTime" Precision="3" />
+          <Property Name="ImportoCarrozzeria3" Type="Double" />
+          <NavigationProperty Name="Carrozzeria2" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Carrozzeria2" FromRole="TelaiAnagrafica" ToRole="Carrozzeria" />
+          <NavigationProperty Name="TelaiAnagrafica1" Relationship="GRANDINEModel.FK_TelaiAnagrafica_TelaiAnagrafica" FromRole="TelaiAnagrafica" ToRole="TelaiAnagrafica1" />
+          <NavigationProperty Name="TelaiAnagrafica2" Relationship="GRANDINEModel.FK_TelaiAnagrafica_TelaiAnagrafica" FromRole="TelaiAnagrafica1" ToRole="TelaiAnagrafica" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1535,6 +1587,30 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Principal>
             <Dependent Role="Ricambi">
               <PropertyRef Name="IDTelaio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_Carrozzeria2">
+          <End Type="GRANDINEModel.Carrozzeria" Role="Carrozzeria" Multiplicity="0..1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrozzeria">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica">
+              <PropertyRef Name="IDCarrozzeria3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelaiAnagrafica_TelaiAnagrafica">
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica" Multiplicity="1" />
+          <End Type="GRANDINEModel.TelaiAnagrafica" Role="TelaiAnagrafica1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TelaiAnagrafica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TelaiAnagrafica1">
+              <PropertyRef Name="ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1766,6 +1842,10 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="TelaiAnagrafica">
             <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
               <MappingFragment StoreEntitySet="TelaiAnagrafica">
+                <ScalarProperty Name="ImportoCarrozzeria3" ColumnName="ImportoCarrozzeria3" />
+                <ScalarProperty Name="DataFatturaCarrozzeria3" ColumnName="DataFatturaCarrozzeria3" />
+                <ScalarProperty Name="NumFattCarrozzeria3" ColumnName="NumFattCarrozzeria3" />
+                <ScalarProperty Name="IDCarrozzeria3" ColumnName="IDCarrozzeria3" />
                 <ScalarProperty Name="Fila" ColumnName="Fila" />
                 <ScalarProperty Name="Chiave" ColumnName="Chiave" />
                 <ScalarProperty Name="NumFattTecnico" ColumnName="NumFattTecnico" />

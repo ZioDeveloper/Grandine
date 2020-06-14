@@ -438,6 +438,7 @@
     <Content Include="Views\Ricambi\Edit.cshtml" />
     <Content Include="Views\Ricambi\Index.cshtml" />
     <Content Include="Views\Test\Index02.cshtml" />
+    <Content Include="Views\Ricambi\EditBackup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

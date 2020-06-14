@@ -129,6 +129,11 @@ namespace Grandine.Controllers
                     new SqlParameter("@IDStato", "GI"),
                       new SqlParameter("@IDUtente", Session["UserName"]));
 
+                // INSERT Ricambi
+                sql = @"INSERT INTO dbo.Ricambi  (IDTelaio ) Values (@IDTelaio )";
+                noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                    new SqlParameter("@IDTelaio", telaiAnagrafica.ID));
+
                 // END
 
                 return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
@@ -166,12 +171,14 @@ namespace Grandine.Controllers
             float ImportoCarrozzeria1 = (float)(telaiAnagrafica.ImportoCarrozzeria1 ?? 0);
             float ImportoCarrozzeria2 = (float)(telaiAnagrafica.ImportoCarrozzeria2 ?? 0);
             float ImportoFattCarGlass = (float)(telaiAnagrafica.ImportoFattCarGlass ?? 0);
-            Totale = CostoAndata + CostoRitorno + ImportoFattPass + ImportoCarrozzeria1 + ImportoCarrozzeria2 + ImportoFattCarGlass;
+            float ImportoCarrozzeria3 = (float)(telaiAnagrafica.ImportoCarrozzeria3 ?? 0);
+            Totale = CostoAndata + CostoRitorno + ImportoFattPass + ImportoCarrozzeria1 + ImportoCarrozzeria2 + ImportoCarrozzeria3;
             float Differenza = Fatturato - Totale;
             ViewBag.Totale = Totale.ToString();
             ViewBag.Fatturato = Fatturato;
             ViewBag.Differenza = Differenza;
 
+            
             var tmp =(from m in db.Telai_LastStatus_vw
                     where m.ID == id
                     select m.LastStatus).FirstOrDefault();
@@ -182,10 +189,12 @@ namespace Grandine.Controllers
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
             ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
             ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
+            ViewBag.IDCarrozzeria3 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria3);
             ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
             ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
             ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
-            
+            ViewBag.IDStatus = new SelectList(db.Status, "ID", "Descr");
+
             return View(telaiAnagrafica);
         }
 
@@ -197,14 +206,26 @@ namespace Grandine.Controllers
         public ActionResult Edit([Bind(Include = " ID,Telaio,IDCommessa,Modello,InsertUser,InsertDate,NomeFile,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt, " +
                                                  " ImpFattAtt,IDTecnico,NumFattTecnico,DataFatturaPassiva,ImportoFattPass,IDCarrozzeria1,NumFattCarrozzeria1, " +
                                                  " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
-                                                 " ImportoCarrozzeria2,IDCarglass,NumFattCarGlass,ImportoFattCarGlass,DataFatturaCarglass,IDBisarchistaAndata, " +
+                                                 " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
                                                  "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
-                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila")] TelaiAnagrafica telaiAnagrafica)
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(telaiAnagrafica).State = EntityState.Modified;
                 db.SaveChanges();
+
+                // Insert StoricoStatus
+                if (IDStatus != "**")
+                {
+                    int myID = telaiAnagrafica.ID;
+                    var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDUtente) Values (@IDTelaio ,@IDStato  ,@IDUtente)";
+                    int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                        new SqlParameter("@IDTelaio", telaiAnagrafica.ID),
+                        new SqlParameter("@IDStato", IDStatus.ToString()),
+                          new SqlParameter("@IDUtente", Session["UserName"]));
+                }
+
                 return RedirectToAction("Edit", new { id = telaiAnagrafica.ID });
                 return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
             }
@@ -257,6 +278,7 @@ namespace Grandine.Controllers
         {
             CancellaStorico(id);
             CancellaDocumenti(id);
+            CancellaRicambi(id);
 
             TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
             int myIDCommessa = (int)telaiAnagrafica.IDCommessa;
@@ -280,8 +302,14 @@ namespace Grandine.Controllers
             int noOfRowDeleted = db.Database.ExecuteSqlCommand(sql,
                 new SqlParameter("@IDTelaio", IDtelaio));
         }
+        public void CancellaRicambi(int IDtelaio)
+        {
+            var sql = @"DELETE FROM dbo.Ricambi  WHERE IDTelaio = @IDTelaio ";
+            int noOfRowDeleted = db.Database.ExecuteSqlCommand(sql,
+                new SqlParameter("@IDTelaio", IDtelaio));
+        }
 
-        
+
         public ActionResult ScattaFoto(int? IDTelaio,int? IDTipoDocumento)
         {
 
@@ -520,16 +548,14 @@ namespace Grandine.Controllers
             var elencoTecnici = new SelectList(model.Tecnici.ToList().OrderBy(m => m.ID), "ID", "Cognome");
             ViewData["Tecnici"] = elencoTecnici;
 
-            //var modelstatus = new Models.HomeModel();
-            //var storico = from m in db.StoricoStatus_vw
-                         
-            //              select m;
+            var modelstatus = new Models.HomeModel();
 
-            //var dati = from m in db.StoricoStatus
-            //           where m.IDTelaio == IDTelaio
-            //              select m;
 
-            //modelstatus.StoricoStatus_vw = storico.ToList();
+            var stati = from m in db.StoricoStatus
+                       where m.IDTelaio == IDTelaio
+                       select m;
+
+            modelstatus.StoricoStatus = stati.ToList();
             //modelstatus.StoricoStatus = dati.ToList();
 
             return View();

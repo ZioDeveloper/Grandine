@@ -139,31 +139,43 @@
 
         <div class="form-row">
             <div class="form-group col-md-12">
-                <b style="color:black">Fatturato : @ViewBag.Fatturato</b> &nbsp;
-                <b style="color:red">Costi : @ViewBag.Totale</b> &nbsp;
-                <b style="color:green">Margine : @ViewBag.Differenza</b>&nbsp;&nbsp;&nbsp;
-                <b style="color:black">Status attuale : @ViewBag.LastStatus</b>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                @Html.ActionLink("Ricambi", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary btn-sm" })
-                @Html.ActionLink("Status", "InsertStatus", "TelaiAnagraficas", new { id = Model.ID }, new { @class = "btn btn-primary btn-sm" })
-                @*@Html.ActionLink("Status", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary btn-sm" })*@
-                <br />
+                <div class="form-group col-md-2">
+                    <b style="color:black">Fatturato : @ViewBag.Fatturato</b> @*&nbsp;*@
+                </div>
+                <div class="form-group col-md-2">
+                    <b style="color:red">Costi : @ViewBag.Totale</b> @*&nbsp;*@
+                </div>
+                <div class="form-group col-md-2">
+                    <b style="color:green">Margine : @ViewBag.Differenza</b>@*&nbsp;&nbsp;&nbsp;*@
+                </div>
+                <div class="form-group col-md-3">
+                    <b style="color:black">Status attuale : @ViewBag.LastStatus</b>
+                </div>
+                @*&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*@
+                @*<div class="form-group col-md-2">
+                    @Html.ActionLink("Ricambi", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary btn-sm" })
+                </div>*@
+                    @*@Html.ActionLink("Status", "InsertStatus", "TelaiAnagraficas", new { IDTelaio = Model.ID }, new { @class = "btn btn-primary btn-sm" })*@
+                    @*@Html.ActionLink("Status", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary btn-sm" })*@
+                <div class="form-group col-md-3">
+                    <div>
+                        <b>Status:</b> @Html.DropDownList("IDStatus", null, htmlAttributes: new { @class = "form-control", @style = "height:35px" })
+                    </div>
+                </div>
+                    <br />
+                </div>
             </div>
-        </div>
 
 
 
-
-
-
-        <div class="form-row">
+        @*<div class="form-row">
             <div class="form-group col-md-12">
 
                 <hr class="nero" />
                 <b style="color:darkgreen">Altri dati</b>
                 <br />
             </div>
-        </div>
+        </div>*@
 
         <div class="form-row">
             <div class="form-group col-md-3">
@@ -248,31 +260,31 @@
 
         <div class="form-row">
             <div class="form-group col-md-3">
-                @Html.Label("Carglass", htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.Label("Carrozzeria3", htmlAttributes: new { @class = "control-label col-md-3" })
                 <div>
-                    @Html.DropDownList("IDCarglass", null, htmlAttributes: new { @class = "form-control", @style = "height:35px" })
-                    @Html.ValidationMessageFor(model => model.IDCarglass, "", new { @class = "text-danger" })
+                    @Html.DropDownList("IDCarrozzeria3", null, htmlAttributes: new { @class = "form-control", @style = "height:35px" })
+                    @Html.ValidationMessageFor(model => model.IDCarrozzeria3, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group col-md-3">
                 @Html.Label("Fattura", htmlAttributes: new { @class = "control-label col-md-3" })
                 <div>
-                    @Html.EditorFor(model => model.NumFattCarGlass, new { htmlAttributes = new { @class = "form-control", @style = "height:20px" } })
-                    @Html.ValidationMessageFor(model => model.NumFattCarGlass, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.NumFattCarrozzeria3, new { htmlAttributes = new { @class = "form-control", @style = "height:20px" } })
+                    @Html.ValidationMessageFor(model => model.NumFattCarrozzeria3, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group col-md-4">
                 @Html.Label("Data fattura", htmlAttributes: new { @class = "control-label col-md-4" })
                 <div>
-                    @Html.EditorFor(model => model.DataFatturaCarglass, new { htmlAttributes = new { @class = "form-control", @style = "height:20px" } })
-                    @Html.ValidationMessageFor(model => model.DataFatturaCarglass, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.DataFatturaCarrozzeria3, new { htmlAttributes = new { @class = "form-control", @style = "height:20px" } })
+                    @Html.ValidationMessageFor(model => model.DataFatturaCarrozzeria3, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group col-md-2">
                 @Html.Label("Importo", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div>
-                    @Html.EditorFor(model => model.ImportoFattCarGlass, new { htmlAttributes = new { @class = "form-control", @style = "height:20px" } })
-                    @Html.ValidationMessageFor(model => model.ImportoFattCarGlass, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.ImportoCarrozzeria3, new { htmlAttributes = new { @class = "form-control", @style = "height:20px" } })
+                    @Html.ValidationMessageFor(model => model.ImportoCarrozzeria3, "", new { @class = "text-danger" })
                 </div>
 
             </div>
@@ -403,8 +415,10 @@
             <div class="form-group col-md-12">
                 <input type="submit" value="Salva dati" class="btn btn-success" />
                 @Html.ActionLink("Torna a lista", "Index", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Ricambi", "Edit", "Ricambi", new { IDTelaio = Model.ID }, new { @class = "btn btn-default" })
             </div>
         </div>
+
 
     </form>
 }

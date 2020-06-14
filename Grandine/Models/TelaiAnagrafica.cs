@@ -62,6 +62,10 @@ namespace Grandine.Models
         public string NumFattTecnico { get; set; }
         public string Chiave { get; set; }
         public string Fila { get; set; }
+        public Nullable<int> IDCarrozzeria3 { get; set; }
+        public string NumFattCarrozzeria3 { get; set; }
+        public Nullable<System.DateTime> DataFatturaCarrozzeria3 { get; set; }
+        public Nullable<double> ImportoCarrozzeria3 { get; set; }
     
         public virtual Bisarchista Bisarchista { get; set; }
         public virtual Bisarchista Bisarchista1 { get; set; }
@@ -76,5 +80,8 @@ namespace Grandine.Models
         public virtual Carglass Carglass { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ricambi> Ricambi { get; set; }
+        public virtual Carrozzeria Carrozzeria2 { get; set; }
+        public virtual TelaiAnagrafica TelaiAnagrafica1 { get; set; }
+        public virtual TelaiAnagrafica TelaiAnagrafica2 { get; set; }
     }
 }
