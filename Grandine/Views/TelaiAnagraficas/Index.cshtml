@@ -144,6 +144,8 @@
 <script>
     $(document).ready(function () {
         var table = $('#ElencoTelai').DataTable({
+            "pageLength": 5,
+            stateSave: true,
             buttons: [
                 {
                     extend: 'searchPanes',
