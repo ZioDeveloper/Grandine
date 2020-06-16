@@ -30,6 +30,7 @@ namespace Grandine.Controllers
            if (Session["IDCommessa"] == null)
             {
                 Session["IDCommessa"] = IDCommessa;
+
                 Int32.TryParse(Session["IDCommessa"].ToString(), out myIDCommessa);
             }
             else
@@ -187,11 +188,18 @@ namespace Grandine.Controllers
 
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
-            ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
-            ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
-            ViewBag.IDCarrozzeria3 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria3);
+           // ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
+           // ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
+           // ViewBag.IDCarrozzeria3 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria3);
             ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
-            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+
+           // ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+
+            ViewBag.IDTecnico = new SelectList(GetTecniciXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDTecnico);
+            ViewBag.IDCarrozzeria1 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria1);
+            ViewBag.IDCarrozzeria2 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria2);
+            ViewBag.IDCarrozzeria3 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria3);
+
             ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
             ViewBag.IDStatus = new SelectList(db.Status, "ID", "Descr");
 
@@ -231,10 +239,14 @@ namespace Grandine.Controllers
             }
             ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
-            ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
-            ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
+            //ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
+            //ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
             ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
-            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+            // ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+            ViewBag.IDTecnico = new SelectList(GetTecniciXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDCarrozzeria1 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDCarrozzeria2 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDCarrozzeria3 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
 
             float Totale = 0;
             float Fatturato = (float)(telaiAnagrafica.ImpFattAtt ?? 0);
@@ -255,6 +267,35 @@ namespace Grandine.Controllers
 
             return View(telaiAnagrafica);
         }
+
+        public IEnumerable<SelectListItem> GetTecniciXCommessa(int? aIDCommessa)
+        {
+            IEnumerable<SelectListItem> list = null;
+
+            
+                var query = (from t in db.Tecnici
+                             join c in db.CommesseXTecnici on t.ID equals c.IDTecnico
+                             where c.IDCommessa == aIDCommessa
+                             select new SelectListItem { Text = t.ID.ToString(), Value = t.Cognome });
+                list = query.ToList();
+
+            return list;
+        }
+
+        public IEnumerable<SelectListItem> GetCarrozzeriaXCommessa(int? aIDCommessa)
+        {
+            IEnumerable<SelectListItem> list = null;
+
+
+            var query = (from carr in db.Carrozzeria
+                         join comm in db.CommesseXCarrozzerie on carr.ID equals comm.IDCarrozzeria
+                         where comm.IDCommessa == aIDCommessa
+                         select new SelectListItem { Text = carr.ID.ToString(), Value = carr.RagioneSociale });
+            list = query.ToList();
+
+            return list;
+        }
+
 
         // GET: TelaiAnagraficas/Delete/5
         public ActionResult Delete(int? id)
