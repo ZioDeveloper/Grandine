@@ -54,9 +54,34 @@ namespace Grandine.Controllers
                     model.Clienti = clienti.ToList();
 
                     // Lista commesse
-                    var commesse = from m in db.Commesse
-                                   select m;
-                    model.Commesse = commesse.ToList();
+                    if (myIDUtente == "C001")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+                    else if (myIDUtente == "L001")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where co.ID == 5
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+                    else if (myIDUtente == "L002")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where co.ID == 2
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+
+
 
                     var elencoClienti = new SelectList(model.Clienti.ToList().Where(m=> m.IsActive== true).OrderBy(m => m.RagioneSociale) , "ID", "RagioneSociale");
                     var elencoCommesse = new SelectList(model.Commesse.ToList().OrderBy(m => m.Descrizione), "ID", "Descrizione");
@@ -124,10 +149,32 @@ namespace Grandine.Controllers
                                   select m;
                     model.Clienti = clienti.ToList();
 
-                    // Lista commesse
-                    var commesse = from m in db.Commesse
-                                   select m;
-                    model.Commesse = commesse.ToList();
+                    if (myIDUtente == "C001")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+                    else if (myIDUtente == "L001")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where co.ID == 5
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+                    else if (myIDUtente == "L002")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where co.ID == 2
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
 
                     ViewBag.DescrizioneClasse = myTipo;
 

@@ -115,11 +115,11 @@
 
 @foreach (var item in Model)
 {
-    <table border="1">
+    <table border="0">
         <tr>
             <td></td>
             <td>
-                <img src="@Url.Content("~/DocumentiXTelai/" + item.NomeFile)" title="@Url.Content(item.NomeFile)" alt="Image" style='height: 100px; width: 200px; object-fit: contain'>
+                <img src="@Url.Content("~/DocumentiXTelai/" + item.NomeFile)" title="@Url.Content(item.NomeFile)" alt="Image" style='height: 150px; width: 300px; object-fit: contain'>
 
             </td>
             <td>&nbsp;&nbsp;</td>
@@ -132,6 +132,7 @@
 
 
         </tr>
+        <br />
 
     </table>
 

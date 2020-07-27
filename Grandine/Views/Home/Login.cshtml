@@ -14,13 +14,13 @@
             <div class="form-group">
                 <label for="aUser">User name</label><br />
 
-                @Html.TextBox("aCodiceUtente", null, new { style = "width:180px", @Value = "C001", placeholder = "Codice utente" })
+                @Html.TextBox("aCodiceUtente", null, new { style = "width:180px", @Value = "", placeholder = "Codice utente" })
                 @Html.ValidationMessage("aCodiceUtente")
 
             </div>
             <div class="form-group">
                 <label for="aPassword">Password</label><br />
-                @Html.TextBox("aPassword", null, new { style = "width:180px", @Value = "test", placeholder = "Password", type = "password" })
+                @Html.TextBox("aPassword", null, new { style = "width:180px", @Value = "", placeholder = "Password", type = "password" })
                 @Html.ValidationMessage("aPassword")
             </div>
         </div>

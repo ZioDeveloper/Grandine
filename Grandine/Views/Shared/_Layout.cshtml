@@ -26,34 +26,37 @@
 
                         if (!String.IsNullOrEmpty(Session["UserName"].ToString()))
                         {
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Angrafiche<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a>@Html.ActionLink("Commesse", "Index", "Commesses")</a></li>
-                                    <li><a>@Html.ActionLink("Status", "Index", "Status")</a></li>
-                                    <li><a>@Html.ActionLink("Bisarchisti", "Index", "Bisarchistas")</a></li>
-                                    <li><a>@Html.ActionLink("Clienti", "Index", "Clientis")</a></li>
-                                    <li><a>@Html.ActionLink("Città", "Index", "Cittas")</a></li>
-                                    <li><a>@Html.ActionLink("Tecnici", "Index", "Tecnicis")</a></li>
-                                    <li><a>@Html.ActionLink("Carrozzerie", "Index", "Carrozzerias")</a></li>
+                            if (Session["Classeutente"].ToString() == "1")
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Angrafiche<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a>@Html.ActionLink("Commesse", "Index", "Commesses")</a></li>
+                                        <li><a>@Html.ActionLink("Status", "Index", "Status")</a></li>
+                                        <li><a>@Html.ActionLink("Bisarchisti", "Index", "Bisarchistas")</a></li>
+                                        <li><a>@Html.ActionLink("Clienti", "Index", "Clientis")</a></li>
+                                        <li><a>@Html.ActionLink("Città", "Index", "Cittas")</a></li>
+                                        <li><a>@Html.ActionLink("Tecnici", "Index", "Tecnicis")</a></li>
+                                        <li><a>@Html.ActionLink("Carrozzerie", "Index", "Carrozzerias")</a></li>
 
 
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Associazioni<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Associazioni<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
 
-                                    <li><a>@Html.ActionLink("Associa Cliente x Tecnici", "Index", "ClientiXTecnicis")</a></li>
-                                    <li><a>@Html.ActionLink("Associa Commesse x Tecnici", "Index", "CommesseXTecnicis")</a></li>
-                                    <li><a>@Html.ActionLink("Associa Commesse x Clienti", "Index", "CommesseXClientis")</a></li>
-                                    <li><a>@Html.ActionLink("Associa Commesse x Bisarchisti", "Index", "CommesseXBisarchistis")</a></li>
-                                    <li><a>@Html.ActionLink("Associa Commesse x Carrozzerie", "Index", "CommesseXCarrozzeries")</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                @Html.ActionLink("Reports", "Menu", "Home")
-                            </li>
+                                        <li><a>@Html.ActionLink("Associa Cliente x Tecnici", "Index", "ClientiXTecnicis")</a></li>
+                                        <li><a>@Html.ActionLink("Associa Commesse x Tecnici", "Index", "CommesseXTecnicis")</a></li>
+                                        <li><a>@Html.ActionLink("Associa Commesse x Clienti", "Index", "CommesseXClientis")</a></li>
+                                        <li><a>@Html.ActionLink("Associa Commesse x Bisarchisti", "Index", "CommesseXBisarchistis")</a></li>
+                                        <li><a>@Html.ActionLink("Associa Commesse x Carrozzerie", "Index", "CommesseXCarrozzeries")</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    @Html.ActionLink("Reports", "Menu", "Home")
+                                </li>
+                            }
                             @*<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestione rilevamenti<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -61,16 +64,16 @@
                     </ul>
                 </li>*@
 
-                            <li class="dropdown">
+                            @*<li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Importazione dati<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a>@Html.ActionLink("Importa da file txt", "Index", "InsertTelaiFromList")</a></li>
                                 </ul>
-                            </li>
+                            </li>*@
 
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Test", "Index", "Test")</li>
-                            <li>@Html.ActionLink("Ricambi", "Index", "Ricambi")</li>
+                            @*<li>@Html.ActionLink("Test", "Index", "Test")</li>
+                            <li>@Html.ActionLink("Ricambi", "Index", "Ricambi")</li>*@
                         }
                         else
                         {

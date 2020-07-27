@@ -103,8 +103,42 @@ namespace Grandine.Controllers
             ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr");
             ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
             ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
-            ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione");
+            //ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione");
+            ViewBag.IDCommessa = new SelectList(db.Commesse.ToList().Where(m=>m.ID == IDCommessa), "ID", "Descrizione");
             ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome");
+            ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
+
+           
+
+            return View();
+        }
+
+        // GET: TelaiAnagraficas/Create
+        public ActionResult CreateNew(int? IDCommessa)
+        {
+            //ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr");
+            //ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr");
+            //ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
+            //ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
+            ////ViewBag.IDCommessa = 1; //new SelectList(db.Commesse, "ID", "Codice");
+
+            //var model = new Models.HomeModel();
+            //// Lista tecnici
+            //var tecnici = from m in db.Tecnici
+            //               select m;
+            //model.Tecnici = tecnici.ToList();
+            //var elencoTecnici = new SelectList(model.Tecnici.ToList().OrderBy(m => m.ID), "ID", "Cognome");
+            //ViewData["Tecnici"] = elencoTecnici;
+            //return View();
+
+            ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr");
+            ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr");
+            ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
+            ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale");
+            //ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione");
+            ViewBag.IDCommessa = new SelectList(db.Commesse.ToList().Where(m => m.ID == IDCommessa), "ID", "Descrizione");
+            //ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome");
+            ViewBag.IDTecnico = new SelectList(GetTecniciXCommessa(IDCommessa), "Text", "Value");
             ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
             return View();
         }
@@ -119,6 +153,43 @@ namespace Grandine.Controllers
             if (ModelState.IsValid)
             {
                 
+                db.TelaiAnagrafica.Add(telaiAnagrafica);
+                db.SaveChanges();
+
+                // Insert StoricoStatus
+                int myID = telaiAnagrafica.ID;
+                var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDUtente) Values (@IDTelaio ,@IDStato  ,@IDUtente)";
+                int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                    new SqlParameter("@IDTelaio", telaiAnagrafica.ID),
+                    new SqlParameter("@IDStato", "GI"),
+                      new SqlParameter("@IDUtente", Session["UserName"]));
+
+                // INSERT Ricambi
+                sql = @"INSERT INTO dbo.Ricambi  (IDTelaio ) Values (@IDTelaio )";
+                noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                    new SqlParameter("@IDTelaio", telaiAnagrafica.ID));
+
+                // END
+
+                return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
+            }
+
+            ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
+            ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
+            ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
+            ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
+            ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
+            ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+            return View(telaiAnagrafica);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateNew([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,IDCommessa,IDTecnico,DataIn")] TelaiAnagrafica telaiAnagrafica)
+        {
+            if (ModelState.IsValid)
+            {
+
                 db.TelaiAnagrafica.Add(telaiAnagrafica);
                 db.SaveChanges();
 

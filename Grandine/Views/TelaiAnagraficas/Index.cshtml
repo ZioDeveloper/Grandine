@@ -48,11 +48,11 @@
             <th>Cancella</th>
             <th>Foto</th>
             <th>Foto</th>
-            <th>Ingresso</th>
+            <th>Consegna</th>
             <th>Lavorazione</th>
             <th>Bolla per</th>
             <th>Bolla da</th>
-            <th>Consegna</th>
+            <th>Ingresso</th>
         </tr>
 
     </thead>
@@ -94,7 +94,7 @@
                     @Html.DisplayFor(modelItem => item.Foto)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Ingresso)
+                    @Html.DisplayFor(modelItem => item.Consegna)
                 <td>
                     @Html.DisplayFor(modelItem => item.Lavorazione)
                 </td>
@@ -106,7 +106,7 @@
                     @Html.DisplayFor(modelItem => item.BollaDa)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Consegna)
+                    @Html.DisplayFor(modelItem => item.Ingresso)
                 </td>
 
             </tr>
@@ -116,26 +116,26 @@
         <tr>
             <th>Telaio</th>
             <th>Modello</th>
+
             <th>Status</th>
             <th>Chiave</th>
-
             <th>Annotazioni</th>
             <th>Modifica</th>
             <th>Cancella</th>
             <th>Foto</th>
             <th>Foto</th>
-            <th>Ingresso</th>
+            <th>Consegna</th>
             <th>Lavorazione</th>
             <th>Bolla per</th>
             <th>Bolla da</th>
-            <th>Consegna</th>
+            <th>Ingresso</th>
         </tr>
     </tfoot>
 </table>
 <br />
 <div>
     <p>
-        @Html.ActionLink("Inserisci telaio", "Create", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
         @*@Html.ActionLink("Inserisci telaio","Create","TelaiCompleti", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })*@
     </p>
     @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
@@ -156,6 +156,7 @@
             ],
 
             dom: 'Bfrtip',
+            //stateSave: true,
             language: {
 
                 processing: "Ricerca in corso...",
@@ -185,7 +186,7 @@
                         1: 'Un solo filtro selezionato'
                     },
                     clearMessage: 'Azzera filtri !',
-                    collapse: { 0: 'Ricerca avanzata', _: 'Opzioni (%d)' }
+                    collapse: { 0: 'Ricerca avanzata', _: 'Scelte selezionate (%d)' }
                 }
             }
         });
