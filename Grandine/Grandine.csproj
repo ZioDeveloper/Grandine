@@ -285,6 +285,9 @@
     <Content Include="img\folder.png" />
     <Content Include="img\image.png" />
     <Content Include="img\info.gif" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\logo140x42.jpg" />
+    <Content Include="img\logo140x42_trasp.png" />
     <Content Include="img\xls.jpg" />
     <Content Include="Models\GrandineEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
