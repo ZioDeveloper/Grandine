@@ -48,5 +48,6 @@ namespace Grandine.Models
         public virtual DbSet<TelaiAnagrafica> TelaiAnagrafica { get; set; }
         public virtual DbSet<Carglass> Carglass { get; set; }
         public virtual DbSet<Ricambi> Ricambi { get; set; }
+        public virtual DbSet<Gravita> Gravita { get; set; }
     }
 }

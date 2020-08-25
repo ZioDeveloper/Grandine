@@ -272,6 +272,9 @@ namespace Grandine.Controllers
             ViewBag.IDCarrozzeria3 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria3);
 
             ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
+
+            ViewBag.IDGravita = new SelectList(db.Gravita, "ID", "Descr", telaiAnagrafica.IDGravita);
+
             ViewBag.IDStatus = new SelectList(db.Status, "ID", "Descr");
 
             return View(telaiAnagrafica);
@@ -287,7 +290,7 @@ namespace Grandine.Controllers
                                                  " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
                                                  " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
                                                  "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
-                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
         {
             if (ModelState.IsValid)
             {
@@ -318,6 +321,7 @@ namespace Grandine.Controllers
             ViewBag.IDCarrozzeria1 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
             ViewBag.IDCarrozzeria2 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
             ViewBag.IDCarrozzeria3 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDGravita = new SelectList(db.Gravita, "ID", "Descr", telaiAnagrafica.Gravita);
 
             float Totale = 0;
             float Fatturato = (float)(telaiAnagrafica.ImpFattAtt ?? 0);

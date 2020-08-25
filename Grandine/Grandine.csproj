@@ -217,6 +217,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrandineEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Gravita.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Ricambi.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
