@@ -228,6 +228,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Telaio" Type="varchar" MaxLength="20" />
           <Property Name="Modello" Type="varchar" MaxLength="50" />
+          <Property Name="Targa" Type="varchar" MaxLength="50" />
           <Property Name="InsertUser" Type="varchar" MaxLength="20" StoreGeneratedPattern="Computed" />
           <Property Name="InsertDate" Type="datetime" StoreGeneratedPattern="Computed" />
           <Property Name="NomeFile" Type="varchar" MaxLength="50" />
@@ -1420,6 +1421,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <NavigationProperty Name="TelaiAnagrafica2" Relationship="GRANDINEModel.FK_TelaiAnagrafica_TelaiAnagrafica" FromRole="TelaiAnagrafica1" ToRole="TelaiAnagrafica" />
           <Property Name="IDGravita" Type="Int32" />
           <NavigationProperty Name="Gravita" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Gravita" FromRole="TelaiAnagrafica" ToRole="Gravita" />
+          <Property Name="Targa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1894,6 +1896,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="TelaiAnagrafica">
             <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
               <MappingFragment StoreEntitySet="TelaiAnagrafica">
+                <ScalarProperty Name="Targa" ColumnName="Targa" />
                 <ScalarProperty Name="IDGravita" ColumnName="IDGravita" />
                 <ScalarProperty Name="ImportoCarrozzeria3" ColumnName="ImportoCarrozzeria3" />
                 <ScalarProperty Name="DataFatturaCarrozzeria3" ColumnName="DataFatturaCarrozzeria3" />

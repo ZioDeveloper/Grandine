@@ -62,7 +62,7 @@ namespace Grandine.Controllers
                           where m.IDCommessa == myIDCommessa
                           select m;
             model.Telai_LastStatus_vw = telaiAnagrafica.ToList();
-
+            ViewBag.ClasseUtente = Session["Classeutente"].ToString();
             return View(telaiAnagrafica.ToList());
         }
 
@@ -290,7 +290,7 @@ namespace Grandine.Controllers
                                                  " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
                                                  " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
                                                  "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
-                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
         {
             if (ModelState.IsValid)
             {

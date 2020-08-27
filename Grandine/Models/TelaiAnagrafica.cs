@@ -67,6 +67,7 @@ namespace Grandine.Models
         public Nullable<System.DateTime> DataFatturaCarrozzeria3 { get; set; }
         public Nullable<double> ImportoCarrozzeria3 { get; set; }
         public Nullable<int> IDGravita { get; set; }
+        public string Targa { get; set; }
     
         public virtual Bisarchista Bisarchista { get; set; }
         public virtual Bisarchista Bisarchista1 { get; set; }

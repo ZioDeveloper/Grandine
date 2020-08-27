@@ -76,7 +76,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 2
+                                       //where co.ID == 2
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -171,7 +171,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 2
+                                       //where co.ID == 2
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
