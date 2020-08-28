@@ -59,7 +59,7 @@ namespace Grandine.Controllers
             var model = new Models.HomeModel();
             
             var telaiAnagrafica = from m in db.Telai_LastStatus_vw
-                          where m.IDCommessa == myIDCommessa
+                          where m.IDCommessa.ToString() == myIDCommessa.ToString()
                           select m;
             model.Telai_LastStatus_vw = telaiAnagrafica.ToList();
             ViewBag.ClasseUtente = Session["Classeutente"].ToString();

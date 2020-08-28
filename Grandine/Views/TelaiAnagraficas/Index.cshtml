@@ -39,96 +39,107 @@
     <table id="ElencoTelai" class="display" style="width:100%">
         <thead>
             <tr>
+                <th>Modifica</th>
                 <th>Telaio</th>
+                <th>Targa</th>
                 <th>Modello</th>
-
                 <th>Status</th>
                 <th>Chiave</th>
                 <th>Annotazioni</th>
-                <th>Modifica</th>
-                <th>Cancella</th>
                 <th>Foto</th>
+
                 <th>Foto</th>
-                <th>Consegna</th>
                 <th>Lavorazione</th>
+                <th>Ingresso</th>
                 <th>Bolla per</th>
                 <th>Bolla da</th>
-                <th>Ingresso</th>
+                <th>Consegna</th>
+
+                <th>Cancella</th>
             </tr>
 
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Telaio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Modello)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LastStatus)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Chiave)
-                    </td>
+            <tr>
+                <td>
+                    @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telaio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Targa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modello)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chiave)
+                </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Annotazioni)
-                    </td>
-                    @*<td>
-                            @Html.ActionLink("Status", "InsertStatus", new { IDTElaio = item.ID }, new { @class = "btn btn-success btn-xs" })
-                        </td>*@
-                    <td>
-                        @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                <td>
+                    @Html.DisplayFor(modelItem => item.Annotazioni)
+                </td>
 
-                        @*@Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-info" })*@
-                    </td>
-                    <td>
-                        @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
-                    </td>
-                    <td>
-                        @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Foto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Consegna)
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Lavorazione)
-                    </td>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BollaX)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BollaDa)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Ingresso)
-                    </td>
 
-                </tr>
+
+                <td>
+                    @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Foto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lavorazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ingresso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BollaX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BollaDa)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Consegna)
+                </td>
+
+
+
+
+                <td>
+                    @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
+                </td>
+
+            </tr>
             }
         </tbody>
         <tfoot>
             <tr>
+                <th>Modifica</th>
                 <th>Telaio</th>
+                <th>Targa</th>
                 <th>Modello</th>
                 <th>Status</th>
                 <th>Chiave</th>
                 <th>Annotazioni</th>
-                <th>Modifica</th>
-                <th>Cancella</th>
                 <th>Foto</th>
+
                 <th>Foto</th>
-                <th>Consegna</th>
                 <th>Lavorazione</th>
+                <th>Ingresso</th>
                 <th>Bolla per</th>
                 <th>Bolla da</th>
-                <th>Ingresso</th>
+                <th>Consegna</th>
+
+                <th>Cancella</th>
             </tr>
         </tfoot>
     </table>
@@ -138,20 +149,14 @@ else if (ViewBag.ClasseUtente == "3")
     <table id="ElencoTelai" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Telaio</th>
-                <th>Modello</th>
-                @*<th>Status</th>*@
-                @*<th>Chiave</th>*@
-                <th>Annotazioni</th>
                 <th>Modifica</th>
-                @*<th>Cancella</th>*@
+                <th>Telaio</th>
+                <th>Targa</th>
+                <th>Modello</th>
+                <th>Annotazioni</th>
                 <th>Foto</th>
                 <th>Foto</th>
-                @*<th>Consegna</th>*@
                 <th>Lavorazione</th>
-                @*<th>Bolla per</th>
-                    <th>Bolla da</th>
-                    th>Ingresso</th>*@
             </tr>
 
         </thead>
@@ -160,72 +165,43 @@ else if (ViewBag.ClasseUtente == "3")
             {
                 <tr>
                     <td>
+                        @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Telaio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Targa)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Modello)
                     </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.LastStatus)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Chiave)
-                        </td>*@
-
                     <td>
                         @Html.DisplayFor(modelItem => item.Annotazioni)
                     </td>
-
-                    <td>
-                        @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
-
-                        @*@Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-info" })*@
-                    </td>
-                    @*<td>
-                            @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
-                        </td>*@
                     <td>
                         @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Foto)
                     </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Consegna)
-                        </td>*@
+
                     <td>
                         @Html.DisplayFor(modelItem => item.Lavorazione)
                     </td>
-
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.BollaX)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.BollaDa)
-                        </td>*@
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Ingresso)
-                        </td>*@
-
                 </tr>
             }
         </tbody>
         <tfoot>
             <tr>
-                <th>Telaio</th>
-                <th>Modello</th>
-                @*<th>Status</th>*@
-                @*<th>Chiave</th>*@
-                <th>Annotazioni</th>
                 <th>Modifica</th>
-                @*<th>Cancella</th>*@
+                <th>Telaio</th>
+                <th>Targa</th>
+                <th>Modello</th>
+                <th>Annotazioni</th>
                 <th>Foto</th>
                 <th>Foto</th>
-                @*<th>Consegna</th>*@
                 <th>Lavorazione</th>
-                @*<th>Bolla per</th>
-                    <th>Bolla da</th>
-                    <th>Ingresso</th>*@
             </tr>
         </tfoot>
     </table>
@@ -236,39 +212,44 @@ else if (ViewBag.ClasseUtente == "4")
         <thead>
             <tr>
                 <th>Telaio</th>
+                <th>Targa</th>
                 <th>Modello</th>
                 <th>Status</th>
                 <th>Annotazioni</th>
-                
+
             </tr>
 
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Telaio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Modello)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LastStatus)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Annotazioni)
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telaio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Targa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modello)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Annotazioni)
+                </td>
+            </tr>
             }
         </tbody>
         <tfoot>
             <tr>
                 <th>Telaio</th>
+                <th>Targa</th>
                 <th>Modello</th>
                 <th>Status</th>
                 <th>Annotazioni</th>
-                
+
             </tr>
         </tfoot>
     </table>
@@ -286,8 +267,9 @@ else if (ViewBag.ClasseUtente == "4")
 <script>
     $(document).ready(function () {
         var table = $('#ElencoTelai').DataTable({
-            "pageLength": 5,
+            "autoWidth": false,
             stateSave: true,
+            
             buttons: [
                 {
                     extend: 'searchPanes',
@@ -297,7 +279,15 @@ else if (ViewBag.ClasseUtente == "4")
                 }
             ],
 
-            dom: 'Bfrtip',
+            dom: 'Blfrtip',
+            "columnDefs": [
+                { "width": "110px", "targets": 0 },
+                { "width": "40px", "targets": 1 },
+                { "width": "100px", "targets": 2 },
+                { "width": "70px", "targets": 3 },
+                { "width": "270px", "targets": 4 },
+                { "width": "70px", "targets": 5 }
+            ],
             //stateSave: true,
             language: {
 

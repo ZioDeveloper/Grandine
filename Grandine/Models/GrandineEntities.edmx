@@ -323,6 +323,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Telaio" Type="varchar" MaxLength="20" />
+          <Property Name="Targa" Type="varchar" MaxLength="50" />
           <Property Name="Modello" Type="varchar" MaxLength="50" />
           <Property Name="LastStatus" Type="varchar" MaxLength="30" />
           <Property Name="IDCommessa" Type="int" />
@@ -706,6 +707,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <DefiningQuery>SELECT 
     [Telai_LastStatus_vw].[ID] AS [ID], 
     [Telai_LastStatus_vw].[Telaio] AS [Telaio], 
+    [Telai_LastStatus_vw].[Targa] AS [Targa], 
     [Telai_LastStatus_vw].[Modello] AS [Modello], 
     [Telai_LastStatus_vw].[LastStatus] AS [LastStatus], 
     [Telai_LastStatus_vw].[IDCommessa] AS [IDCommessa], 
@@ -1334,6 +1336,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="BollaX" Type="Int32" />
           <Property Name="BollaDa" Type="Int32" />
           <Property Name="Consegna" Type="Int32" />
+          <Property Name="Targa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="StoricoStatus_vw">
           <Key>
@@ -1854,6 +1857,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="Telai_LastStatus_vw">
             <EntityTypeMapping TypeName="GRANDINEModel.Telai_LastStatus_vw">
               <MappingFragment StoreEntitySet="Telai_LastStatus_vw">
+                <ScalarProperty Name="Targa" ColumnName="Targa" />
                 <ScalarProperty Name="Consegna" ColumnName="Consegna" />
                 <ScalarProperty Name="BollaDa" ColumnName="BollaDa" />
                 <ScalarProperty Name="BollaX" ColumnName="BollaX" />

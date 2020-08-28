@@ -27,5 +27,6 @@ namespace Grandine.Models
         public Nullable<int> BollaX { get; set; }
         public Nullable<int> BollaDa { get; set; }
         public Nullable<int> Consegna { get; set; }
+        public string Targa { get; set; }
     }
 }
