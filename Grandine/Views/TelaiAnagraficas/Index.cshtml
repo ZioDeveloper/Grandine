@@ -48,7 +48,7 @@
                 <th>Annotazioni</th>
                 <th>Foto</th>
 
-                <th>Foto</th>
+                <th>Foto veicolo</th>
                 <th>Lavorazione</th>
                 <th>Ingresso</th>
                 <th>Bolla per</th>
@@ -132,7 +132,7 @@
                 <th>Annotazioni</th>
                 <th>Foto</th>
 
-                <th>Foto</th>
+                <th>Foto veicolo</th>
                 <th>Lavorazione</th>
                 <th>Ingresso</th>
                 <th>Bolla per</th>
@@ -155,7 +155,7 @@ else if (ViewBag.ClasseUtente == "3")
                 <th>Modello</th>
                 <th>Annotazioni</th>
                 <th>Foto</th>
-                <th>Foto</th>
+                <th>Foto veicolo</th>
                 <th>Lavorazione</th>
             </tr>
 
@@ -165,7 +165,7 @@ else if (ViewBag.ClasseUtente == "3")
             {
                 <tr>
                     <td>
-                        @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                        @Html.ActionLink("Modifica", "EditTecnico", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Telaio)
@@ -200,7 +200,7 @@ else if (ViewBag.ClasseUtente == "3")
                 <th>Modello</th>
                 <th>Annotazioni</th>
                 <th>Foto</th>
-                <th>Foto</th>
+                <th>Foto veicolo</th>
                 <th>Lavorazione</th>
             </tr>
         </tfoot>

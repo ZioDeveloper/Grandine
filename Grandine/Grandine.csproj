@@ -446,6 +446,7 @@
     <Content Include="Views\Test\Index02.cshtml" />
     <Content Include="Views\Ricambi\EditBackup.cshtml" />
     <Content Include="Views\TelaiAnagraficas\CreateNew.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\EditTecnico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

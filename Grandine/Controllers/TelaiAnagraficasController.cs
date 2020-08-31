@@ -343,6 +343,125 @@ namespace Grandine.Controllers
             return View(telaiAnagrafica);
         }
 
+        public ActionResult EditTecnico(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
+            if (telaiAnagrafica == null)
+            {
+                return HttpNotFound();
+            }
+
+            float Totale = 0;
+            float Fatturato = (float)(telaiAnagrafica.ImpFattAtt ?? 0);
+
+
+            float CostoAndata = (float)(telaiAnagrafica.CostoAndata ?? 0);
+            float CostoRitorno = (float)(telaiAnagrafica.CostoRitorno ?? 0);
+            float ImportoFattPass = (float)(telaiAnagrafica.ImportoFattPass ?? 0);
+            float ImportoCarrozzeria1 = (float)(telaiAnagrafica.ImportoCarrozzeria1 ?? 0);
+            float ImportoCarrozzeria2 = (float)(telaiAnagrafica.ImportoCarrozzeria2 ?? 0);
+            float ImportoFattCarGlass = (float)(telaiAnagrafica.ImportoFattCarGlass ?? 0);
+            float ImportoCarrozzeria3 = (float)(telaiAnagrafica.ImportoCarrozzeria3 ?? 0);
+            Totale = CostoAndata + CostoRitorno + ImportoFattPass + ImportoCarrozzeria1 + ImportoCarrozzeria2 + ImportoCarrozzeria3;
+            float Differenza = Fatturato - Totale;
+            ViewBag.Totale = Totale.ToString();
+            ViewBag.Fatturato = Fatturato;
+            ViewBag.Differenza = Differenza;
+
+
+            var tmp = (from m in db.Telai_LastStatus_vw
+                       where m.ID == id
+                       select m.LastStatus).FirstOrDefault();
+            ViewBag.LastStatus = tmp;
+
+
+            ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
+            ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
+            // ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
+            // ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
+            // ViewBag.IDCarrozzeria3 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria3);
+            ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
+
+            // ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+
+            ViewBag.IDTecnico = new SelectList(GetTecniciXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDTecnico);
+            ViewBag.IDCarrozzeria1 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria1);
+            ViewBag.IDCarrozzeria2 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria2);
+            ViewBag.IDCarrozzeria3 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value", telaiAnagrafica.IDCarrozzeria3);
+
+            ViewBag.IDCarGlass = new SelectList(db.Carglass, "ID", "RagioneSociale");
+
+            ViewBag.IDGravita = new SelectList(db.Gravita, "ID", "Descr", telaiAnagrafica.IDGravita);
+
+            ViewBag.IDStatus = new SelectList(db.Status, "ID", "Descr");
+
+            return View(telaiAnagrafica);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditTecnico([Bind(Include = " ID,Telaio,IDCommessa,Modello,InsertUser,InsertDate,NomeFile,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt, " +
+                                                 " ImpFattAtt,IDTecnico,NumFattTecnico,DataFatturaPassiva,ImportoFattPass,IDCarrozzeria1,NumFattCarrozzeria1, " +
+                                                 " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
+                                                 " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
+                                                 "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa")] TelaiAnagrafica telaiAnagrafica, string IDStatus)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(telaiAnagrafica).State = EntityState.Modified;
+                db.SaveChanges();
+
+                // Insert StoricoStatus
+                //if (IDStatus != "**" && !String.IsNullOrEmpty(IDStatus.ToString()))
+                //{
+                //    int myID = telaiAnagrafica.ID;
+                //    var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDUtente) Values (@IDTelaio ,@IDStato  ,@IDUtente)";
+                //    int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                //        new SqlParameter("@IDTelaio", telaiAnagrafica.ID),
+                //        new SqlParameter("@IDStato", IDStatus.ToString()),
+                //          new SqlParameter("@IDUtente", Session["UserName"]));
+                //}
+
+                return RedirectToAction("EditTecnico", new { id = telaiAnagrafica.ID });
+                return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
+            }
+            ViewBag.IDBisarchistaAndata = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaAndata);
+            ViewBag.IDBisarchistaRitorno = new SelectList(db.Bisarchista, "ID", "Descr", telaiAnagrafica.IDBisarchistaRitorno);
+            //ViewBag.IDCarrozzeria1 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria1);
+            //ViewBag.IDCarrozzeria2 = new SelectList(db.Carrozzeria, "ID", "RagioneSociale", telaiAnagrafica.IDCarrozzeria2);
+            ViewBag.IDCommessa = new SelectList(db.Commesse, "ID", "Descrizione", telaiAnagrafica.IDCommessa);
+            // ViewBag.IDTecnico = new SelectList(db.Tecnici, "ID", "Cognome", telaiAnagrafica.IDTecnico);
+            ViewBag.IDTecnico = new SelectList(GetTecniciXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDCarrozzeria1 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDCarrozzeria2 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDCarrozzeria3 = new SelectList(GetCarrozzeriaXCommessa(telaiAnagrafica.IDCommessa), "Text", "Value");
+            ViewBag.IDGravita = new SelectList(db.Gravita, "ID", "Descr", telaiAnagrafica.Gravita);
+
+            float Totale = 0;
+            float Fatturato = (float)(telaiAnagrafica.ImpFattAtt ?? 0);
+
+
+            float CostoAndata = (float)(telaiAnagrafica.CostoAndata ?? 0);
+            float CostoRitorno = (float)(telaiAnagrafica.CostoRitorno ?? 0);
+            float ImportoFattPass = (float)(telaiAnagrafica.ImportoFattPass ?? 0);
+            float ImportoCarrozzeria1 = (float)(telaiAnagrafica.ImportoCarrozzeria1 ?? 0);
+            float ImportoCarrozzeria2 = (float)(telaiAnagrafica.ImportoCarrozzeria2 ?? 0);
+            float ImportoFattCarGlass = (float)(telaiAnagrafica.ImportoFattCarGlass ?? 0);
+            Totale = CostoAndata + CostoRitorno + ImportoFattPass + ImportoCarrozzeria1 + ImportoCarrozzeria2 + ImportoFattCarGlass;
+            float Differenza = Fatturato - Totale;
+            ViewBag.Totale = Totale.ToString();
+            ViewBag.Fatturato = Fatturato;
+            ViewBag.Differenza = Differenza;
+
+
+            return View(telaiAnagrafica);
+        }
+
         public IEnumerable<SelectListItem> GetTecniciXCommessa(int? aIDCommessa)
         {
             IEnumerable<SelectListItem> list = null;
@@ -448,7 +567,7 @@ namespace Grandine.Controllers
             if (IDTipoDocumento != null)
                 ViewBag.IDTipoDocumento = IDTipoDocumento;
             else
-                ViewBag.IDTipoDocumento = 1;
+                ViewBag.IDTipoDocumento = 7;
 
             ViewBag.IDTelaio = IDTelaio;
             return View("ScattaFoto", myFoto);
