@@ -12,7 +12,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-brand" style="text-align:right">
-                @*<a href="#" class="navbar-left"><img src="~/img/logo140x42.jpg"></a>*@
+                @*<a href="#" class="navbar-left"><img src="~/img/logo.png"></a>*@
 
             </div>
             <div class="navbar-header">
@@ -32,6 +32,7 @@
                         {
                             if (Session["Classeutente"].ToString() == "1")
                             {
+                                <li>@Html.ActionLink("Login", "Login", "Home")</li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Angrafiche<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -46,6 +47,7 @@
 
                                     </ul>
                                 </li>
+
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Associazioni<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -62,22 +64,22 @@
                                 </li>
                             }
                             @*<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestione rilevamenti<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a>@Html.ActionLink("Telai", "Index", "TelaiCompleti", new { test = 2 }, null)</a></li>
-                            </ul>
-                        </li>*@
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestione rilevamenti<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a>@Html.ActionLink("Telai", "Index", "TelaiCompleti", new { test = 2 }, null)</a></li>
+                    </ul>
+                </li>*@
 
                             @*<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Importazione dati<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a>@Html.ActionLink("Importa da file txt", "Index", "InsertTelaiFromList")</a></li>
-                            </ul>
-                        </li>*@
-
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Importazione dati<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a>@Html.ActionLink("Importa da file txt", "Index", "InsertTelaiFromList")</a></li>
+                    </ul>
+                </li>*@
+                            <li>@Html.ActionLink("Login", "Login", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                             @*<li>@Html.ActionLink("Test", "Index", "Test")</li>
-                        <li>@Html.ActionLink("Ricambi", "Index", "Ricambi")</li>*@
+                <li>@Html.ActionLink("Ricambi", "Index", "Ricambi")</li>*@
                         }
                         else
                         {
@@ -96,7 +98,19 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Gestione Concessionari</p>
+            <table>
+                <tr>
+                    <td>
+                        <a href="#" class="navbar-left"><img src="~/img/logo_text_lateraale-1 (1).png">
+                    </td>
+                    <td>
+                        &nbsp;&nbsp; &copy; @DateTime.Now.Year - Gestione Concessionari
+                    </td>
+                </tr>
+            </table>
+            @*<p>&nbsp;&nbsp;&copy; @DateTime.Now.Year - Gestione Concessionari <a href="#" class="navbar-left"><img src="~/img/logo_text_lateraale-1 (1).png"></a></p>*@
+            
+
         </footer>
     </div>
 

@@ -48,10 +48,21 @@ namespace Grandine.Controllers
                     ViewBag.DescrizioneClasse = myTipo;
 
                     // Conta i clienti attivi
-                    var clienti = from m in db.Clienti
-                                 where m.IsActive == true
-                                 select m;
-                    model.Clienti = clienti.ToList();
+                    if (myIDUtente == "DEB")
+                    {
+                        var clienti = from m in db.Clienti
+                                      where m.IsActive == true
+                                      where m.ID == 5
+                                      select m;
+                        model.Clienti = clienti.ToList();
+                    }
+                    else
+                    {
+                        var clienti = from m in db.Clienti
+                                      where m.IsActive == true
+                                      select m;
+                        model.Clienti = clienti.ToList();
+                    }
 
                     // Lista commesse
                     if (myIDUtente == "C001")
@@ -67,7 +78,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 5
+                                       //where co.ID == 5
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -77,6 +88,16 @@ namespace Grandine.Controllers
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
                                        //where co.ID == 2
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+
+                    else if (myIDUtente == "DEB")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where m.ID == 5
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -144,11 +165,23 @@ namespace Grandine.Controllers
                                   select m.Classe).FirstOrDefault();
 
                     // Conta i clienti attivi
-                    var clienti = from m in db.Clienti
-                                  where m.IsActive == true
-                                  select m;
-                    model.Clienti = clienti.ToList();
+                    if (myIDUtente == "DEB")
+                    {
+                        var clienti = from m in db.Clienti
+                                      where m.IsActive == true
+                                      where m.ID == 5
+                                      select m;
+                        model.Clienti = clienti.ToList();
+                    }
+                    else
+                    {
+                        var clienti = from m in db.Clienti
+                                      where m.IsActive == true
+                                      select m;
+                        model.Clienti = clienti.ToList();
+                    }
 
+                    // Lista commesse
                     if (myIDUtente == "C001")
                     {
                         var commesse = from co in db.Commesse
@@ -162,7 +195,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 5
+                                       
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -172,6 +205,16 @@ namespace Grandine.Controllers
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
                                        //where co.ID == 2
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+
+                    else if (myIDUtente == "DEB")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where m.ID == 5
                                        select co;
                         model.Commesse = commesse.ToList();
                     }

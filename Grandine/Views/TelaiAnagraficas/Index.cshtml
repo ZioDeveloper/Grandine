@@ -63,9 +63,20 @@
             @foreach (var item in Model)
             {
             <tr>
-                <td>
-                    @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
-                </td>
+                @if (ViewBag.ClasseUtente == "1")
+                {
+                    <td>
+                        @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Modifica", "EditController", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                    </td>
+                }
+
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Telaio)
                 </td>
@@ -162,7 +173,7 @@ else if (ViewBag.ClasseUtente == "3")
         </thead>
         <tbody>
             @foreach (var item in Model)
-            {
+                        {
                 <tr>
                     <td>
                         @Html.ActionLink("Modifica", "EditTecnico", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
@@ -211,11 +222,14 @@ else if (ViewBag.ClasseUtente == "4")
     <table id="ElencoTelai" class="display" style="width:100%">
         <thead>
             <tr>
+
                 <th>Telaio</th>
                 <th>Targa</th>
                 <th>Modello</th>
                 <th>Status</th>
                 <th>Annotazioni</th>
+                <th>Foto veicolo</th>
+                
 
             </tr>
 
@@ -224,6 +238,7 @@ else if (ViewBag.ClasseUtente == "4")
             @foreach (var item in Model)
             {
             <tr>
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Telaio)
                 </td>
@@ -239,16 +254,27 @@ else if (ViewBag.ClasseUtente == "4")
                 <td>
                     @Html.DisplayFor(modelItem => item.Annotazioni)
                 </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Foto)
+                </td>
+                
+
+
             </tr>
             }
         </tbody>
         <tfoot>
             <tr>
+
                 <th>Telaio</th>
                 <th>Targa</th>
                 <th>Modello</th>
-                <th>Status</th>
                 <th>Annotazioni</th>
+                <th>Status</th>
+
+                <th>Foto veicolo</th>
+
 
             </tr>
         </tfoot>

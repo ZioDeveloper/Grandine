@@ -271,6 +271,7 @@
           <Property Name="Chiave" Type="varchar" MaxLength="50" />
           <Property Name="Fila" Type="varchar" MaxLength="50" />
           <Property Name="IDGravita" Type="int" />
+          <Property Name="IsUrgente" Type="bit" />
         </EntityType>
         <EntityType Name="TipiDocumento">
           <Key>
@@ -323,7 +324,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Telaio" Type="varchar" MaxLength="20" />
-          <Property Name="Targa" Type="varchar" MaxLength="50" />
           <Property Name="Modello" Type="varchar" MaxLength="50" />
           <Property Name="LastStatus" Type="varchar" MaxLength="30" />
           <Property Name="IDCommessa" Type="int" />
@@ -335,6 +335,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="BollaX" Type="int" />
           <Property Name="BollaDa" Type="int" />
           <Property Name="Consegna" Type="int" />
+          <Property Name="Targa" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_ClientiXTecnici_Clienti">
           <End Role="Clienti" Type="Self.Clienti" Multiplicity="1" />
@@ -707,7 +708,6 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <DefiningQuery>SELECT 
     [Telai_LastStatus_vw].[ID] AS [ID], 
     [Telai_LastStatus_vw].[Telaio] AS [Telaio], 
-    [Telai_LastStatus_vw].[Targa] AS [Targa], 
     [Telai_LastStatus_vw].[Modello] AS [Modello], 
     [Telai_LastStatus_vw].[LastStatus] AS [LastStatus], 
     [Telai_LastStatus_vw].[IDCommessa] AS [IDCommessa], 
@@ -718,7 +718,8 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
     [Telai_LastStatus_vw].[Lavorazione] AS [Lavorazione], 
     [Telai_LastStatus_vw].[BollaX] AS [BollaX], 
     [Telai_LastStatus_vw].[BollaDa] AS [BollaDa], 
-    [Telai_LastStatus_vw].[Consegna] AS [Consegna]
+    [Telai_LastStatus_vw].[Consegna] AS [Consegna], 
+    [Telai_LastStatus_vw].[Targa] AS [Targa]
     FROM [dbo].[Telai_LastStatus_vw] AS [Telai_LastStatus_vw]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_ClientiXTecnici_Clienti" Association="Self.FK_ClientiXTecnici_Clienti">
@@ -1425,6 +1426,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="IDGravita" Type="Int32" />
           <NavigationProperty Name="Gravita" Relationship="GRANDINEModel.FK_TelaiAnagrafica_Gravita" FromRole="TelaiAnagrafica" ToRole="Gravita" />
           <Property Name="Targa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsUrgente" Type="Boolean" />
         </EntityType>
         <Association Name="FK_TelaiAnagrafica_Bisarchista">
           <End Type="GRANDINEModel.Bisarchista" Role="Bisarchista" Multiplicity="0..1" />
@@ -1900,6 +1902,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="TelaiAnagrafica">
             <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagrafica">
               <MappingFragment StoreEntitySet="TelaiAnagrafica">
+                <ScalarProperty Name="IsUrgente" ColumnName="IsUrgente" />
                 <ScalarProperty Name="Targa" ColumnName="Targa" />
                 <ScalarProperty Name="IDGravita" ColumnName="IDGravita" />
                 <ScalarProperty Name="ImportoCarrozzeria3" ColumnName="ImportoCarrozzeria3" />

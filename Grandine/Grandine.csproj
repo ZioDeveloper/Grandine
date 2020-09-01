@@ -288,9 +288,12 @@
     <Content Include="img\folder.png" />
     <Content Include="img\image.png" />
     <Content Include="img\info.gif" />
+    <Content Include="img\Logo NSG - 20.png" />
     <Content Include="img\logo.jpg" />
+    <Content Include="img\logo.png" />
     <Content Include="img\logo140x42.jpg" />
     <Content Include="img\logo140x42_trasp.png" />
+    <Content Include="img\logo_text_lateraale-1 %281%29.png" />
     <Content Include="img\xls.jpg" />
     <Content Include="Models\GrandineEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -447,6 +450,7 @@
     <Content Include="Views\Ricambi\EditBackup.cshtml" />
     <Content Include="Views\TelaiAnagraficas\CreateNew.cshtml" />
     <Content Include="Views\TelaiAnagraficas\EditTecnico.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\EditController.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
