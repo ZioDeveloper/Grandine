@@ -23,7 +23,7 @@
 <div>
     <table border="0">
         <thead>
-            Clienti con commesse attualmente attive :
+            <b>Clienti con commesse attualmente attive :</b>
             <br />
         </thead>
         <tbody>
@@ -57,11 +57,12 @@
     @using (Html.BeginForm("Index", "TelaiAnagraficas", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
+        @Html.Label("Commesse attive :")
         @Html.DropDownList("IDCommessa", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
         <br />
         <div>
             <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
         </div>
-    }
-</div>
+        }
+    </div>
 <br />
