@@ -61,9 +61,9 @@ namespace Grandine.Controllers
             var telaiAnagrafica = from m in db.Telai_LastStatus_vw
                           where m.IDCommessa.ToString() == myIDCommessa.ToString()
                           select m;
-            model.Telai_LastStatus_vw = telaiAnagrafica.ToList();
+            model.Telai_LastStatus_vw = telaiAnagrafica.ToList().OrderByDescending(s=>s.UpdateDate);
             ViewBag.ClasseUtente = Session["Classeutente"].ToString();
-            return View(telaiAnagrafica.ToList());
+            return View(telaiAnagrafica.ToList().OrderByDescending(s => s.UpdateDate));
         }
 
         // GET: TelaiAnagraficas/Details/5
@@ -148,7 +148,10 @@ namespace Grandine.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt,IDTecnico,DataFatturaPassiva,ImportoFattPass,IDCarrozzeria1,NumFattCarrozzeria1,DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2,ImportoCarrozzeria2,IDCarglass,NumFattCarGlass,ImportoFattCarGlass,DataFatturaCarglass,IDBisarchistaAndata,NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR,DataFattBisarchistaR,CostoRitorno,Costi")] TelaiAnagrafica telaiAnagrafica)
+        public ActionResult Create([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,NomeFile,IDCommessa,Annotazioni,DataIn,DataOut,NFattAttiva,DataFattAtt,ImpFattAtt," +
+            "IDTecnico,DataFatturaPassiva,ImportoFattPass,IDCarrozzeria1,NumFattCarrozzeria1,DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2," +
+            "NumFattCarrozzeria2,DataFatturaCarrozzeria2,ImportoCarrozzeria2,IDCarglass,NumFattCarGlass,ImportoFattCarGlass,DataFatturaCarglass,IDBisarchistaAndata," +
+            "NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR,DataFattBisarchistaR,CostoRitorno,Costi")] TelaiAnagrafica telaiAnagrafica)
         {
             if (ModelState.IsValid)
             {
@@ -290,10 +293,11 @@ namespace Grandine.Controllers
                                                  " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
                                                  " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
                                                  "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
-                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa,IsUrgente")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa,IsUrgente,VerificatoNSG,VerificatoCliente")] TelaiAnagrafica telaiAnagrafica,string IDStatus)
         {
             if (ModelState.IsValid)
             {
+                telaiAnagrafica.UpdateDate = DateTime.Now;
                 db.Entry(telaiAnagrafica).State = EntityState.Modified;
                 db.SaveChanges();
 
@@ -409,10 +413,11 @@ namespace Grandine.Controllers
                                                  " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
                                                  " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
                                                  "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
-                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa,IsUrgente")] TelaiAnagrafica telaiAnagrafica, string IDStatus)
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa,IsUrgente,VerificatoNSG,VerificatoCliente")] TelaiAnagrafica telaiAnagrafica, string IDStatus)
         {
             if (ModelState.IsValid)
             {
+                telaiAnagrafica.UpdateDate = DateTime.Now;
                 db.Entry(telaiAnagrafica).State = EntityState.Modified;
                 db.SaveChanges();
 
@@ -527,10 +532,11 @@ namespace Grandine.Controllers
                                                  " DataFatturaCarrozzeria1,ImportoCarrozzeria1,IDCarrozzeria2,NumFattCarrozzeria2,DataFatturaCarrozzeria2, " +
                                                  " ImportoCarrozzeria2,IDCarrozzeria3,NumFattCarrozzeria3,DataFatturaCarrozzeria3,ImportoCarrozzeria3,IDBisarchistaAndata, " +
                                                  "  NumFattBisarchistaA,DataFattBisarchistaA,CostoAndata,IDBisarchistaRitorno,NumFattBisarchistaR, " +
-                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa,IsUrgente")] TelaiAnagrafica telaiAnagrafica, string IDStatus)
+                                                 "  DataFattBisarchistaR,CostoRitorno,Costi, Chiave, Fila,IDGravita,Targa,IsUrgente,VerificatoNSG,VerificatoCliente")] TelaiAnagrafica telaiAnagrafica, string IDStatus)
         {
             if (ModelState.IsValid)
             {
+                telaiAnagrafica.UpdateDate = DateTime.Now;
                 db.Entry(telaiAnagrafica).State = EntityState.Modified;
                 db.SaveChanges();
 
@@ -608,6 +614,7 @@ namespace Grandine.Controllers
             return list;
         }
 
+ 
 
         // GET: TelaiAnagraficas/Delete/5
         public ActionResult Delete(int? id)
@@ -665,8 +672,7 @@ namespace Grandine.Controllers
 
         public ActionResult ScattaFoto(int? IDTelaio,int? IDTipoDocumento)
         {
-
-            
+           
             var model = new Models.HomeModel();
 
             // Lista tipidocumento
@@ -786,6 +792,32 @@ namespace Grandine.Controllers
                 System.IO.File.Delete(fullPath);
             }
 
+            var model = new Models.HomeModel();
+
+            // Lista tipidocumento
+            var tipidoc = from m in db.TipiDocumento
+                          select m;
+            model.TipiDocumento = tipidoc.ToList();
+            var elencotipidocumento = new SelectList(model.TipiDocumento.ToList().OrderBy(m => m.ID), "ID", "TipoDocumento");
+            ViewData["TipiDocumento"] = elencotipidocumento;
+
+            var myFoto = (from f in db.FotoXTelaio_vw
+                          where f.IDTelaio == IDTelaio
+                          select f);
+            model.FotoXTelaio_vw = myFoto.ToList();
+
+            ViewBag.IDTelaio = IDTelaio;
+            ViewBag.IDTipoDocumento = IDTipoDocumento;
+            return View("ScattaFoto", myFoto);
+        }
+
+        public ActionResult ModificaDocumento(int? IDDocumento, int? IDTelaio, string nomefile, int? IDTipoDocumento)
+        {
+            var sql = @"UPDATE  FotoXTelaio SET IDTipoDocumento = @IDTipoDocumento WHERE ID = @IDDocumento";
+            int myRecordCounter = db.Database.ExecuteSqlCommand(sql, new SqlParameter("@IDDocumento", IDDocumento),
+                        new SqlParameter("@IDTipoDocumento", IDTipoDocumento));
+
+            
             var model = new Models.HomeModel();
 
             // Lista tipidocumento
@@ -934,6 +966,30 @@ namespace Grandine.Controllers
             return View(storicoStatus);
             
 
+        }
+
+        public ActionResult StatusProntaConsegna(int? id)
+        {
+
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
+            if (telaiAnagrafica == null)
+            {
+                return HttpNotFound();
+            }
+
+
+            var sql = @"INSERT INTO dbo.StoricoStatus  (IDTelaio ,IDStato ,IDUtente) Values (@IDTelaio ,@IDStato  ,@IDUtente)";
+            int noOfRowInserted = db.Database.ExecuteSqlCommand(sql,
+                new SqlParameter("@IDTelaio", telaiAnagrafica.ID),
+                new SqlParameter("@IDStato", "PC"),
+                  new SqlParameter("@IDUtente", Session["UserName"]));
+
+            return RedirectToAction("Index",  new { IDCommessa = telaiAnagrafica.IDCommessa });
         }
 
 
