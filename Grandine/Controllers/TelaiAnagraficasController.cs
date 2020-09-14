@@ -61,7 +61,7 @@ namespace Grandine.Controllers
             var telaiAnagrafica = from m in db.Telai_LastStatus_vw
                           where m.IDCommessa.ToString() == myIDCommessa.ToString()
                           select m;
-            model.Telai_LastStatus_vw = telaiAnagrafica.ToList().OrderByDescending(s=>s.UpdateDate);
+            model.Telai_LastStatus_vw = telaiAnagrafica.ToList();
             ViewBag.ClasseUtente = Session["Classeutente"].ToString();
             return View(telaiAnagrafica.ToList().OrderByDescending(s => s.UpdateDate));
         }
@@ -188,7 +188,7 @@ namespace Grandine.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateNew([Bind(Include = "ID,Telaio,Modello,InsertUser,InsertDate,IDCommessa,IDTecnico,DataIn")] TelaiAnagrafica telaiAnagrafica)
+        public ActionResult CreateNew([Bind(Include = "ID,Telaio,Targa,Modello,InsertUser,InsertDate,IDCommessa,IDTecnico,DataIn")] TelaiAnagrafica telaiAnagrafica)
         {
             if (ModelState.IsValid)
             {
@@ -990,6 +990,58 @@ namespace Grandine.Controllers
                   new SqlParameter("@IDUtente", Session["UserName"]));
 
             return RedirectToAction("Index",  new { IDCommessa = telaiAnagrafica.IDCommessa });
+        }
+
+        public ActionResult SegnaComeVerificata(int? id , bool? Verificata)
+        {
+
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
+            if (telaiAnagrafica == null)
+            {
+                return HttpNotFound();
+            }
+
+            Verificata = !Verificata;
+
+            var sql = @"UPDATE TelaiAnagrafica SET VerificatoCliente = @Verificata WHERE ID = @IDTelaio ";
+            int noOfRowInserted = db.Database.ExecuteSqlCommand(sql, new SqlParameter("@IDTelaio", id), new SqlParameter("@Verificata", Verificata));
+
+            return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
+        }
+
+        public ActionResult SegnaComeUrgente(int? id,bool? Urgente)
+        {
+
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
+            if (telaiAnagrafica == null)
+            {
+                return HttpNotFound();
+            }
+
+            Urgente = !Urgente;
+            //if (Urgente == true)
+            //{
+            //    Urgente = false;
+            //}
+            //else if (Urgente == false)
+            //{
+            //    Urgente = true;
+            //}
+
+            var sql = @"UPDATE TelaiAnagrafica SET IsUrgente = @Urgente WHERE ID = @IDTelaio ";
+            int noOfRowInserted = db.Database.ExecuteSqlCommand(sql, new SqlParameter("@IDTelaio", id), new SqlParameter("@Urgente", Urgente));
+
+            return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
         }
 
 

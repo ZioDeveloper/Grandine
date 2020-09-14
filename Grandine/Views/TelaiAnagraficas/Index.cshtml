@@ -245,7 +245,13 @@ else if (ViewBag.ClasseUtente == "4")
                 <th>Status</th>
                 <th>Annotazioni</th>
                 <th>Foto veicolo</th>
-                
+                <th>Data PC</th>
+                <th>Urgente</th>
+                <th>Urgente Si/No</th>
+                <th>Verificata</th>
+                <th>Verificata Si/No
+                </th>
+
 
             </tr>
 
@@ -274,8 +280,25 @@ else if (ViewBag.ClasseUtente == "4")
                 <td>
                     @Html.DisplayFor(modelItem => item.Foto)
                 </td>
-                
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataPC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsUrgente)
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("Urgente Si/No", "SegnaComeUrgente", new { id = item.ID, Urgente = item.IsUrgente }, new { @class = "btn btn-warning btn-xs" })
 
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VerificatoCliente)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Verificata Si/No", "SegnaComeVerificata", new { id = item.ID, Verificata = item.VerificatoCliente }, new { @class = "btn btn-warning btn-xs" })
+
+                </td>
 
             </tr>
             }
@@ -288,9 +311,12 @@ else if (ViewBag.ClasseUtente == "4")
                 <th>Modello</th>
                 <th>Annotazioni</th>
                 <th>Status</th>
-
                 <th>Foto veicolo</th>
-
+                <th>Data PC</th>
+                <th>Urgente</th>
+                <th>Urgente Si/No</th>
+                <th>Verificata</th>
+                <th>Verificata Si/No</th>
 
             </tr>
         </tfoot>

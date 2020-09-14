@@ -30,5 +30,8 @@ namespace Grandine.Models
         public string Targa { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<System.DateTime> DataPC { get; set; }
+        public bool VerificatoCliente { get; set; }
+        public bool IsUrgente { get; set; }
+        public bool VerificatoNSG { get; set; }
     }
 }
