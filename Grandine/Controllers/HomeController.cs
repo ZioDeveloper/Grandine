@@ -82,6 +82,15 @@ namespace Grandine.Controllers
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
+                    if (myIDUtente == "C003")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where co.ID == 2 
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
                     else if (myIDUtente == "L001")
                     {
                         var commesse = from co in db.Commesse
@@ -218,7 +227,15 @@ namespace Grandine.Controllers
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
-
+                    if (myIDUtente == "C003")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where co.ID == 2
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
                     else if (myIDUtente == "L001")
                     {
                         var commesse = from co in db.Commesse
