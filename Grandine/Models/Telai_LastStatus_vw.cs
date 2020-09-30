@@ -33,5 +33,6 @@ namespace Grandine.Models
         public bool VerificatoCliente { get; set; }
         public bool IsUrgente { get; set; }
         public bool VerificatoNSG { get; set; }
+        public string Gravità { get; set; }
     }
 }

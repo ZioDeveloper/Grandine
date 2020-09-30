@@ -78,7 +78,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 6  || co.ID == 9
+                                       where co.ID == 6  || co.ID == 9 || co.ID == 10
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -114,7 +114,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 6 || co.ID == 9
+                                       where co.ID == 6 || co.ID == 9 || co.ID == 10
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -223,7 +223,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 6 || co.ID == 9
+                                       where co.ID == 6 || co.ID == 9 || co.ID == 10
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -259,7 +259,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 6 || co.ID == 9
+                                       where co.ID == 6 || co.ID == 9 || co.ID == 10
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
