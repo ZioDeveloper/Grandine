@@ -1044,6 +1044,19 @@ namespace Grandine.Controllers
             return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
         }
 
+       
+        public ActionResult ExportAllDataInExcel(int? IDCommessa)
+        {
+            var model = new Models.HomeModel();
+
+            var telaiAnagrafica = from m in db.TelaiAnagraficaFlat_vw
+                                  where m.IDCommessa == IDCommessa
+                                  select m;
+            model.TelaiAnagraficaFlat_vw = telaiAnagrafica.ToList();
+            
+            return View(telaiAnagrafica.ToList());
+;
+        }
 
         protected override void Dispose(bool disposing)
         {

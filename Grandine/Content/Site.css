@@ -43,3 +43,23 @@ hr.nero {
 .sectionlabel{
     color:darkgreen;
 }
+.sign-in-xls {
+    background: url("../img/xls.jpg");
+    /*background-position: -9px -7px;*/
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    padding-left: 41px;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
+    /*text-decoration:underline;*/
+}
+
+.sign-in-xls:hover {
+    background: url("../img/xls.jpg");
+    /*background-position: -9px -7px;*/
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    padding-left: 41px;
+    color: #000;
+}

@@ -324,9 +324,9 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
         <EntityType Name="Telai_LastStatus_vw">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="VerificatoCliente" />
             <PropertyRef Name="IsUrgente" />
             <PropertyRef Name="VerificatoNSG" />
+            <PropertyRef Name="VerificatoCliente" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Telaio" Type="varchar" MaxLength="20" />
@@ -344,10 +344,77 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="Targa" Type="varchar" MaxLength="50" />
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="DataPC" Type="datetime" />
-          <Property Name="VerificatoCliente" Type="bit" Nullable="false" />
           <Property Name="IsUrgente" Type="bit" Nullable="false" />
           <Property Name="VerificatoNSG" Type="bit" Nullable="false" />
+          <Property Name="VerificatoCliente" Type="bit" Nullable="false" />
           <Property Name="Gravità" Type="varchar" MaxLength="50" />
+          <Property Name="Tecnico" Type="varchar" MaxLength="101" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GRANDINE.dbo.TelaiAnagraficaFlat_vw' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TelaiAnagraficaFlat_vw">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="IsUrgente" />
+            <PropertyRef Name="VerificatoNSG" />
+            <PropertyRef Name="VerificatoCliente" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Telaio" Type="varchar" MaxLength="20" />
+          <Property Name="Modello" Type="varchar" MaxLength="50" />
+          <Property Name="Targa" Type="varchar" MaxLength="50" />
+          <Property Name="InsertUser" Type="varchar" MaxLength="20" />
+          <Property Name="InsertDate" Type="datetime" />
+          <Property Name="NomeFile" Type="varchar" MaxLength="50" />
+          <Property Name="IDCommessa" Type="int" />
+          <Property Name="Commessa" Type="varchar" MaxLength="50" />
+          <Property Name="Annotazioni" Type="varchar(max)" />
+          <Property Name="DataIn" Type="datetime" />
+          <Property Name="DataOut" Type="datetime" />
+          <Property Name="NFattAttiva" Type="varchar" MaxLength="50" />
+          <Property Name="DataFattAtt" Type="datetime" />
+          <Property Name="ImpFattAtt" Type="float" />
+          <Property Name="Tecnico" Type="varchar" MaxLength="101" />
+          <Property Name="NumFattTecnico" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaPassiva" Type="datetime" />
+          <Property Name="ImportoFattPass" Type="float" />
+          <Property Name="Carrozzeria 1" Type="varchar" MaxLength="50" />
+          <Property Name="NumFattCarrozzeria1" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaCarrozzeria1" Type="datetime" />
+          <Property Name="ImportoCarrozzeria1" Type="float" />
+          <Property Name="IDCarrozzeria2" Type="int" />
+          <Property Name="Carrozzera 2" Type="varchar" MaxLength="50" />
+          <Property Name="NumFattCarrozzeria2" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaCarrozzeria2" Type="datetime" />
+          <Property Name="ImportoCarrozzeria2" Type="float" />
+          <Property Name="IDCarrozzeria3" Type="int" />
+          <Property Name="Carrozzeria 3" Type="varchar" MaxLength="50" />
+          <Property Name="NumFattCarrozzeria3" Type="varchar" MaxLength="50" />
+          <Property Name="DataFatturaCarrozzeria3" Type="datetime" />
+          <Property Name="ImportoCarrozzeria3" Type="float" />
+          <Property Name="IDCarglass" Type="int" />
+          <Property Name="CarGlass" Type="varchar" MaxLength="50" />
+          <Property Name="NumFattCarGlass" Type="varchar" MaxLength="50" />
+          <Property Name="ImportoFattCarGlass" Type="float" />
+          <Property Name="DataFatturaCarglass" Type="datetime" />
+          <Property Name="IDBisarchistaAndata" Type="int" />
+          <Property Name="BisarchistaAndata" Type="varchar" MaxLength="50" />
+          <Property Name="NumFattBisarchistaA" Type="varchar" MaxLength="50" />
+          <Property Name="DataFattBisarchistaA" Type="datetime" />
+          <Property Name="CostoAndata" Type="float" />
+          <Property Name="IDBisarchistaRitorno" Type="int" />
+          <Property Name="BisarchistaRitorno" Type="varchar" MaxLength="50" />
+          <Property Name="NumFattBisarchistaR" Type="varchar" MaxLength="50" />
+          <Property Name="DataFattBisarchistaR" Type="datetime" />
+          <Property Name="CostoRitorno" Type="float" />
+          <Property Name="Costi" Type="float" />
+          <Property Name="Chiave" Type="varchar" MaxLength="50" />
+          <Property Name="Fila" Type="varchar" MaxLength="50" />
+          <Property Name="IDGravita" Type="int" />
+          <Property Name="Gravita" Type="varchar" MaxLength="50" />
+          <Property Name="IsUrgente" Type="bit" Nullable="false" />
+          <Property Name="VerificatoNSG" Type="bit" Nullable="false" />
+          <Property Name="VerificatoCliente" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_ClientiXTecnici_Clienti">
           <End Role="Clienti" Type="Self.Clienti" Multiplicity="1" />
@@ -734,11 +801,72 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
     [Telai_LastStatus_vw].[Targa] AS [Targa], 
     [Telai_LastStatus_vw].[UpdateDate] AS [UpdateDate], 
     [Telai_LastStatus_vw].[DataPC] AS [DataPC], 
-    [Telai_LastStatus_vw].[VerificatoCliente] AS [VerificatoCliente], 
     [Telai_LastStatus_vw].[IsUrgente] AS [IsUrgente], 
     [Telai_LastStatus_vw].[VerificatoNSG] AS [VerificatoNSG], 
-    [Telai_LastStatus_vw].[Gravità] AS [Gravità]
+    [Telai_LastStatus_vw].[VerificatoCliente] AS [VerificatoCliente], 
+    [Telai_LastStatus_vw].[Gravità] AS [Gravità], 
+    [Telai_LastStatus_vw].[Tecnico] AS [Tecnico]
     FROM [dbo].[Telai_LastStatus_vw] AS [Telai_LastStatus_vw]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TelaiAnagraficaFlat_vw" EntityType="Self.TelaiAnagraficaFlat_vw" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TelaiAnagraficaFlat_vw].[ID] AS [ID], 
+    [TelaiAnagraficaFlat_vw].[Telaio] AS [Telaio], 
+    [TelaiAnagraficaFlat_vw].[Modello] AS [Modello], 
+    [TelaiAnagraficaFlat_vw].[Targa] AS [Targa], 
+    [TelaiAnagraficaFlat_vw].[InsertUser] AS [InsertUser], 
+    [TelaiAnagraficaFlat_vw].[InsertDate] AS [InsertDate], 
+    [TelaiAnagraficaFlat_vw].[NomeFile] AS [NomeFile], 
+    [TelaiAnagraficaFlat_vw].[IDCommessa] AS [IDCommessa], 
+    [TelaiAnagraficaFlat_vw].[Commessa] AS [Commessa], 
+    [TelaiAnagraficaFlat_vw].[Annotazioni] AS [Annotazioni], 
+    [TelaiAnagraficaFlat_vw].[DataIn] AS [DataIn], 
+    [TelaiAnagraficaFlat_vw].[DataOut] AS [DataOut], 
+    [TelaiAnagraficaFlat_vw].[NFattAttiva] AS [NFattAttiva], 
+    [TelaiAnagraficaFlat_vw].[DataFattAtt] AS [DataFattAtt], 
+    [TelaiAnagraficaFlat_vw].[ImpFattAtt] AS [ImpFattAtt], 
+    [TelaiAnagraficaFlat_vw].[Tecnico] AS [Tecnico], 
+    [TelaiAnagraficaFlat_vw].[NumFattTecnico] AS [NumFattTecnico], 
+    [TelaiAnagraficaFlat_vw].[DataFatturaPassiva] AS [DataFatturaPassiva], 
+    [TelaiAnagraficaFlat_vw].[ImportoFattPass] AS [ImportoFattPass], 
+    [TelaiAnagraficaFlat_vw].[Carrozzeria 1] AS [Carrozzeria 1], 
+    [TelaiAnagraficaFlat_vw].[NumFattCarrozzeria1] AS [NumFattCarrozzeria1], 
+    [TelaiAnagraficaFlat_vw].[DataFatturaCarrozzeria1] AS [DataFatturaCarrozzeria1], 
+    [TelaiAnagraficaFlat_vw].[ImportoCarrozzeria1] AS [ImportoCarrozzeria1], 
+    [TelaiAnagraficaFlat_vw].[IDCarrozzeria2] AS [IDCarrozzeria2], 
+    [TelaiAnagraficaFlat_vw].[Carrozzera 2] AS [Carrozzera 2], 
+    [TelaiAnagraficaFlat_vw].[NumFattCarrozzeria2] AS [NumFattCarrozzeria2], 
+    [TelaiAnagraficaFlat_vw].[DataFatturaCarrozzeria2] AS [DataFatturaCarrozzeria2], 
+    [TelaiAnagraficaFlat_vw].[ImportoCarrozzeria2] AS [ImportoCarrozzeria2], 
+    [TelaiAnagraficaFlat_vw].[IDCarrozzeria3] AS [IDCarrozzeria3], 
+    [TelaiAnagraficaFlat_vw].[Carrozzeria 3] AS [Carrozzeria 3], 
+    [TelaiAnagraficaFlat_vw].[NumFattCarrozzeria3] AS [NumFattCarrozzeria3], 
+    [TelaiAnagraficaFlat_vw].[DataFatturaCarrozzeria3] AS [DataFatturaCarrozzeria3], 
+    [TelaiAnagraficaFlat_vw].[ImportoCarrozzeria3] AS [ImportoCarrozzeria3], 
+    [TelaiAnagraficaFlat_vw].[IDCarglass] AS [IDCarglass], 
+    [TelaiAnagraficaFlat_vw].[CarGlass] AS [CarGlass], 
+    [TelaiAnagraficaFlat_vw].[NumFattCarGlass] AS [NumFattCarGlass], 
+    [TelaiAnagraficaFlat_vw].[ImportoFattCarGlass] AS [ImportoFattCarGlass], 
+    [TelaiAnagraficaFlat_vw].[DataFatturaCarglass] AS [DataFatturaCarglass], 
+    [TelaiAnagraficaFlat_vw].[IDBisarchistaAndata] AS [IDBisarchistaAndata], 
+    [TelaiAnagraficaFlat_vw].[BisarchistaAndata] AS [BisarchistaAndata], 
+    [TelaiAnagraficaFlat_vw].[NumFattBisarchistaA] AS [NumFattBisarchistaA], 
+    [TelaiAnagraficaFlat_vw].[DataFattBisarchistaA] AS [DataFattBisarchistaA], 
+    [TelaiAnagraficaFlat_vw].[CostoAndata] AS [CostoAndata], 
+    [TelaiAnagraficaFlat_vw].[IDBisarchistaRitorno] AS [IDBisarchistaRitorno], 
+    [TelaiAnagraficaFlat_vw].[BisarchistaRitorno] AS [BisarchistaRitorno], 
+    [TelaiAnagraficaFlat_vw].[NumFattBisarchistaR] AS [NumFattBisarchistaR], 
+    [TelaiAnagraficaFlat_vw].[DataFattBisarchistaR] AS [DataFattBisarchistaR], 
+    [TelaiAnagraficaFlat_vw].[CostoRitorno] AS [CostoRitorno], 
+    [TelaiAnagraficaFlat_vw].[Costi] AS [Costi], 
+    [TelaiAnagraficaFlat_vw].[Chiave] AS [Chiave], 
+    [TelaiAnagraficaFlat_vw].[Fila] AS [Fila], 
+    [TelaiAnagraficaFlat_vw].[IDGravita] AS [IDGravita], 
+    [TelaiAnagraficaFlat_vw].[Gravita] AS [Gravita], 
+    [TelaiAnagraficaFlat_vw].[IsUrgente] AS [IsUrgente], 
+    [TelaiAnagraficaFlat_vw].[VerificatoNSG] AS [VerificatoNSG], 
+    [TelaiAnagraficaFlat_vw].[VerificatoCliente] AS [VerificatoCliente]
+    FROM [dbo].[TelaiAnagraficaFlat_vw] AS [TelaiAnagraficaFlat_vw]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_ClientiXTecnici_Clienti" Association="Self.FK_ClientiXTecnici_Clienti">
             <End Role="Clienti" EntitySet="Clienti" />
@@ -1026,6 +1154,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <End Role="Gravita" EntitySet="Gravita" />
             <End Role="TelaiAnagrafica" EntitySet="TelaiAnagrafica" />
           </AssociationSet>
+          <EntitySet Name="TelaiAnagraficaFlat_vw" EntityType="GRANDINEModel.TelaiAnagraficaFlat_vw" />
           </EntityContainer>
         <EntityType Name="Bisarchista">
           <Key>
@@ -1365,6 +1494,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <Property Name="IsUrgente" Type="Boolean" Nullable="false" />
           <Property Name="VerificatoNSG" Type="Boolean" Nullable="false" />
           <Property Name="Gravità" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tecnico" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="StoricoStatus_vw">
           <Key>
@@ -1703,6 +1833,70 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TelaiAnagraficaFlat_vw">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="IsUrgente" />
+            <PropertyRef Name="VerificatoNSG" />
+            <PropertyRef Name="VerificatoCliente" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Telaio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Modello" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Targa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InsertUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <Property Name="NomeFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDCommessa" Type="Int32" />
+          <Property Name="Commessa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Annotazioni" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DataIn" Type="DateTime" Precision="3" />
+          <Property Name="DataOut" Type="DateTime" Precision="3" />
+          <Property Name="NFattAttiva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFattAtt" Type="DateTime" Precision="3" />
+          <Property Name="ImpFattAtt" Type="Double" />
+          <Property Name="Tecnico" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattTecnico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaPassiva" Type="DateTime" Precision="3" />
+          <Property Name="ImportoFattPass" Type="Double" />
+          <Property Name="Carrozzeria_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattCarrozzeria1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaCarrozzeria1" Type="DateTime" Precision="3" />
+          <Property Name="ImportoCarrozzeria1" Type="Double" />
+          <Property Name="IDCarrozzeria2" Type="Int32" />
+          <Property Name="Carrozzera_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattCarrozzeria2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaCarrozzeria2" Type="DateTime" Precision="3" />
+          <Property Name="ImportoCarrozzeria2" Type="Double" />
+          <Property Name="IDCarrozzeria3" Type="Int32" />
+          <Property Name="Carrozzeria_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattCarrozzeria3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFatturaCarrozzeria3" Type="DateTime" Precision="3" />
+          <Property Name="ImportoCarrozzeria3" Type="Double" />
+          <Property Name="IDCarglass" Type="Int32" />
+          <Property Name="CarGlass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattCarGlass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImportoFattCarGlass" Type="Double" />
+          <Property Name="DataFatturaCarglass" Type="DateTime" Precision="3" />
+          <Property Name="IDBisarchistaAndata" Type="Int32" />
+          <Property Name="BisarchistaAndata" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattBisarchistaA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFattBisarchistaA" Type="DateTime" Precision="3" />
+          <Property Name="CostoAndata" Type="Double" />
+          <Property Name="IDBisarchistaRitorno" Type="Int32" />
+          <Property Name="BisarchistaRitorno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumFattBisarchistaR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataFattBisarchistaR" Type="DateTime" Precision="3" />
+          <Property Name="CostoRitorno" Type="Double" />
+          <Property Name="Costi" Type="Double" />
+          <Property Name="Chiave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDGravita" Type="Int32" />
+          <Property Name="Gravita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsUrgente" Type="Boolean" Nullable="false" />
+          <Property Name="VerificatoNSG" Type="Boolean" Nullable="false" />
+          <Property Name="VerificatoCliente" Type="Boolean" Nullable="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1889,6 +2083,7 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
           <EntitySetMapping Name="Telai_LastStatus_vw">
             <EntityTypeMapping TypeName="GRANDINEModel.Telai_LastStatus_vw">
               <MappingFragment StoreEntitySet="Telai_LastStatus_vw">
+                <ScalarProperty Name="Tecnico" ColumnName="Tecnico" />
                 <ScalarProperty Name="Gravità" ColumnName="Gravità" />
                 <ScalarProperty Name="VerificatoNSG" ColumnName="VerificatoNSG" />
                 <ScalarProperty Name="IsUrgente" ColumnName="IsUrgente" />
@@ -2064,6 +2259,68 @@ warning 6002: The table/view 'GRANDINE.dbo.Telai_LastStatus_vw' does not have a 
             <EntityTypeMapping TypeName="GRANDINEModel.Gravita">
               <MappingFragment StoreEntitySet="Gravita">
                 <ScalarProperty Name="Descr" ColumnName="Descr" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TelaiAnagraficaFlat_vw">
+            <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagraficaFlat_vw">
+              <MappingFragment StoreEntitySet="TelaiAnagraficaFlat_vw">
+                <ScalarProperty Name="VerificatoCliente" ColumnName="VerificatoCliente" />
+                <ScalarProperty Name="VerificatoNSG" ColumnName="VerificatoNSG" />
+                <ScalarProperty Name="IsUrgente" ColumnName="IsUrgente" />
+                <ScalarProperty Name="Gravita" ColumnName="Gravita" />
+                <ScalarProperty Name="IDGravita" ColumnName="IDGravita" />
+                <ScalarProperty Name="Fila" ColumnName="Fila" />
+                <ScalarProperty Name="Chiave" ColumnName="Chiave" />
+                <ScalarProperty Name="Costi" ColumnName="Costi" />
+                <ScalarProperty Name="CostoRitorno" ColumnName="CostoRitorno" />
+                <ScalarProperty Name="DataFattBisarchistaR" ColumnName="DataFattBisarchistaR" />
+                <ScalarProperty Name="NumFattBisarchistaR" ColumnName="NumFattBisarchistaR" />
+                <ScalarProperty Name="BisarchistaRitorno" ColumnName="BisarchistaRitorno" />
+                <ScalarProperty Name="IDBisarchistaRitorno" ColumnName="IDBisarchistaRitorno" />
+                <ScalarProperty Name="CostoAndata" ColumnName="CostoAndata" />
+                <ScalarProperty Name="DataFattBisarchistaA" ColumnName="DataFattBisarchistaA" />
+                <ScalarProperty Name="NumFattBisarchistaA" ColumnName="NumFattBisarchistaA" />
+                <ScalarProperty Name="BisarchistaAndata" ColumnName="BisarchistaAndata" />
+                <ScalarProperty Name="IDBisarchistaAndata" ColumnName="IDBisarchistaAndata" />
+                <ScalarProperty Name="DataFatturaCarglass" ColumnName="DataFatturaCarglass" />
+                <ScalarProperty Name="ImportoFattCarGlass" ColumnName="ImportoFattCarGlass" />
+                <ScalarProperty Name="NumFattCarGlass" ColumnName="NumFattCarGlass" />
+                <ScalarProperty Name="CarGlass" ColumnName="CarGlass" />
+                <ScalarProperty Name="IDCarglass" ColumnName="IDCarglass" />
+                <ScalarProperty Name="ImportoCarrozzeria3" ColumnName="ImportoCarrozzeria3" />
+                <ScalarProperty Name="DataFatturaCarrozzeria3" ColumnName="DataFatturaCarrozzeria3" />
+                <ScalarProperty Name="NumFattCarrozzeria3" ColumnName="NumFattCarrozzeria3" />
+                <ScalarProperty Name="Carrozzeria_3" ColumnName="Carrozzeria 3" />
+                <ScalarProperty Name="IDCarrozzeria3" ColumnName="IDCarrozzeria3" />
+                <ScalarProperty Name="ImportoCarrozzeria2" ColumnName="ImportoCarrozzeria2" />
+                <ScalarProperty Name="DataFatturaCarrozzeria2" ColumnName="DataFatturaCarrozzeria2" />
+                <ScalarProperty Name="NumFattCarrozzeria2" ColumnName="NumFattCarrozzeria2" />
+                <ScalarProperty Name="Carrozzera_2" ColumnName="Carrozzera 2" />
+                <ScalarProperty Name="IDCarrozzeria2" ColumnName="IDCarrozzeria2" />
+                <ScalarProperty Name="ImportoCarrozzeria1" ColumnName="ImportoCarrozzeria1" />
+                <ScalarProperty Name="DataFatturaCarrozzeria1" ColumnName="DataFatturaCarrozzeria1" />
+                <ScalarProperty Name="NumFattCarrozzeria1" ColumnName="NumFattCarrozzeria1" />
+                <ScalarProperty Name="Carrozzeria_1" ColumnName="Carrozzeria 1" />
+                <ScalarProperty Name="ImportoFattPass" ColumnName="ImportoFattPass" />
+                <ScalarProperty Name="DataFatturaPassiva" ColumnName="DataFatturaPassiva" />
+                <ScalarProperty Name="NumFattTecnico" ColumnName="NumFattTecnico" />
+                <ScalarProperty Name="Tecnico" ColumnName="Tecnico" />
+                <ScalarProperty Name="ImpFattAtt" ColumnName="ImpFattAtt" />
+                <ScalarProperty Name="DataFattAtt" ColumnName="DataFattAtt" />
+                <ScalarProperty Name="NFattAttiva" ColumnName="NFattAttiva" />
+                <ScalarProperty Name="DataOut" ColumnName="DataOut" />
+                <ScalarProperty Name="DataIn" ColumnName="DataIn" />
+                <ScalarProperty Name="Annotazioni" ColumnName="Annotazioni" />
+                <ScalarProperty Name="Commessa" ColumnName="Commessa" />
+                <ScalarProperty Name="IDCommessa" ColumnName="IDCommessa" />
+                <ScalarProperty Name="NomeFile" ColumnName="NomeFile" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="InsertUser" ColumnName="InsertUser" />
+                <ScalarProperty Name="Targa" ColumnName="Targa" />
+                <ScalarProperty Name="Modello" ColumnName="Modello" />
+                <ScalarProperty Name="Telaio" ColumnName="Telaio" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

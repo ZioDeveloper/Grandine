@@ -139,6 +139,7 @@
     <Compile Include="Controllers\CommesseXClientisController.cs" />
     <Compile Include="Controllers\CommesseXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImpotazioneDatiController.cs" />
     <Compile Include="Controllers\InsertTelaiFormListController.cs" />
     <Compile Include="Controllers\RicambiController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
@@ -237,6 +238,9 @@
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TelaiAnagrafica.cs">
+      <DependentUpon>GrandineEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TelaiAnagraficaFlat_vw.cs">
       <DependentUpon>GrandineEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Telai_LastStatus_vw.cs">
@@ -451,6 +455,8 @@
     <Content Include="Views\TelaiAnagraficas\CreateNew.cshtml" />
     <Content Include="Views\TelaiAnagraficas\EditTecnico.cshtml" />
     <Content Include="Views\TelaiAnagraficas\EditController.cshtml" />
+    <Content Include="Views\TelaiAnagraficas\ExportAllDataInExcel.cshtml" />
+    <Content Include="Views\ImpotazioneDati\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

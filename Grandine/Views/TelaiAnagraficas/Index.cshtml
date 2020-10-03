@@ -35,9 +35,22 @@
 
 
 @*<h4>Gestione telai</h4>*@
+<br /><br />
+<div>
+    <p>
+        @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        @*@Html.ActionLink("Inserisci telaio","Create","TelaiCompleti", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })*@
+        @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
+        @if (ViewBag.ClasseUtente == "1" )
+        {
+            @Html.ActionLink("Esporta in Excel tutti i dati di commessa", "ExportAllDataInExcel", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-info sign-in-xls" })
+        }
+        </p>
+
+</div>
 
 
-<br /><br /><br /><br /><br /><br />
+<br /><br />
 
 
 @if (ViewBag.ClasseUtente == "1" || ViewBag.ClasseUtente == "2")
@@ -49,7 +62,7 @@
                 <th>Telaio</th>
                 <th>Targa</th>
                 <th>Modello</th>
-                <th>Modello</th>
+                <th>Tecnico</th>
                 <th>Data PC</th>
                 <th>Pronta Consegna</th>
 
@@ -62,7 +75,7 @@
                 <th>Lavorazione</th>
                 @*<th>Ingresso</th>*@
                 @*<th>Bolla per</th>
-        <th>Bolla da</th>*@
+                    <th>Bolla da</th>*@
                 <th>Consegna</th>
 
                 <th>Cancella</th>
@@ -77,99 +90,102 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                @if (ViewBag.ClasseUtente == "1")
-                {
+                <tr>
+                    @if (ViewBag.ClasseUtente == "1")
+                    {
+                        <td>
+                            @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.ActionLink("Modifica", "EditController", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                        </td>
+                    }
+
+
                     <td>
-                        @Html.ActionLink("Modifica", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                        @Html.DisplayFor(modelItem => item.Telaio)
                     </td>
-                }
-                else
-                {
                     <td>
-                        @Html.ActionLink("Modifica", "EditController", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                        @Html.DisplayFor(modelItem => item.Targa)
                     </td>
-                }
 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modello)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tecnico)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataPC)
+                    </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telaio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Targa)
-                </td>
+                    <td>
+                        @Html.ActionLink("Pronta consegna", "StatusProntaConsegna", new { id = item.ID }, new { @class = "btn btn-warning btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastStatus)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Chiave)
+                        </td>*@
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modello)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataPC)
-                </td>
-
-                <td>
-                    @Html.ActionLink("Pronta consegna", "StatusProntaConsegna", new { id = item.ID }, new { @class = "btn btn-warning btn-xs" })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastStatus)
-                </td>
-                @*<td>
-            @Html.DisplayFor(modelItem => item.Chiave)
-        </td>*@
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Annotazioni)
-                </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Annotazioni)
+                    </td>
 
 
 
-                <td>
-                    @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Foto)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Lavorazione)
-                </td>
-                @*<td>
-            @Html.DisplayFor(modelItem => item.Ingresso)
-        </td>*@
-                @*<td>
-            @Html.DisplayFor(modelItem => item.BollaX)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BollaDa)
-        </td>*@
+                    <td>
+                        @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lavorazione)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Ingresso)
+                        </td>*@
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.BollaX)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BollaDa)
+                        </td>*@
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Consegna)
-                </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consegna)
+                    </td>
 
 
-                <td>
-                    @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsUrgente)
-                </td>
-                <td>
+                    <td>
+                        @Html.ActionLink("Cancella", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsUrgente)
+                    </td>
+                    <td>
 
-                    @Html.ActionLink("Urgente Si/No", "SegnaComeUrgente", new { id = item.ID, Urgente = item.IsUrgente }, new { @class = "btn btn-warning btn-xs" })
+                        @Html.ActionLink("Urgente Si/No", "SegnaComeUrgente", new { id = item.ID, Urgente = item.IsUrgente }, new { @class = "btn btn-warning btn-xs" })
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VerificatoCliente)
-                </td>
-                <td>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VerificatoCliente)
+                    </td>
+                    <td>
 
-                    @Html.ActionLink("Verificata Si/No", "SegnaComeVerificata", new { id = item.ID, Verificata = item.VerificatoCliente }, new { @class = "btn btn-warning btn-xs" })
+                        @Html.ActionLink("Verificata Si/No", "SegnaComeVerificata", new { id = item.ID, Verificata = item.VerificatoCliente }, new { @class = "btn btn-warning btn-xs" })
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gravità)
-                </td>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gravità)
+                    </td>
 
-            </tr>
+                </tr>
             }
         </tbody>
         <tfoot>
@@ -178,6 +194,7 @@
                 <th>Telaio</th>
                 <th>Targa</th>
                 <th>Modello</th>
+                <th>Tecnico</th>
                 <th>Data PC</th>
                 <th>Pronta Consegna</th>
 
@@ -190,7 +207,7 @@
                 <th>Lavorazione</th>
                 @*<th>Ingresso</th>*@
                 @*<th>Bolla per</th>
-        <th>Bolla da</th>*@
+                    <th>Bolla da</th>*@
                 <th>Consegna</th>
 
                 <th>Cancella</th>
@@ -224,43 +241,43 @@ else if (ViewBag.ClasseUtente == "3")
         </thead>
         <tbody>
             @foreach (var item in Model)
-                        {
-            <tr>
-                <td>
-                    @Html.ActionLink("Modifica", "EditTecnico", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telaio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Targa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modello)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Annotazioni)
-                </td>
-                <td>
-                    @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Foto)
-                </td>
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Modifica", "EditTecnico", new { id = item.ID }, new { @class = "btn btn-success btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telaio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Targa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modello)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Annotazioni)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Foto", "ScattaFoto", new { IDTelaio = item.ID }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Lavorazione)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataPC)
-                </td>
-                <td>
-                    @Html.ActionLink("Pronta consegna", "StatusProntaConsegna", new { id = item.ID }, new { @class = "btn btn-warning btn-xs" })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsUrgente)
-                </td>
-            </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lavorazione)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataPC)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Pronta consegna", "StatusProntaConsegna", new { id = item.ID }, new { @class = "btn btn-warning btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsUrgente)
+                    </td>
+                </tr>
             }
         </tbody>
         <tfoot>
@@ -296,7 +313,8 @@ else if (ViewBag.ClasseUtente == "4")
                 <th>Urgente</th>
                 <th>Urgente Si/No</th>
                 <th>Verificata</th>
-                <th>Verificata Si/No
+                <th>
+                    Verificata Si/No
                 </th>
 
 
@@ -306,48 +324,48 @@ else if (ViewBag.ClasseUtente == "4")
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
+                <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telaio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Targa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modello)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastStatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Annotazioni)
-                </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telaio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Targa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modello)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Annotazioni)
+                    </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Foto)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataPC)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsUrgente)
-                </td>
-                <td>
-                    
-                    @Html.ActionLink("Urgente Si/No", "SegnaComeUrgente", new { id = item.ID, Urgente = item.IsUrgente }, new { @class = "btn btn-warning btn-xs" })
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Foto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataPC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsUrgente)
+                    </td>
+                    <td>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VerificatoCliente)
-                </td>
-                <td>
+                        @Html.ActionLink("Urgente Si/No", "SegnaComeUrgente", new { id = item.ID, Urgente = item.IsUrgente }, new { @class = "btn btn-warning btn-xs" })
 
-                    @Html.ActionLink("Verificata Si/No", "SegnaComeVerificata", new { id = item.ID, Verificata = item.VerificatoCliente }, new { @class = "btn btn-warning btn-xs" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VerificatoCliente)
+                    </td>
+                    <td>
 
-                </td>
+                        @Html.ActionLink("Verificata Si/No", "SegnaComeVerificata", new { id = item.ID, Verificata = item.VerificatoCliente }, new { @class = "btn btn-warning btn-xs" })
 
-            </tr>
+                    </td>
+
+                </tr>
             }
         </tbody>
         <tfoot>
@@ -374,9 +392,9 @@ else if (ViewBag.ClasseUtente == "4")
 <div>
     <p>
         @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
-        @*@Html.ActionLink("Inserisci telaio","Create","TelaiCompleti", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })*@
+        @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
     </p>
-    @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
+
 </div>
 
 <script>
@@ -395,7 +413,7 @@ else if (ViewBag.ClasseUtente == "4")
                 },
                 {
                     extend: 'excelHtml5',
-                    text: 'Crea excel',
+                    text: 'Crea excel (solo dati griglia)',
                     exportOptions: {
                         modifier: {
                             search: 'none'
@@ -412,18 +430,18 @@ else if (ViewBag.ClasseUtente == "4")
                         }
                     }
                 }
-                ,
-                {
-                    extend: 'pdf',
-                    text: 'Crea PDF',
-                    exportOptions: {
-                        modifier: {
-                            search: 'none'
-                        }
-                    }
-                }
+                //,
+                //{
+                //    extend: 'pdf',
+                //    text: 'Crea PDF',
+                //    exportOptions: {
+                //        modifier: {
+                //            search: 'none'
+                //        }
+                //    }
+                //}
             ],
-            
+
 
             dom: 'Blfrtip',
             //buttons: [
@@ -443,7 +461,7 @@ else if (ViewBag.ClasseUtente == "4")
                 processing: "Ricerca in corso...",
                 search: "Ricerca:",
                 //lengthMenu: "Visualizza _MENU_ elementi",
-                
+
                 info: "Elenca da _START_ a _END_ di _TOTAL_ elementi",
                 infoEmpty: "Elenca da 0 a 0 di 0 elementi",
                 infoFiltered: "(filtrati da _MAX_ elementi totali)",
@@ -471,7 +489,7 @@ else if (ViewBag.ClasseUtente == "4")
                     collapse: { 0: 'Ricerca avanzata', _: 'Scelte selezionate (%d)' }
                 },
                 buttons: [
-                    'copy', 'csv', 'excel',  'print'
+                    'copy', 'csv', 'excel', 'print'
                 ]
             }
         });

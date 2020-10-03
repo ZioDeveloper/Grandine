@@ -54,7 +54,7 @@
     </div>*@
 <br />
 <div>
-    @using (Html.BeginForm("Index", "TelaiAnagraficas", FormMethod.Post))
+    @using (Html.BeginForm("Index", "TelaiAnagraficas", FormMethod.Post,new { IDCommessa = 1}))
     {
         @Html.AntiForgeryToken()
         @Html.Label("Commesse attive :")
@@ -63,6 +63,8 @@
         <div>
             <button type="submit" class="btn btn-primary">Vai a gestione dati</button>
         </div>
-        }
-    </div>
+    }
+</div>
+<br />
+
 <br />
