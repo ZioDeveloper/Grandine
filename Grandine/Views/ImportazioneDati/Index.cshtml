@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align:center">
+        <h2>Importazione dati da csv</h2>
+
+        <h4>Istruzione</h4>
+        @*<ul style="text-align:left">
+                <li class="list-group-item ">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>*@
+        <ol style="text-align:left">
+            <li>Preparare un file csv che contenga : <b>Telaio - Targa - Modello - Gravità</b> &nbsp;&nbsp; &nbsp;&nbsp;@Html.ActionLink("Scarica template", "DownloadTemplate", null, new { @class = "btn btn-info btn-xs" })</li>
+
+
+            Dati Obbligatori :
+            <ul>
+
+                <li>Almeno un campo tra telaio e targa</li>
+                <li>Un valore per la gravità da selezionare con questi criteri :</li>
+                <ul><b>1 .*** Undefined *** </b></ul>
+                <ul><b>2. Lieve</b></ul>
+                <ul><b>3. Medio</b></ul>
+                <ul><b>4. Grave</b> </ul>
+                <ul><b>5. Gravissimo</b></ul>
+
+
+            </ul>
+            <li>Selezionare commessa da lista </li>
+            <li>Uploadare il file .csv (Choose file)</b></li>
+            <li>Caricare dati</b></li>
+        </ol>
+    </div>
+</div>
+<br />
+<div>
+    @using (Html.BeginForm("UploadData", "ImportazioneDati", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Label("Selezionare commessa :")
+        @Html.DropDownList("IDCommessa", (SelectList)ViewData["Commesse"], new { @class = "form-control" })
+        <br />
+        <table>
+            <tr>
+                <td>
+                    Upload file
+                </td>
+                <td>
+                    <input type="file" name="files" multiple id="files_0" class="btn btn-defual" />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                    <input type="submit" value="Carica file CSV" class="btn btn-info" />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                    <div>
+                        @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
+
+                    </div>
+                </td>
+            </tr>
+           
+        </table>
+    }
+</div>
+

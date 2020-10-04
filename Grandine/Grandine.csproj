@@ -139,7 +139,7 @@
     <Compile Include="Controllers\CommesseXClientisController.cs" />
     <Compile Include="Controllers\CommesseXTecnicisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ImpotazioneDatiController.cs" />
+    <Compile Include="Controllers\ImportazioneDatiController.cs" />
     <Compile Include="Controllers\InsertTelaiFormListController.cs" />
     <Compile Include="Controllers\RicambiController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
@@ -266,6 +266,8 @@
     <Content Include="Content\delete.png" />
     <Content Include="Content\deleteFile.png" />
     <Content Include="Content\image.png" />
+    <Content Include="App_Data\TemplateTelai.csv" />
+    <Content Include="App_Data\TemplateTelai.xlsx" />
     <None Include="Content\jquery-3.3.1.intellisense.js" />
     <Content Include="Content\jquery-3.3.1.js" />
     <Content Include="Content\jquery-3.3.1.min.js" />
@@ -456,10 +458,11 @@
     <Content Include="Views\TelaiAnagraficas\EditTecnico.cshtml" />
     <Content Include="Views\TelaiAnagraficas\EditController.cshtml" />
     <Content Include="Views\TelaiAnagraficas\ExportAllDataInExcel.cshtml" />
-    <Content Include="Views\ImpotazioneDati\Index.cshtml" />
+    <Content Include="Views\ImportazioneDati\Index.cshtml" />
+    <Content Include="Views\ImportazioneDati\UploadData.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\CSV\" />
     <Folder Include="DocumentiXTelai\" />
     <Folder Include="Views\Anagrafiche\" />
     <Folder Include="Views\InsertTelaiFormList\" />
