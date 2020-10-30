@@ -70,5 +70,6 @@ namespace Grandine.Models
         public bool IsUrgente { get; set; }
         public bool VerificatoNSG { get; set; }
         public bool VerificatoCliente { get; set; }
+        public string LastStatus { get; set; }
     }
 }

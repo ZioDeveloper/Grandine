@@ -38,14 +38,18 @@
 <br /><br />
 <div>
     <p>
-        @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        @if (ViewBag.ClasseUtente == "1" || ViewBag.ClasseUtente == "2")
+        {
+            @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        }
+
         @*@Html.ActionLink("Inserisci telaio","Create","TelaiCompleti", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })*@
         @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
-        @if (ViewBag.ClasseUtente == "1" )
+        @if (ViewBag.ClasseUtente == "1")
         {
             @Html.ActionLink("Esporta in Excel tutti i dati di commessa", "ExportAllDataInExcel", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-info sign-in-xls" })
         }
-        </p>
+    </p>
 
 </div>
 
@@ -391,7 +395,10 @@ else if (ViewBag.ClasseUtente == "4")
 <br />
 <div>
     <p>
-        @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        @if (ViewBag.ClasseUtente == "1" || ViewBag.ClasseUtente == "2")
+        {
+            @Html.ActionLink("Inserisci telaio", "CreateNew", new { IDCommessa = Session["IDCommessa"] }, new { @class = "btn btn-primary" })
+        }
         @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
     </p>
 

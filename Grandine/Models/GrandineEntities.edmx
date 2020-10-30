@@ -363,6 +363,7 @@ warning 6002: The table/view 'GRANDINE.dbo.TelaiAnagraficaFlat_vw' does not have
           <Property Name="Telaio" Type="varchar" MaxLength="20" />
           <Property Name="Modello" Type="varchar" MaxLength="50" />
           <Property Name="Targa" Type="varchar" MaxLength="50" />
+          <Property Name="LastStatus" Type="varchar" MaxLength="30" />
           <Property Name="InsertUser" Type="varchar" MaxLength="20" />
           <Property Name="InsertDate" Type="datetime" />
           <Property Name="NomeFile" Type="varchar" MaxLength="50" />
@@ -814,6 +815,7 @@ warning 6002: The table/view 'GRANDINE.dbo.TelaiAnagraficaFlat_vw' does not have
     [TelaiAnagraficaFlat_vw].[Telaio] AS [Telaio], 
     [TelaiAnagraficaFlat_vw].[Modello] AS [Modello], 
     [TelaiAnagraficaFlat_vw].[Targa] AS [Targa], 
+    [TelaiAnagraficaFlat_vw].[LastStatus] AS [LastStatus], 
     [TelaiAnagraficaFlat_vw].[InsertUser] AS [InsertUser], 
     [TelaiAnagraficaFlat_vw].[InsertDate] AS [InsertDate], 
     [TelaiAnagraficaFlat_vw].[NomeFile] AS [NomeFile], 
@@ -1896,6 +1898,7 @@ warning 6002: The table/view 'GRANDINE.dbo.TelaiAnagraficaFlat_vw' does not have
           <Property Name="IsUrgente" Type="Boolean" Nullable="false" />
           <Property Name="VerificatoNSG" Type="Boolean" Nullable="false" />
           <Property Name="VerificatoCliente" Type="Boolean" Nullable="false" />
+          <Property Name="LastStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2266,6 +2269,7 @@ warning 6002: The table/view 'GRANDINE.dbo.TelaiAnagraficaFlat_vw' does not have
           <EntitySetMapping Name="TelaiAnagraficaFlat_vw">
             <EntityTypeMapping TypeName="GRANDINEModel.TelaiAnagraficaFlat_vw">
               <MappingFragment StoreEntitySet="TelaiAnagraficaFlat_vw">
+                <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
                 <ScalarProperty Name="VerificatoCliente" ColumnName="VerificatoCliente" />
                 <ScalarProperty Name="VerificatoNSG" ColumnName="VerificatoNSG" />
                 <ScalarProperty Name="IsUrgente" ColumnName="IsUrgente" />

@@ -115,7 +115,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 6 || co.ID == 9 || co.ID == 10
+                                       where co.ID == 6 || co.ID == 9 || co.ID == 10 || co.ID == 11
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -126,6 +126,17 @@ namespace Grandine.Controllers
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
                                        where m.ID == 5
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+
+                    else if (myIDUtente == "MDP")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where m.ID == 5
+                                       where co.ID == 10
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -201,6 +212,7 @@ namespace Grandine.Controllers
                                       select m;
                         model.Clienti = clienti.ToList();
                     }
+                   
                     else
                     {
                         var clienti = from m in db.Clienti
@@ -260,7 +272,7 @@ namespace Grandine.Controllers
                         var commesse = from co in db.Commesse
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
-                                       where co.ID == 6 || co.ID == 9 || co.ID == 10
+                                       where co.ID == 6 || co.ID == 9 || co.ID == 10 || co.ID == 11
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
@@ -271,6 +283,16 @@ namespace Grandine.Controllers
                                        join m in db.Clienti on co.IDCliente equals m.ID
                                        where m.IsActive == true
                                        where m.ID == 5
+                                       select co;
+                        model.Commesse = commesse.ToList();
+                    }
+                    else if (myIDUtente == "MDP")
+                    {
+                        var commesse = from co in db.Commesse
+                                       join m in db.Clienti on co.IDCliente equals m.ID
+                                       where m.IsActive == true
+                                       where m.ID == 5
+                                       where co.ID == 10
                                        select co;
                         model.Commesse = commesse.ToList();
                     }
