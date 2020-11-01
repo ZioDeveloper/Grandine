@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -104,10 +103,19 @@ namespace Grandine.Controllers
 
             }
             //return View("Index");
-            if(IsCompleted)
-                return RedirectToAction("Index");
+            if (IsCompleted)
+            {
+                TempData["Message"] = "Dati importati correttamente";
+                TempData["Result"] = "OK";
+                //return Content("<script language='javascript' type='text/javascript'>alert('Thanks for Feedback!');</script>");
+                return RedirectToAction("Index", "Messaggi");
+            }
             else
-                return RedirectToAction("Error","Shared");
+            {
+                TempData["Message"] = "Errore nell'importazione dei dati !";
+                TempData["Result"] = "KO";
+                return RedirectToAction("Index", "Messaggi");
+            }
         }
 
         public bool SaveImportDataToDatabase(DataTable imported_data, string IDCommessa)

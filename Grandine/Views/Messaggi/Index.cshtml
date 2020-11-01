@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br /><br />
+
+@if (@TempData["Result"].ToString().ToUpper() == "OK")
+{
+    <h4 style="color:forestgreen">Risultato : @TempData["Message"]</h4>
+}
+else
+{
+    <h4 style="color:red">Risultato : @TempData["Message"]</h4>
+}
+
+<br /><br />
+
+@Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })

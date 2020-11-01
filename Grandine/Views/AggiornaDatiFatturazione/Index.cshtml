@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align:center">
+        <h2>Importazione dati da csv</h2>
+
+        <h4>Istruzioni</h4>
+
+        <ol style="text-align:left">
+            <li>Preparare un file csv che contenga : <b>Telaio / Targa  - Data Fattura - Importo fattura- Numero fattura</b> &nbsp;&nbsp; &nbsp;&nbsp;@Html.ActionLink("Scarica template", "DownloadTemplate", null, new { @class = "btn btn-info btn-xs" })</li>
+
+
+            Formato dati :
+            <ul>
+
+                <li>Almeno un valore a scelta tra telaio e targa da inserire nelal colonna "Telaio"</li>
+                <li>Data Fattura formato dd/MM/yyyy (es : 04/12/2020 - 25/05/2020) </li>
+                <li>Importo : formato ####.00 (es: 1234,50 - 1365,00) </li>
+                <li>Numero fattura : una stringa max 50 caratteri </li>
+
+
+            </ul>
+            <li>Selezionare commessa da lista </li>
+            <li>Uploadare il file .csv (Choose file)</b></li>
+            <li>Caricare dati</b></li>
+        </ol>
+    </div>
+</div>
+<br /><br />
+      <div>
+          @using (Html.BeginForm("VerifyData", "AggiornaDatiFatturazione", FormMethod.Post, new { enctype = "multipart/form-data" }))
+          {
+              @Html.AntiForgeryToken()
+
+              <br />
+              <table>
+                  <tr>
+                      <td>
+                          Carica file da controllare
+                      </td>
+                      <td>
+                          <input type="file" name="files" multiple id="files_0" class="btn btn-defual" />
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                      <td>
+                          <input type="submit" value="Verifica dati CSV" class="btn btn-success" />
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                      <td>&nbsp;&nbsp;</td>
+
+                  </tr>
+
+              </table>
+          }
+      </div>
+<div>
+    @using (Html.BeginForm("UploadData", "AggiornaDatiFatturazione", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @*@Html.Label("Selezionare commessa :")
+        @Html.DropDownList("IDCommessa", (SelectList)ViewData["Commesse"], new { @class = "form-control" })*@
+        <br />
+        <table>
+            <tr>
+                <td>
+                    Carica file da importare &nbsp;
+                </td>
+                <td>
+                    <input type="file" name="files" multiple id="files_0" class="btn btn-defual" />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                    <input type="submit" value="Carica file CSV" class="btn btn-info" />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                    <div>
+                        @Html.ActionLink("Torna a pagina principale", "LoginInUse", "Home", new { aCodiceUtente = Session["UserName"].ToString() }, new { @class = "btn btn-primary" })
+
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    }
+
+
