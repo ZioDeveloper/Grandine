@@ -1014,6 +1014,28 @@ namespace Grandine.Controllers
             return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
         }
 
+        public ActionResult SegnaComeVerificataNSG(int? id, bool? Verificata)
+        {
+
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TelaiAnagrafica telaiAnagrafica = db.TelaiAnagrafica.Find(id);
+            if (telaiAnagrafica == null)
+            {
+                return HttpNotFound();
+            }
+
+            Verificata = !Verificata;
+
+            var sql = @"UPDATE TelaiAnagrafica SET VerificatoNSG = @Verificata WHERE ID = @IDTelaio ";
+            int noOfRowInserted = db.Database.ExecuteSqlCommand(sql, new SqlParameter("@IDTelaio", id), new SqlParameter("@Verificata", Verificata));
+
+            return RedirectToAction("Index", new { IDCommessa = telaiAnagrafica.IDCommessa });
+        }
+
         public ActionResult SegnaComeUrgente(int? id,bool? Urgente)
         {
 
